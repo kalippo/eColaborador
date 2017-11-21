@@ -1,0 +1,57 @@
+".container": {
+},
+//				VISTAS
+"#vistaTop": {
+	"height": "30%",
+	"width": "100%",
+	"layout": "vertical",
+},
+"#vistaDatosLogin": {
+	"height": "50%",
+	"layout": "vertical",
+},
+"#vistaInformacion": {
+	"height": "30%",
+	"layout": "vertical"
+},
+//				 CAJAS DE TEXTO
+".textoLogin": {
+	"width": "80%",
+	"height": "20%",
+	"borderColor": "#E5E5E5",
+	"borderWidth": "1",
+	"top": "5%",
+	"left": "10%",
+	"borderRadius": "40",
+	"font": {fontSize:'17',fontFamily:'Montserrat-Regular',fontStyle:'normal',fontWeight:''},
+	"backgroundColor": "white",
+	"color": "black"
+},
+"#claveColaborador": {
+	"hintText": "Ingresa tu Clave de Colaborador"
+},
+"#password": {
+	"hintText": "Contraseña"
+},
+// 				BOTONES 
+"#iniciarSesion": {
+	"title": "INICIAR SESIÓN"
+},
+// 				ETIQUETAS
+"#etiquetaComunicate": {
+	"text": "SI NO CUENTAS CON TU CONTRASEÑA COMUNICATE AL 12 34 5678 PARA SOLICITAR TUS ACCESOS",
+	"width": "80%",
+	"textAlign": Ti.UI.TEXT_ALIGNMENT_JUSTIFY,
+	"autoLink": Ti.UI.AUTOLINK_PHONE_NUMBERS,
+	"color": "#105a9b",
+	"top": "20%"
+},
+//				IMAGENES
+"#ImageView_1": {
+	"top": "10%",
+	"height": "120",
+	"width": "120",
+	"image": "/imagen.jpg",
+	"borderRadius": "60",
+	borderColor:"white"
+}

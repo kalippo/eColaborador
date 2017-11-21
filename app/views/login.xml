@@ -1,0 +1,15 @@
+<Alloy>
+    <Window class="container" layout="vertical">
+        <View id="vistaTop">
+            <ImageView id="ImageView_1"/>
+        </View>
+        <View id="vistaDatosLogin">
+            <TextField class="textoLogin" id="claveColaborador"/>
+            <TextField class="textoLogin" id="password"/>
+            <Button class="boton fuenteApp h4" id="iniciarSesion"/>
+        </View>
+        <View id="vistaInformacion">
+            <Label class="fuenteApp h2" id="etiquetaComunicate"/>
+        </View>
+    </Window>
+</Alloy>

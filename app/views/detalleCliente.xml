@@ -1,0 +1,43 @@
+<Alloy>
+    <Window class="container" layout="vertical">
+        <View class="vistaTitulo" id="vistaTitulo">
+            <Label class="etiquetaTitulo fuenteApp" id="titulo"/>
+        </View>
+        <ScrollView id="vistaDetalleCliente">
+            <View class="panelDetalles" id="vistaDatosContacto">
+                <ImageView id="fotoCliente"/>
+                <Label class="fuenteApp" id="nombreCliente"/>
+                <Label class="fuenteApp" id="telefonoCliente"/>
+            </View>
+            <View class="panelDetalles" id="vistaEstatusPago">
+                <Label class="etiquetasDetalle" id="estatusDePago"/>
+                <View id="View_1">
+                    <Label class="fuenteApp" id="estatus"/>
+                </View>
+            </View>
+            <View class="panelDetalles" id="vistaBoletosEntregados">
+                <View id="vistaTituloPanel">
+                    <Label class="etiquetasDetalle" id="boletosEntregados"/>
+                </View>
+                <View id="vistaCantidadBoletos" layout="horizontal">
+                    <Label class="contenidoDetalle" id="cantidadBoletos"/>
+                    <Label class="contenidoDetalle" id="boletos"/>
+                </View>
+                <Label class="etiquetasDetalle" id="sorteos"/>
+            </View>
+            <View class="panelDetalles" id="vistaAbonos">
+                <View id="vistaTituloAbonos">
+                    <Label class="etiquetasDetalle" id="tituloAbonos"/>
+                </View>
+                <ListView id="ListView_1"/>
+            </View>
+            <View class="panelDetalles" id="vistaNotas">
+                <View id="tituloAbonos">
+                    <Label class="etiquetasDetalle" id="tituloNotas"/>
+                </View>
+            </View>
+            <Label class="contenidoDetalle" id="ultimaActualizacion"/>
+            <Button class="fuenteApp" id="eliminarContacto "/>
+        </ScrollView>
+    </Window>
+</Alloy>

@@ -1,0 +1,26 @@
+".container": {
+},
+//				VISTAS
+"#vistaTitulo": {
+	"layout": "horizontal"
+},
+"#titulo": {
+	"text": "Mis Clientes",
+},
+"#vistaClientes": {
+},
+".icon": {
+	"width": "50dp",
+	"height": "50dp",
+	"left": 0
+},
+"#nombreContacto": {
+	"color": "black",
+	
+	"left": "60dp",
+	"top": 0
+},
+"#listaCOntactos": {
+},
+"#icon": {
+}

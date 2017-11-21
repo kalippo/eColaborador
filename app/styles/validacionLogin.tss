@@ -1,0 +1,76 @@
+".container": {
+	"layout": "vertical"
+},
+//				VISTAS
+"#vistaValidarColaborador": {
+	"zIndex": "100"
+},
+//				ETIQUETAS
+"#bienvenido": {
+	"text": "Bienvenido",
+	"textAlign": Ti.UI.TEXT_ALIGNMENT_CENTER,
+	"top": "25%"
+},
+"#nombreColaborador": {
+	"text": "Pxxxx Pxxxx Mxxxxxxxxx Vxxxxxxx"
+},
+"etiquetas": {
+},
+"#noSoyYo": {
+	"text": "No Soy Yo",
+	"textAlign": Ti.UI.TEXT_ALIGNMENT_CENTER,
+	"attributedString": "AttributedString"
+},
+//				BOTONES
+"#entrar": {
+	"title": "Entrar"
+},
+"AttributedString": {
+	"attributes": [{type:Ti.UI.ATTRIBUTE_FOREGROUND_COLOR,value:'red',range:[0,5]},{type:Ti.UI.ATTRIBUTE_UNDERLINES_STYLE,value:Ti.UI.ATTRIBUTE_UNDERLINE_STYLE_SINGLE,range:[9,5]}]
+},
+"#View_1": {
+	"borderWidth": "1",
+	"height": "1",
+	"width": "30%",
+	"backgroundColor": "#000000"
+},
+"#ImageView_1": {
+},
+//				IMAGENES
+"#imagenColaborador": {
+	"top": "-62%",
+	"image": "/imagen.jpg",
+	"borderRadius": "80",
+	"height": "140",
+	"width": "140",
+	"zIndex": "1",
+	"borderWidth": "9",
+	"borderColor": "white"
+},
+"#vistaLegal": {
+	"height": "20%",
+	"top": "40%",
+	"layout": "vertical"
+},
+"#terminosCondiciones": {
+},
+"#vistaTerminos": {
+	"height": "40%"
+},
+"#vistaPrivacidad": {
+	"height": "40%"
+},
+"#terminos": {
+	title:"Acepto los terminos y condiciones",
+},
+"#aviso": {
+	title:"Acepto el aviso de privacidad",
+},
+".switches[platform=android]": {
+	"left": "10%",
+	"style": Ti.UI.Android.SWITCH_STYLE_CHECKBOX,
+	"font": {fontSize:'18',fontFamily:'Montserrat-Regular',fontStyle:'regular',fontWeight:''}
+},
+".switches": {
+	"left": "10%",
+	}

@@ -1,0 +1,21 @@
+<Alloy>
+    <Window class="container" layout="vertical">
+        <View class="vistaTitulo" id="vistaTitulo">
+            <Label class="etiquetaTitulo fuenteApp h4" id="titulo"/>
+        </View>
+        <View id="vistaClientes">
+            <ListView defaultItemTemplate="templateContactos" id="listaCOntactos">
+                <Templates>
+                    <ItemTemplate name="templateContactos">
+                        <ImageView bindId="icon" class="icon" id="icon"/>
+                        <Label bindId="nombreContacto" id="nombreContacto"/>
+                        <ImageView bindId="edit" class="icon" id="edit"/>
+                    </ItemTemplate>
+                </Templates>
+                <ListSection>
+                    <ListItem edit:image="/imagen.jpg" icon:image="/imagen.jpg" nombreContacto:text="Pedro PAblo "/>
+                </ListSection>
+            </ListView>
+        </View>
+    </Window>
+</Alloy>

@@ -1,0 +1,81 @@
+".container": {
+	"backgroundColor": "#f4f4f4"
+},
+".boton": {
+	"width": "80%",
+	"height": "20%",
+	"top": "10%",
+	"left": "10%",
+	"borderRadius": "50",
+	"color": "white",
+	"backgroundColor": "#2b7ef1"
+},
+".etiquetaValidarLogin": {
+	"left": "5%",
+	"top": "5%",
+	"width": "90%",
+	"textAlign": Ti.UI.TEXT_ALIGNMENT_JUSTIFY,
+	"autoLink": Ti.UI.AUTOLINK_PHONE_NUMBERS,
+	"color": "black",
+	"font": {fontSize:'18',fontFamily:'Montserrat-Regular',fontStyle:'regular',fontWeight:''}
+},
+".etiquetaTitulo": {
+	"textAlign": Ti.UI.TEXT_ALIGNMENT_CENTER,
+	"color": "white",
+	"width": "70%",
+	"left": "15%",
+	"top": "30%"
+},
+//				VISTAS
+".vistaValidarLogin": {
+	"layout": "vertical",
+	"height": "50%",
+	"width": "90%",
+	"left": "5%",
+	"top": "25%",
+	"backgroundColor": "#ffffff",
+	"borderRadius": "60"
+},
+".vistaTitulo": {
+	"height": "50",
+	"backgroundColor": "#00dded"
+},
+//				FUENTES
+".fuenteApp": {
+},
+"fuenteRaleway": {
+	"font": {fontFamily:'Raleway-Regular'}
+},
+".fa": {
+	"font": {fontFamily:'FontAwesome'}
+},
+".ma": {
+	"font": {fontFamily:'MaterialIcons'}
+},
+".centrado": {
+	"textAlign": Ti.UI.TEXT_ALIGNMENT_CENTER
+},
+".derecha": {
+	"textAlign": Ti.UI.TEXT_ALIGNMENT_RIGHT
+},
+".colorAzul": {
+	"color": "#004370"
+},
+".h1": {
+	"font": {fontSize:'10'}
+},
+".h2": {
+	"font": {fontSize:'15'}
+},
+".h3": {
+	"font": {fontSize:'20'}
+},
+".h4": {
+	"font": {fontSize:'25'}
+},
+".h4": {
+	"font": {fontSize:'30'}
+},
+".h5": {
+	"font": {fontSize:'35'}
+}

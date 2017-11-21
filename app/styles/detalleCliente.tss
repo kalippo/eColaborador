@@ -1,0 +1,141 @@
+".container": {
+},
+"#vistaTitulo": {
+},
+"#titulo": {
+	"text": "DETALLE"
+},
+"#vistaDetalleCliente": {
+	"backgroundColor": "#f4f4f4",
+	"layout": "vertical",
+	"scrollType": "vertical"
+},
+"#vistaDatosContacto": {
+	"backgroundColor": "#ffffff",
+	"height": "30%",
+	"layout": "vertical"
+},
+"#vistaEstatusPago": {
+	"height": "9%",
+	"layout": "horizontal"
+},
+"#vistaBoletosEntregados": {
+	"height": "19%",
+	"layout": "vertical"
+},
+"#vistaAbonos": {
+	"height": "30%",
+	"layout": "vertical"
+},
+"#vistaNotas": {
+	"height": "20%",
+	"backgroundColor": "#f1e9c4",
+	"layout": "vertical"
+},
+".panelDetalles": {
+	"backgroundColor": "white",
+	"top": "2%",
+	"left": "5%",
+	"width": "90%"
+},
+//				ETIQUETAS
+".etiquetasDetalle": {
+	"color": "black",
+	"font": {fontSize:'17',fontFamily:'Montserrat-Regular',fontStyle:'regular',fontWeight:''},
+	"top": "20%",
+	"left": "5%"
+},
+".contenidoDetalle": {
+	"color": "gray",
+	"left": "5%",
+	"font": {fontSize:'15',fontFamily:'Montserrat-Regular',fontStyle:'regular',fontWeight:''}
+},
+"#estatusDePago": {
+	"text": "Estatus de Pago"
+},
+"#vistaTituloPanel": {
+	"height": "30%"
+},
+"#boletosEntregados": {
+	"text": "Boletos Entregados",
+	"class": "etiquetasDetalle"
+},
+"#cantidadBoletos": {
+	"text": "0",
+	"left": "5%"
+},
+"#sorteos": {
+	"text": "Sorteos",
+	"class": "etiquetasDetalle",
+	"top": "1%"
+},
+"#vistaCantidadBoletos": {
+	"height": "25%"
+},
+"#vistaTituloAbonos": {
+	"height": "20%"
+},
+"#tituloAbonos": {
+	"text": "Abonos",
+	"height": "20%"
+},
+"#tituloAbonos": {
+},
+"#tituloNotas": {
+	"text": "Notas"
+},
+"#boletos": {
+	"left": "5",
+	"text": "Boletos"
+},
+"#ListView_1": {
+},
+"#ultimaActualizacion": {
+	"text": "Actualizado el 16 de Noviembre de 2017",
+	"top": "2%"
+},
+"#eliminarContacto ": {
+	"title": "Eliminar de Contactos",
+	"color": "#red",
+	"backgroundColor": "white",
+	"height": "100",
+	"width": "90%",
+	"top": "2%",
+	"class": "boton"
+},
+"#fotoCliente": {
+	"borderRadius": "80",
+	"height": "100",
+	"width": "100",
+	"image": "/imagen.jpg",
+	"borderWidth": "9",
+	"borderColor": "white",
+	"top": "10"
+},
+"#nombreCliente": {
+	"text": "Pedro Pablo Miramontes Valencia",
+	"class": "fuenteApp",
+	"font": {fontSize:'17',fontFamily:'',fontStyle:'',fontWeight:''},
+	"textAlign": Ti.UI.TEXT_ALIGNMENT_CENTER,
+	"color": "black",
+	"top": "5"
+},
+"#telefonoCliente": {
+	"text": "6449 999999",
+	"color": "gray",
+	"font": {fontSize:'16',fontFamily:'',fontStyle:'',fontWeight:''},
+	"autoLink": Ti.UI.AUTOLINK_PHONE_NUMBERS,
+	"top": "5"
+},
+"#View_1": {
+	"backgroundColor": "#66ccff",
+	"borderRadius": "50",
+	"bottom": "10",
+	"left": "10",
+	"right": "10",
+	"top": "10",
+},
+"#estatus": {
+	"text": "Pagado",
+	"color": "#ffffff",
+}

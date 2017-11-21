@@ -1,0 +1,20 @@
+<Alloy>
+    <Window class="container" left="0.00%" top="6.67%">
+        <View class="vistaValidarLogin" id="vistaValidarColaborador">
+            <Label class="etiquetaValidarLogin" id="bienvenido"/>
+            <Label class="etiquetaValidarLogin" id="nombreColaborador"/>
+            <Button class="boton" id="entrar"/>
+            <Label class="etiquetaValidarLogin" id="noSoyYo"/>
+            <View id="View_1"/>
+        </View>
+        <ImageView id="imagenColaborador"/>
+        <View id="vistaLegal">
+            <View id="vistaTerminos">
+                <Switch class="switches" id="terminos"/>
+            </View>
+            <View id="vistaPrivacidad">
+                <Switch class="switches" id="aviso"/>
+            </View>
+        </View>
+    </Window>
+</Alloy>

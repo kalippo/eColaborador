@@ -1,0 +1,8 @@
+<Alloy>
+    <Window class="container" layout="vertical">
+        <View class="vistaValidarLogin" id="vistaNoSoyYo">
+            <Label class="etiquetaValidarLogin" id="label_1"/>
+            <Button class="boton" id="regresar"/>
+        </View>
+    </Window>
+</Alloy>
