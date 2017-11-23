@@ -91,8 +91,6 @@
         <theme>default</theme>
     </mobileweb>
     <modules>
-        <module platform="iphone" version="2.0">com.soasta.touchtest</module>
-        <module platform="android" version="2.0">com.soasta.touchtest</module>
         <module platform="android">hyperloop</module>
         <module platform="iphone">hyperloop</module>
         <module platform="commonjs">ti.cloud</module>

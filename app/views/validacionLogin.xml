@@ -7,7 +7,7 @@
             <Label class="etiquetaValidarLogin" id="noSoyYo"/>
             <View id="View_1"/>
         </View>
-        <ImageView id="imagenColaborador"/>
+        <ImageView class="imagenColaborador" id="imagenColaborador"/>
         <View id="vistaLegal">
             <View id="vistaTerminos">
                 <Switch class="switches" id="terminos"/>

@@ -1,0 +1,90 @@
+".container": {
+},
+"#vistaTitulo": {
+	"backgroundColor": "#ffffff",
+	"layout": "horizontal"
+},
+"#vistaPerfil": {
+	"layout": "vertical",
+	"backgroundColor": "#ffffff"
+},
+"#vistaFotoPerfil": {
+	"height": "150",
+	"backgroundColor": "#e6f6ff"
+},
+"#imagenColaborador": {
+	"height": "120",
+	"width": "120"
+},
+"#vistaNombre": {
+},
+"#vistaCorreo": {
+},
+".vistaDatosColaborador": {
+	"height": "100",
+	"layout": "horizontal"
+},
+"#vistaTelefono": {
+},
+"#Label_1": {
+	"text": "Label"
+},
+"#Label_2": {
+	"text": "Label"
+},
+"#nombre": {
+	"text": "Nombre:"
+},
+"#correo": {
+	"text": "Correo:"
+},
+"#telefono": {
+	"text": "Teléfono:"
+},
+".tituloPerfil": {
+	"left": "5",
+	"top": "44"
+},
+".datosPerfil": {
+	"left": "5",
+	"top": "50",
+	"color": "gray"
+},
+"#nombreColaborador": {
+	"text": "Pedro Pablo Miramontes Valencia",
+	"class": "fuenteApp"
+},
+"#correoColaborador": {
+	"text": "pedro.miramontes@sorteostec.mx"
+},
+"#telefonoColaborador": {
+	"text": "6449 989186"
+},
+"#vistaSeparador1": {
+},
+".separador": {
+	"width": "300",
+	"height": "1",
+	"borderColor": "black",
+	"borderWidth": "1"
+},
+"#Label_3": {
+	"text": "Label"
+},
+"#cancelar": {
+	"text": "Cancelar",
+	"left": "5",
+	"color": "#66ccff",
+	"top": "20",
+},
+"#editarPerfil": {
+	"text": "Editar Perfil",
+	"top": "20",
+	"width": "50%"
+},
+"#aceptar": {
+	"text": "Aceptar",
+	"class": "fuenteApp h4 centrado",
+	"color": "#66ccff",
+	"top": "20",
+}

@@ -104,13 +104,12 @@
 	"class": "boton"
 },
 "#fotoCliente": {
-	"borderRadius": "80",
 	"height": "100",
 	"width": "100",
 	"image": "/imagen.jpg",
 	"borderWidth": "9",
 	"borderColor": "white",
-	"top": "10"
+	"top": "10",
 },
 "#nombreCliente": {
 	"text": "Pedro Pablo Miramontes Valencia",
@@ -133,9 +132,9 @@
 	"bottom": "10",
 	"left": "10",
 	"right": "10",
-	"top": "10",
+	"top": "10"
 },
 "#estatus": {
 	"text": "Pagado",
-	"color": "#ffffff",
+	"color": "#ffffff"
 }

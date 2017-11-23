@@ -1,0 +1,85 @@
+".container": {
+},
+"#vistaColaborador": {
+	"height": "200",
+	"layout": "vertical"
+},
+"#vistaOpciones": {
+	"backgroundColor": "#ffffff",
+	"layout": "vertical"
+},
+"#fotoColaborador": {
+	"layout": "vertical",
+	"top": "20"
+},
+"#nombreColaborador": {
+	"text": "Pedro Pablo Miramontes",
+	"top": "5",
+	"class": "fuenteApp h1"
+},
+"#correoColaborador": {
+	"text": "pedro.miramontes@sorteostec.mx",
+	"font": {fontSize:'13',fontFamily:'',fontStyle:'',fontWeight:''},
+	"top": "5"
+},
+".separador": {
+	"borderColor": "#000000",
+	"borderWidth": "1",
+	"height": "1",
+	"top": "5"
+},
+"#View_1": {
+},
+"#Label_1": {
+	"text": "x"
+},
+"#miPerfil": {
+	"text": "Mi Perfil"
+},
+".icono": {
+	"left": "20",
+	"top": "20"
+},
+".titulo": {
+	"top": "20",
+	"left": "10"
+},
+".contenido": {
+	"top": "5",
+	"left": "35"
+},
+"#preguntasFrecuentes": {
+	"text": "Preguntas Frecuentes"
+},
+"#iconoNotificaciones": {
+},
+"#notificaciones": {
+	"text": "Notificaciones"
+},
+"#ayuda": {
+	"text": "Ayuda / Atención",
+	"top": "10"
+},
+"#contacto": {
+	"text": "Contacto"
+},
+"#avisoPrivacidad": {
+	"text": "Aviso de Privacidad"
+},
+"#iconoAyuda": {
+},
+"#iconoInformacion": {
+},
+"#informacion": {
+	"text": "Informacion",
+	"top": "15"
+},
+"#terminos": {
+	"text": "Terminos y Condiciones"
+},
+"#legales": {
+	"text": "Legales Sorteos Tec"
+},
+"#cerrarSesion": {
+	"text": "Cerrar Sesión"
+}

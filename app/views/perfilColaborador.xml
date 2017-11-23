@@ -1,0 +1,29 @@
+<Alloy>
+    <Window class="container" layout="vertical">
+        <View class="vistaTitulo" id="vistaTitulo">
+            <Label class="fuenteApp h3" id="cancelar"/>
+            <Label class="fuenteApp h3 centrado colorAzul" id="editarPerfil"/>
+            <Label class="fuenteApp h3" id="aceptar"/>
+        </View>
+        <View id="vistaPerfil">
+            <View id="vistaFotoPerfil">
+                <ImageView class="imagenColaborador" id="imagenColaborador"/>
+            </View>
+            <View class="vistaDatosColaborador" id="vistaNombre">
+                <Label class="fuenteApp h3 tituloPerfil colorAzul" id="nombre"/>
+                <Label class="fuenteApp datosPerfil h2" id="nombreColaborador"/>
+            </View>
+            <View class="separador"/>
+            <View class="vistaDatosColaborador" id="vistaCorreo">
+                <Label class="fuenteApp h3 tituloPerfil colorAzul" id="correo"/>
+                <Label class="fuenteApp datosPerfil h2" id="correoColaborador"/>
+            </View>
+            <View class="separador"/>
+            <View class="vistaDatosColaborador" id="vistaTelefono">
+                <Label class="fuenteApp h3 tituloPerfil colorAzul" id="telefono"/>
+                <Label class="fuenteApp datosPerfil h2" id="telefonoColaborador"/>
+            </View>
+            <View class="separador"/>
+        </View>
+    </Window>
+</Alloy>

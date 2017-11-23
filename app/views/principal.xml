@@ -1,0 +1,43 @@
+<Alloy>
+    <View class="container" layout="vertical">
+        <View class="vistaTitulo" id="vistaTitulo">
+            <Label class="fa colorAzul h5" id="iconoMenu"/>
+            <ImageView id="titulo"/>
+            <Label class="fa  h5" id="postales"/>
+        </View>
+        <View id="vistaPrincipal">
+            <ScrollView id="vistaPanel" showHorizontalScrollIndicator="false" showVerticalScrollIndicator="true">
+                <View id="vistaCuentaRegresiva">
+                    <Label class="etiquetaContador centrado fuenteRaleway h2" id="soloFaltan"/>
+                    <Label class="etiquetaContador centrado fuenteRaleway h2" id="etiquetaSorteo"/>
+                    <View id="vistaContador">
+                        <Label class="fuenteApp h4 contador" id="contadorDias"/>
+                        <Label class="fuenteApp h4 contador" id="separador1"/>
+                        <Label class="fuenteApp h4 contador" id="contadorHoras"/>
+                        <Label class="fuenteApp h4 contador" id="separador2"/>
+                        <Label class="fuenteApp h4 contador" id="contadorMinutos"/>
+                        <Label class="fuenteApp h4 contador" id="separador3"/>
+                        <Label class="fuenteApp h4 contador" id="contadorSegundos"/>
+                    </View>
+                    <View id="vistaDiasHorasMinutos">
+                        <Label class="fuenteRaleway diahoraminuto etiquetaContador" id="dias"/>
+                        <Label class="fuenteRaleway diahoraminuto etiquetaContador" id="horas">
+                            <Label class="fuenteRaleway diahoraminuto etiquetaContador" id="horas"/>
+                        </Label>
+                        <Label class="fuenteRaleway diahoraminuto etiquetaContador" id="minutos"/>
+                        <Label class="fuenteRaleway diahoraminuto etiquetaContador" id="segundos"/>
+                    </View>
+                </View>
+                <View id="vistaCalendario">
+                    <ImageView class="centrado" id="iconoCalendario"/>
+                    <Label class="fuenteApp" id="Label_1"/>
+                </View>
+                <ImageView class="imagenOpciones" id="imagenMisClientes"/>
+                <ImageView class="imagenOpciones" id="imagenSorteosHerramientas"/>
+                <ImageView class="imagenOpciones" id="imagenEstadoCuenta"/>
+                <ImageView class="imagenOpciones" id="imagenConsultaGanadores"/>
+                <ImageView class="imagenOpciones" id="imagenCobroMovil"/>
+            </ScrollView>
+        </View>
+    </View>
+</Alloy>

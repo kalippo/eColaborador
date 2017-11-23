@@ -1,17 +1,22 @@
 
 
-$.imagenMisClientes.addEventListener('click',function(error){
-	var validacion = Alloy.createController("misClientes");
-	validacion = validacion.getView();
-	validacion.open();
-	
-});
+var principal = Alloy.createController("principal");
+principal = principal.getView();
 
-$.imagenSorteosHerramientas.addEventListener('click',function(error){
-	var validacion = Alloy.createController("login");
-	validacion = validacion.getView();
-	validacion.open();
+var menu = Alloy.createController("menuLateral");
+menu = menu.getView();
 	
-});
+	
+var args = {
 
-$.index.open();
+	mainView : principal,
+	menuView : menu
+	
+};
+	
+	
+	$.navDrawer.open();
+// define your initial view
+//$.navDrawer.changeView(principal);
+
+

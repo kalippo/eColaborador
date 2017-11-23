@@ -5,7 +5,7 @@
         </View>
         <ScrollView id="vistaDetalleCliente">
             <View class="panelDetalles" id="vistaDatosContacto">
-                <ImageView id="fotoCliente"/>
+                <ImageView class="imagenColaborador" id="fotoCliente"/>
                 <Label class="fuenteApp" id="nombreCliente"/>
                 <Label class="fuenteApp" id="telefonoCliente"/>
             </View>

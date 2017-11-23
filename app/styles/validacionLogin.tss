@@ -3,7 +3,7 @@
 },
 //				VISTAS
 "#vistaValidarColaborador": {
-	"zIndex": "100"
+	"zIndex": "100",
 },
 //				ETIQUETAS
 "#bienvenido": {
@@ -19,7 +19,7 @@
 "#noSoyYo": {
 	"text": "No Soy Yo",
 	"textAlign": Ti.UI.TEXT_ALIGNMENT_CENTER,
-	"attributedString": "AttributedString"
+	"attributedString": "AttributedString",
 },
 //				BOTONES
 "#entrar": {
@@ -32,21 +32,11 @@
 	"borderWidth": "1",
 	"height": "1",
 	"width": "30%",
-	"backgroundColor": "#000000"
+	"backgroundColor": "#000000",
 },
 "#ImageView_1": {
 },
 //				IMAGENES
-"#imagenColaborador": {
-	"top": "-62%",
-	"image": "/imagen.jpg",
-	"borderRadius": "80",
-	"height": "140",
-	"width": "140",
-	"zIndex": "1",
-	"borderWidth": "9",
-	"borderColor": "white"
-},
 "#vistaLegal": {
 	"height": "20%",
 	"top": "40%",
@@ -61,10 +51,10 @@
 	"height": "40%"
 },
 "#terminos": {
-	title:"Acepto los terminos y condiciones",
+	"title": "Acepto los terminos y condiciones"
 },
 "#aviso": {
-	title:"Acepto el aviso de privacidad",
+	"title": "Acepto el aviso de privacidad"
 },
 ".switches[platform=android]": {
 	"left": "10%",
@@ -72,5 +62,9 @@
 	"font": {fontSize:'18',fontFamily:'Montserrat-Regular',fontStyle:'regular',fontWeight:''}
 },
 ".switches": {
-	"left": "10%",
-	}
+	"left": "10%"
+},
+"#imagenColaborador": {
+	"top": "-62%",
+	
+}
