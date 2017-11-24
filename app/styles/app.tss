@@ -1,6 +1,7 @@
-".container": {
-	"backgroundColor": "#dadada",
-	"top": "20"
+".container[platform=android]": {
+},
+".container[platform=ios]": {
+	"top": "25"
 },
 ".boton": {
 	"width": "80%",
@@ -51,7 +52,10 @@
 	"borderColor": "white"
 },
 //				FUENTES
-".fuenteApp": {
+".fuenteApp[platform=android]": {
+	"font": {fontFamily:'Montserrat-Regular'}
+},
+".fuenteApp[platform=ios]": {
 	"font": {fontFamily:'Montserrat-Regular'}
 },
 ".fuenteAppBold": {
@@ -60,7 +64,10 @@
 "fuenteRaleway": {
 	"font": {fontFamily:'Raleway-Regular'}
 },
-".fa": {
+".fa[platform=android]": {
+	"font": {fontFamily:'FontAwesome'}
+},
+".fa[platform=ios]": {
 	"font": {fontFamily:'FontAwesome'}
 },
 ".ma": {
@@ -73,7 +80,13 @@
 	"textAlign": Ti.UI.TEXT_ALIGNMENT_RIGHT
 },
 ".colorAzul": {
-	"color": "#004370"
+	"color": "#12456f"
+},
+".colorTurquesa": {
+	"color": "#63dced"
+},
+".fondoGris": {
+	"backgroundColor": "#eef2f6"
 },
 ".h1": {
 	"font": {fontSize:'10',fontFamily:'Arial',fontStyle:'normal',fontWeight:'normal'}
@@ -87,9 +100,9 @@
 ".h4": {
 	"font": {fontSize:'25'}
 },
-".h4": {
+".h5": {
 	"font": {fontSize:'30'}
 },
-".h5": {
+".h6": {
 	"font": {fontSize:'35'}
 }

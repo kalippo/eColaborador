@@ -1,31 +1,14 @@
-
-".container" : {
-  
+".container": {
 },
 //				ETIQUETAS
 ".contador": {
-	"left": "15",
+	"left": "5",
 	"top": "5",
-	"width": "44",
-	"color": "black"
+	"color": "black",
+	"width": "18%",
+	"layout": "vertical"
 },
-".tituloVista": {
-	"width": "53%",
-	"height": "30%",
-	"top": "40%",
-	"color": "white",
-	"left": "5%",
-	"font": {fontSize:'18',fontFamily:'Montserrat-Regular',fontStyle:'bold',fontWeight:''},
-	"textAlign": Ti.UI.TEXT_ALIGNMENT_JUSTIFY
-},
-"#tituloCalendario": {
-	"text": "SORTEOS Y HERRAMIENTAS"
-},
-"#tituloEstadoCuenta": {
-	"text": "ESTADO DE CUENTA"
-},
-"#tituloConsultaGanadores": {
-	"text": "CONSULTA GANADORES"
+".etiquetaContador": {
 },
 "#soloFaltan": {
 	"text": "Faltan Pocos dias para el",
@@ -35,17 +18,23 @@
 	"text": "29 Sorteo Educativo"
 },
 ".diahoraminuto": {
-	"width": "60",
-	"left": "25",
-	"height": "30"
+	"left": "5",
+	"height": "30",
+	"top": "20"
 },
 ".etiquetaContador": {
 	"color": "black"
 },
 //				VISTAS
-"#vistaTitulo": {
-	"layout": "horizontal",
+".vistaOpciones": {
+	"width": "40",
+	"height": "40",
+	"top": "5"
+},
+"#vistaLogo": {
 	"backgroundColor": "#eff2f2",
+	"left": "10",
+	"width": "100"
 },
 "#vistaPrincipal": {
 	"height": "93%",
@@ -53,16 +42,15 @@
 },
 "#vistaPanel": {
 	"layout": "vertical",
-	"backgroundColor": "#eef2f2",
 	"height": "100%",
-	"scrollType": "vertical",
+	"scrollType": "vertical"
 },
 "#vistaCalendario": {
 	"class": "panelOpciones",
 	"backgroundColor": "#eef2f2",
 	"height": "45",
 	"layout": "horizontal",
-	"top": "4",
+	"top": "4"
 },
 "#vistaCuentaRegresiva": {
 	"height": "130",
@@ -71,25 +59,7 @@
 	"left": "10",
 	"right": "10",
 	"borderColor": "#66ffff",
-	"top": "10",
-},
-"#vistaMisClientes": {
-	"backgroundColor": "#3ac0f1"
-},
-"#vistaEstadoCuenta": {
-	"backgroundColor": "#a06ade"
-},
-"#vistaConsultaGanadores": {
-	"backgroundColor": "#6e5cde"
-},
-".panelOpciones": {
-	"backgroundColor": "#4666b4",
-	"borderRadius": "40",
-	"height": "20%",
-	"top": "3%",
-	"left": "5%",
-	"width": "90%",
-	"layout": "horizontal"
+	"top": "10"
 },
 //				IMAGENES
 ".imagenOpciones": {
@@ -110,68 +80,44 @@
 	"image": "/Images/Home/consulta-ganadores.png"
 },
 "#vistaContador": {
-	"height": "50",
+	"height": "80",
 	"layout": "horizontal"
 },
 "#vistaDiasHorasMinutos": {
 	"height": "20%",
 	"layout": "horizontal"
 },
-"#dias": {
-	"text": "DÍAS",
-	"font": {fontSize:'14',fontFamily:'',fontStyle:'',fontWeight:''},
-	"left": "40"
-},
-"#HORAS": {
-	"text": "HORAS"
-},
-"#minutos": {
-	"text": "MINUTOS",
-	"font": {fontSize:'14',fontFamily:'',fontStyle:'',fontWeight:''}
+".etiquetaContador": {
+	"font": {fontSize:'14'},
+	"left": "40",
+	"width": Ti.UI.FILL
 },
 "#imagenCobroMovil": {
 	"image": "/Images/Home/cobro-movil.png"
 },
 "#contadorDias": {
-	"text": "15",
-	"left": "35"
-},
-"#segundos": {
-	"font": {fontSize:'14',fontFamily:'',fontStyle:'',fontWeight:''},
-	"text": "SEGUNDOS",
-	"width": "90"
+	"text": "15"
 },
 "#iconoMenu": {
 	"text": "\uf0c9",
-	"height": "30",
-	"width": "30",
-	"left": "5",
-	"top": "5",
+	"height": "40",
+	"width": "40"
 },
 "#postales": {
 	"text": "\uf0e0",
-	"right": "5",
-	"color": "#00dded",
-	"top": "5",
+	"width": "40",
+	"height": "40"
 },
 "#titulo": {
 	"image": "/Images/Home/ecol-top.png",
 	"height": "30",
-	"top": "5",
-	"left": "20%",
-	"width": "150"
+	"width": 120
 },
-"#vistaTitulo": {
+"#vistaLogo": {
 	"layout": "horizontal"
 },
 "#contadorDias": {
 	"text": "15"
-},
-"#horas": {
-	"text": "HORAS",
-	"font": {fontSize:'14',fontFamily:'',fontStyle:'',fontWeight:''},
-	"top": "0.00%",
-	"left": "0.00%"
 },
 "#contadorSegundos": {
 	"text": "50"
@@ -181,22 +127,24 @@
 },
 "#separador1": {
 	"text": ":",
-	"left": "10",
-	"width": "10"
+	"left": "5",
+	"width": "10",
+	"top": "10"
 },
 "#separador2": {
 	"text": ":",
-	"width": "10"
+	"width": "10",
+	"left": "5"
 },
 "#separador3": {
 	"text": ":",
-	"left": "10",
+	"left": "5",
 	"width": "10"
 },
 "#contadorMinutos": {
 	"text": "50"
 },
-"#View_1": {
+".contador": {
 },
 "#iconoCalendario": {
 	"left": "25%",
@@ -210,4 +158,34 @@
 	"left": "15",
 	"top": "20",
 	"color": "black"
+},
+"#vistaMenu": {
+},
+"#vistaPostales": {
+},
+"#vistaTitulo": {
+	"layout": "horizontal"
+},
+"#View_1": {
+},
+"#vistaD": {
+},
+"#vistaH": {
+},
+"#vistaM": {
+},
+"#vistaS": {
+	"width": "23%"
+},
+"#dias": {
+	"text": "DIAS",
+},
+"#horas": {
+	"text": "HORAS"
+},
+"#minutos": {
+	"text": "MINUTOS"
+},
+"#segundos": {
+	"text": "SEGUNDOS"
 }

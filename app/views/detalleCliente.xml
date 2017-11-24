@@ -1,9 +1,9 @@
 <Alloy>
-    <Window class="container" layout="vertical">
+    <Window class="container" layout="vertical" left="1.20%" top="6.67%">
         <View class="vistaTitulo" id="vistaTitulo">
             <Label class="etiquetaTitulo fuenteApp" id="titulo"/>
         </View>
-        <ScrollView id="vistaDetalleCliente">
+        <ScrollView class="fondoGris" id="vistaDetalleCliente">
             <View class="panelDetalles" id="vistaDatosContacto">
                 <ImageView class="imagenColaborador" id="fotoCliente"/>
                 <Label class="fuenteApp" id="nombreCliente"/>

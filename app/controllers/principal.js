@@ -11,6 +11,7 @@ $.imagenMisClientes.addEventListener('click', function(error) {
 $.iconoMenu.addEventListener('click', function(error) {
 
 	$.navDrawer.toggleMenu();
+	Ti.API.info($.navDrawer,null,3);
 	
 
 });

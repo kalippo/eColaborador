@@ -1,8 +1,7 @@
 <Alloy>
     <Widget id="navDrawer" src="com.jpntex.navdrawer">
-        <View role="menu">
+        <View role="menu" >
             <Label>Menu</Label>
-            
         </View>
         <View role="main"/>
     </Widget>

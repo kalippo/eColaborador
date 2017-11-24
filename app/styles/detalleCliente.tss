@@ -6,9 +6,9 @@
 	"text": "DETALLE"
 },
 "#vistaDetalleCliente": {
-	"backgroundColor": "#f4f4f4",
 	"layout": "vertical",
-	"scrollType": "vertical"
+	"scrollType": "vertical",
+	"class": "fondoGris"
 },
 "#vistaDatosContacto": {
 	"backgroundColor": "#ffffff",
@@ -109,7 +109,7 @@
 	"image": "/imagen.jpg",
 	"borderWidth": "9",
 	"borderColor": "white",
-	"top": "10",
+	"top": "10"
 },
 "#nombreCliente": {
 	"text": "Pedro Pablo Miramontes Valencia",
