@@ -7,24 +7,24 @@
         </View>
         <ScrollView id="vistaOpciones">
             <View height="60" layout="horizontal">
-                <Label class="icono fa h3 colorAzul" id="iconoPerfil"/>
+                <Label class="icono fa h4 colorAzul" id="iconoPerfil"/>
                 <Label class="titulo fuenteAppBold colorAzul h3" id="miPerfil"/>
             </View>
             <View class="separador"/>
             <View height="60" layout="horizontal">
-                <Label class="icono fa h3 colorAzul" id="iconoNotificaciones"/>
+                <Label class="icono fa h4 colorAzul" id="iconoNotificaciones"/>
                 <Label class="titulo fuenteAppBold colorAzul h3" id="notificaciones"/>
             </View>
             <View class="separador"/>
-            <View height="40" layout="horizontal">
-                <Label class="icono fa h3 colorAzul" id="iconoAyuda"/>
+            <View height="60" layout="horizontal">
+                <Label class="icono fa h4 colorAzul" id="iconoAyuda"/>
                 <Label class="titulo fuenteAppBold colorAzul h3" id="ayuda"/>
             </View>
             <Label class="contenido h2 colorAzul" id="preguntasFrecuentes"/>
             <Label class="contenido h2 colorAzul" id="contacto"/>
             <View class="separador"/>
-            <View height="40" layout="horizontal">
-                <Label class="icono fa h3 colorAzul" id="iconoInformacion"/>
+            <View height="60" layout="horizontal">
+                <Label class="icono fa h4 colorAzul" id="iconoInformacion"/>
                 <Label class="titulo fuenteAppBold colorAzul h3" id="informacion"/>
             </View>
             <Label class="contenido h2 colorAzul" id="avisoPrivacidad"/>
@@ -32,7 +32,6 @@
             <Label class="contenido h2 colorAzul" id="legales"/>
             <View class="separador"/>
             <View height="60" layout="horizontal">
-                <Label class="icono fa h3 colorAzul" id="iconoCerrarSesion"/>
                 <Label class="titulo fuenteAppBold colorAzul h3" id="cerrarSesion"/>
             </View>
             <View class="separador"/>

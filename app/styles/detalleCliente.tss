@@ -1,9 +1,10 @@
 ".container": {
 },
 "#vistaTitulo": {
+	"layout": "horizontal",
 },
 "#titulo": {
-	"text": "DETALLE"
+	"text": "Detalle"
 },
 "#vistaDetalleCliente": {
 	"layout": "vertical",
@@ -38,7 +39,8 @@
 	"left": "5%",
 	"width": "90%"
 },
-//				ETIQUETAS
+
+
 ".etiquetasDetalle": {
 	"color": "black",
 	"font": {fontSize:'17',fontFamily:'Montserrat-Regular',fontStyle:'regular',fontWeight:''},
@@ -137,4 +139,12 @@
 "#estatus": {
 	"text": "Pagado",
 	"color": "#ffffff"
+},
+"#buscar": {
+	"text": "\uf002",
+	"width": "50"
+},
+"#regresar": {
+	"text": "\uf053",
+	"width": "50"
 }

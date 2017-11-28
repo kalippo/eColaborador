@@ -1,9 +1,9 @@
 <Alloy>
     <Window class="container" layout="vertical">
         <View class="vistaTitulo" id="vistaTitulo">
-            <Label class="fuenteApp h3" id="cancelar"/>
+            <Label class="fuenteApp h3 colorTurquesa" id="cancelar"/>
             <Label class="fuenteApp h3 centrado colorAzul" id="editarPerfil"/>
-            <Label class="fuenteApp h3" id="aceptar"/>
+            <Label class="fuenteApp h3 colorTurquesa" id="aceptar"/>
         </View>
         <View id="vistaPerfil">
             <View id="vistaFotoPerfil">

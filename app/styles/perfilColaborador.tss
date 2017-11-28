@@ -74,17 +74,15 @@
 "#cancelar": {
 	"text": "Cancelar",
 	"left": "5",
-	"color": "#66ccff",
 	"top": "20",
 },
 "#editarPerfil": {
 	"text": "Editar Perfil",
 	"top": "20",
-	"width": "50%"
+	"width": "50%",
 },
 "#aceptar": {
 	"text": "Aceptar",
 	"class": "fuenteApp h4 centrado",
-	"color": "#66ccff",
 	"top": "20",
 }

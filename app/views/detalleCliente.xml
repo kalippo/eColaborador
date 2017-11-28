@@ -1,7 +1,9 @@
 <Alloy>
-    <Window class="container" layout="vertical" left="1.20%" top="6.67%">
+    <Window class="container" layout="vertical">
         <View class="vistaTitulo" id="vistaTitulo">
-            <Label class="etiquetaTitulo fuenteApp" id="titulo"/>
+            <Label class="etiquetaTitulo fa h4" id="regresar"/>
+            <Label class="etiquetaTitulo fuenteApp h4 centrado" id="titulo"/>
+            <Label class="etiquetaTitulo fa h4" id="buscar"/>
         </View>
         <ScrollView class="fondoGris" id="vistaDetalleCliente">
             <View class="panelDetalles" id="vistaDatosContacto">

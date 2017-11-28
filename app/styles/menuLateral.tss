@@ -38,27 +38,28 @@
 },
 ".icono": {
 	"left": "20",
-	"top": "20"
+	"top": "20",
+	"width": "30"
 },
 ".titulo": {
 	"top": "20",
 	"left": "10"
 },
 ".contenido": {
-	"top": "5",
+	"top": "10",
 	"left": "35"
 },
 "#preguntasFrecuentes": {
-	"text": "Preguntas Frecuentes"
+	"text": "Preguntas Frecuentes",
 },
 "#iconoNotificaciones": {
+	"text": "\uf0f3",
 },
 "#notificaciones": {
-	"text": "Notificaciones"
+	"text": "Notificaciones",
 },
 "#ayuda": {
 	"text": "Ayuda / Atención",
-	"top": "10"
 },
 "#contacto": {
 	"text": "Contacto"
@@ -67,12 +68,13 @@
 	"text": "Aviso de Privacidad"
 },
 "#iconoAyuda": {
+	"text": "\uf059"
 },
 "#iconoInformacion": {
+	"text": "\uf05a",
 },
 "#informacion": {
 	"text": "Informacion",
-	"top": "15"
 },
 "#terminos": {
 	"text": "Terminos y Condiciones"
@@ -81,5 +83,10 @@
 	"text": "Legales Sorteos Tec"
 },
 "#cerrarSesion": {
-	"text": "Cerrar Sesión"
+	"text": "Cerrar Sesión",
+},
+"#iconoPerfil": {
+	"text": "\uf007"
+},
+"#iconoCerrarSesion": {
 }

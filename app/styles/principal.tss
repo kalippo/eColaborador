@@ -5,10 +5,8 @@
 	"left": "5",
 	"top": "5",
 	"color": "black",
-	"width": "18%",
+	"width": "15%",
 	"layout": "vertical"
-},
-".etiquetaContador": {
 },
 "#soloFaltan": {
 	"text": "Faltan Pocos dias para el",
@@ -19,11 +17,8 @@
 },
 ".diahoraminuto": {
 	"left": "5",
-	"height": "30",
-	"top": "20"
-},
-".etiquetaContador": {
-	"color": "black"
+	"height": "25",
+	"top": "15"
 },
 //				VISTAS
 ".vistaOpciones": {
@@ -32,9 +27,9 @@
 	"top": "5"
 },
 "#vistaLogo": {
-	"backgroundColor": "#eff2f2",
 	"left": "10",
-	"width": "100"
+	"width": "70%",
+	"layout": "horizontal"
 },
 "#vistaPrincipal": {
 	"height": "93%",
@@ -53,13 +48,13 @@
 	"top": "4"
 },
 "#vistaCuentaRegresiva": {
-	"height": "130",
+	"height": "115",
 	"layout": "vertical",
 	"backgroundColor": "white",
 	"left": "10",
 	"right": "10",
 	"borderColor": "#66ffff",
-	"top": "10"
+	"top": "10",
 },
 //				IMAGENES
 ".imagenOpciones": {
@@ -80,17 +75,19 @@
 	"image": "/Images/Home/consulta-ganadores.png"
 },
 "#vistaContador": {
-	"height": "80",
-	"layout": "horizontal"
+	"height": "70",
+	"layout": "horizontal",
+	"backgroundColor": "white",
+	"left": "10",
+	"right": "10",
 },
 "#vistaDiasHorasMinutos": {
-	"height": "20%",
+	"height": "1",
 	"layout": "horizontal"
 },
 ".etiquetaContador": {
-	"font": {fontSize:'14'},
-	"left": "40",
-	"width": Ti.UI.FILL
+	"width": Ti.UI.FILL,
+	"color": "black"
 },
 "#imagenCobroMovil": {
 	"image": "/Images/Home/cobro-movil.png"
@@ -111,10 +108,9 @@
 "#titulo": {
 	"image": "/Images/Home/ecol-top.png",
 	"height": "30",
-	"width": 120
-},
-"#vistaLogo": {
-	"layout": "horizontal"
+	"width": "120",
+	"left": "25%",
+	"top": "10"
 },
 "#contadorDias": {
 	"text": "15"
@@ -134,17 +130,17 @@
 "#separador2": {
 	"text": ":",
 	"width": "10",
-	"left": "5"
+	"left": "5",
+	"top": "10"
 },
 "#separador3": {
 	"text": ":",
 	"left": "5",
-	"width": "10"
+	"width": "10",
+	"top": "10"
 },
 "#contadorMinutos": {
 	"text": "50"
-},
-".contador": {
 },
 "#iconoCalendario": {
 	"left": "25%",
@@ -159,23 +155,21 @@
 	"top": "20",
 	"color": "black"
 },
-"#vistaMenu": {
-},
-"#vistaPostales": {
-},
 "#vistaTitulo": {
-	"layout": "horizontal"
-},
-"#View_1": {
+	"layout": "horizontal",
+	"left": "5",
+	"right": "5",
+	"width": "100%"
 },
 "#vistaD": {
 },
 "#vistaH": {
 },
 "#vistaM": {
+	"width": "21%"
 },
 "#vistaS": {
-	"width": "23%"
+	"width": "25%"
 },
 "#dias": {
 	"text": "DIAS",
@@ -187,5 +181,10 @@
 	"text": "MINUTOS"
 },
 "#segundos": {
-	"text": "SEGUNDOS"
+	"text": "SEGUNDOS",
+},
+"#vistaMenu": {
+},
+"#vistaPostales": {
+	"right": "5"
 }

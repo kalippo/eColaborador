@@ -1,7 +1,9 @@
 <Alloy>
     <Window class="container" layout="vertical">
         <View class="vistaTitulo" id="vistaTitulo">
-            <Label class="etiquetaTitulo fuenteApp h4" id="titulo"/>
+            <Label class="etiquetaTitulo fa h4" id="regresar"/>
+            <Label class="etiquetaTitulo fuenteApp h4 centrado" id="titulo"/>
+            <Label class="etiquetaTitulo fa h4" id="buscar"/>
         </View>
         <View id="vistaClientes">
             <ListView defaultItemTemplate="templateContactos" id="listaCOntactos">
@@ -12,8 +14,8 @@
                         <ImageView bindId="edit" class="icon" id="edit"/>
                     </ItemTemplate>
                 </Templates>
-                <ListSection>
-                    <ListItem edit:image="/imagen.jpg" icon:image="/imagen.jpg" nombreContacto:text="Pedro PAblo "/>
+                <ListSection name ="contactos">
+                   
                 </ListSection>
             </ListView>
         </View>

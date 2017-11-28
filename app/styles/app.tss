@@ -24,9 +24,9 @@
 ".etiquetaTitulo": {
 	"textAlign": Ti.UI.TEXT_ALIGNMENT_CENTER,
 	"color": "white",
-	"width": "70%",
-	"left": "15%",
-	"top": "30%"
+	"width": "170",
+	"left": "5",
+	"top": "10"
 },
 //				VISTAS
 ".vistaValidarLogin": {
@@ -61,8 +61,11 @@
 ".fuenteAppBold": {
 	"font": {fontFamily:'Montserrat-Bold'}
 },
-"fuenteRaleway": {
+".fuenteRaleway": {
 	"font": {fontFamily:'Raleway-Regular'}
+},
+".fuenteRalewayBold": {
+	"font": {fontFamily:'Raleway-ExtraBold'}
 },
 ".fa[platform=android]": {
 	"font": {fontFamily:'FontAwesome'}
@@ -89,7 +92,7 @@
 	"backgroundColor": "#eef2f6"
 },
 ".h1": {
-	"font": {fontSize:'10',fontFamily:'Arial',fontStyle:'normal',fontWeight:'normal'}
+	"font": {fontSize:'10'}
 },
 ".h2": {
 	"font": {fontSize:'15'}
