@@ -91,21 +91,39 @@
 ".fondoGris": {
 	"backgroundColor": "#eef2f6"
 },
-".h1": {
+".h1[platform=android]": {
 	"font": {fontSize:'10'}
 },
-".h2": {
+".h2[platform=android]": {
 	"font": {fontSize:'15'}
 },
-".h3": {
+".h3[platform=android]": {
 	"font": {fontSize:'20'}
 },
-".h4": {
+".h4[platform=android]": {
 	"font": {fontSize:'25'}
 },
-".h5": {
+".h5[platform=android]": {
 	"font": {fontSize:'30'}
 },
-".h6": {
+".h6[platform=android]": {
 	"font": {fontSize:'35'}
+},
+".h1[platform=ios]": {
+	"font": {fontSize:'9'}
+},
+".h2[platform=ios]": {
+	"font": {fontSize:'12'}
+},
+".h3[platform=ios]": {
+	"font": {fontSize:'15'}
+},
+".h4[platform=ios]": {
+	"font": {fontSize:'18'}
+},
+".h5[platform=ios]": {
+	"font": {fontSize:'21'}
+},
+".h6[platform=ios]": {
+	"font": {fontSize:'24'}
 }

@@ -317,6 +317,13 @@ exports.toggleMenu = function() {
 	}
 };
 
+Alloy.Globals.toggleMenu = function() {
+	if (menuOpen) {
+		closeMenu();
+	} else {
+		openMenu();
+	}
+};
 // window methods
 _.each([
 	'open',

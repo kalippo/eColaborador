@@ -1,7 +1,7 @@
 ".container": {
 },
 "#vistaTitulo": {
-	"layout": "horizontal",
+	"layout": "horizontal"
 },
 "#titulo": {
 	"text": "Detalle"
@@ -39,32 +39,29 @@
 	"left": "5%",
 	"width": "90%"
 },
-
-
 ".etiquetasDetalle": {
 	"color": "black",
 	"font": {fontSize:'17',fontFamily:'Montserrat-Regular',fontStyle:'regular',fontWeight:''},
-	"top": "20%",
-	"left": "5%"
+	"top": "15",
+	"left": "20"
 },
 ".contenidoDetalle": {
 	"color": "gray",
-	"left": "5%",
+	"left": "25",
 	"font": {fontSize:'15',fontFamily:'Montserrat-Regular',fontStyle:'regular',fontWeight:''}
 },
 "#estatusDePago": {
-	"text": "Estatus de Pago"
+	"text": "Estatus de Pago",
 },
 "#vistaTituloPanel": {
-	"height": "30%"
+	"height": "40",
 },
 "#boletosEntregados": {
 	"text": "Boletos Entregados",
-	"class": "etiquetasDetalle"
+	"class": "etiquetasDetalle",
 },
 "#cantidadBoletos": {
 	"text": "0",
-	"left": "5%"
 },
 "#sorteos": {
 	"text": "Sorteos",
@@ -79,7 +76,7 @@
 },
 "#tituloAbonos": {
 	"text": "Abonos",
-	"height": "20%"
+	"height": "15",
 },
 "#tituloAbonos": {
 },
@@ -88,7 +85,7 @@
 },
 "#boletos": {
 	"left": "5",
-	"text": "Boletos"
+	"text": "Boletos",
 },
 "#ListView_1": {
 },
@@ -130,15 +127,15 @@
 },
 "#View_1": {
 	"backgroundColor": "#66ccff",
-	"borderRadius": "50",
+	"borderRadius": "30",
 	"bottom": "10",
 	"left": "10",
 	"right": "10",
-	"top": "10"
+	"top": "10",
 },
 "#estatus": {
 	"text": "Pagado",
-	"color": "#ffffff"
+	"color": "#ffffff",
 },
 "#buscar": {
 	"text": "\uf002",

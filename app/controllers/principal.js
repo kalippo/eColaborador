@@ -3,15 +3,18 @@ var args = $.args;
 
 $.imagenMisClientes.addEventListener('click', function(error) {
 
-	var validacion = Alloy.createController("misClientes");
-	validacion = validacion.getView();
-	validacion.open();
+	//var validacion = Alloy.createController("misClientes");
+	//validacion = validacion.getView();
+	//validacion.open();
+	
+	Ti.API.info("nanana");
+	Alloy.Globals.toggleMenu();
 });
 
 $.iconoMenu.addEventListener('click', function(error) {
 
-	$.navDrawer.toggleMenu();
-	Ti.API.info($.navDrawer,null,3);
+	Ti.API.info("nanana");
+	Alloy.Globals.toggleMenu();
 	
 
 });

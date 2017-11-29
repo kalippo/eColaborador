@@ -5,7 +5,7 @@
 	"left": "5",
 	"top": "5",
 	"color": "black",
-	"width": "15%",
+	"width": "14%",
 	"layout": "vertical"
 },
 "#soloFaltan": {
@@ -16,7 +16,6 @@
 	"text": "29 Sorteo Educativo"
 },
 ".diahoraminuto": {
-	"left": "5",
 	"height": "25",
 	"top": "15"
 },
@@ -54,7 +53,7 @@
 	"left": "10",
 	"right": "10",
 	"borderColor": "#66ffff",
-	"top": "10",
+	"top": "10"
 },
 //				IMAGENES
 ".imagenOpciones": {
@@ -79,21 +78,21 @@
 	"layout": "horizontal",
 	"backgroundColor": "white",
 	"left": "10",
-	"right": "10",
+	"right": "10"
 },
 "#vistaDiasHorasMinutos": {
 	"height": "1",
 	"layout": "horizontal"
 },
 ".etiquetaContador": {
-	"width": Ti.UI.FILL,
-	"color": "black"
+	"color": "black",
+	"top": "5"
 },
 "#imagenCobroMovil": {
 	"image": "/Images/Home/cobro-movil.png"
 },
 "#contadorDias": {
-	"text": "15"
+	"text": "15",
 },
 "#iconoMenu": {
 	"text": "\uf0c9",
@@ -123,7 +122,6 @@
 },
 "#separador1": {
 	"text": ":",
-	"left": "5",
 	"width": "10",
 	"top": "10"
 },
@@ -164,15 +162,16 @@
 "#vistaD": {
 },
 "#vistaH": {
+	"width": "15%"
 },
 "#vistaM": {
-	"width": "21%"
+	"width": "22%"
 },
 "#vistaS": {
 	"width": "25%"
 },
 "#dias": {
-	"text": "DIAS",
+	"text": "DIAS"
 },
 "#horas": {
 	"text": "HORAS"
@@ -181,7 +180,7 @@
 	"text": "MINUTOS"
 },
 "#segundos": {
-	"text": "SEGUNDOS",
+	"text": "SEGUNDOS"
 },
 "#vistaMenu": {
 },
