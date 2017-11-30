@@ -1,5 +1,5 @@
 <Alloy>
-    <Window class="container" layout="vertical">
+    <Window backgroundColor="#75d5ff" class="container" layout="vertical">
         <View id="vistaTop">
             <ImageView id="ImageView_1"/>
         </View>

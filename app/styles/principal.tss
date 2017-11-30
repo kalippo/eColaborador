@@ -92,7 +92,7 @@
 	"image": "/Images/Home/cobro-movil.png"
 },
 "#contadorDias": {
-	"text": "15",
+	"text": "15"
 },
 "#iconoMenu": {
 	"text": "\uf0c9",
@@ -100,9 +100,9 @@
 	"width": "40"
 },
 "#postales": {
-	"text": "\uf0e0",
+	"text": "\uf1d8",
 	"width": "40",
-	"height": "40"
+	"height": "40",
 },
 "#titulo": {
 	"image": "/Images/Home/ecol-top.png",
@@ -183,6 +183,7 @@
 	"text": "SEGUNDOS"
 },
 "#vistaMenu": {
+	"left": "10"
 },
 "#vistaPostales": {
 	"right": "5"

@@ -2,13 +2,13 @@
     <View class="container fondoGris" layout="vertical">
         <View class="vistaTitulo fondoGris" id="vistaTitulo">
             <View class="vistaOpciones" id="vistaMenu">
-                <Label class="fa colorAzul h5" id="iconoMenu"/>
+                <Label class="fa colorAzul h6 " id="iconoMenu"/>
             </View>
             <View id="vistaLogo">
                 <ImageView id="titulo"/>
             </View>
             <View class="vistaOpciones" id="vistaPostales">
-                <Label class="fa h4 colorTurquesa centrado" id="postales"/>
+                <Label class="fa h6 colorTurquesa centrado" id="postales"/>
             </View>
         </View>
         <View id="vistaPrincipal">

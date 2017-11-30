@@ -1,8 +1,8 @@
 ".container": {
 },
 "#navDrawer": {
-	overlayShadow: true, // Fade out menu on close
-	menuWidth: 250, // Slide menu width
-	duration: 150, // Close/open animation duration
-	ledge: 40, // Ledge size
+	"overlayShadow": true,
+	"menuWidth": 250,
+	"duration": 150,
+	"ledge": 10,
 }

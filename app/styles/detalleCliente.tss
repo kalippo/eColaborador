@@ -51,17 +51,17 @@
 	"font": {fontSize:'15',fontFamily:'Montserrat-Regular',fontStyle:'regular',fontWeight:''}
 },
 "#estatusDePago": {
-	"text": "Estatus de Pago",
+	"text": "Estatus de Pago"
 },
 "#vistaTituloPanel": {
-	"height": "40",
+	"height": "40"
 },
 "#boletosEntregados": {
 	"text": "Boletos Entregados",
-	"class": "etiquetasDetalle",
+	"class": "etiquetasDetalle"
 },
 "#cantidadBoletos": {
-	"text": "0",
+	"text": "0"
 },
 "#sorteos": {
 	"text": "Sorteos",
@@ -76,7 +76,7 @@
 },
 "#tituloAbonos": {
 	"text": "Abonos",
-	"height": "15",
+	"height": "15"
 },
 "#tituloAbonos": {
 },
@@ -85,7 +85,7 @@
 },
 "#boletos": {
 	"left": "5",
-	"text": "Boletos",
+	"text": "Boletos"
 },
 "#ListView_1": {
 },
@@ -131,15 +131,15 @@
 	"bottom": "10",
 	"left": "10",
 	"right": "10",
-	"top": "10",
+	"top": "10"
 },
 "#estatus": {
 	"text": "Pagado",
-	"color": "#ffffff",
+	"color": "#ffffff"
 },
 "#buscar": {
-	"text": "\uf002",
-	"width": "50"
+	"text": "\uf0e0",
+	"width": "50",
 },
 "#regresar": {
 	"text": "\uf053",
