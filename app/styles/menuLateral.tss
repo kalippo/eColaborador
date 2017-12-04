@@ -34,7 +34,7 @@
 	"text": "x"
 },
 "#miPerfil": {
-	"text": "Mi Perfil"
+	"text": "Mi Perfil",
 },
 ".icono": {
 	"left": "20",
@@ -50,16 +50,16 @@
 	"left": "35"
 },
 "#preguntasFrecuentes": {
-	"text": "Preguntas Frecuentes",
+	"text": "Preguntas Frecuentes"
 },
 "#iconoNotificaciones": {
-	"text": "\uf0f3",
+	"text": "\uf0f3"
 },
 "#notificaciones": {
-	"text": "Notificaciones",
+	"text": "Notificaciones"
 },
 "#ayuda": {
-	"text": "Ayuda / Atención",
+	"text": "Ayuda / Atención"
 },
 "#contacto": {
 	"text": "Contacto"
@@ -71,10 +71,10 @@
 	"text": "\uf059"
 },
 "#iconoInformacion": {
-	"text": "\uf05a",
+	"text": "\uf05a"
 },
 "#informacion": {
-	"text": "Informacion",
+	"text": "Informacion"
 },
 "#terminos": {
 	"text": "Terminos y Condiciones"
@@ -83,10 +83,12 @@
 	"text": "Legales Sorteos Tec"
 },
 "#cerrarSesion": {
-	"text": "Cerrar Sesión",
+	"text": "Cerrar Sesión"
 },
 "#iconoPerfil": {
 	"text": "\uf007"
 },
 "#iconoCerrarSesion": {
+},
+"#vistaMiPerfil": {
 }

@@ -2,7 +2,7 @@
 var args = $.args;
 
 
-$.miPerfil.addEventListener('click', function(error) {
+$.vistaMiPerfil.addEventListener('click', function(error) {
 
 	var validacion = Alloy.createController("perfilColaborador");
 	validacion = validacion.getView();

@@ -5,10 +5,10 @@
 },
 ".boton": {
 	"width": "80%",
-	"height": "20%",
+	"height": "60",
 	"top": "10%",
 	"left": "10%",
-	"borderRadius": "50",
+	"borderRadius": "30",
 	"color": "white",
 	"backgroundColor": "#2b7ef1"
 },
@@ -28,13 +28,11 @@
 	"left": "5",
 	"top": "10"
 },
-//				VISTAS
 ".vistaValidarLogin": {
-	"layout": "vertical",
-	"height": "50%",
+	"layout": "absolute",
+	"height": "280",
 	"width": "90%",
 	"left": "5%",
-	"top": "25%",
 	"backgroundColor": "#ffffff",
 	"borderRadius": "60"
 },
@@ -47,11 +45,10 @@
 	"borderRadius": "50",
 	"height": "100",
 	"width": "100",
-	"zIndex": "1",
+	"zIndex": "10",
 	"borderWidth": "9",
 	"borderColor": "white"
 },
-//				FUENTES
 ".fuenteApp[platform=android]": {
 	"font": {fontFamily:'Montserrat-Regular'}
 },

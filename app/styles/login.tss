@@ -4,11 +4,11 @@
 "#vistaTop": {
 	"height": "30%",
 	"width": "100%",
-	"layout": "vertical",
+	"layout": "vertical"
 },
 "#vistaDatosLogin": {
 	"height": "50%",
-	"layout": "vertical",
+	"layout": "vertical"
 },
 "#vistaInformacion": {
 	"height": "30%",
@@ -22,13 +22,13 @@
 	"borderWidth": "1",
 	"top": "5%",
 	"left": "10%",
-	"borderRadius": "40",
+	"borderRadius": "30",
 	"font": {fontSize:'17',fontFamily:'Montserrat-Regular',fontStyle:'normal',fontWeight:''},
 	"backgroundColor": "white",
 	"color": "black"
 },
 "#claveColaborador": {
-	"hintText": "Ingresa tu Clave de Colaborador"
+	"hintText": "Ingresa tu Clave de Colaborador",
 },
 "#password": {
 	"hintText": "Contraseña"
@@ -53,5 +53,5 @@
 	"width": "120",
 	"image": "/imagen.jpg",
 	"borderRadius": "60",
-	borderColor:"white"
+	"borderColor": "white"
 }

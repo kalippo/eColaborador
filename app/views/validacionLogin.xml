@@ -1,5 +1,5 @@
 <Alloy>
-    <Window backgroundColor="#75d5ff" class="container" left="0.00%" top="6.67%">
+    <Window backgroundColor="#75d5ff" class="container" left="0.00%" top="6.45%">
         <View class="vistaValidarLogin" id="vistaValidarColaborador">
             <Label class="etiquetaValidarLogin" id="bienvenido"/>
             <Label class="etiquetaValidarLogin" id="nombreColaborador"/>
@@ -7,14 +7,18 @@
             <Label class="etiquetaValidarLogin" id="noSoyYo"/>
             <View id="View_1"/>
         </View>
-        <ImageView class="imagenColaborador" id="imagenColaborador"/>
         <View id="vistaLegal">
             <View id="vistaTerminos">
                 <Switch class="switches" id="terminos"/>
+                <Label class="fuenteApp h2" id="Label_2"/>
             </View>
             <View id="vistaPrivacidad">
                 <Switch class="switches" id="aviso"/>
+                <Label class="fuenteApp h2" id="Label_1"/>
             </View>
+        </View>
+        <View id="View_2">
+            <ImageView class="imagenColaborador" id="imagenColaborador"/>
         </View>
     </Window>
 </Alloy>

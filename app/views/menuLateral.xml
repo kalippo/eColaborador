@@ -6,7 +6,7 @@
             <Label class="fuenteApp h1 centrado colorAzul" id="correoColaborador"/>
         </View>
         <ScrollView id="vistaOpciones">
-            <View height="60" layout="horizontal">
+            <View height="60" id="vistaMiPerfil" layout="horizontal">
                 <Label class="icono fa h4 colorAzul" id="iconoPerfil"/>
                 <Label class="titulo fuenteAppBold colorAzul h3" id="miPerfil"/>
             </View>

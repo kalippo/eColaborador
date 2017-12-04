@@ -2,8 +2,6 @@
 var args = $.args;
 
 
-
-
 $.iniciarSesion.addEventListener('click', function(error) {
 
 
