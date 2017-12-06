@@ -16,11 +16,16 @@ $.vistaMenu.addEventListener('click', function(error) {
 
 });
 
-$.imagenSorteosHerramientas.addEventListener('click', function(error) {
+$.imagenEstadoCuenta.addEventListener('click', function(error) {
 	var validacion = Alloy.createController("login");
 	validacion = validacion.getView();
 	validacion.open();
 });
 
+$.imagenSorteosHerramientas.addEventListener('click', function(error) {
+	var validacion = Alloy.createController("sorteosHerramientas");
+	validacion = validacion.getView();
+	validacion.open();
+});
 
 

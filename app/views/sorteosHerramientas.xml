@@ -1,0 +1,36 @@
+<Alloy>
+    <Window class="container" layout="vertical">
+        <View class="vistaTitulo fondoBlanco" id="vistaTitulo">
+            <Label class="colorAzul h3 fuenteApp" id="atras"/>
+            <Label class="h4 fuenteApp colorAzul centrado" id="herramientas"/>
+        </View>
+        <ScrollView class="fondoBlanco" id="vistaPrincipal">
+            <ScrollableView class="fondoGris" id="ScrollableView_1">
+                <View class="fondoGris" id="View_3">
+                    <Label id="Label_1"/>
+                </View>
+                <View class="fondoBlanco" id="View_4">
+                    <Label id="Label_2"/>
+                </View>
+            </ScrollableView>
+            <View id="vistaMensajes">
+                <View id="View_1">
+                    <ImageView id="ImageView_2"/>
+                    <Label class="h2 fuenteApp colorAzul" id="Label_3"/>
+                </View>
+                <View id="View_2">
+                    <ImageView id="ImageView_1"/>
+                    <ImageView id="ImageView_3"/>
+                    <ImageView id="ImageView_4"/>
+                </View>
+            </View>
+            <View id="View_5">
+                <Label class="fuenteApp h3 colorAzul" id="Label_4"/>
+                <View id="View_6">
+                    <ImageView id="ImageView_5"/>
+                </View>
+            </View>
+            <Label class="h4 fuenteApp colorAzul" id="Label_5"/>
+        </ScrollView>
+    </Window>
+</Alloy>

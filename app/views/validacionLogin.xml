@@ -1,5 +1,5 @@
 <Alloy>
-    <Window backgroundColor="#75d5ff" class="container" left="0.00%" top="6.45%">
+    <Window backgroundColor="#75d5ff" class="container" left="0.00%" top="6.67%">
         <View class="vistaValidarLogin" id="vistaValidarColaborador">
             <Label class="etiquetaValidarLogin" id="bienvenido"/>
             <Label class="etiquetaValidarLogin" id="nombreColaborador"/>

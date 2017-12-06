@@ -88,6 +88,9 @@
 ".fondoGris": {
 	"backgroundColor": "#eef2f6"
 },
+".fondoBlanco": {
+	"backgroundColor": "white"
+},
 ".h1[platform=android]": {
 	"font": {fontSize:'10'}
 },

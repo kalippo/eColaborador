@@ -1,0 +1,100 @@
+".container": {
+},
+"#vistaTitulo": {
+	"layout": "horizontal",
+	"class": "titulo"
+},
+"#vistaPrincipal": {
+	"layout": "vertical"
+},
+"#atras": {
+	"text": "<< Atras",
+	"top": "10",
+	"left": "10"
+},
+"#herramientas": {
+	"text": "Mis Herramientas",
+	"class": "h4 centrado colorAzul fuenteApp",
+	"left": "20",
+	"top": "10"
+},
+"#vistaMensajes": {
+	"height": "200",
+	"layout": "vertical"
+},
+"#ScrollableView_1": {
+	"height": "150"
+},
+"#View_1": {
+	"height": "80",
+	"layout": "horizontal",
+	"left": "10",
+	"top": "10"
+},
+"#View_2": {
+	"layout": "horizontal"
+},
+"#ImageView_1": {
+	"top": "10",
+	"height": "100",
+	"width": "100",
+	"left": "10",
+	"image": "/imagen.jpg"
+},
+"#View_3": {
+},
+"#View_4": {
+},
+"#Label_1": {
+	"text": "sorteo 1"
+},
+"#Label_2": {
+	"text": "sorteo 2"
+},
+"#Label_3": {
+	"text": "ENVIO DE MENSAJES PARA MIS CLIENTES",
+	"left": "10",
+	"top": "20",
+},
+"#ImageView_2": {
+	"height": "60",
+	"width": "60",
+	"image": "/imagen.jpg"
+},
+"#ImageView_3": {
+	"top": "10",
+	"height": "100",
+	"width": "100",
+	"left": "10",
+	"image": "/imagen.jpg"
+},
+"#ImageView_4": {
+	"top": "10",
+	"height": "100",
+	"width": "100",
+	"left": "10",
+	"image": "/imagen.jpg"
+},
+"#View_5": {
+	"height": "150",
+	"layout": "vertical",
+	"top": "20"
+},
+"#Label_4": {
+	"text": "GALERIA PUBLICITARIA",
+	"top": "10"
+},
+"#View_6": {
+	"layout": "horizontal",
+	"left": "10",
+	"right": "10",
+	"top": "10"
+},
+"#Label_5": {
+	"text": "CONOCE TODOS LOS PREMIOS >>"
+},
+"#ImageView_5": {
+	"height": "60",
+	"width": "60",
+	"image": "/imagen.jpg"
+}

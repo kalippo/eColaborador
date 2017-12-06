@@ -1,6 +1,7 @@
 ".container": {
 },
 "#vistaValidarColaborador": {
+	"top": "120"
 },
 "#bienvenido": {
 	"text": "Bienvenido",
@@ -20,7 +21,7 @@
 },
 "#entrar": {
 	"title": "Entrar",
-	"top": "160"
+	"top": "160",
 },
 "#View_1": {
 	"borderWidth": "1",
@@ -33,7 +34,7 @@
 },
 "#vistaLegal": {
 	"height": "140",
-	"top": "450",
+	"top": "420",
 	"layout": "vertical",
 	"left": "30",
 	"right": "20"
@@ -41,11 +42,11 @@
 "#terminosCondiciones": {
 },
 "#vistaTerminos": {
-	"height": "80",
+	"height": "45",
 	"layout": "absolute"
 },
 "#vistaPrivacidad": {
-	"height": "80"
+	"height": "45"
 },
 "#terminos": {
 },
@@ -65,16 +66,16 @@
 "#Label_1": {
 	"text": "Acepto el aviso de privacidad",
 	"left": "60",
-	"top": "20"
+	"top": "15"
 },
 "#Label_2": {
 	"text": "Acepto los terminos y condiciones",
 	"left": "60",
-	"top": "20"
+	"top": "15"
 },
 "#View_2": {
 	"height": "100",
 	"width": "100",
-	"top": "100",
+	"top": "75",
 	"zIndex": "10"
 }
