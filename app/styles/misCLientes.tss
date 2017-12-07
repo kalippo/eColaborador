@@ -19,6 +19,7 @@
 	"top": 0
 },
 "#listaCOntactos": {
+	backgroundColor:"white",
 },
 "#icon": {
 },

@@ -14,9 +14,7 @@
                         <ImageView bindId="edit" class="icon" id="edit"/>
                     </ItemTemplate>
                 </Templates>
-                <ListSection name ="contactos">
-                   
-                </ListSection>
+                <ListSection name="contactos"/>
             </ListView>
         </View>
     </Window>

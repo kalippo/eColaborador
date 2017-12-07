@@ -10,7 +10,7 @@ $.imagenMisClientes.addEventListener('click', function(error) {
 
 $.vistaMenu.addEventListener('click', function(error) {
 
-	Ti.API.info("nanana");
+	
 	Alloy.Globals.toggleMenu();
 	
 
