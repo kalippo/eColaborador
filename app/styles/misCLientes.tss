@@ -16,7 +16,9 @@
 "#nombreContacto": {
 	"color": "black",
 	"left": "60dp",
-	"top": 0
+	"top": 10,
+	left:"60"
+	
 },
 "#listaCOntactos": {
 	backgroundColor:"white",
@@ -26,8 +28,13 @@
 "#buscar": {
 	"text": "\uf002",
 	"width": "50",
+	right:"10"
 },
 "#regresar": {
 	"text": "\uf053",
 	"width": "50",
+},
+"#edit":{
+	text:"\uf040",
+	right:"10"
 }

@@ -11,7 +11,7 @@
                     <ItemTemplate name="templateContactos">
                         <ImageView bindId="icon" class="icon" id="icon"/>
                         <Label bindId="nombreContacto" id="nombreContacto"/>
-                        <ImageView bindId="edit" class="icon" id="edit"/>
+                        <Label bindId="edit" class="fa" id="edit"/>
                     </ItemTemplate>
                 </Templates>
                 <ListSection name="contactos"/>
