@@ -41,14 +41,14 @@
 },
 ".etiquetasDetalle": {
 	"color": "black",
-	"font": {fontSize:'17',fontFamily:'Montserrat-Regular',fontStyle:'regular',fontWeight:''},
 	"top": "15",
 	"left": "20"
 },
 ".contenidoDetalle": {
 	"color": "gray",
 	"left": "25",
-	"font": {fontSize:'15',fontFamily:'Montserrat-Regular',fontStyle:'regular',fontWeight:''}
+	"font": {fontSize:'15'},
+	
 },
 "#estatusDePago": {
 	"text": "Estatus de Pago"
@@ -93,7 +93,7 @@
 	"text": "Actualizado el 16 de Noviembre de 2017",
 	"top": "2%"
 },
-"#eliminarContacto ": {
+"#eliminarContacto": {
 	"title": "Eliminar de Contactos",
 	"color": "#red",
 	"backgroundColor": "white",
