@@ -1,0 +1,29 @@
+".container": {
+},
+"#vistaTitulo": {
+	"height": "50",
+	"left": "1",
+	"right": "1",
+	"top": "1"
+},
+"#vista": {
+	"height": "300",
+},
+"#vistaSorteos": {
+},
+"#ImageView_1": {
+	"left": "0.67%",
+	"top": "0.33%",
+	"right": "1",
+	"image": "/sala.jpeg",
+	"height": "200",
+},
+"#Label_1": {
+	"text": "\uf015",
+	"left": "5",
+	"color": "#000000",
+	"height": "50",
+	"width": "50",
+	"top": "5",
+	"class": "fa"
+}

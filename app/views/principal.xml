@@ -47,6 +47,7 @@
                 <ImageView class="imagenOpciones" id="imagenEstadoCuenta"/>
                 <ImageView class="imagenOpciones" id="imagenConsultaGanadores"/>
                 <ImageView class="imagenOpciones" id="imagenCobroMovil"/>
+                <View id="View_1"/>
             </ScrollView>
         </View>
     </View>

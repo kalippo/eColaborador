@@ -23,7 +23,7 @@ $.imagenEstadoCuenta.addEventListener('click', function(error) {
 });
 
 $.imagenSorteosHerramientas.addEventListener('click', function(error) {
-	var validacion = Alloy.createController("sorteosHerramientas");
+	var validacion = Alloy.createController("sorteosHerramientasPrincipal");
 	validacion = validacion.getView();
 	validacion.open();
 });

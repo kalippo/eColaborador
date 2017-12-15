@@ -1,0 +1,11 @@
+<Alloy>
+    <View class="container" layout="vertical">
+        <View id="vista">
+            <View id="vistaTitulo">
+                <Label class="h4 centrado" id="Label_1"/>
+            </View>
+            <ImageView id="ImageView_1"/>
+        </View>
+        <View id="vistaSorteos"/>
+    </View>
+</Alloy>

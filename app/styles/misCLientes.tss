@@ -16,9 +16,8 @@
 "#nombreContacto": {
 	"color": "black",
 	"left": "60dp",
-	"top": 10,
+	"top": "10",
 	left:"60"
-	
 },
 "#listaCOntactos": {
 	backgroundColor:"white",
