@@ -1,11 +1,22 @@
 <Alloy>
-    <View class="container" layout="vertical">
+    <Window class="container fondoBlanco" layout="vertical" left="0.00%" top="6.67%">
         <View id="vista">
             <View id="vistaTitulo">
-                <Label class="h4 centrado" id="Label_1"/>
+                <Label class="h5 centrado fa" id="home"/>
+                <Label class="fa h5 centrado" id="notificacion"/>
             </View>
             <ImageView id="ImageView_1"/>
         </View>
-        <View id="vistaSorteos"/>
-    </View>
+        <View id="vistaSorteos">
+            <View id="View_1">
+                <Label class="fuenteApp h4 tituloSeccion"  id="Label_1" lass="fuenteApp h4"/>
+            </View>
+        </View>
+        <View id="vistaMembresias">
+            <View id="View_2">
+                <Label class="fuenteApp h4 tituloSeccion" id="Label_2"/>
+            </View>
+        </View>
+        <View id="vistaVideos"/>
+    </Window>
 </Alloy>

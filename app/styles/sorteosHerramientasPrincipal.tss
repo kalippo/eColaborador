@@ -4,26 +4,36 @@
 	"height": "50",
 	"left": "1",
 	"right": "1",
-	"top": "1"
+	"top": "1",
+	"zIndex": "2",
 },
 "#vista": {
-	"height": "300",
+	"height": "300"
 },
 "#vistaSorteos": {
 },
 "#ImageView_1": {
-	"left": "0.67%",
-	"top": "0.33%",
+	"left": "1",
+	"top": "1",
 	"right": "1",
 	"image": "/sala.jpeg",
-	"height": "200",
+	"height": "200"
 },
-"#Label_1": {
+"#home": {
 	"text": "\uf015",
 	"left": "5",
-	"color": "#000000",
-	"height": "50",
-	"width": "50",
+	"color": "white",
+	"height": "30",
+	"width": "30",
 	"top": "5",
-	"class": "fa"
+	"class": "fa",
+	"zIndex": "10",
+},
+"#notificacion": {
+	"text": "\uf0f3",
+	"height": "30",
+	"right": "5",
+	"top": "5",
+	"width": "30",
+	color:"white"
 }
