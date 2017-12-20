@@ -2,12 +2,13 @@
 },
 "#vistaNotificacion": {
 	"height": "300",
-	"layout": "vertical"
+	"layout": "vertical",
+	"opacity": "1"
 },
 "#imagenHeader": {
 	"image": "/Images/Home/app-ECOL-icono-clientes.png",
 	"height": "100",
-	"width": "100",
+	"width": "100"
 },
 "#View_1": {
 	"height": "1",
@@ -19,4 +20,19 @@
 "#inicioSesion": {
 	"title": "Ir a inicio de sesión",
 	"backgroundColor": "#63dced"
+},
+"#View_2": {
+	"layout": "vertical",
+	"left": "0.00%",
+	"top": "0.00%"
+},
+"#vistaAbajo": {
+	"backgroundColor": "#000000",
+	"height": "25%",
+	"opacity": ".7",
+},
+"#VistaArriba": {
+	"backgroundColor": "#000000",
+	"height": "25%",
+	"opacity": ".7"
 }

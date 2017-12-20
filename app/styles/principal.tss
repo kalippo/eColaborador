@@ -30,13 +30,11 @@
 	"class": "fondoBlanco"
 },
 "#vistaPrincipal": {
-	"height": "93%",
-	"layout": "horizontal"
+	"layout": "horizontal",
 },
 "#vistaPanel": {
 	"layout": "vertical",
-	"height": "100%",
-	"scrollType": "vertical"
+	"scrollType": "vertical",
 },
 "#vistaCalendario": {
 	"class": "panelOpciones",
@@ -157,7 +155,7 @@
 	"layout": "horizontal",
 	"left": "5",
 	"right": "5",
-	"width": "100%"
+	"width": "100%",
 },
 "#vistaD": {
 },

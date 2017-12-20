@@ -1,0 +1,11 @@
+<Alloy>
+    <Window class="container " layout="vertical">
+        <View class="vistaTitulo fondoBlanco" id="vistaTitulo">
+            <Label class=" colorTurquesa fuenteApp h3" id="atras"/>
+            <Label class=" colorAzul fuenteApp h3" id="titulo"/>
+        </View>
+        <View id="vistaAviso">
+            <WebView id="webAviso"/>
+        </View>
+    </Window>
+</Alloy>

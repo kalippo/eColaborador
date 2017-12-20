@@ -1,0 +1,20 @@
+".container": {
+},
+"#vistaTitulo": {
+	"layout": "horizontal"
+},
+"#vistaAviso": {
+},
+"#webAviso": {
+	"url": "https://m.sorteostec.org/assets/aviso.html"
+},
+"#atras": {
+	"text": "<< Atras",
+	"top": "15",
+	"left": "10"
+},
+"#titulo": {
+	"text": "AVISO DE PRIVACIDAD",
+	"left": "20",
+	"top": "15"
+},

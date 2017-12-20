@@ -1,0 +1,21 @@
+
+".container" : {
+  
+}
+
+"#webAviso": {
+	"url": "https://m.sorteostec.org/assets/terminos.html",
+},
+"#atras": {
+	"text": "<< Atras",
+	"top": "15",
+	"left": "10"
+},
+"#titulo": {
+	"text": "TERMINOS Y CONDICIONES",
+	"left": "20",
+	"top": "15"
+},
+"#vistaTitulo": {
+	"layout": "horizontal"
+},

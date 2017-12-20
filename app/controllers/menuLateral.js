@@ -8,3 +8,18 @@ $.vistaMiPerfil.addEventListener('click', function(error) {
 	validacion = validacion.getView();
 	validacion.open();
 });
+
+$.avisoPrivacidad.addEventListener('click', function(error) {
+
+	var validacion = Alloy.createController("avisoPrivacidad");
+	validacion = validacion.getView();
+	validacion.open();
+});
+
+
+$.terminos.addEventListener('click', function(error) {
+
+	var validacion = Alloy.createController("terminosCondiciones");
+	validacion = validacion.getView();
+	validacion.open();
+});
