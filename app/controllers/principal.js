@@ -17,7 +17,7 @@ $.vistaMenu.addEventListener('click', function(error) {
 });
 
 $.imagenEstadoCuenta.addEventListener('click', function(error) {
-	var validacion = Alloy.createController("login");
+	var validacion = Alloy.createController("notificacionLogin");
 	validacion = validacion.getView();
 	validacion.open();
 });

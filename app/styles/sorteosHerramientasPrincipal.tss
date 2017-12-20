@@ -5,12 +5,14 @@
 	"left": "1",
 	"right": "1",
 	"top": "1",
-	"zIndex": "2",
+	"zIndex": "2"
 },
 "#vista": {
-	"height": "300"
+	"height": "220"
 },
 "#vistaSorteos": {
+	"height": "150",
+	"layout": "vertical"
 },
 "#ImageView_1": {
 	"left": "1",
@@ -27,7 +29,7 @@
 	"width": "30",
 	"top": "5",
 	"class": "fa",
-	"zIndex": "10",
+	"zIndex": "10"
 },
 "#notificacion": {
 	"text": "\uf0f3",
@@ -35,5 +37,31 @@
 	"right": "5",
 	"top": "5",
 	"width": "30",
-	color:"white"
+	"color": "white"
+},
+"#vistaMembresias": {
+	"height": "150",
+	"layout": "vertical"
+},
+"#vistaVideos": {
+	"height": "150",
+	"layout": "vertical",
+},
+"#View_1": {
+	"height": "30",
+	"layout": "horizontal",
+},
+"#View_2": {
+	"height": "30",
+	"layout": "horizontal",
+},
+"#Label_1": {
+	"text": "SORTEOS"
+},
+"#Label_2": {
+	"text": "MEMBRESÍA DE LA SUERTE",
+},
+".tituloSeccion": {
+	"top": "5",
+	"left": "5"
 }

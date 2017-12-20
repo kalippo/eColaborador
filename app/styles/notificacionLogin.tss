@@ -1,0 +1,22 @@
+".container": {
+},
+"#vistaNotificacion": {
+	"height": "300",
+	"layout": "vertical"
+},
+"#imagenHeader": {
+	"image": "/Images/Home/app-ECOL-icono-clientes.png",
+	"height": "100",
+	"width": "100",
+},
+"#View_1": {
+	"height": "1",
+	"borderColor": "#63dced"
+},
+"#mensageNotificacion": {
+	"text": "Para acceder a \"Mis clientes\" inicia sesion con tu clave de colaborador y contraseña"
+},
+"#inicioSesion": {
+	"title": "Ir a inicio de sesión",
+	"backgroundColor": "#63dced"
+}

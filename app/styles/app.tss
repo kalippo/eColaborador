@@ -126,4 +126,7 @@
 },
 ".h6[platform=ios]": {
 	"font": {fontSize:'24'}
+},
+".backgroundLogin": {
+	"backgroundImage": "/Images/Home/BG-blue-v1.png"
 }

@@ -9,7 +9,7 @@
         </View>
         <View id="vistaSorteos">
             <View id="View_1">
-                <Label class="fuenteApp h4 tituloSeccion"  id="Label_1" lass="fuenteApp h4"/>
+                <Label class="fuenteApp h4 tituloSeccion" id="Label_1" lass="fuenteApp h4"/>
             </View>
         </View>
         <View id="vistaMembresias">

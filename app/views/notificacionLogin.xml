@@ -1,0 +1,10 @@
+<Alloy>
+    <Window backgroundColor="#5e5e5e" class="container">
+        <View class="fondoBlanco" id="vistaNotificacion">
+            <ImageView id="imagenHeader"/>
+            <View id="View_1"/>
+            <Label class="fuenteApp h4" id="mensageNotificacion"/>
+            <Button class="boton h4 fuenteApp" id="inicioSesion"/>
+        </View>
+    </Window>
+</Alloy>
