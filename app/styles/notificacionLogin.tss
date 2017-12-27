@@ -15,7 +15,8 @@
 	"borderColor": "#63dced"
 },
 "#mensageNotificacion": {
-	"text": "Para acceder a \"Mis clientes\" inicia sesion con tu clave de colaborador y contraseña"
+	"text": "Para acceder a \"Mis clientes\" inicia sesion con tu clave de colaborador y contraseña",
+	color : "black"
 },
 "#inicioSesion": {
 	"title": "Ir a inicio de sesión",

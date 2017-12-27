@@ -28,4 +28,10 @@ $.imagenSorteosHerramientas.addEventListener('click', function(error) {
 	validacion.open();
 });
 
+var altura = Math.trunc($.imagenMisClientes.width * .4);
 
+$.imagenMisClientes.height = altura;
+$.imagenEstadoCuenta.height = altura;
+$.imagenSorteosHerramientas.height = altura;
+$.imagenCobroMovil.height = altura;
+$.imagenConsultaGanadores.height = altura;

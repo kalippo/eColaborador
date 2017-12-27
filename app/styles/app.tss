@@ -41,13 +41,10 @@
 	"backgroundColor": "#00dded"
 },
 ".imagenColaborador": {
-	"image": "/imagen.jpg",
-	"borderRadius": "50",
+	"image": "/Images/Home/app-ECOL-icono-logo.png",
 	"height": "100",
 	"width": "100",
-	"zIndex": "10",
-	"borderWidth": "9",
-	"borderColor": "white"
+	"zIndex": "10"
 },
 ".fuenteApp[platform=android]": {
 	"font": {fontFamily:'Montserrat-Regular'}

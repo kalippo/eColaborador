@@ -16,7 +16,6 @@ $.avisoPrivacidad.addEventListener('click', function(error) {
 	validacion.open();
 });
 
-
 $.terminos.addEventListener('click', function(error) {
 
 	var validacion = Alloy.createController("terminosCondiciones");

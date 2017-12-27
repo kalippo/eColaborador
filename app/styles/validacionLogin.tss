@@ -21,7 +21,7 @@
 },
 "#entrar": {
 	"title": "Entrar",
-	"top": "160",
+	"top": "160"
 },
 "#View_1": {
 	"borderWidth": "1",
