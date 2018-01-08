@@ -30,11 +30,11 @@
 	"class": "fondoBlanco"
 },
 "#vistaPrincipal": {
-	"layout": "horizontal",
+	"layout": "horizontal"
 },
 "#vistaPanel": {
 	"layout": "vertical",
-	"scrollType": "vertical",
+	"scrollType": "vertical"
 },
 "#vistaCalendario": {
 	"class": "panelOpciones",
@@ -58,16 +58,20 @@
 	"height": "150"
 },
 "#imagenMisClientes": {
-	"image": "/Images/Home/mis-clientes-btn.png"
+	"image": "/Images/Home/mis-clientes-btn.png",
+	"visible": "false"
 },
 "#imagenSorteosHerramientas": {
-	"image": "/Images/Home/sorteos-herramientas.png"
+	"image": "/Images/Home/sorteos-herramientas.png",
+	"visible": "false"
 },
 "#imagenEstadoCuenta": {
-	"image": "/Images/Home/estado-de-cuenta.png"
+	"image": "/Images/Home/estado-de-cuenta.png",
+	"visible": "false"
 },
 "#imagenConsultaGanadores": {
-	"image": "/Images/Home/consulta-ganadores.png"
+	"image": "/Images/Home/consulta-ganadores.png",
+	"visible": "false"
 },
 "#vistaContador": {
 	"height": "70",
@@ -85,7 +89,8 @@
 	"top": "5"
 },
 "#imagenCobroMovil": {
-	"image": "/Images/Home/cobro-movil.png"
+	"image": "/Images/Home/cobro-movil.png",
+	"visible": "false"
 },
 "#contadorDias": {
 	"text": "15"
@@ -155,7 +160,7 @@
 	"layout": "horizontal",
 	"left": "5",
 	"right": "5",
-	"width": "100%",
+	"width": "100%"
 },
 "#vistaD": {
 },

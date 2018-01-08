@@ -7,3 +7,24 @@ $.inicioSesion.addEventListener('click', function(error) {
 	validacion = validacion.getView();
 	validacion.open();
 });
+
+$.cancelar.addEventListener('click',function(error){
+	var validacion = Alloy.createController("index");
+	validacion = validacion.getView();
+	validacion.open();
+	
+});
+
+$.vistaAbajo.addEventListener('click',function(error){
+	var validacion = Alloy.createController("index");
+	validacion = validacion.getView();
+	validacion.open();
+	
+});
+
+$.VistaArriba.addEventListener('click',function(error){
+	var validacion = Alloy.createController("index");
+	validacion = validacion.getView();
+	validacion.open();
+	
+});

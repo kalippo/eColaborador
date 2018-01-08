@@ -2,6 +2,7 @@
     <Window class="container" layout="vertical">
         <View id="VistaArriba"/>
         <View class="fondoBlanco" id="vistaNotificacion">
+            <Label class="derecha fuenteApp h4" id="cancelar"/>
             <ImageView id="imagenHeader"/>
             <View id="View_1"/>
             <Label class="fuenteApp h4" id="mensageNotificacion"/>

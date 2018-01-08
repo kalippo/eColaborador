@@ -6,8 +6,8 @@
 ".boton": {
 	"width": "80%",
 	"height": "60",
-	"top": "10%",
-	"left": "10%",
+	"top": "10",
+	"left": "30",
 	"borderRadius": "30",
 	"color": "white",
 	"backgroundColor": "#2b7ef1"

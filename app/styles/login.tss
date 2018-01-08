@@ -18,22 +18,22 @@
 	"height": "20%",
 	"borderColor": "#E5E5E5",
 	"borderWidth": "1",
-	"top": "5%",
-	"left": "10%",
+	"top": "10",
+	"left": "30",
 	"borderRadius": "30",
 	"font": {fontSize:'17',fontFamily:'Montserrat-Regular',fontStyle:'normal',fontWeight:''},
 	"backgroundColor": "white",
 	"color": "black"
 },
 "#claveColaborador": {
-	"hintText": "Clave de Colaborador"
+	"hintText": "Clave de Colaborador",
 },
 "#password": {
 	"hintText": "Contraseña",
-	"passwordMask": "1"
+	"passwordMask": "1",
 },
 "#iniciarSesion": {
-	"title": "INICIAR SESIÓN"
+	"title": "INICIAR SESIÓN",
 },
 "#etiquetaComunicate": {
 	"text": "SI NO CUENTAS CON TU CONTRASEÑA COMUNICATE AL 12 34 56 78 PARA SOLICITAR TUS ACCESOS",
@@ -47,5 +47,5 @@
 	"top": "10%",
 	"height": "120",
 	"width": "120",
-	"image": "/Images/Home/app-ECOL-icono-logo.png",
+	"image": "/Images/Home/app-ECOL-icono-logo.png"
 }

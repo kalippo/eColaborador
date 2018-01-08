@@ -12,7 +12,7 @@
             </View>
         </View>
         <View id="vistaPrincipal">
-            <ScrollView class="fondoGris" id="vistaPanel" showHorizontalScrollIndicator="false" showVerticalScrollIndicator="true">
+            <ScrollView class="fondoGris" id="vistaPanel">
                 <View id="vistaCuentaRegresiva">
                     <Label class="etiquetaContador centrado fuenteRalewayBold h2" id="soloFaltan"/>
                     <Label class="etiquetaContador centrado fuenteRalewayBold h2" id="etiquetaSorteo"/>
@@ -47,7 +47,6 @@
                 <ImageView class="imagenOpciones" id="imagenEstadoCuenta"/>
                 <ImageView class="imagenOpciones" id="imagenConsultaGanadores"/>
                 <ImageView class="imagenOpciones" id="imagenCobroMovil"/>
-                <View id="View_1"/>
             </ScrollView>
         </View>
     </View>

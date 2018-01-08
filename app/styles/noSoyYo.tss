@@ -1,20 +1,15 @@
 ".container": {
 },
 
-//				VISTAS
-
 "#vistaNoSoyYo": {
+	"layout": "vertical",
+	"top": "120",
 },
-
-//				ETIQUETAS
-
 
 "#label_1": {
 	"text": "SI NO CUENTAS CON TUS DATOS DE ACCESO COMUNICATE AL 1515 3030 PARA SOLICITARLOS.",
-	"top": "25%",
+	"top": "25%"
 },
-
-//				BOTONES
 
 "#regresar": {
 	"title": "REGRESAR",

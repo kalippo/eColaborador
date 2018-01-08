@@ -16,11 +16,14 @@
 },
 "#mensageNotificacion": {
 	"text": "Para acceder a \"Mis clientes\" inicia sesion con tu clave de colaborador y contraseña",
-	color : "black"
+	"color": "black",
+	"left": "40",
+	"right": "40"
 },
 "#inicioSesion": {
 	"title": "Ir a inicio de sesión",
-	"backgroundColor": "#63dced"
+	"backgroundColor": "#63dced",
+	"right": "30",
 },
 "#View_2": {
 	"layout": "vertical",
@@ -30,10 +33,16 @@
 "#vistaAbajo": {
 	"backgroundColor": "#000000",
 	"height": "25%",
-	"opacity": ".7",
+	"opacity": ".7"
 },
 "#VistaArriba": {
 	"backgroundColor": "#000000",
 	"height": "25%",
 	"opacity": ".7"
+},
+"#cancelar": {
+	"text": "x",
+	"right": "5",
+	"color": "gray",
+	"left": "5"
 }
