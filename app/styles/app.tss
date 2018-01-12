@@ -1,7 +1,8 @@
 ".container[platform=android]": {
 },
 ".container[platform=ios]": {
-	"top": "25"
+	"top": "25",
+	"backgroundColor": "white"
 },
 ".boton": {
 	"width": "80%",
@@ -38,7 +39,7 @@
 },
 ".vistaTitulo": {
 	"height": "50",
-	"backgroundColor": "#00dded"
+	"backgroundColor": "#4bc3ff"
 },
 ".imagenColaborador": {
 	"image": "/Images/Home/app-ECOL-icono-logo.png",

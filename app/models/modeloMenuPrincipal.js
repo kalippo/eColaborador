@@ -9,7 +9,9 @@ exports.definition = {
 		adapter: {
 			type: "sql",
 			collection_name: "modeloMenuPrincipal",
-			idAttribute:'indice'
+			idAttribute:'indice',
+			comparatror:'indice'
+			
 		}
 	},
 	extendModel: function(Model) {

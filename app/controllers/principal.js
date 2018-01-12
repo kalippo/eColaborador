@@ -1,38 +1,11 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
 
-$.imagenMisClientes.addEventListener('click', function(error) {
+Alloy.Collections.menuPrincipal.reset();
 
-	var validacion = Alloy.createController("misClientes");
-	validacion = validacion.getView();
-	validacion.open();
-});
-
-$.vistaMenu.addEventListener('click', function(error) {
-
-	Alloy.Globals.toggleMenu();
-
-});
-
-$.imagenEstadoCuenta.addEventListener('click', function(error) {
-	var validacion = Alloy.createController("notificacionLogin");
-	validacion = validacion.getView();
-	validacion.open();
-});
-
-$.imagenSorteosHerramientas.addEventListener('click', function(error) {
-	var validacion = Alloy.createController("sorteosHerramientasPrincipal");
-	validacion = validacion.getView();
-	validacion.open();
-});
-
-var altura = Math.trunc($.imagenMisClientes.width * .4);
-
-$.imagenMisClientes.height = altura;
-$.imagenEstadoCuenta.height = altura;
-$.imagenSorteosHerramientas.height = altura;
-$.imagenCobroMovil.height = altura;
-$.imagenConsultaGanadores.height = altura;
+Alloy.Collections.menuPrincipal.comparator = function(model){
+	return model.get('indice');
+};
 
 Alloy.Globals.Cloud.PhotoCollections.showPhotos({
 	collection_id : "5a4e90755a276e961e1f55f6"
@@ -41,37 +14,56 @@ Alloy.Globals.Cloud.PhotoCollections.showPhotos({
 		if (!e.photos) {
 			alert('Success: No photos');
 		} else {
-			Alloy.Collections.menuPrincipal.reset();
 			
 			e.photos.forEach(function(photo) {
+				//Ti.API.info(photo.custom_fields.pantalla);
+				//Ti.API.info(JSON.stringify(photo.custom_fields.activo));
 				
-				var modeloMenu = Alloy.createModel('modeloMenuPrincipal'
-												,{activo: 1
-												,pantalla: 'photo.pantalla'
-												,indice: 1
-												,original: 'photo.urls.original'});
-				Alloy.Collections.menuPrincipal.add(modeloMenu);
-				Ti.API.info(modeloMenu);
+				var menus = Alloy.createModel('modeloMenuPrincipal',{activo: photo.custom_fields.activo
+						    ,pantalla: photo.custom_fields.pantalla
+						    ,indice: photo.custom_fields.indice
+						    ,original : photo.urls.original
+						   }) ;
 				
+					menus.save();
+				//listaMenu.fetch();
+				Alloy.Collections.menuPrincipal.push(menus);
+
+			});
+			
+			var menuActivo = Alloy.Collections.menuPrincipal.where({activo : true});
+			//Ti.API.info(JSON.stringify(menuActivo));
+			//Ti.API.info(JSON.stringify(Alloy.Collections.menuPrincipal,null,4));
+			//Ti.API.info(JSON.stringify(menuActivo,null,4));
+			
+			menuActivo.sort().forEach(function(opcion){
+				Ti.API.info(JSON.stringify(opcion.get('pantalla'),null,4));
 				var menu = Titanium.UI.createImageView({
-					image : photo.urls.original,
-					id : photo.custom_fields.pantalla,
+					image : opcion.get('original'),
+					id : opcion.get('pantalla'),
 					top : '5',
-					left : '5',
-					right : '5',
-					pantallaDestino : photo.custom_fields.pantalla
+					left : '10',
+					right : '10',
+					pantallaDestino : opcion.get('pantalla')
 				});
 				menu.addEventListener('click',clickMenu);
-				menu.width  = 350;
+				if (Ti.Platform.osname == 'android'){
+					menu.width  = 380;
+				}else{
+					menu.width  = 300;
+				}
 				menu.height = menu.width *.4;
 				$.vistaPanel.add(menu);
 				
 			});
+			
 		}
 	} else {
 		alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
 	}
 });
+
+
 
 
 
@@ -83,5 +75,3 @@ function clickMenu(){
 	}
 }
 
-Ti.API.info('xxx');
-Ti.API.info(JSON.stringify(Alloy.Collections.menuPrincipal) );
