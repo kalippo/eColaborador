@@ -1,12 +1,13 @@
 ".container": {
 },
 "#vistaTitulo": {
-	"layout": "horizontal",
+	"layout": "horizontal"
 },
 "#titulo": {
-	"text": "Mis Clientes",
+	"text": "Mis Clientes"
 },
 "#vistaClientes": {
+	"layout": "vertical",
 },
 ".icon": {
 	"width": "50dp",
@@ -17,23 +18,44 @@
 	"color": "black",
 	"left": "60dp",
 	"top": "10",
-	left:"60"
+	"left": "60"
 },
 "#listaCOntactos": {
-	backgroundColor:"white",
+	"backgroundColor": "white"
 },
 "#icon": {
 },
 "#buscar": {
 	"text": "\uf002",
 	"width": "50",
-	right:"10"
+	"right": "10"
 },
 "#regresar": {
 	"text": "\uf053",
-	"width": "50",
+	"width": "50"
 },
-"#edit":{
-	text:"\uf040",
-	right:"10"
+"#edit": {
+	"text": "\uf040",
+	"right": "10"
+},
+"#TabGroup": {
+},
+"#Tab_1": {
+},
+"#Window_1": {
+	"title": "Window",
+},
+"#Tab_2": {
+},
+"#Window_2": {
+	"title": "Window",
+},
+"#tabTodos": {
+	"title": "Todos",
+},
+"#tabSinAdeudo": {
+	"title": "Adeudo",
+},
+"#tabConAdeudo": {
+	"title": "Con Adeudo",
 }

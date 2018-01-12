@@ -37,7 +37,7 @@ Alloy.Globals.Cloud.PhotoCollections.showPhotos({
 			//Ti.API.info(JSON.stringify(menuActivo,null,4));
 			
 			menuActivo.sort().forEach(function(opcion){
-				Ti.API.info(JSON.stringify(opcion.get('pantalla'),null,4));
+				//Ti.API.info(JSON.stringify(opcion.get('pantalla'),null,4));
 				var menu = Titanium.UI.createImageView({
 					image : opcion.get('original'),
 					id : opcion.get('pantalla'),

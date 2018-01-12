@@ -1,0 +1,14 @@
+<Alloy>
+    <View class="container">
+        <ListView defaultItemTemplate="templateContactos" id="listaCOntactos">
+            <Templates>
+                <ItemTemplate name="templateContactos">
+                    <ImageView bindId="icon" class="icon" id="icon"/>
+                    <Label bindId="nombreContacto" id="nombreContacto"/>
+                    <Label bindId="edit" class="fa" id="edit"/>
+                </ItemTemplate>
+            </Templates>
+            <ListSection name="contactos"/>
+        </ListView>
+    </View>
+</Alloy>
