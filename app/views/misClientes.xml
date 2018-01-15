@@ -5,18 +5,19 @@
             <Label class="etiquetaTitulo fuenteApp h4 centrado" id="titulo"/>
             <Label class="etiquetaTitulo fa h4" id="buscar"/>
         </View>
-        <View id="vistaClientes">
-            <TabGroup>
-                <Tab id="tabTodos">
-                    <Window id="Window_1"/>
-                </Tab>
-                <Tab id="tabSinAdeudo">
-                    <Window id="Window_2"/>
-                </Tab>
-                <Tab id="tabConAdeudo">
-                    <Window id="Window_2"/>
-                </Tab>
-            </TabGroup>
-        </View>
+        <View id="vistaClientes"/>
     </Window>
+    <TabGroup class="fondoBlanco" id="tabClientes">
+        <Tab id="tabTodos">
+            <Window id="Window_1" backgroundColor="blue">
+            	  
+            	</Window>
+        </Tab>
+        <Tab id="tabSinAdeudo">
+            <Window id="Window_2"/>
+        </Tab>
+        <Tab id="tabConAdeudo">
+            <Window id="Window_2"/>
+        </Tab>
+    </TabGroup>
 </Alloy>

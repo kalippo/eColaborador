@@ -7,7 +7,7 @@
 	"text": "Mis Clientes"
 },
 "#vistaClientes": {
-	"layout": "vertical",
+	"layout": "vertical"
 },
 ".icon": {
 	"width": "50dp",
@@ -38,24 +38,27 @@
 	"text": "\uf040",
 	"right": "10"
 },
-"#TabGroup": {
+"#tabClientes": {
+	"top": "60",
 },
 "#Tab_1": {
 },
 "#Window_1": {
-	"title": "Window",
+	"title": "Window"
 },
 "#Tab_2": {
 },
 "#Window_2": {
-	"title": "Window",
+	"title": "Window"
 },
 "#tabTodos": {
 	"title": "Todos",
-},
+}
 "#tabSinAdeudo": {
 	"title": "Adeudo",
+
 },
 "#tabConAdeudo": {
 	"title": "Con Adeudo",
+	
 }
