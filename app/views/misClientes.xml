@@ -1,23 +1,56 @@
 <Alloy>
-    <Window class="container" layout="vertical">
+    <Window class="container fondoBlanco" layout="vertical">
         <View class="vistaTitulo" id="vistaTitulo">
             <Label class="etiquetaTitulo fa h4" id="regresar"/>
             <Label class="etiquetaTitulo fuenteApp h4 centrado" id="titulo"/>
-            <Label class="etiquetaTitulo fa h4" id="buscar"/>
+            <Label class="etiquetaTitulo fa h4 derecha" id="buscar"/>
         </View>
-        <View id="vistaClientes"/>
+        <ScrollView id="vistaClientes">
+            <View class="fondoBlanco" id="vistaOpciones">
+                <Button class="botonFiltro fondoBlanco" id="todos"/>
+                <Button class="botonFiltro fondoBlanco" id="conAdeudo"/>
+                <Button class="botonFiltro fondoBlanco" id="sinAdeudo"/>
+            </View>
+            <View id="vistaListaClientes">
+                <ScrollableView id="vistaFiltros">
+                    <View id="vistaTodos">
+                        <ListView defaultItemTemplate="templateContactos" id="listaCOntactos">
+                            <Templates>
+                                <ItemTemplate name="templateContactos">
+                                    <Label bindId="estatus" id="iconoEstatus" class="fa h4 "/>
+                                    <Label bindId="nombreContacto" id="nombreContacto"/>
+                                    <Label bindId="edit" class="fa" id="edit"/>
+                                </ItemTemplate>
+                            </Templates>
+                            <ListSection class="fondoBlanco" name="contactos"/>
+                        </ListView>
+                    </View>
+                    <View id="vistaConAdeudo">
+                        <ListView defaultItemTemplate="templateConAdeudo" id="listaConAdeudo">
+                            <Templates>
+                                <ItemTemplate name="templateConAdeudo">
+                                    <Label bindId="estatus" id="iconoEstatus" class="fa h4 "/>
+                                    <Label bindId="nombreContacto" id="nombreContacto"/>
+                                    <Label bindId="edit" class="fa" id="edit"/>
+                                </ItemTemplate>
+                            </Templates>
+                             <ListSection class="fondoBlanco" name="contactos"/>
+                        </ListView>
+                    </View>
+                    <View id="vistaSinAdeudo">
+                        <ListView defaultItemTemplate="templateSinAdeudo" id="listaSinAdeudo">
+                            <Templates>
+                                <ItemTemplate name="templateSinAdeudo">
+                                    <Label bindId="estatus" id="iconoEstatus" class="fa h4 "/>
+                                    <Label bindId="nombreContacto" id="Label_3"/>
+                                    <Label bindId="edit" class="fa" id="Label_4"/>
+                                </ItemTemplate>
+                            </Templates>
+                             <ListSection class="fondoBlanco" name="contactos"/>
+                        </ListView>
+                    </View>
+                </ScrollableView>
+            </View>
+        </ScrollView>
     </Window>
-    <TabGroup class="fondoBlanco" id="tabClientes">
-        <Tab id="tabTodos">
-            <Window id="Window_1" backgroundColor="blue">
-            	  
-            	</Window>
-        </Tab>
-        <Tab id="tabSinAdeudo">
-            <Window id="Window_2"/>
-        </Tab>
-        <Tab id="tabConAdeudo">
-            <Window id="Window_2"/>
-        </Tab>
-    </TabGroup>
 </Alloy>

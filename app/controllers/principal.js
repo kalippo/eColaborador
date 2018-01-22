@@ -5,12 +5,8 @@ Alloy.Collections.menuPrincipal.comparator = function(model){
 	return model.get('indice');
 };
 
-
-	obtenerImagenes();
-	crearMenuOpciones();
-
-
-
+Ti.API.info(Alloy.Collections.menuPrincipal.count);
+obtenerImagenes();
 
 
 
@@ -23,6 +19,7 @@ function obtenerImagenes(){
 			if (!e.photos) {
 				alert('Success: No photos');
 			} else {
+				 Alloy.Collections.menuPrincipal.reset();
 				e.photos.forEach(function(photo) {
 					var menus = Alloy.createModel('modeloMenuPrincipal',{activo: photo.custom_fields.activo
 							    ,pantalla: photo.custom_fields.pantalla
@@ -32,6 +29,8 @@ function obtenerImagenes(){
 						menus.save();
 					Alloy.Collections.menuPrincipal.push(menus);
 				});
+				 //Ti.API.info(JSON.stringify(Alloy.Collections.menuPrincipal,null,4));
+				 crearMenuOpciones(Alloy.Collections.menuPrincipal.where({activo : true}));
 			}
 		} else {
 			alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
@@ -39,8 +38,9 @@ function obtenerImagenes(){
 	});
 }
 
-function crearMenuOpciones(){
-	var menuActivo = Alloy.Collections.menuPrincipal.where({activo : true});
+function crearMenuOpciones(menuActivo){
+	//var menuActivo = Alloy.Collections.menuPrincipal.where({activo : true});
+	//Ti.API.info(JSON.stringify(menuActivo,null,4));
 	menuActivo.sort().forEach(function(opcion){
 		//Ti.API.info(JSON.stringify(opcion.get('pantalla'),null,4));
 		var menu = Titanium.UI.createImageView({

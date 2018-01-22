@@ -1,11 +1,11 @@
 ".container": {
 },
 "#vistaTitulo": {
-	"backgroundColor": "#feffff",
+	"backgroundColor": "#feffff"
 },
 "#vistaOpciones": {
-	"height": "170",
-	"layout": "vertical"
+	"height": "150",
+	"layout": "vertical",
 },
 "#vistaClientes": {
 },
@@ -19,7 +19,7 @@
 },
 "#importarTodos": {
 	"title": "IMPORTAR TODOS",
-	"backgroundColor": "#42cee9"
+	"backgroundColor": "#42cee9",
 },
 "#View_1": {
 },
@@ -36,18 +36,20 @@
 "#Label_3": {
 	"text": "<<",
 	"left": "10",
-	"top": "10"
+	"top": "10",
+	"height": "35"
 },
 "#Label_4": {
 	"text": "Listo",
 	"left": "5",
 	"top": "10",
 	"right": "10",
+	"height": "35",
 },
 "#Label_5": {
-	"text": "Mis Clientes",
+	"text": "Mis Compradores",
 	"left": "10",
 	"top": "10",
-	"width": "70%",
-	"right": "10"
+	"right": "10",
+	"height": "35",
 }

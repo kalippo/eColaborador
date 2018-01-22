@@ -1,10 +1,10 @@
-".container": {
-},
-"#vistaTitulo": {
-	"layout": "horizontal"
-},
+".container": {},
+"#vistaTitulo": {},
 "#titulo": {
-	"text": "Mis Clientes"
+	"text": "Mis Compradores",
+	"left": "40",
+	"right": "40",
+	"height": "35"
 },
 "#vistaClientes": {
 	"layout": "vertical"
@@ -12,53 +12,98 @@
 ".icon": {
 	"width": "50dp",
 	"height": "50dp",
-	"left": 0
+	"left": 50
 },
 "#nombreContacto": {
 	"color": "black",
 	"left": "60dp",
 	"top": "10",
-	"left": "60"
+	"left": "40"
 },
 "#listaCOntactos": {
 	"backgroundColor": "white"
 },
-"#icon": {
-},
+"#icon": {},
 "#buscar": {
 	"text": "\uf002",
-	"width": "50",
-	"right": "10"
+	"right": "10",
+	"left": "200",
+	"height": "35"
 },
 "#regresar": {
 	"text": "\uf053",
-	"width": "50"
+	"width": "40",
+	"height": "40"
 },
 "#edit": {
 	"text": "\uf040",
-	"right": "10"
+	"right": "10",
+	"color": "black"
 },
-"#tabClientes": {
-	"top": "60",
+"#vistaOpciones": {
+	"height": "50",
+	"layout": "horizontal"
 },
-"#Tab_1": {
-},
-"#Window_1": {
-	"title": "Window"
-},
-"#Tab_2": {
-},
-"#Window_2": {
-	"title": "Window"
-},
-"#tabTodos": {
+"#todos": {
 	"title": "Todos",
-}
-"#tabSinAdeudo": {
-	"title": "Adeudo",
-
+	"left": "5",
+	"borderWidth": "1",
+	"color": "#000000"
 },
-"#tabConAdeudo": {
+"#conAdeudo": {
 	"title": "Con Adeudo",
-	
+	"borderWidth": "0",
+	"color": "#6dace7"
+},
+"#sinAdeudo": {
+	"title": "Sin Adeudo",
+	"borderWidth": "0"
+},
+".botonFiltro": {
+	"width": "32%",
+	"height": "90%",
+	"left": "1",
+	"top": "5",
+	"borderColor": "white"
+},
+"#vistaTodos": {},
+"#vistaListaClientes": {},
+"#vistaFiltros": {},
+"#vistaConAdeudo": {},
+"#vistaSinAdeudo": {},
+"#listaConAdeudo": {
+	"backgroundColor": "white"
+},
+"#ImageView_1": {},
+"#Label_1": {
+	"text": "Label",
+	"color": "black",
+	"left": "60",
+	"top": "10"
+},
+"#Label_2": {
+	"text": "\uf040",
+	"right": "10",
+	"color": "black"
+},
+"#listaSinAdeudo": {
+	"backgroundColor": "white"
+},
+"#ImageView_2": {},
+"#Label_3": {
+	"text": "Label",
+	"color": "black",
+	"left": "60",
+	"top": "10"
+},
+"#Label_4": {
+	"text": "\uf040",
+	"right": "10",
+	"color": "black"
+},
+"#iconoEstatus":{
+	width: "40",
+	height: "40",
+	text: "\uf111",
+	"left": 10
 }

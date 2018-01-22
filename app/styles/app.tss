@@ -25,7 +25,6 @@
 ".etiquetaTitulo": {
 	"textAlign": Ti.UI.TEXT_ALIGNMENT_CENTER,
 	"color": "white",
-	"width": "170",
 	"left": "5",
 	"top": "10"
 },

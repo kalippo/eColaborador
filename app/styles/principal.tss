@@ -21,13 +21,14 @@
 ".vistaOpciones": {
 	"width": "40",
 	"height": "40",
-	"top": "5"
+	"top": "10"
 },
 "#vistaLogo": {
-	"left": "10",
+	"left": "50",
 	"width": "65%",
-	"layout": "horizontal",
-	"class": "fondoBlanco"
+	"class": "fondoBlanco",
+	"right": "50",
+	"top": "10",
 },
 "#vistaPrincipal": {
 	"layout": "horizontal"
@@ -104,15 +105,14 @@
 	"text": "\uf1d8",
 	"width": "40",
 	"height": "40",
-	"right": "5",
-	"left": "5"
+	"right": "10",
+	"left": "5",
 },
 "#titulo": {
 	"image": "/Images/Home/ecol-top.png",
 	"height": "30",
 	"width": "120",
-	"left": "25%",
-	"top": "10"
+	"left": "25%"
 },
 "#contadorDias": {
 	"text": "15"
@@ -157,10 +157,9 @@
 	"color": "black"
 },
 "#vistaTitulo": {
-	"layout": "horizontal",
 	"left": "5",
 	"right": "5",
-	"width": "100%"
+	"width": "100%",
 },
 "#vistaD": {
 },
@@ -186,10 +185,10 @@
 	"text": "SEGUNDOS"
 },
 "#vistaMenu": {
-	"left": "10"
+	"left": "10",
 },
 "#vistaPostales": {
-	"right": "5"
+	"right": "10",
 },
 "#View_1": {
 }

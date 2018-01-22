@@ -1,50 +1,48 @@
 <Alloy>
-	<View class="container fondoGris" layout="vertical">
-		<View class="vistaTitulo fondoGris" id="vistaTitulo">
-			<View class="vistaOpciones" id="vistaMenu">
-				<Label class="fa colorAzul h6 " id="iconoMenu"/>
-			</View>
-			<View id="vistaLogo">
-				<ImageView id="titulo"/>
-			</View>
-			<View class="vistaOpciones" id="vistaPostales">
-				<Label class="fa h6 colorTurquesa " id="postales"/>
-			</View>
-		</View>
-		<View id="vistaPrincipal">
-			<ScrollView class="fondoGris" id="vistaPanel">
-				<View id="vistaCuentaRegresiva">
-					<Label class="etiquetaContador centrado fuenteRalewayBold h2" id="soloFaltan"/>
-					<Label class="etiquetaContador centrado fuenteRalewayBold h2" id="etiquetaSorteo"/>
-					<View id="vistaContador">
-						<View class="contador" id="vistaD">
-							<Label class="fuenteRalewayBold h4 etiquetaContador centrado" id="contadorDias"/>
-							<Label class="fuenteRaleway diahoraminuto etiquetaContador centrado h2" id="dias"/>
-						</View>
-						<Label class="fuenteRalewayBold h4  etiquetaContador" id="separador1"/>
-						<View class="contador" id="vistaH">
-							<Label class="fuenteRalewayBold h4 etiquetaContador" id="contadorHoras"/>
-							<Label class="fuenteRaleway diahoraminuto etiquetaContador centrado h2" id="horas"/>
-						</View>
-						<Label class="fuenteRaleway h4 etiquetaContador" id="separador2"/>
-						<View class="contador" id="vistaM">
-							<Label class="fuenteRalewayBold h4 etiquetaContador" id="contadorMinutos"/>
-							<Label class="fuenteRaleway diahoraminuto etiquetaContador centrado h2" id="minutos"/>
-						</View>
-						<Label class="fuenteRalewayBold h4 etiquetaContador" id="separador3"/>
-						<View class="contador" id="vistaS">
-							<Label class="fuenteRalewayBold h4 etiquetaContador" id="contadorSegundos"/>
-							<Label class="fuenteRaleway diahoraminuto etiquetaContador centrado h2" id="segundos"/>
-						</View>
-					</View>
-				</View>
-				<View id="vistaCalendario">
-					<ImageView class="centrado" id="iconoCalendario"/>
-					<Label class="fuenteApp" id="Label_1"/>
-				</View>
-				
-
-			</ScrollView>
-		</View>
-	</View>
+    <View class="container fondoGris" layout="vertical">
+        <View class="vistaTitulo fondoGris" id="vistaTitulo">
+            <View class="vistaOpciones" id="vistaMenu">
+                <Label class="fa colorAzul h6 " id="iconoMenu"/>
+            </View>
+            <View id="vistaLogo">
+                <ImageView id="titulo"/>
+            </View>
+            <View class="vistaOpciones" id="vistaPostales">
+                <Label class="fa h6 colorTurquesa derecha " id="postales"/>
+            </View>
+        </View>
+        <View id="vistaPrincipal">
+            <ScrollView class="fondoGris" id="vistaPanel">
+                <View id="vistaCuentaRegresiva">
+                    <Label class="etiquetaContador centrado fuenteRalewayBold h2" id="soloFaltan"/>
+                    <Label class="etiquetaContador centrado fuenteRalewayBold h2" id="etiquetaSorteo"/>
+                    <View id="vistaContador">
+                        <View class="contador" id="vistaD">
+                            <Label class="fuenteRalewayBold h4 etiquetaContador centrado" id="contadorDias"/>
+                            <Label class="fuenteRaleway diahoraminuto etiquetaContador centrado h2" id="dias"/>
+                        </View>
+                        <Label class="fuenteRalewayBold h4  etiquetaContador" id="separador1"/>
+                        <View class="contador" id="vistaH">
+                            <Label class="fuenteRalewayBold h4 etiquetaContador" id="contadorHoras"/>
+                            <Label class="fuenteRaleway diahoraminuto etiquetaContador centrado h2" id="horas"/>
+                        </View>
+                        <Label class="fuenteRaleway h4 etiquetaContador" id="separador2"/>
+                        <View class="contador" id="vistaM">
+                            <Label class="fuenteRalewayBold h4 etiquetaContador" id="contadorMinutos"/>
+                            <Label class="fuenteRaleway diahoraminuto etiquetaContador centrado h2" id="minutos"/>
+                        </View>
+                        <Label class="fuenteRalewayBold h4 etiquetaContador" id="separador3"/>
+                        <View class="contador" id="vistaS">
+                            <Label class="fuenteRalewayBold h4 etiquetaContador" id="contadorSegundos"/>
+                            <Label class="fuenteRaleway diahoraminuto etiquetaContador centrado h2" id="segundos"/>
+                        </View>
+                    </View>
+                </View>
+                <View id="vistaCalendario">
+                    <ImageView class="centrado" id="iconoCalendario"/>
+                    <Label class="fuenteApp" id="Label_1"/>
+                </View>
+            </ScrollView>
+        </View>
+    </View>
 </Alloy>
