@@ -35,7 +35,6 @@ $.vistaFiltros.addEventListener('scroll', function(e) {
 });
 
 function getClientes() {
-
 	var url = "https://randomuser.me/api/?results=15";
 	var client = Ti.Network.createHTTPClient({
 		onload : function(e) {

@@ -124,6 +124,24 @@
 ".h6[platform=ios]": {
 	"font": {fontSize:'24'}
 },
+".h1[platform=ios formFactor=tablet]": {
+	"font": {fontSize:'19'}
+},
+".h2[platform=ios formFactor=tablet]": {
+	"font": {fontSize:'20'}
+},
+".h3[platform=ios formFactor=tablet]": {
+	"font": {fontSize:'25'}
+},
+".h4[platform=ios formFactor=tablet]": {
+	"font": {fontSize:'28'}
+},
+".h5[platform=ios formFactor=tablet]": {
+	"font": {fontSize:'31'}
+},
+".h6[platform=ios formFactor=tablet]": {
+	"font": {fontSize:'34'}
+},
 ".backgroundLogin": {
 	"backgroundImage": "/Images/Home/BG-blue-v1.png"
 }

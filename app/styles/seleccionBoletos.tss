@@ -1,0 +1,77 @@
+".container": {
+},
+"#vistaNotificacion": {
+	"height": "400",
+	"layout": "vertical",
+	"opacity": "1",
+	"left": "10",
+	"right": "10"
+},
+"#inicioSesion": {
+	"title": "Aceptar",
+	"backgroundColor": "#63dced",
+	"right": "30"
+},
+"#sorteosActivos": {
+	"layout": "vertical",
+	"height": "150",
+},
+"#vistaAbajo": {
+	"height": "20%",
+	"opacity": ".7",
+	"backgroundColor": "#494d49"
+},
+"#VistaArriba": {
+	"height": "20%",
+	"opacity": ".7",
+	"backgroundColor": "#4b4d4b"
+},
+"#cancelar": {
+	"text": "x",
+	"right": "5",
+	"color": "gray",
+	"left": "200"
+},
+"#View_1": {
+	"height": "40"
+},
+"#titulo": {
+	"text": "Selecciona tus boletos",
+	"right": "50",
+	"left": "50",
+	"top": "10",
+	"color": "#000000"
+},
+"#View_2": {
+	"height": "100",
+	"layout": "horizontal",
+	"top": "10",
+	"left": "30",
+	"right": "30"
+},
+"#botonMenos": {
+	"title": "-",
+	"backgroundColor": "#929292",
+	"color": "#feffff",
+	"left": "0"
+},
+"#cantidadBoletos": {
+	"text": "1",
+	"width": "56%",
+	"color": "#000000"
+},
+"#botonMas": {
+	"title": "+",
+	"backgroundColor": "#929292",
+	"color": "#feffff"
+},
+".botonCantidad": {
+	"height": "100%",
+	"left": "2%",
+	"width": "20%",
+	"borderColor": "#000000",
+	"borderRadius": "15",
+	"borderWidth": "2"
+},
+"#vistaSeleccionarSorteo": {
+}

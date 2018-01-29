@@ -318,7 +318,8 @@ exports.toggleMenu = function() {
 };
 
 Alloy.Globals.toggleMenu = function() {
-	if (menuOpen) {
+	Ti.API.log(Alloy.isTablet);
+	if (menuOpen && Alloy.isTablet==0) {
 		closeMenu();
 	} else {
 		openMenu();

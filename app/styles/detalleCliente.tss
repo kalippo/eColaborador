@@ -1,10 +1,11 @@
 ".container": {
 },
 "#vistaTitulo": {
-	"layout": "horizontal"
 },
 "#titulo": {
-	"text": "Detalle"
+	"text": "Detalle",
+	"right": "50",
+	"left": "50",
 },
 "#vistaDetalleCliente": {
 	"layout": "vertical",
@@ -17,15 +18,14 @@
 	"layout": "vertical"
 },
 "#vistaEstatusPago": {
-	"height": "9%",
-	"layout": "horizontal"
+	"height": "50"
 },
 "#vistaBoletosEntregados": {
 	"height": "19%",
 	"layout": "vertical"
 },
 "#vistaAbonos": {
-	"height": "30%",
+	"height": "15%",
 	"layout": "vertical"
 },
 "#vistaNotas": {
@@ -42,13 +42,11 @@
 ".etiquetasDetalle": {
 	"color": "black",
 	"top": "15",
-	"left": "20"
+	"left": "10"
 },
 ".contenidoDetalle": {
 	"color": "gray",
-	"left": "25",
-	"font": {fontSize:'15'},
-	
+	"left": "25"
 },
 "#estatusDePago": {
 	"text": "Estatus de Pago"
@@ -56,7 +54,7 @@
 "#vistaTituloPanel": {
 	"height": "40"
 },
-"#boletosEntregados": {
+"#agregarBoletos": {
 	"text": "Boletos Entregados",
 	"class": "etiquetasDetalle"
 },
@@ -72,11 +70,10 @@
 	"height": "25%"
 },
 "#vistaTituloAbonos": {
-	"height": "20%"
+	"height": "40"
 },
 "#tituloAbonos": {
-	"text": "Abonos",
-	"height": "15"
+	"text": "Abonos"
 },
 "#tituloAbonos": {
 },
@@ -86,8 +83,6 @@
 "#boletos": {
 	"left": "5",
 	"text": "Boletos"
-},
-"#ListView_1": {
 },
 "#ultimaActualizacion": {
 	"text": "Actualizado el 16 de Noviembre de 2017",
@@ -113,7 +108,6 @@
 "#nombreCliente": {
 	"text": "Pedro Pablo Miramontes Valencia",
 	"class": "fuenteApp",
-	"font": {fontSize:'17',fontFamily:'',fontStyle:'',fontWeight:''},
 	"textAlign": Ti.UI.TEXT_ALIGNMENT_CENTER,
 	"color": "black",
 	"top": "5"
@@ -121,17 +115,16 @@
 "#telefonoCliente": {
 	"text": "6449 999999",
 	"color": "gray",
-	"font": {fontSize:'16',fontFamily:'',fontStyle:'',fontWeight:''},
 	"autoLink": Ti.UI.AUTOLINK_PHONE_NUMBERS,
 	"top": "5"
 },
 "#View_1": {
 	"backgroundColor": "#66ccff",
-	"borderRadius": "30",
+	"borderRadius": "10",
 	"bottom": "10",
-	"left": "10",
 	"right": "10",
-	"top": "10"
+	"top": "10",
+	"width": "100"
 },
 "#estatus": {
 	"text": "Pagado",
@@ -140,8 +133,40 @@
 "#buscar": {
 	"text": "\uf0e0",
 	"width": "50",
+	"left": "250",
+	"right": "10",
 },
 "#regresar": {
 	"text": "\uf053",
-	"width": "50"
+	"width": "50",
+},
+"#agregarBoletos": {
+	"text": "\uf0fe",
+	"right": "10",
+	"top": "15",
+	"left": "10"
+},
+"#Label_2": {
+	"text": "\uf0fe",
+	"right": "10",
+	"top": "5",
+	"left": "10",
+	"color": "#000000"
+},
+"#boletosEntregados": {
+	"text": "Boletos entregados"
+},
+"#seleccionarBoletos": {
+	"left": "10",
+	"right": "10",
+	"text": "\uf0fe",
+	"top": "5",
+	"color": "#000000"
+},
+"#Label_3": {
+	"text": "Ver el historial de pagos",
+	"left": "10",
+	"right": "10",
+	"top": "20",
+	"class": "fuenteApp h2 centrado"
 }

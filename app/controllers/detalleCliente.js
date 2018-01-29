@@ -9,3 +9,12 @@ $.regresar.addEventListener('click', function(error) {
 	inicio.open();
 
 });
+
+
+$.seleccionarBoletos.addEventListener('click', function(error) {
+
+	var inicio = Alloy.createController("seleccionBoletos");
+	inicio = inicio.getView();
+	inicio.open();
+
+});

@@ -37,3 +37,6 @@ var collectionMenuPrincipal = Backbone.Collection.extend();
 var menuPrincipal = new collectionMenuPrincipal();
 Alloy.Collections.menuPrincipal = menuPrincipal;
 
+var collectionSorteosActivos = Backbone.Collection.extend();
+var sorteosActivos = new collectionSorteosActivos();
+Alloy.Collections.sorteosActivos = sorteosActivos;

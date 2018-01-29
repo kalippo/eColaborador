@@ -3,35 +3,37 @@
         <View class="vistaTitulo" id="vistaTitulo">
             <Label class="etiquetaTitulo fa h4" id="regresar"/>
             <Label class="etiquetaTitulo fuenteApp h4 centrado" id="titulo"/>
-            <Label class="etiquetaTitulo fa h4" id="buscar"/>
+            <Label class="etiquetaTitulo fa h4 derecha" id="buscar"/>
         </View>
         <ScrollView class="fondoGris" id="vistaDetalleCliente">
             <View class="panelDetalles" id="vistaDatosContacto">
                 <ImageView class="imagenColaborador" id="fotoCliente"/>
-                <Label class="fuenteApp" id="nombreCliente"/>
-                <Label class="fuenteApp" id="telefonoCliente"/>
+                <Label class="fuenteApp h2" id="nombreCliente"/>
+                <Label class="fuenteApp h2" id="telefonoCliente"/>
             </View>
             <View class="panelDetalles" id="vistaEstatusPago">
-                <Label class="etiquetasDetalle" id="estatusDePago"/>
+                <Label class="etiquetasDetalle h3 fuenteApp" id="estatusDePago"/>
                 <View id="View_1">
                     <Label class="fuenteApp" id="estatus"/>
                 </View>
             </View>
             <View class="panelDetalles" id="vistaBoletosEntregados">
                 <View id="vistaTituloPanel">
-                    <Label class="etiquetasDetalle" id="boletosEntregados"/>
+                    <Label class="etiquetasDetalle h3 fuenteApp" id="boletosEntregados"/>
+                    <Label class="fa h4 derecha  etiquetaDetalle fuenteApp" id="seleccionarBoletos"/>
                 </View>
                 <View id="vistaCantidadBoletos" layout="horizontal">
                     <Label class="contenidoDetalle fuenteApp" id="cantidadBoletos"/>
-                    <Label class="contenidoDetalle fuenteApp" id="boletos"/>
+                    <Label class="contenidoDetalle fuenteApp h2" id="boletos"/>
                 </View>
-                <Label class="etiquetasDetalle" id="sorteos"/>
+                <Label class="etiquetasDetalle h2 fuenteApp" id="sorteos"/>
             </View>
             <View class="panelDetalles" id="vistaAbonos">
                 <View id="vistaTituloAbonos">
-                    <Label class="etiquetasDetalle fuenteApp" id="tituloAbonos"/>
+                    <Label class="etiquetasDetalle h3 fuenteApp" id="tituloAbonos"/>
+                    <Label class="fa h4 derecha " id="Label_2"/>
                 </View>
-                <ListView id="ListView_1"/>
+                <Label class="h2 fuenteApp centrado colorGris" id="Label_3"/>
             </View>
             <View class="panelDetalles" id="vistaNotas">
                 <View id="tituloAbonos">
