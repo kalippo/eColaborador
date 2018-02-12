@@ -1,25 +1,45 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
 
-$.cancelar.addEventListener('click', function(error) {
-	var validacion = Alloy.createController("detalleCliente");
-	validacion = validacion.getView();
-	validacion.open();
+//$.botonMas.height = $.botonMas.width;
+
+$.cantidadBoletos.text = parseInt($.cantidadBoletos.boletos) + " Boletos";
+
+obetnerSorteos();
+
+if (Alloy.Collections.sorteosActivos.count !=0){
+	obtenerImagenes();
+	
+}else{
+	crearListaSorteos(Alloy.Collections.sorteosActivos.where({
+					activo : true
+			}));
+}
+
+$.regresar.addEventListener('click', function(error) {
+
+	var inicio = Alloy.createController("detalleCliente");
+	inicio = inicio.getView();
+	inicio.open();
 
 });
 
+
 $.botonMas.addEventListener('click', function(error) {
-	$.cantidadBoletos.text = parseInt($.cantidadBoletos.text) + 1;
+	$.cantidadBoletos.boletos = parseInt($.cantidadBoletos.boletos) + 1;
+	$.cantidadBoletos.text = parseInt($.cantidadBoletos.boletos) + " Boletos";
+
 
 });
 
 $.botonMenos.addEventListener('click', function(error) {
 	if (parseInt($.cantidadBoletos.text) > 1) {
-		$.cantidadBoletos.text = parseInt($.cantidadBoletos.text) - 1;
-	}
-}); 
+		$.cantidadBoletos.boletos = parseInt($.cantidadBoletos.boletos) - 1;
+		$.cantidadBoletos.text = parseInt($.cantidadBoletos.boletos) + " Boletos";
 
-obtenerImagenes();
+	}
+});
+
 
 
 function obtenerImagenes() {
@@ -30,50 +50,91 @@ function obtenerImagenes() {
 			if (!e.photos) {
 				//agregar mensaje de que no hay sorteos activos
 			} else {
-				Alloy.Collections.menuPrincipal.reset();
+				Alloy.Collections.sorteosActivos.reset();
 				e.photos.forEach(function(photo) {
 					var sorteo = Alloy.createModel('modeloSorteo', {
 						activo : photo.custom_fields.activo,
 						fecha : photo.custom_fields.fecha,
 						numeroSorteo : photo.custom_fields.numeroSorteo,
 						original : photo.urls.original,
-						miniatura :  photo.urls.original,
+						miniatura : photo.urls.original,
 						nombreSorteo : ''
-						
+
 					});
 					sorteo.save();
 					Alloy.Collections.sorteosActivos.push(sorteo);
+
 				});
-				Ti.API.info(JSON.stringify(sorteo,null,4));
-				crearListaSorteos(Alloy.Collections.menuPrincipal.where({
+				//Ti.API.info(JSON.stringify(Alloy.Collections.sorteosActivos,null,4));
+				crearListaSorteos(Alloy.Collections.sorteosActivos.where({
 					activo : true
 				}));
 			}
 		} else {
-			alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
+			//alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
 		}
 	});
 }
 
 function crearListaSorteos(sorteos) {
 	//var menuActivo = Alloy.Collections.menuPrincipal.where({activo : true});
-	//Ti.API.info(JSON.stringify(menuActivo,null,4));
+	//Ti.API.info(JSON.stringify(sorteos,null,4));
+	var paginas = [];
+	//Ti.API.info(JSON.stringify(paginas, null, 4));
 	sorteos.sort().forEach(function(opcion) {
-		//Ti.API.info(JSON.stringify(opcion.get('pantalla'),null,4));
-		var sorteo = Titanium.UI.createImageView({
+		//Ti.API.info(JSON.stringify(opcion,null,4));
+		var imagenSorteo = Titanium.UI.createImageView({
 			image : opcion.get('original'),
-			id : opcion.get('pantalla'),
-			top : '5',
+			top : '50',
 			left : '10',
 			right : '10'
-			
-		});
-		menu.addEventListener('click', clickMenu);
-		
-		sorteo.width = 200;
-		sorteo.height = sorteo.width * .4;
 
-		$.vistaSeleccionarSorteo.add(sorteo);
+		});
+		
+		var vistaSorteo = Titanium.UI.createView({
+			background : "blue"
+		});
+
+		vistaSorteo.add(imagenSorteo);
+		paginas.push(vistaSorteo);
+		//menu.addEventListener('click', clickMenu);
+
 
 	});
+		//Ti.API.info(JSON.stringify(paginas, null, 4));
+		$.vistaSeleccionarSorteo.views = paginas;
+	
 }
+
+
+function removeAllChildren(viewObject){
+    //copy array of child object references because view's "children" property is live collection of child object references
+    var children = viewObject.children.slice(0);
+ 
+    for (var i = 0; i < children.length; ++i) {
+        viewObject.remove(children[i]);
+    }
+}
+
+
+function obetnerSorteos(){
+	
+	Alloy.Globals.Cloud.PhotoCollections.showSubcollections({
+    	page: 1,
+	    per_page: 20,
+	    collection_id: "5a57d3521ceda35a3b5c74eb"
+	}, function (e) {
+	    if (e.success) {
+	        for (var i = 0; i < e.collections.length; i++) {
+	            var collection = e.collections[i];
+	            Ti.API.info(JSON.stringify(collection, null, 4));
+	        }
+	    } else {
+	        alert('Error:\n' +
+	            ((e.error && e.message) || JSON.stringify(e)));
+	    }
+	});
+	
+	
+}
+

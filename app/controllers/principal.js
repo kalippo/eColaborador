@@ -52,7 +52,7 @@ function crearMenuOpciones(menuActivo) {
 			pantallaDestino : opcion.get('pantalla')
 		});
 		menu.addEventListener('click', clickMenu);
-		var anchoPantalla = Ti.Platform.displayCaps.platformWidth - 60;
+		var anchoPantalla = Ti.Platform.displayCaps.platformWidth - 20;
 
 		menu.width = anchoPantalla;
 		menu.height = menu.width * .4;

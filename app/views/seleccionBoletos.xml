@@ -1,21 +1,21 @@
 <Alloy>
-    <Window backgroundColor="#4c4d4c" layout="vertical">
-        <View id="VistaArriba"/>
+    <Window backgroundColor="#4c4d4c" class="container" layout="vertical">
+        <View class="vistaTitulo" id="View_1">
+            <Label class="fuenteApp h4 centrado " id="titulo"/>
+            <Label class="fuenteApp h5" id="regresar"/>
+        </View>
         <View class="fondoBlanco" id="vistaNotificacion">
-            <View id="View_1">
-                <Label class="fuenteApp h3 centrado colorNegro" id="titulo"/>
-                <Label class="derecha fuenteApp h4" id="cancelar"/>
-            </View>
+            <Label class="fuenteApp h5 centrado" id="Label_2"/>
             <View id="sorteosActivos">
-                <ScrollView id="vistaSeleccionarSorteo"/>
+                <ScrollableView id="vistaSeleccionarSorteo"/>
             </View>
+            <Label class="fuenteApp h6 centrado" id="Label_1"/>
             <View id="View_2">
                 <Button class="botonCantidad h6" id="botonMenos"/>
-                <Label class="botonCantidad h6 centrado" id="cantidadBoletos"/>
+                <Label boletos="10" class="botonCantidad h6 centrado" id="cantidadBoletos"/>
                 <Button class="botonCantidad h6" id="botonMas"/>
             </View>
             <Button class="boton h5 fuenteApp" id="inicioSesion"/>
         </View>
-        <View id="vistaAbajo"/>
     </Window>
 </Alloy>

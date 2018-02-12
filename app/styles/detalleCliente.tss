@@ -5,7 +5,7 @@
 "#titulo": {
 	"text": "Detalle",
 	"right": "50",
-	"left": "50",
+	"left": "50"
 },
 "#vistaDetalleCliente": {
 	"layout": "vertical",
@@ -25,8 +25,7 @@
 	"layout": "vertical"
 },
 "#vistaAbonos": {
-	"height": "15%",
-	"layout": "vertical"
+	"width": "45%"
 },
 "#vistaNotas": {
 	"height": "20%",
@@ -70,10 +69,8 @@
 	"height": "25%"
 },
 "#vistaTituloAbonos": {
-	"height": "40"
-},
-"#tituloAbonos": {
-	"text": "Abonos"
+	"left": "1",
+	"width": "50%"
 },
 "#tituloAbonos": {
 },
@@ -134,11 +131,11 @@
 	"text": "\uf0e0",
 	"width": "50",
 	"left": "250",
-	"right": "10",
+	"right": "10"
 },
 "#regresar": {
 	"text": "\uf053",
-	"width": "50",
+	"width": "50"
 },
 "#agregarBoletos": {
 	"text": "\uf0fe",
@@ -146,27 +143,65 @@
 	"top": "15",
 	"left": "10"
 },
-"#Label_2": {
-	"text": "\uf0fe",
-	"right": "10",
-	"top": "5",
-	"left": "10",
-	"color": "#000000"
-},
 "#boletosEntregados": {
 	"text": "Boletos entregados"
 },
 "#seleccionarBoletos": {
 	"left": "10",
 	"right": "10",
-	"text": "\uf0fe",
+	"text": "\uf055",
 	"top": "5",
-	"color": "#000000"
+	"color": "#66ccff"
 },
-"#Label_3": {
-	"text": "Ver el historial de pagos",
-	"left": "10",
-	"right": "10",
-	"top": "20",
+"#historial": {
+	"text": "Ver Historial >>",
+	"left": "2",
+	"right": "5",
+	"top": "50",
 	"class": "fuenteApp h2 centrado"
+},
+"#saldarDeuda": {
+	"text": "\uf14b",
+	"top": "15",
+	"left": "10",
+	"right": "5"
+},
+"#pagoPendiente": {
+	"text": "Pago Pendiente",
+	"left": "10",
+	"top": "15"
+},
+"#agregarPago": {
+	"title": "Agregar Pago",
+	"left": "30",
+	"top": "8",
+	"backgroundColor": "#66ccff",
+	"borderRadius": "10",
+	"color": "#feffff",
+	"height": "25",
+	"right": "10",
+	"class": "h3"
+},
+"#Label_4": {
+	"text": "Label",
+	"left": "4%",
+	"top": "59%"
+},
+"#View_2": {
+	"width": "50%",
+	"left": "35",
+	"top": "66",
+	"borderWidth": "1",
+	"height": "1",
+	"right": "4",
+},
+"#pendiente": {
+	"width": "55%"
+},
+"#vistaDeudaPagos              ": {
+	"height": "19%",
+	"layout": "horizontal"
+},
+"#eliminarContacto ": {
+	"width": "50%"
 }

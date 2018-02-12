@@ -1,12 +1,12 @@
 exports.definition = {
 	config: {
 		columns: {
-		    "activo": "boolean",
-		    "fecha": "date",
-		    "numeroSorteo": "int",
-		    "original": "string",
-		    "miniatura": "string",
-		    "nombreSorteo": "string"
+		    "activo": "integer",
+		    "fecha": "text",
+		    "numeroSorteo": "integer",
+		    "original": "text",
+		    "miniatura": "text",
+		    "nombreSorteo": "text"
 		},
 		adapter: {
 			type: "sql",
