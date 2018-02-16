@@ -14,14 +14,14 @@
 },
 "#vistaDatosContacto": {
 	"backgroundColor": "#ffffff",
-	"height": "30%",
-	"layout": "vertical"
+	"height": "35%",
+	"layout": "vertical",
 },
 "#vistaEstatusPago": {
 	"height": "50"
 },
 "#vistaBoletosEntregados": {
-	"height": "19%",
+	"height": "30%",
 	"layout": "vertical"
 },
 "#vistaAbonos": {
@@ -66,7 +66,7 @@
 	"top": "1%"
 },
 "#vistaCantidadBoletos": {
-	"height": "25%"
+	"height": "30%"
 },
 "#vistaTituloAbonos": {
 	"left": "1",
@@ -100,7 +100,7 @@
 	"image": "/imagen.jpg",
 	"borderWidth": "9",
 	"borderColor": "white",
-	"top": "10"
+	"top": "5",
 },
 "#nombreCliente": {
 	"text": "Pedro Pablo Miramontes Valencia",
@@ -174,7 +174,7 @@
 "#agregarPago": {
 	"title": "Agregar Pago",
 	"left": "30",
-	"top": "8",
+	"top": "10",
 	"backgroundColor": "#66ccff",
 	"borderRadius": "10",
 	"color": "#feffff",
@@ -193,7 +193,7 @@
 	"top": "66",
 	"borderWidth": "1",
 	"height": "1",
-	"right": "4",
+	"right": "4"
 },
 "#pendiente": {
 	"width": "55%"
@@ -204,4 +204,10 @@
 },
 "#eliminarContacto ": {
 	"width": "50%"
+},
+"#vistaBoletosAsignados": {
+	"height": "30%",
+	"layout": "horizontal"
+},
+"#View_3": {
 }

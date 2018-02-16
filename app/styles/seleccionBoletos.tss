@@ -9,7 +9,7 @@
 	"backgroundColor": "#63dced",
 	"right": "30",
 	"top": "30",
-	"borderRadius": "15"
+	"borderRadius": "15",
 },
 "#sorteosActivos": {
 	"layout": "vertical",
@@ -65,23 +65,21 @@
 "#vistaSeleccionarSorteo": {
 	"scrollType": "horizontal",
 	"layout": "horizontal",
-	"bottom": "10",
 	"left": "10",
 	"right": "10",
-	"height": "180"
 },
 "#Label_1": {
 	"text": "Cantidad de Boletos",
-	"top": "30"
+	"top": "20",
 },
 "#regresar": {
 	"text": "<",
-	"left": "5",
+	"left": "10",
 	"top": "15",
 	"color": "#feffff",
-	"class": "fuenteApp h5",
+	"class": "fuenteApp h5"
 },
 "#Label_2": {
 	"text": "Selecciona el Sorteo",
-	"top": "20"
+	"top": "20",
 }

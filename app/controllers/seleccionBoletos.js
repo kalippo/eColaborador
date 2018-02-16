@@ -95,7 +95,18 @@ function crearListaSorteos(sorteos) {
 			background : "blue"
 		});
 
+// "\uf058",
+var checkBox = Titanium.UI.createLabel({
+		text : "\\uf058",
+		left : '75%',
+		top : '20%',
+		height:'50',
+		width : '50',
+		font: { fontSize:40, fontFamily: 'MaterialIcons-Regular' },
+});
+
 		vistaSorteo.add(imagenSorteo);
+		vistaSorteo.add(checkBox);
 		paginas.push(vistaSorteo);
 		//menu.addEventListener('click', clickMenu);
 

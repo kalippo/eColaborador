@@ -10,6 +10,7 @@
                 <ImageView class="imagenColaborador" id="fotoCliente"/>
                 <Label class="fuenteApp h2" id="nombreCliente"/>
                 <Label class="fuenteApp h2" id="telefonoCliente"/>
+                <View id="View_3"/>
             </View>
             <View class="panelDetalles" id="vistaEstatusPago">
                 <Label class="etiquetasDetalle h3 fuenteApp" id="estatusDePago"/>
@@ -27,6 +28,7 @@
                     <Label class="contenidoDetalle fuenteApp h2" id="boletos"/>
                 </View>
                 <Label class="etiquetasDetalle h3 fuenteApp" id="sorteos"/>
+                <View id="vistaBoletosAsignados"/>
             </View>
             <View class="panelDetalles" id="vistaDeudaPagos              ">
                 <View id="pendiente">
