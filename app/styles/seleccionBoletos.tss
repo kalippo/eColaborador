@@ -9,18 +9,18 @@
 	"backgroundColor": "#63dced",
 	"right": "30",
 	"top": "30",
-	"borderRadius": "15",
+	"borderRadius": "15"
 },
 "#sorteosActivos": {
 	"layout": "vertical",
 	"height": "180",
 	"left": "5",
-	"right": "5"
+	"right": "5",
 },
 "#View_1": {
 },
 "#titulo": {
-	"text": "Selecciona tus boletos",
+	"text": "Entregar boletos",
 	"right": "50",
 	"left": "50",
 	"top": "15",
@@ -70,16 +70,12 @@
 },
 "#Label_1": {
 	"text": "Cantidad de Boletos",
-	"top": "20",
+	"top": "20"
 },
 "#regresar": {
-	"text": "<",
-	"left": "10",
-	"top": "15",
-	"color": "#feffff",
-	"class": "fuenteApp h5"
+	"class": "fuenteApp h5",
 },
 "#Label_2": {
 	"text": "Selecciona el Sorteo",
-	"top": "20",
+	"top": "20"
 }

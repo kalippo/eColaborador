@@ -1,7 +1,7 @@
 <Alloy>
     <Window class="container fondoBlanco" layout="vertical">
         <View class="vistaTitulo" id="vistaTitulo">
-            <Label class="etiquetaTitulo fa h4" id="regresar"/>
+            <Label class="fa h5 regresar" id="regresar"/>
             <Label class="etiquetaTitulo fuenteApp h4 centrado" id="titulo"/>
             <Label class="etiquetaTitulo fa h4 derecha" id="buscar"/>
         </View>
@@ -17,7 +17,7 @@
                         <ListView defaultItemTemplate="templateContactos" id="listaCOntactos">
                             <Templates>
                                 <ItemTemplate name="templateContactos">
-                                    <Label bindId="estatus" id="iconoEstatus" class="fa h4 "/>
+                                    <Label bindId="estatus" class="fa h4 " id="iconoEstatus"/>
                                     <Label bindId="nombreContacto" id="nombreContacto"/>
                                     <Label bindId="edit" class="fa" id="edit"/>
                                 </ItemTemplate>
@@ -29,28 +29,32 @@
                         <ListView defaultItemTemplate="templateConAdeudo" id="listaConAdeudo">
                             <Templates>
                                 <ItemTemplate name="templateConAdeudo">
-                                    <Label bindId="estatus" id="iconoEstatus" class="fa h4 "/>
+                                    <Label bindId="estatus" class="fa h4 " id="iconoEstatus"/>
                                     <Label bindId="nombreContacto" id="nombreContacto"/>
                                     <Label bindId="edit" class="fa" id="edit"/>
                                 </ItemTemplate>
                             </Templates>
-                             <ListSection class="fondoBlanco" name="contactos"/>
+                            <ListSection class="fondoBlanco" name="contactos"/>
                         </ListView>
                     </View>
                     <View id="vistaSinAdeudo">
                         <ListView defaultItemTemplate="templateSinAdeudo" id="listaSinAdeudo">
                             <Templates>
                                 <ItemTemplate name="templateSinAdeudo">
-                                    <Label bindId="estatus" id="iconoEstatus" class="fa h4 "/>
+                                    <Label bindId="estatus" class="fa h4 " id="iconoEstatus"/>
                                     <Label bindId="nombreContacto" id="Label_3"/>
                                     <Label bindId="edit" class="fa" id="Label_4"/>
                                 </ItemTemplate>
                             </Templates>
-                             <ListSection class="fondoBlanco" name="contactos"/>
+                            <ListSection class="fondoBlanco" name="contactos"/>
                         </ListView>
                     </View>
                 </ScrollableView>
             </View>
         </ScrollView>
+        <View id="crearNuevoComprador">
+            <Label class="fa h6 " id="Label_1"/>
+            <Label class="fuenteApp h4 derecha" id="Label_2"/>
+        </View>
     </Window>
 </Alloy>

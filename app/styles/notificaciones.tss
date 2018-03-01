@@ -1,0 +1,35 @@
+".container": {
+},
+"#View_1": {
+},
+"#View_2": {
+},
+"#ListView_1": {
+},
+"#imagen": {
+	"left": "10",
+	"top": "5",
+	"height": "80",
+	"width": "80"
+},
+"#titulo": {
+	"left": "90", 
+	"top": "5",
+	"width": "220"
+},
+"#detalle": {
+	"left": "90",
+	"top": "30",
+	"width": "220"
+},
+"#regresar": {
+},
+"#tituloVista": {
+	"text": "Notificaciones",
+	"left": "50",
+	"top": "10",
+	"color": "#feffff",
+	"right": "50"
+},
+"#fuenteApp h4 centrado": {
+}

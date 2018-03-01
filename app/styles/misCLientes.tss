@@ -1,5 +1,7 @@
-".container": {},
-"#vistaTitulo": {},
+".container": {
+},
+"#vistaTitulo": {
+},
 "#titulo": {
 	"text": "Mis Compradores",
 	"left": "40",
@@ -7,12 +9,14 @@
 	"height": "35"
 },
 "#vistaClientes": {
-	"layout": "vertical"
+	"layout": "vertical",
+	"top": "1",
+	"height": "83%",
 },
 ".icon": {
 	"width": "50dp",
 	"height": "50dp",
-	"left": 50
+	"left": "50"
 },
 "#nombreContacto": {
 	"color": "black",
@@ -23,7 +27,8 @@
 "#listaCOntactos": {
 	"backgroundColor": "white"
 },
-"#icon": {},
+"#icon": {
+},
 "#buscar": {
 	"text": "\uf002",
 	"right": "10",
@@ -31,9 +36,6 @@
 	"height": "35"
 },
 "#regresar": {
-	"text": "\uf053",
-	"width": "40",
-	"height": "40"
 },
 "#edit": {
 	"text": "\uf040",
@@ -66,30 +68,43 @@
 	"top": "5",
 	"borderColor": "white"
 },
-"#vistaTodos": {},
-"#vistaListaClientes": {},
-"#vistaFiltros": {},
-"#vistaConAdeudo": {},
-"#vistaSinAdeudo": {},
+"#vistaTodos": {
+},
+"#vistaListaClientes": {
+},
+"#vistaFiltros": {
+},
+"#vistaConAdeudo": {
+},
+"#vistaSinAdeudo": {
+},
 "#listaConAdeudo": {
 	"backgroundColor": "white"
 },
-"#ImageView_1": {},
+"#ImageView_1": {
+	"height": "80",
+	"width": "80"
+},
 "#Label_1": {
-	"text": "Label",
-	"color": "black",
-	"left": "60",
-	"top": "10"
+	"text": "\uf234",
+	"color": "#feffff",
+	"left": "10",
+	"top": "5",
+	"class": "h6 fa",
+	"height": "30",
+	"width": "30",
 },
 "#Label_2": {
-	"text": "\uf040",
-	"right": "10",
-	"color": "black"
+	"text": "Agregar nuevo comprador",
+	"color": "#ffffff",
+	"left": "40",
+	"right": "40",
 },
 "#listaSinAdeudo": {
 	"backgroundColor": "white"
 },
-"#ImageView_2": {},
+"#ImageView_2": {
+},
 "#Label_3": {
 	"text": "Label",
 	"color": "black",
@@ -101,9 +116,17 @@
 	"right": "10",
 	"color": "black"
 },
-"#iconoEstatus":{
-	width: "40",
-	height: "40",
-	text: "\uf111",
-	"left": 10
+"#iconoEstatus": {
+	"width": "40",
+	"height": "40",
+	"text": "\uf111",
+	"left": "10"
+},
+"#Button_1": {
+	"title": "Button",
+	"left": "77%",
+	"top": "57%"
+},
+"#crearNuevoComprador": {
+	"backgroundColor": "#4bc3fe",
 }

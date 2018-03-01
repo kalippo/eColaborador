@@ -20,13 +20,16 @@
     <use-app-thinning>true</use-app-thinning>
     <plist>
       <dict>
+      	
+        <key>NSContactsUsageDescription</key>
+        <string>Can we use your contacts?</string>
         <key>UISupportedInterfaceOrientations~iphone</key>
         <array>
           <string>UIInterfaceOrientationPortrait</string>
         </array>
         <key>UISupportedInterfaceOrientations~ipad</key>
         <array>
-          <string>UIInterfaceOrientationPortrait</string>
+          <string>UIInterfaceOrientationPortrait</string> 
           <string>UIInterfaceOrientationPortraitUpsideDown</string>
           <string>UIInterfaceOrientationLandscapeLeft</string>
           <string>UIInterfaceOrientationLandscapeRight</string>

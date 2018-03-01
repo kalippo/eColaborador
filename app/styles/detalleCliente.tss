@@ -5,7 +5,7 @@
 "#titulo": {
 	"text": "Detalle",
 	"right": "50",
-	"left": "50"
+	"left": "50",
 },
 "#vistaDetalleCliente": {
 	"layout": "vertical",
@@ -15,7 +15,7 @@
 "#vistaDatosContacto": {
 	"backgroundColor": "#ffffff",
 	"height": "35%",
-	"layout": "vertical",
+	"layout": "vertical"
 },
 "#vistaEstatusPago": {
 	"height": "50"
@@ -100,7 +100,7 @@
 	"image": "/imagen.jpg",
 	"borderWidth": "9",
 	"borderColor": "white",
-	"top": "5",
+	"top": "5"
 },
 "#nombreCliente": {
 	"text": "Pedro Pablo Miramontes Valencia",
@@ -134,8 +134,6 @@
 	"right": "10"
 },
 "#regresar": {
-	"text": "\uf053",
-	"width": "50"
 },
 "#agregarBoletos": {
 	"text": "\uf0fe",
@@ -207,7 +205,8 @@
 },
 "#vistaBoletosAsignados": {
 	"height": "30%",
-	"layout": "horizontal"
+	"layout": "horizontal",
+	"scrollType": "horizontal"
 },
 "#View_3": {
 }

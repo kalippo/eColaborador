@@ -7,13 +7,14 @@ $.cantidadBoletos.text = parseInt($.cantidadBoletos.boletos) + " Boletos";
 
 obetnerSorteos();
 
-if (Alloy.Collections.sorteosActivos.count !=0){
+if (Alloy.Collections.sorteosActivos.count != 0) {
 	obtenerImagenes();
-	
-}else{
+
+}
+else {
 	crearListaSorteos(Alloy.Collections.sorteosActivos.where({
-					activo : true
-			}));
+		activo : true
+	}));
 }
 
 $.regresar.addEventListener('click', function(error) {
@@ -24,11 +25,9 @@ $.regresar.addEventListener('click', function(error) {
 
 });
 
-
 $.botonMas.addEventListener('click', function(error) {
 	$.cantidadBoletos.boletos = parseInt($.cantidadBoletos.boletos) + 1;
 	$.cantidadBoletos.text = parseInt($.cantidadBoletos.boletos) + " Boletos";
-
 
 });
 
@@ -40,8 +39,6 @@ $.botonMenos.addEventListener('click', function(error) {
 	}
 });
 
-
-
 function obtenerImagenes() {
 	Alloy.Globals.Cloud.PhotoCollections.showPhotos({
 		collection_id : "5a6b839824ee48c54b8ecad7"
@@ -49,7 +46,8 @@ function obtenerImagenes() {
 		if (e.success) {
 			if (!e.photos) {
 				//agregar mensaje de que no hay sorteos activos
-			} else {
+			}
+			else {
 				Alloy.Collections.sorteosActivos.reset();
 				e.photos.forEach(function(photo) {
 					var sorteo = Alloy.createModel('modeloSorteo', {
@@ -70,7 +68,8 @@ function obtenerImagenes() {
 					activo : true
 				}));
 			}
-		} else {
+		}
+		else {
 			//alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
 		}
 	});
@@ -90,62 +89,71 @@ function crearListaSorteos(sorteos) {
 			right : '10'
 
 		});
-		
+
 		var vistaSorteo = Titanium.UI.createView({
 			background : "blue"
 		});
 
-// "\uf058",
-var checkBox = Titanium.UI.createLabel({
-		text : "\\uf058",
-		left : '75%',
-		top : '20%',
-		height:'50',
-		width : '50',
-		font: { fontSize:40, fontFamily: 'MaterialIcons-Regular' },
-});
-
+		// "\uf058",
+		var checkBox = Titanium.UI.createLabel({
+			text : "\uf058",
+			left : '80%',
+			top : '17%',
+			height : '50',
+			width : '50',
+			color : "#63dced",
+			font : {
+				fontSize : 40, fontFamily:'FontAwesome'
+			},
+		});
+		var fondoCheckBox = Titanium.UI.createLabel({
+			text : "\uf111",
+			left : '80%',
+			top : '17%',
+			height : '50',
+			width : '50',
+			color : "white",
+			font : {
+				fontSize : 40, fontFamily:'FontAwesome'
+			},
+		});
 		vistaSorteo.add(imagenSorteo);
+		vistaSorteo.add(fondoCheckBox);
 		vistaSorteo.add(checkBox);
 		paginas.push(vistaSorteo);
 		//menu.addEventListener('click', clickMenu);
 
-
 	});
-		//Ti.API.info(JSON.stringify(paginas, null, 4));
-		$.vistaSeleccionarSorteo.views = paginas;
-	
+	//Ti.API.info(JSON.stringify(paginas, null, 4));
+	$.vistaSeleccionarSorteo.views = paginas;
+
 }
 
+function removeAllChildren(viewObject) {
+	//copy array of child object references because view's "children" property is live collection of child object references
+	var children = viewObject.children.slice(0);
 
-function removeAllChildren(viewObject){
-    //copy array of child object references because view's "children" property is live collection of child object references
-    var children = viewObject.children.slice(0);
- 
-    for (var i = 0; i < children.length; ++i) {
-        viewObject.remove(children[i]);
-    }
+	for (var i = 0; i < children.length; ++i) {
+		viewObject.remove(children[i]);
+	}
 }
 
+function obetnerSorteos() {
 
-function obetnerSorteos(){
-	
 	Alloy.Globals.Cloud.PhotoCollections.showSubcollections({
-    	page: 1,
-	    per_page: 20,
-	    collection_id: "5a57d3521ceda35a3b5c74eb"
-	}, function (e) {
-	    if (e.success) {
-	        for (var i = 0; i < e.collections.length; i++) {
-	            var collection = e.collections[i];
-	            Ti.API.info(JSON.stringify(collection, null, 4));
-	        }
-	    } else {
-	        alert('Error:\n' +
-	            ((e.error && e.message) || JSON.stringify(e)));
-	    }
+		page : 1,
+		per_page : 20,
+		collection_id : "5a57d3521ceda35a3b5c74eb"
+	}, function(e) {
+		if (e.success) {
+			for (var i = 0; i < e.collections.length; i++) {
+				var collection = e.collections[i];
+				Ti.API.info(JSON.stringify(collection, null, 4));
+			}
+		}
+		else {
+			alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
+		}
 	});
-	
-	
 }
 

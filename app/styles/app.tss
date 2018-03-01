@@ -5,9 +5,8 @@
 	"backgroundColor": "white"
 },
 ".boton": {
-	"width": "80%",
 	"height": "60",
-	"top": "10",
+	"top": "0",
 	"left": "30",
 	"borderRadius": "30",
 	"color": "white",
@@ -26,7 +25,7 @@
 	"textAlign": Ti.UI.TEXT_ALIGNMENT_CENTER,
 	"color": "white",
 	"left": "5",
-	"top": "10"
+	"top": "15"
 },
 ".vistaValidarLogin": {
 	"layout": "absolute",
@@ -144,4 +143,12 @@
 },
 ".backgroundLogin": {
 	"backgroundImage": "/Images/Home/BG-blue-v1.png"
+},
+".regresar": {
+	"top": "10",
+	"left": "10",
+	"color": "#ffffff",
+	"height": "40",
+	"text": "\uf053",
+	"width": "40"
 }

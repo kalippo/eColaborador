@@ -1,0 +1,8 @@
+<Alloy>
+    <View class="container" layout="vertical">
+        <TextField class="campoCaptura" id="TextField_1"/>
+        <TextField class="campoCaptura" id="TextField_2"/>
+        <TextField class="campoCaptura" id="TextField_3"/>
+        <Button class="boton" id="crearComprador"/>
+    </View>
+</Alloy>

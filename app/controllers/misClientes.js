@@ -6,7 +6,7 @@ $.regresar.addEventListener('click', function(error) {
 	var inicio = Alloy.createController("index");
 	inicio = inicio.getView();
 	inicio.open();
-});
+}); 
 
 $.todos.addEventListener('click', function(e) {
 	$.vistaFiltros.scrollToView(0);
@@ -94,6 +94,12 @@ function creaContactos(contactos) {
 
 $.listaCOntactos.addEventListener('itemclick', function(error) {
 	var validacion = Alloy.createController("detalleCliente");
+	validacion = validacion.getView();
+	validacion.open();
+});
+
+$.crearNuevoComprador.addEventListener('click', function(error) {
+	var validacion = Alloy.createController("nuevoComprador");
 	validacion = validacion.getView();
 	validacion.open();
 });

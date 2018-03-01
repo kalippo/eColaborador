@@ -1,0 +1,22 @@
+".container": {
+},
+"#TextField_1": {
+	"hintText": "Nombre",
+},
+"#TextField_2": {
+	"hintText": "Apellidos"
+},
+"#TextField_3": {
+	"hintText": "Correo"
+},
+".campoCaptura": {
+	"borderRadius": "10",
+	"borderColor": "#E5E5E5",
+	"borderWidth": "1",
+	"height": "50",
+	"width": "100%"
+},
+"#crearComprador": {
+	"title": "Crear Comprador",
+	"width": "80%",
+}

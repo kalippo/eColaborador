@@ -1,21 +1,14 @@
 <Alloy>
-    <Window class="container" layout="vertical">
-        <View class="vistaTitulo" id="vistaTitulo">
-            <Label class="fuenteApp colorTurquesa h3" id="Label_3"/>
-            <Label class="centrado fuenteApp colorAzul h4" id="Label_5"/>
-            <Label class="derecha fuenteApp colorTurquesa h4" id="Label_4"/>
-        </View>
+    <View class="container" layout="vertical">
         <ScrollView id="scrollContenido">
             <View class="fondoBlanco" id="vistaOpciones">
                 <Label class="fuenteApp h3 centrado" id="Label_1"/>
                 <Label class="fuenteApp colorTurquesa h3 centrado" id="Label_2"/>
-                <Button class="boton" id="importarTodos"/>
-                <View id="View_1"/>
             </View>
             <View id="View_2"/>
             <View class="fondoBlanco" id="vistaClientes">
                 <ListView id="ListView_1"/>
             </View>
         </ScrollView>
-    </Window>
+    </View>
 </Alloy>

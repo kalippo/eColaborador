@@ -1,0 +1,23 @@
+<Alloy>
+    <Window class="container" layout="vertical">
+        <View class="vistaTitulo" id="View_1">
+            <Label class="fa h5 regresar" id="regresar"/>
+            <Label class="fuenteApp h4 centrado" id="tituloVista"/>
+        </View>
+        <View id="View_2">
+            <ListView defaultItemTemplate="notificaciones" id="listaNotificaciones">
+                <Templates>
+                    <ItemTemplate name="notificaciones">
+                        <ImageView bindId="imagen" id="imagen"/>
+                        <Label bindId="titulo" claaccessibilityHidden="fa h2" id="titulo"/>
+                        <Label bindId="detalle" class="fa h1" id="detalle"/>
+                    </ItemTemplate>
+                </Templates>
+                <ListSection class="fondoBlanco" name="contactos">
+                    <ListItem detalle:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat." imagen:image="/Images/Home/app-ECOL-icono-logo.png" titulo:text="titulo de la notificacion 1"/>
+                    <ListItem detalle:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat." imagen:image="/Images/Home/app-ECOL-icono-logo.png" titulo:text="titulo de la notificacion 2"/>
+                </ListSection>
+            </ListView>
+        </View>
+    </Window>
+</Alloy>
