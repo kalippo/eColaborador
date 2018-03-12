@@ -1,4 +1,22 @@
-
-".container" : {
-  
+".container": {
+},
+"#ListView_1": {
+}
+"#nombreContacto":{
+	top:"10",
+	left:"10",
+	color:"black",
+	width:"300"
+}
+"#telefono":{
+	top:"30",
+	left:"50",
+	color:"black"
+},
+"#seleccionado":{
+	left:"80%",
+	top:"10",
+	right:"10",
+	
+	
 }

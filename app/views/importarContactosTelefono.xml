@@ -1,3 +1,14 @@
 <Alloy>
-    <View class="container"/>
+    <View class="container fondoBlanco">
+        <ListView defaultItemTemplate="templateContactos" id="listaContactosTelefono">
+            <Templates>
+                <ItemTemplate name="templateContactos">
+                    <Label bindId="nombreContacto" class="fuenteApp h3" id="nombreContacto"/>
+                    <Label bindId="telefono" class="fuenteApp h2" id="telefono"/>
+                    <Switch class="fondoBlanco" id="seleccionado"/>
+                </ItemTemplate>
+            </Templates>
+            <ListSection class="fondoBlanco" name="contactos"/>
+        </ListView>
+    </View>
 </Alloy>

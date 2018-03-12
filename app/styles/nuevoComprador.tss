@@ -4,7 +4,7 @@
 },
 "#vistaFiltros": {
 },
-"#Label_1": {
+"#regresar": {
 },
 "#Label_2": {
 	"text": "Nuevo Comprador",
@@ -13,7 +13,7 @@
 },
 "#vistaOpciones": {
 	"height": "40",
-	"layout": "horizontal",
+	"layout": "horizontal"
 },
 ".botonFiltro": {
 	"width": "32%",
@@ -27,7 +27,7 @@
 	"title": "Telefono"
 },
 "#nuevo": {
-	"title": "Nuevo",
+	"title": "Nuevo"
 },
 "#frecuentes": {
 	"title": "Frecuentes"

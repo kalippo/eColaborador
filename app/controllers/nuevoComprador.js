@@ -1,6 +1,6 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
-
+$.nuevo.color = "black";
 
 $.nuevo.addEventListener('click', function(e) {
 	$.vistaFiltros.scrollToView(0);
@@ -27,3 +27,10 @@ $.vistaFiltros.addEventListener('scroll', function(e) {
 	}
 
 });
+
+
+$.regresar.addEventListener('click', function(error) {
+	var validacion = Alloy.createController("misClientes");
+	validacion = validacion.getView();
+	validacion.open();
+}); 

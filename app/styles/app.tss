@@ -6,8 +6,9 @@
 },
 ".boton": {
 	"height": "60",
-	"top": "0",
-	"left": "30",
+	"top": "10",
+	"right": "40",
+	"left": "40",
 	"borderRadius": "30",
 	"color": "white",
 	"backgroundColor": "#2b7ef1"
@@ -91,19 +92,19 @@
 	"font": {fontSize:'10'}
 },
 ".h2[platform=android]": {
-	"font": {fontSize:'15'}
+	"font": {fontSize:'12'}
 },
 ".h3[platform=android]": {
-	"font": {fontSize:'20'}
+	"font": {fontSize:'17'}
 },
 ".h4[platform=android]": {
-	"font": {fontSize:'25'}
+	"font": {fontSize:'22'}
 },
 ".h5[platform=android]": {
-	"font": {fontSize:'30'}
+	"font": {fontSize:'27'}
 },
 ".h6[platform=android]": {
-	"font": {fontSize:'35'}
+	"font": {fontSize:'32'}
 },
 ".h1[platform=ios]": {
 	"font": {fontSize:'9'}

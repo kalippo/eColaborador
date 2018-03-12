@@ -1,5 +1,5 @@
 <Alloy>
-    <View class="container" layout="vertical">
+    <View class="container fondoBlanco" layout="vertical">
         <TextField class="campoCaptura" id="TextField_1"/>
         <TextField class="campoCaptura" id="TextField_2"/>
         <TextField class="campoCaptura" id="TextField_3"/>

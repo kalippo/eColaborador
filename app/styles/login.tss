@@ -26,11 +26,11 @@
 	"color": "black"
 },
 "#claveColaborador": {
-	"hintText": "Clave de Colaborador",
+	"hintText": "Clave de Colaborador"
 },
 "#password": {
 	"hintText": "Contraseña",
-	"passwordMask": "1",
+	"passwordMask": "1"
 },
 "#iniciarSesion": {
 	"title": "INICIAR SESIÓN",

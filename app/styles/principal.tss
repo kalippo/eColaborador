@@ -51,7 +51,7 @@
 	"left": "10",
 	"right": "10",
 	"borderColor": "#66ffff",
-	"top": "10",
+	"top": "10"
 },
 "#vistaCuentaRegresiva[platform=ios formFactor=tablet]": {
 	"height": "170",
@@ -107,7 +107,7 @@
 "#iconoMenu": {
 	"text": "\uf0c9",
 	"height": "40",
-	"width": "40"
+	"width": "40",
 },
 "#postales": {
 	"text": "\uf1d8",

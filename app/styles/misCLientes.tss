@@ -6,12 +6,11 @@
 	"text": "Mis Compradores",
 	"left": "40",
 	"right": "40",
-	"height": "35"
 },
 "#vistaClientes": {
 	"layout": "vertical",
 	"top": "1",
-	"height": "83%",
+	"height": "84%",
 },
 ".icon": {
 	"width": "50dp",
@@ -44,7 +43,7 @@
 },
 "#vistaOpciones": {
 	"height": "50",
-	"layout": "horizontal"
+	"layout": "horizontal",
 },
 "#todos": {
 	"title": "Todos",
@@ -88,17 +87,18 @@
 "#Label_1": {
 	"text": "\uf234",
 	"color": "#feffff",
-	"left": "10",
-	"top": "5",
+	"left": "15",
+	"top": "10",
 	"class": "h6 fa",
 	"height": "30",
-	"width": "30",
+	"width": "30"
 },
 "#Label_2": {
 	"text": "Agregar nuevo comprador",
 	"color": "#ffffff",
-	"left": "40",
-	"right": "40",
+	"left": "50",
+	"right": "10",
+	"top": "16",
 },
 "#listaSinAdeudo": {
 	"backgroundColor": "white"

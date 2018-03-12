@@ -46,7 +46,7 @@
                                     <Label bindId="edit" class="fa" id="Label_4"/>
                                 </ItemTemplate>
                             </Templates>
-                            <ListSection class="fondoBlanco" name="contactos"/>
+                            <ListSection class="fondoBlanco " name="contactos"/>
                         </ListView>
                     </View>
                 </ScrollableView>
@@ -54,7 +54,7 @@
         </ScrollView>
         <View id="crearNuevoComprador">
             <Label class="fa h6 " id="Label_1"/>
-            <Label class="fuenteApp h4 derecha" id="Label_2"/>
+            <Label class="fuenteApp h4 " id="Label_2"/>
         </View>
     </Window>
 </Alloy>

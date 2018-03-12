@@ -1,7 +1,7 @@
 ".container": {
 },
 "#TextField_1": {
-	"hintText": "Nombre",
+	"hintText": "Nombre"
 },
 "#TextField_2": {
 	"hintText": "Apellidos"
@@ -14,9 +14,11 @@
 	"borderColor": "#E5E5E5",
 	"borderWidth": "1",
 	"height": "50",
-	"width": "100%"
+	"width": "80%",
+	"top": "15",
+	"left": "20",
+	"right": "20"
 },
 "#crearComprador": {
 	"title": "Crear Comprador",
-	"width": "80%",
 }
