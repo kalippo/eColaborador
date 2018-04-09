@@ -1,6 +1,9 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
 
+Ti.API.info(JSON.stringify(Alloy.Globals.Datoscolaborador,null,4));
+llenaDatosColaborador();
+
 
 
 $.imagenColaborador.addEventListener("click", function(e){
@@ -12,7 +15,7 @@ $.imagenColaborador.addEventListener("click", function(e){
             var imageView = Titanium.UI.createImageView({
                 image:e.media,
                 width:320,
-                height:480,
+                height:480, 
                 top:12,
                 zIndex:1
             });
@@ -47,3 +50,9 @@ $.aceptar.addEventListener('click', function(error) {
 	validacion = validacion.getView();
 	validacion.open();
 });
+
+function llenaDatosColaborador (){
+	$.nombreColaborador.text = Alloy.Globals.Datoscolaborador.nombre;
+	$.correoColaborador.text = Alloy.Globals.Datoscolaborador.correo;
+	$.telefonoColaborador.text = Alloy.Globals.Datoscolaborador.telefono;
+}

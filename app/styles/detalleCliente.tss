@@ -5,7 +5,7 @@
 "#titulo": {
 	"text": "Detalle",
 	"right": "50",
-	"left": "50",
+	"left": "50"
 },
 "#vistaDetalleCliente": {
 	"layout": "vertical",
@@ -130,8 +130,10 @@
 "#buscar": {
 	"text": "\uf0e0",
 	"width": "50",
-	"left": "250",
-	"right": "10"
+	"left": "85%",
+	"right": "5",
+	"color": "#ffffff",
+	"top": "15",
 },
 "#regresar": {
 },

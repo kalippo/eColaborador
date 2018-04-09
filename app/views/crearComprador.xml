@@ -1,8 +1,10 @@
 <Alloy>
     <View class="container fondoBlanco" layout="vertical">
-        <TextField class="campoCaptura" id="TextField_1"/>
-        <TextField class="campoCaptura" id="TextField_2"/>
-        <TextField class="campoCaptura" id="TextField_3"/>
+        <TextField class="campoCaptura" id="nombre"/>
+        <TextField class="campoCaptura" id="apellidos"/>
+        <TextField class="campoCaptura" id="telefono"/>
+        <TextField class="campoCaptura" id="correo"/>
+        <TextField class="campoCaptura" id="empresa"/>
         <Button class="boton" id="crearComprador"/>
     </View>
 </Alloy>

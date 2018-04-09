@@ -1,6 +1,8 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
-getClientes();
+//getClientes();
+
+desplegarCompradores();
 
 $.regresar.addEventListener('click', function(error) {
 	var inicio = Alloy.createController("index");
@@ -33,6 +35,18 @@ $.vistaFiltros.addEventListener('scroll', function(e) {
 	}
 
 });
+
+function desplegarCompradores(){
+	
+	//Ti.API.info(JSON.stringify(Alloy.Globals.compradores.Clientes.Nombres,null,4));
+
+	Alloy.Globals.compradores.Clientes.Nombres.forEach( function(contacto){
+			Ti.API.info(JSON.stringify(contacto));
+	}
+	);
+
+}
+
 
 function getClientes() {
 	var url = "https://randomuser.me/api/?results=15";

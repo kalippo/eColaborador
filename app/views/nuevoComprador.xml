@@ -14,5 +14,8 @@
             <Require src="importarClientes"/>
             <Require src="importarContactosTelefono"/>
         </ScrollableView>
+        <View id="vistaAgregar">
+            <Button class="fuenteApp" id="Button_1"/>
+        </View>
     </Window>
 </Alloy>

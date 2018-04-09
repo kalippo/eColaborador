@@ -2,7 +2,7 @@
 },
 "#vistaOpciones": {
 	"height": "100",
-	"layout": "vertical",
+	"layout": "vertical"
 },
 "#vistaClientes": {
 },
@@ -22,7 +22,7 @@
 	"backgroundColor": "#eaeaea",
 	"height": "30"
 },
-"#ListView_1": {
+"#listaFrecuentes": {
 },
 "#Label_3": {
 	"text": "<<",

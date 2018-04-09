@@ -3,6 +3,7 @@
 "#vistaTitulo": {
 },
 "#vistaFiltros": {
+	"height": "77%",
 },
 "#regresar": {
 },
@@ -31,4 +32,19 @@
 },
 "#frecuentes": {
 	"title": "Frecuentes"
+},
+"#View_1": {
+	"left": "7%",
+	"top": "96%"
+},
+"#vistaAgregar": {
+	"height": "50",
+	"bottom": "1",
+},
+"#Button_1": {
+	"title": "Agregar",
+	"backgroundColor": "#4bc3fe",
+	"color": "#ffffff",
+	"height": "100%",
+	"width": "100%",
 }

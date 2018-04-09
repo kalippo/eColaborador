@@ -3,7 +3,7 @@
         <View class="vistaTitulo" id="vistaTitulo">
             <Label class="fa h5 regresar" id="regresar"/>
             <Label class="etiquetaTitulo fuenteApp h5 centrado" id="titulo"/>
-            <Label class="etiquetaTitulo fa h4 derecha" id="buscar"/>
+            <Label class="fa h4 derecha" id="buscar"/>
         </View>
         <ScrollView class="fondoGris" id="vistaDetalleCliente">
             <View class="panelDetalles" id="vistaDatosContacto">

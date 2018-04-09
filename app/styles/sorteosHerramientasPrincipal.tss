@@ -1,67 +1,73 @@
 ".container": {
 },
 "#vistaTitulo": {
-	"height": "50",
-	"left": "1",
-	"right": "1",
-	"top": "1",
-	"zIndex": "2"
+	"height": "50"
 },
 "#vista": {
-	"height": "220"
 },
-"#vistaSorteos": {
-	"height": "150",
-	"layout": "vertical"
-},
-"#ImageView_1": {
-	"left": "1",
-	"top": "1",
-	"right": "1",
-	"image": "/sala.jpeg",
-	"height": "200"
+"#vistaSorteosActivos": {
+	"layout": "horizontal",
+	"showPagingControl": "true",
+	"pagingControlColor": "blue",
+	"borderColor": "#993300",
+	"borderWidth": "1",
+	"bottom": "5",
+	"left": "5",
+	"right": "5",
+	"top": "5",
 },
 "#home": {
 	"text": "\uf015",
-	"left": "5",
+	"left": "10",
 	"color": "white",
 	"height": "30",
 	"width": "30",
-	"top": "5",
+	"top": "10",
 	"class": "fa",
 	"zIndex": "10"
 },
 "#notificacion": {
 	"text": "\uf0f3",
 	"height": "30",
-	"right": "5",
-	"top": "5",
+	"right": "10",
+	"top": "10",
 	"width": "30",
 	"color": "white"
 },
-"#vistaMembresias": {
-	"height": "150",
+"#vistaGaleria": {
+	"height": "58%",
 	"layout": "vertical"
 },
 "#vistaVideos": {
 	"height": "150",
-	"layout": "vertical",
+	"layout": "vertical"
 },
 "#View_1": {
-	"height": "30",
-	"layout": "horizontal",
+	"height": "50",
+	"layout": "absolute",
 },
 "#View_2": {
 	"height": "30",
-	"layout": "horizontal",
+	"layout": "horizontal"
 },
 "#Label_1": {
-	"text": "SORTEOS"
+	"text": "Selecciona el sorteo para buscar tus \n herramientas de venta",
+	"width": "100%",
+	"layout": "vertical"
 },
 "#Label_2": {
-	"text": "MEMBRESÍA DE LA SUERTE",
+	"text": "GALERÍA DE IMAGENES"
 },
 ".tituloSeccion": {
 	"top": "5",
-	"left": "5"
+	"left": "5",
+	"right": "5"
+},
+"#vistaSorteosActivos": {
+},
+"#ScrollableView_2": {
+},
+"#vistaSorteos": {
+	"height": "60%",
+	"layout": "vertical",
 }

@@ -1,12 +1,12 @@
 ".container": {
 },
-"#TextField_1": {
+"#nombre": {
 	"hintText": "Nombre"
 },
-"#TextField_2": {
+"#apellidos": {
 	"hintText": "Apellidos"
 },
-"#TextField_3": {
+"#correo": {
 	"hintText": "Correo"
 },
 ".campoCaptura": {
@@ -20,5 +20,12 @@
 	"right": "20"
 },
 "#crearComprador": {
-	"title": "Crear Comprador",
+	"title": "Crear Comprador"
+},
+"#empresa": {
+	
+	"hintText": "Empresa"
+},
+"#telefono": {
+	"hintText": "Telefono"
 }

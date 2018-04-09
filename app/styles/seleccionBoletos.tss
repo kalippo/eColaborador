@@ -67,6 +67,10 @@
 	"layout": "horizontal",
 	"left": "10",
 	"right": "10",
+	"showPagingControl": "true",
+	contentHeight: Ti.UI.SIZE,
+	contentWidth: Ti.UI.SIZE
+	
 },
 "#Label_1": {
 	"text": "Cantidad de Boletos",

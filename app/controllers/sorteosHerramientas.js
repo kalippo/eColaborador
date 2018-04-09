@@ -2,10 +2,14 @@
 var args = $.args;
 
 
-$.atras.addEventListener('click', function(error) {
+
+
+$.atras.addEventListener('click', function(error) {   
 
 	var inicio = Alloy.createController("index");
 	inicio = inicio.getView();
 	inicio.open();
 
 });
+
+
