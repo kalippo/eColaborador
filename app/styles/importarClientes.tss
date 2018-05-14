@@ -1,17 +1,21 @@
 ".container": {
 },
 "#vistaOpciones": {
-	"height": "100",
+	"height": "90",
 	"layout": "vertical"
 },
 "#vistaClientes": {
 },
 "#Label_1": {
-	"text": "Estos son tus clientes frecuentes",
-	"top": "10"
+	"text": "Estos son tus compradores registrados en Sorteos Tec",
+	"top": "10",
+	"color": "#000000",
+	"height": "40",
+	"left": "20",
+	"right": "20",
 },
 "#Label_2": {
-	"text": "Selecciona a los que quieras importar",
+	"text": "Selecciona los que deseas importar",
 	"top": "10"
 },
 "#scrollContenido": {
@@ -20,7 +24,7 @@
 },
 "#View_2": {
 	"backgroundColor": "#eaeaea",
-	"height": "30"
+	"height": "20"
 },
 "#listaFrecuentes": {
 },
@@ -29,4 +33,21 @@
 	"left": "10",
 	"top": "10",
 	"height": "35"
+},
+"#telefono": {
+	"top": "30",
+	"left": "50",
+	"color": "black"
+},
+"#nombreContacto": {
+	"top": "10",
+	"left": "10",
+	"color": "black",
+	"width": "300"
+},
+"#seleccionado": {
+	"left": "80%",
+	"top": "10",
+	"right": "10",
+	"value": "false"
 }

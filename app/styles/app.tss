@@ -67,9 +67,6 @@
 ".fa[platform=ios]": {
 	"font": {fontFamily:'FontAwesome'}
 },
-".ma": {
-	"font": {fontFamily:'MaterialIcons-Regular'}
-},
 ".centrado": {
 	"textAlign": Ti.UI.TEXT_ALIGNMENT_CENTER
 },

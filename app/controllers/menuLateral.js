@@ -24,3 +24,14 @@ $.notificaciones.addEventListener('click', function(error) {
 	validacion = validacion.getView();
 	validacion.open();
 }); 
+
+
+$.nombreColaborador.text = Alloy.Globals.Datoscolaborador.nombre;
+	$.correoColaborador.text = Alloy.Globals.Datoscolaborador.correo;
+	//$.telefonoColaborador.text = Alloy.Globals.Datoscolaborador.telefono;
+	
+
+$.cerrarSesion.addEventListener('click', function(error) {
+	Ti.App.Properties.setList('listaContactos', []);
+	Alloy.Globals.contactos=[];
+}); 

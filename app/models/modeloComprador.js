@@ -1,19 +1,20 @@
 exports.definition = {
 	config: {
 		columns: {
-		    "idColaborador": "text",
-		    "nombre": "text",
+		    "id": "text",
+		    "nombreCompleto": "text",
 		    "telefono": "text",
 		    "direccion": "text",
-		    "correo":"text"
+		    "boletos": "text",
+		    "adeudoPendiente": "int",
+		    "abonos": "text"
 		},
 		adapter: {
 			type: "sql",
-			collection_name: "colaborador",
-			idAttribute:'idColaborador',
-			comparatror:'nombre'
+			collection_name: "modeloComprador",
+			idAttribute:'id',
+			comparatror:'nombreCompleto'
 		}
-		
 	},
 	extendModel: function(Model) {
 		_.extend(Model.prototype, {

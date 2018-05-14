@@ -1,17 +1,25 @@
 exports.definition = {
 	config: {
 		columns: {
+		    "id":"text",
+		    "nombreSorteo": "text",
 		    "activo": "integer",
-		    "fecha": "text",
+		    "tipoSorteo": "integer",
 		    "numeroSorteo": "integer",
+		    "fechaInicio": "text",
+		    "fechaFin": "text",
+		    "fechaFiniquito": "text",
+		    "precioUnitario": "integer",
+		    "emision": "integer",
+		    
 		    "original": "text",
 		    "miniatura": "text",
-		    "nombreSorteo": "text"
 		},
 		adapter: {
 			type: "sql",
 			collection_name: "modeloSorteo",
-			comparatror:'fecha'
+			comparatror:'fecha',
+			idAttribute:'id',
 		}
 	},
 	extendModel: function(Model) {

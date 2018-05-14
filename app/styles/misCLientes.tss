@@ -5,12 +5,12 @@
 "#titulo": {
 	"text": "Mis Compradores",
 	"left": "40",
-	"right": "40",
+	"right": "40"
 },
 "#vistaClientes": {
 	"layout": "vertical",
 	"top": "1",
-	"height": "84%",
+	"height": "84%"
 },
 ".icon": {
 	"width": "50dp",
@@ -24,7 +24,9 @@
 	"left": "40"
 },
 "#listaCOntactos": {
-	"backgroundColor": "white"
+	"backgroundColor": "white",
+	"separatorColor": "gray",
+	"dividerHeight": "1dp"
 },
 "#icon": {
 },
@@ -37,28 +39,34 @@
 "#regresar": {
 },
 "#edit": {
-	"text": "\uf040",
+	"text": "\uf054",
 	"right": "10",
 	"color": "black"
 },
 "#vistaOpciones": {
 	"height": "50",
-	"layout": "horizontal",
+	"layout": "horizontal"
 },
 "#todos": {
 	"title": "Todos",
 	"left": "5",
 	"borderWidth": "1",
-	"color": "#000000"
+	"color": "#000000",
+	"separatorColor": "gray",
+	"dividerHeight": "1dp"
 },
 "#conAdeudo": {
 	"title": "Con Adeudo",
 	"borderWidth": "0",
-	"color": "#6dace7"
+	"color": "#6dace7",
+	"separatorColor": "gray",
+	"dividerHeight": "1dp"
 },
 "#sinAdeudo": {
-	"title": "Sin Adeudo",
-	"borderWidth": "0"
+	"title": "Sin Boleto",
+	"borderWidth": "0",
+	"separatorColor": "gray",
+	"dividerHeight": "1dp",
 },
 ".botonFiltro": {
 	"width": "32%",
@@ -87,18 +95,18 @@
 "#Label_1": {
 	"text": "\uf234",
 	"color": "#feffff",
-	"left": "15",
-	"top": "10",
+	"left": "10",
+	"top": "0",
 	"class": "h6 fa",
-	"height": "30",
-	"width": "30"
+	"height": "40",
+	"width": "40"
 },
 "#Label_2": {
 	"text": "Agregar nuevo comprador",
 	"color": "#ffffff",
 	"left": "50",
 	"right": "10",
-	"top": "16",
+	"top": "7"
 },
 "#listaSinAdeudo": {
 	"backgroundColor": "white"
@@ -128,5 +136,15 @@
 	"top": "57%"
 },
 "#crearNuevoComprador": {
-	"backgroundColor": "#4bc3fe",
+	"backgroundColor": "#4bc3fe"
+},
+"#sinClientes": {
+	"text": "Aún no has registrado ningun /n comprador en tu lista",
+	"left": "15%",
+	"top": "31%",
+	"color": "#333333",
+	"right": "15%",
+	"zIndex": "10",
+	"class": "fuenteApp",
+	"visible": "false"
 }

@@ -14,7 +14,7 @@
 },
 "#vistaDatosContacto": {
 	"backgroundColor": "#ffffff",
-	"height": "35%",
+	"height": "30%",
 	"layout": "vertical"
 },
 "#vistaEstatusPago": {
@@ -53,10 +53,7 @@
 "#vistaTituloPanel": {
 	"height": "40"
 },
-"#agregarBoletos": {
-	"text": "Boletos Entregados",
-	"class": "etiquetasDetalle"
-},
+ 
 "#cantidadBoletos": {
 	"text": "0"
 },
@@ -68,14 +65,13 @@
 "#vistaCantidadBoletos": {
 	"height": "30%"
 },
-"#vistaTituloAbonos": {
-	"left": "1",
-	"width": "50%"
-},
+ 
 "#tituloAbonos": {
+	"height": "20%"
 },
 "#tituloNotas": {
-	"text": "Notas"
+	"text": "Notas",
+	"top": "0"
 },
 "#boletos": {
 	"left": "5",
@@ -88,19 +84,21 @@
 "#eliminarContacto": {
 	"title": "Eliminar de Contactos",
 	"color": "#red",
-	"backgroundColor": "white",
-	"height": "100",
-	"width": "90%",
-	"top": "2%",
-	"class": "boton"
+	"backgroundColor": "#66ccff",
+	"height": "40",
+	"width": "70%",
+	"class": "boton",
+	"left": "20",
+	"right": "20",
+	"visible": "true",
+	"zIndex": "10"
 },
 "#fotoCliente": {
 	"height": "100",
 	"width": "100",
-	"image": "/imagen.jpg",
 	"borderWidth": "9",
 	"borderColor": "white",
-	"top": "5"
+	"top": "5",
 },
 "#nombreCliente": {
 	"text": "Pedro Pablo Miramontes Valencia",
@@ -115,7 +113,7 @@
 	"autoLink": Ti.UI.AUTOLINK_PHONE_NUMBERS,
 	"top": "5"
 },
-"#View_1": {
+"#vistaEstatus": {
 	"backgroundColor": "#66ccff",
 	"borderRadius": "10",
 	"bottom": "10",
@@ -133,16 +131,11 @@
 	"left": "85%",
 	"right": "5",
 	"color": "#ffffff",
-	"top": "15",
+	"top": "15"
 },
 "#regresar": {
 },
-"#agregarBoletos": {
-	"text": "\uf0fe",
-	"right": "10",
-	"top": "15",
-	"left": "10"
-},
+ 
 "#boletosEntregados": {
 	"text": "Boletos entregados"
 },
@@ -164,12 +157,15 @@
 	"text": "\uf14b",
 	"top": "15",
 	"left": "10",
-	"right": "5"
+	"right": "5",
+	"zIndex": "10"
 },
 "#pagoPendiente": {
-	"text": "Pago Pendiente",
-	"left": "10",
-	"top": "15"
+	"left": "27",
+	"text": "0",
+	"top": "60",
+	"color": "#000000",
+	"zIndex": "10"
 },
 "#agregarPago": {
 	"title": "Agregar Pago",
@@ -196,19 +192,40 @@
 	"right": "4"
 },
 "#pendiente": {
-	"width": "55%"
+	"width": "55%",
 },
-"#vistaDeudaPagos              ": {
+"#vistaDeudaPagos": {
 	"height": "19%",
 	"layout": "horizontal"
 },
-"#eliminarContacto ": {
-	"width": "50%"
+"#eliminarContacto": {
+	"width": "50%",
+	"height": "19%"
 },
 "#vistaBoletosAsignados": {
 	"height": "30%",
 	"layout": "horizontal",
 	"scrollType": "horizontal"
 },
-"#View_3": {
+"#notas": {
+	"backgroundColor": "#f5f2ce",
+	"editable": "true",
+	"height": "100%",
+	"width": "100%",
+	"color": "#000000",
+},
+"#pagoPendiente": {
+	"text": "Label",
+	"left": "20%",
+	"top": "50%"
+},
+"#titulopagoPendiente": {
+	"left": "10",
+	"text": "Pago Pendiente",
+	"top": "10"
+},
+"#Label_1": {
+	"text": "$",
+	"left": "15",
+	"top": "60"
 }

@@ -1,8 +1,9 @@
 <Alloy>
-    <Window class="container" layout="vertical">
+    <Window class="container" layout="vertical" left="0.00%" top="6.45%">
         <View class="vistaTitulo" id="vistaTitulo">
-            <Label class="regresar h5 fa" id="regresar"/>
-            <Label class="etiquetaTitulo fuenteApp h4 centrado" id="Label_2"/>
+            <Label class="h3 fuenteApp" id="regresar"/>
+            <Label class="etiquetaTitulo fuenteApp h3 centrado" id="Label_2"/>
+            <Label class="fuenteApp h3 derecha" id="agregar"/>
         </View>
         <View class="fondoBlanco" id="vistaOpciones">
             <Button class="botonFiltro fondoBlanco" id="nuevo"/>
@@ -14,8 +15,5 @@
             <Require src="importarClientes"/>
             <Require src="importarContactosTelefono"/>
         </ScrollableView>
-        <View id="vistaAgregar">
-            <Button class="fuenteApp" id="Button_1"/>
-        </View>
     </Window>
 </Alloy>

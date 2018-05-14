@@ -1,7 +1,9 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
+//var args = arguments[0] || {};
 
-Ti.API.info(JSON.stringify(Alloy.Globals.Datoscolaborador,null,4));
+//Ti.API.info(JSON.stringify(Alloy.Globals.Datoscolaborador,null,4));
+
 llenaDatosColaborador();
 
 
@@ -52,7 +54,8 @@ $.aceptar.addEventListener('click', function(error) {
 });
 
 function llenaDatosColaborador (){
-	$.nombreColaborador.text = Alloy.Globals.Datoscolaborador.nombre;
-	$.correoColaborador.text = Alloy.Globals.Datoscolaborador.correo;
-	$.telefonoColaborador.text = Alloy.Globals.Datoscolaborador.telefono;
+	Ti.API.info(JSON.stringify(Alloy.Collections.colaborador, null, 4));
+	$.nombreColaborador.text = Alloy.Collections.colaborador.nombre;
+	$.correoColaborador.text = Alloy.Collections.colaborador.correo;
+	$.telefonoColaborador.text = Alloy.Collections.colaborador.telefono;
 }

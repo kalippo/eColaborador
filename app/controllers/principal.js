@@ -15,7 +15,7 @@ function obtenerImagenes() {
 	}, function(e) {
 		if (e.success) {
 			if (!e.photos) {
-				alert('Success: No photos');
+				//alert('Success: No photos');
 			}
 			else {
 				Alloy.Collections.menuPrincipal.reset();
@@ -26,7 +26,7 @@ function obtenerImagenes() {
 						indice : photo.custom_fields.indice,
 						original : photo.urls.original
 					});
-					menus.save();
+					menus.save(); 
 					Alloy.Collections.menuPrincipal.push(menus);
 				});
 				//Ti.API.info(JSON.stringify(Alloy.Collections.menuPrincipal,null,4));

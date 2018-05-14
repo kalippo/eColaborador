@@ -1,25 +1,48 @@
-// Arguments passed into this controller can be accessed via the `$.args` object directly or:
+// Arguments passed into this controller can be accessed via the `$.args` object
+// directly or:
 var args = $.args;
 
+Ti.API.info(JSON.stringify(args, null, 4));
 //$.botonMas.height = $.botonMas.width;
+Alloy.Globals.contactos.forEach(function(contacto) {
+	if(contacto.id == args) {
+		detalle = contacto;
+	}
+});
 
 $.cantidadBoletos.text = parseInt($.cantidadBoletos.boletos) + " Boletos";
 
-obetnerSorteos();
-
-if (Alloy.Collections.sorteosActivos.count != 0) {
-	obtenerImagenes();
-
-}
-else {
-	crearListaSorteos(Alloy.Collections.sorteosActivos.where({
-		activo : true
-	}));
-}
+crearListaSorteos(Alloy.Collections.sorteosActivos.where({
+	activo : 1
+}));
 
 $.regresar.addEventListener('click', function(error) {
 
-	var inicio = Alloy.createController("detalleCliente");
+	var inicio = Alloy.createController("detalleCliente", args);
+	inicio = inicio.getView();
+	inicio.open();
+
+});
+
+$.aceptar.addEventListener('click', function(error) {
+
+	var indice = $.vistaSeleccionarSorteo.currentPage;
+	var viewArray = $.vistaSeleccionarSorteo.getViews();
+	detalle.boletos.push({
+		"id" : viewArray[indice].getViewById('imagen').idImagen,
+		"cantidad" : $.cantidadBoletos.boletos
+	});
+	detalle.pagoPendiente = detalle.pagoPendiente + (500 * $.cantidadBoletos.boletos);
+
+	var newContactos = Alloy.Globals.contactos.filter(function(e) {
+		return e !== detalle;
+	});
+
+	newContactos.push(detalle);
+	Alloy.Globals.contactos = newContactos;
+	Ti.App.Properties.setList('listaContactos', Alloy.Globals.contactos);
+
+	var inicio = Alloy.createController("detalleCliente", args);
 	inicio = inicio.getView();
 	inicio.open();
 
@@ -32,61 +55,27 @@ $.botonMas.addEventListener('click', function(error) {
 });
 
 $.botonMenos.addEventListener('click', function(error) {
-	if (parseInt($.cantidadBoletos.text) > 1) {
+	if(parseInt($.cantidadBoletos.text) > 1) {
 		$.cantidadBoletos.boletos = parseInt($.cantidadBoletos.boletos) - 1;
 		$.cantidadBoletos.text = parseInt($.cantidadBoletos.boletos) + " Boletos";
 
 	}
 });
 
-function obtenerImagenes() {
-	Alloy.Globals.Cloud.PhotoCollections.showPhotos({
-		collection_id : "5a6b839824ee48c54b8ecad7"
-	}, function(e) {
-		if (e.success) {
-			if (!e.photos) {
-				//agregar mensaje de que no hay sorteos activos
-			}
-			else {
-				Alloy.Collections.sorteosActivos.reset();
-				e.photos.forEach(function(photo) {
-					var sorteo = Alloy.createModel('modeloSorteo', {
-						activo : photo.custom_fields.activo,
-						fecha : photo.custom_fields.fecha,
-						numeroSorteo : photo.custom_fields.numeroSorteo,
-						original : photo.urls.original,
-						miniatura : photo.urls.original,
-						nombreSorteo : ''
-
-					});
-					sorteo.save();
-					Alloy.Collections.sorteosActivos.push(sorteo);
-
-				});
-				//Ti.API.info(JSON.stringify(Alloy.Collections.sorteosActivos,null,4));
-				crearListaSorteos(Alloy.Collections.sorteosActivos.where({
-					activo : true
-				}));
-			}
-		}
-		else {
-			//alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
-		}
-	});
-}
-
 function crearListaSorteos(sorteos) {
 	//var menuActivo = Alloy.Collections.menuPrincipal.where({activo : true});
-	//Ti.API.info(JSON.stringify(sorteos,null,4));
+	Ti.API.info(JSON.stringify(sorteos, null, 4));
 	var paginas = [];
 	//Ti.API.info(JSON.stringify(paginas, null, 4));
 	sorteos.sort().forEach(function(opcion) {
-		//Ti.API.info(JSON.stringify(opcion,null,4));
+		Ti.API.info(JSON.stringify(opcion, null, 4));
 		var imagenSorteo = Titanium.UI.createImageView({
+			id : "imagen",
 			image : opcion.get('original'),
 			top : '50',
 			left : '10',
-			right : '10'
+			right : '10',
+			idImagen : opcion.get('id')
 
 		});
 
@@ -103,7 +92,20 @@ function crearListaSorteos(sorteos) {
 			width : '50',
 			color : "#63dced",
 			font : {
-				fontSize : 40, fontFamily:'FontAwesome'
+				fontSize : 40,
+				fontFamily : 'FontAwesome'
+			},
+		});
+		var fechaSorteo = Titanium.UI.createLabel({
+			text : opcion.get('fechaFin'),
+			left : '10%',
+			right : '10%',
+			top : '75%',
+			textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER,
+			color : "white",
+			font : {
+				fontSize : 20,
+				fontFamily : 'Montserrat-Regular'
 			},
 		});
 		var fondoCheckBox = Titanium.UI.createLabel({
@@ -114,12 +116,15 @@ function crearListaSorteos(sorteos) {
 			width : '50',
 			color : "white",
 			font : {
-				fontSize : 40, fontFamily:'FontAwesome'
+				fontSize : 40,
+				fontFamily : 'FontAwesome'
 			},
 		});
 		vistaSorteo.add(imagenSorteo);
 		vistaSorteo.add(fondoCheckBox);
 		vistaSorteo.add(checkBox);
+		vistaSorteo.add(fechaSorteo);
+
 		paginas.push(vistaSorteo);
 		//menu.addEventListener('click', clickMenu);
 
@@ -129,31 +134,20 @@ function crearListaSorteos(sorteos) {
 
 }
 
+
 function removeAllChildren(viewObject) {
-	//copy array of child object references because view's "children" property is live collection of child object references
+	//copy array of child object references because view's "children" property is
+	// live collection of child object references
 	var children = viewObject.children.slice(0);
 
-	for (var i = 0; i < children.length; ++i) {
+	for(var i = 0; i < children.length; ++i) {
 		viewObject.remove(children[i]);
 	}
 }
 
-function obetnerSorteos() {
 
-	Alloy.Globals.Cloud.PhotoCollections.showSubcollections({
-		page : 1,
-		per_page : 20,
-		collection_id : "5a57d3521ceda35a3b5c74eb"
-	}, function(e) {
-		if (e.success) {
-			for (var i = 0; i < e.collections.length; i++) {
-				var collection = e.collections[i];
-				Ti.API.info(JSON.stringify(collection, null, 4));
-			}
-		}
-		else {
-			alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
-		}
-	});
+function removeFromArray(array, item, index) {
+	while(( index = array.indexOf(item)) > -1) {
+		array.splice(index, 1);
+	}
 }
-

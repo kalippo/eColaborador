@@ -24,6 +24,7 @@
                             </Templates>
                             <ListSection class="fondoBlanco" name="contactos"/>
                         </ListView>
+                        <Label id="sinClientes"/>
                     </View>
                     <View id="vistaConAdeudo">
                         <ListView defaultItemTemplate="templateConAdeudo" id="listaConAdeudo">
@@ -37,18 +38,7 @@
                             <ListSection class="fondoBlanco" name="contactos"/>
                         </ListView>
                     </View>
-                    <View id="vistaSinAdeudo">
-                        <ListView defaultItemTemplate="templateSinAdeudo" id="listaSinAdeudo">
-                            <Templates>
-                                <ItemTemplate name="templateSinAdeudo">
-                                    <Label bindId="estatus" class="fa h4 " id="iconoEstatus"/>
-                                    <Label bindId="nombreContacto" id="Label_3"/>
-                                    <Label bindId="edit" class="fa" id="Label_4"/>
-                                </ItemTemplate>
-                            </Templates>
-                            <ListSection class="fondoBlanco " name="contactos"/>
-                        </ListView>
-                    </View>
+                    <View id="vistaSinAdeudo"/>
                 </ScrollableView>
             </View>
         </ScrollView>

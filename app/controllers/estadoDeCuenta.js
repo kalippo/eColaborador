@@ -10,3 +10,11 @@ function abreLogin(){
 	validacion = validacion.getView();
 	validacion.open();
 }
+
+
+
+$.regresar.addEventListener('click', function(error) {
+	var inicio = Alloy.createController("index");
+	inicio = inicio.getView();
+	inicio.open();
+});  

@@ -10,18 +10,17 @@
                 <ImageView class="imagenColaborador" id="fotoCliente"/>
                 <Label class="fuenteApp h2" id="nombreCliente"/>
                 <Label class="fuenteApp h2" id="telefonoCliente"/>
-                <View id="View_3"/>
             </View>
             <View class="panelDetalles" id="vistaEstatusPago">
                 <Label class="etiquetasDetalle h3 fuenteApp" id="estatusDePago"/>
-                <View id="View_1">
+                <View id="vistaEstatus">
                     <Label class="fuenteApp" id="estatus"/>
                 </View>
             </View>
             <View class="panelDetalles" id="vistaBoletosEntregados">
                 <View id="vistaTituloPanel">
                     <Label class="etiquetasDetalle h3 fuenteApp" id="boletosEntregados"/>
-                    <Label class="fa h5 derecha  etiquetaDetalle fuenteApp" id="seleccionarBoletos"/>
+                    <Label class="fa h5 derecha fuenteApp" id="seleccionarBoletos"/>
                 </View>
                 <View id="vistaCantidadBoletos" layout="horizontal">
                     <Label class="contenidoDetalle fuenteApp" id="cantidadBoletos"/>
@@ -30,10 +29,12 @@
                 <Label class="etiquetasDetalle h3 fuenteApp" id="sorteos"/>
                 <ScrollView id="vistaBoletosAsignados"/>
             </View>
-            <View class="panelDetalles" id="vistaDeudaPagos              ">
+            <View class="panelDetalles" id="vistaDeudaPagos">
                 <View id="pendiente">
-                    <Label class="fuenteApp h3" id="pagoPendiente"/>
+                    <Label class="fuenteApp h3" id="titulopagoPendiente"/>
                     <Label class="fa h4 colorTurquesa derecha" id="saldarDeuda"/>
+                    <Label class="fuenteApp h3" id="pagoPendiente"/>
+                    <Label id="Label_1"/>
                 </View>
                 <View id="vistaAbonos">
                     <Button class="h2" id="agregarPago"/>
@@ -45,9 +46,10 @@
                 <View id="tituloAbonos">
                     <Label class="etiquetasDetalle fuenteApp" id="tituloNotas"/>
                 </View>
+                <TextArea id="notas" onChange="edicionNotas"/>
             </View>
+            <Button class="fuenteApp" id="eliminarContacto"/>
             <Label class="contenidoDetalle h2" id="ultimaActualizacion"/>
-            <Button class="eliminarContacto fuenteApp" id="eliminarContacto "/>
         </ScrollView>
     </Window>
 </Alloy>

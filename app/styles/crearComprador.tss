@@ -1,20 +1,20 @@
-".container": {
-},
+".container": {},
 "#nombre": {
-	"hintText": "Nombre"
+	"hintText": "Nombre",
+	"color": "#666666",
+	hintTextColor: "gray"
 },
 "#apellidos": {
-	"hintText": "Apellidos"
-},
-"#correo": {
-	"hintText": "Correo"
+	"hintText": "Apellidos",
+	"color": "black",
+	hintTextColor: "gray"
 },
 ".campoCaptura": {
 	"borderRadius": "10",
 	"borderColor": "#E5E5E5",
 	"borderWidth": "1",
 	"height": "50",
-	"width": "80%",
+	"width": "80%", 
 	"top": "15",
 	"left": "20",
 	"right": "20"
@@ -22,10 +22,9 @@
 "#crearComprador": {
 	"title": "Crear Comprador"
 },
-"#empresa": {
-	
-	"hintText": "Empresa"
-},
 "#telefono": {
-	"hintText": "Telefono"
+	"hintText": "Telefono",
+	"color": "black",
+	hintTextColor: "gray"	,
+	keyboardType: Ti.UI.KEYBOARD_NUMBER_PAD
 }

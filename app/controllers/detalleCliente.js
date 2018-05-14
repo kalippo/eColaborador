@@ -1,26 +1,79 @@
-// Arguments passed into this controller can be accessed via the `$.args` object directly or:
+// Arguments passed into this controller can be accessed via the `$.args` object
+// directly or:
 var args = $.args;
+var cantidadBoletos = 0;
+Ti.API.info(JSON.stringify(args, null, 4));
+var detalle = "";
+
+Alloy.Globals.contactos.forEach(function(contacto) {
+	if(contacto.id == args) {
+		detalle = contacto;
+	}
+});
+
+Ti.API.info(JSON.stringify(detalle, null, 4));
+
+$.nombreCliente.text = detalle.nombreContacto;
+$.telefonoCliente.text = detalle.telefono;
+$.pagoPendiente.text = detalle.pagoPendiente;
+$.notas.value = detalle.notas;
+if(detalle.pagoPendiente > 0) {
+	$.estatus.text = "Adeudo";
+	//$.vistaEstatus.backgroundColor='red';
+}
+
 asignarBoletos();
+
 $.regresar.addEventListener('click', function(error) {
 	var inicio = Alloy.createController("misClientes");
 	inicio = inicio.getView();
 	inicio.open();
 });
+
+$.agregarPago.addEventListener('click', function(error) {
+	var dialog = Ti.UI.createAlertDialog({
+		message : 'Cantidad a abonar:',
+		style : Ti.UI.iOS.AlertDialogStyle.PLAIN_TEXT_INPUT,
+		ok : 'Abonar',
+		title : 'Agregar Abono'
+	});
+	dialog.addEventListener('click', function(e) {
+
+		Ti.API.info(JSON.stringify(detalle.pagoPendiente, null, 4));
+
+		var newContactos = Alloy.Globals.contactos.filter(function(e) {
+			return e !== detalle;
+		});
+		detalle.pagoPendiente -= e.text;
+		newContactos.push(detalle);
+		Alloy.Globals.contactos = newContactos;
+		Ti.App.Properties.setList('listaContactos', Alloy.Globals.contactos);
+
+		$.pagoPendiente.text = detalle.pagoPendiente;
+
+	});
+	dialog.show();
+});
+
 $.seleccionarBoletos.addEventListener('click', function(error) {
-	var inicio = Alloy.createController("seleccionBoletos");
+	var inicio = Alloy.createController("seleccionBoletos", args);
 	inicio = inicio.getView();
 	inicio.open();
 });
 function asignarBoletos() {
 	//boletos.forEach(function(sorteo){
-	crearAsignacion('1', 1);
-	crearAsignacion('5', 1);
-	crearAsignacion('10', 1);
-	crearAsignacion('7', 1);
+	detalle.boletos.forEach(function(boleto) {
+		Ti.API.info(JSON.stringify(boleto, null, 4));
+		crearAsignacion(boleto.id, boleto.cantidad);
+		cantidadBoletos += boleto.cantidad;
+
+	});
+	$.cantidadBoletos.text = cantidadBoletos;
 	//});
 }
 
-function crearAsignacion(cantidadBoletos, sorteo) {
+
+function crearAsignacion(sorteo, cantidadBoletos) {
 	var vistaAsignacion = Titanium.UI.createView({
 		backgroudn : "white",
 		width : '115',
@@ -44,16 +97,52 @@ function crearAsignacion(cantidadBoletos, sorteo) {
 		textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER,
 		text : cantidadBoletos
 	});
-	var imagenSorteo = Ti.UI.createImageView({
-		image : 'https://s3-us-west-1.amazonaws.com/storage-platform.cloud.appcelerator.com/VsCFrroIecox2cc1mCb7lsuTtmQFX4zn/photos/4d/a9/5a70aaa66e5b2d3de2ee30e2/sms-btn_thumb_100.png',
+
+	var imagenSorteo =  Ti.UI.createImageView({
+		image : Alloy.Collections.sorteosActivos.get(sorteo.toString()).get('original'),
 		width : '80',
 		height : '26',
 		left : '1'
 	});
 	vistaAsignacion.add(cantidadBoletos);
 	vistaAsignacion.add(imagenSorteo);
-	Ti.API.info(JSON.stringify(vistaAsignacion, null, 4));
-	Ti.API.info(JSON.stringify(cantidadBoletos, null, 4));
-	Ti.API.info(JSON.stringify(imagenSorteo, null, 4));
+	//Ti.API.info(JSON.stringify(vistaAsignacion, null, 4));
+	//Ti.API.info(JSON.stringify(cantidadBoletos, null, 4));
+	//Ti.API.info(JSON.stringify(imagenSorteo, null, 4));
 	$.vistaBoletosAsignados.add(vistaAsignacion);
+
+}
+
+
+/********************************************************
+
+ * Appcelerator Designer Generated Code
+ *******************************************************/
+
+/**
+ * edicionNotas
+ * @param {object} e - event object
+ */
+function edicionNotas(e) {
+
+	var newContactos = Alloy.Globals.contactos.filter(function(e) {
+		return e !== detalle;
+	});
+	detalle.notas = $.notas.value;
+	newContactos.push(detalle);
+	Alloy.Globals.contactos = newContactos;
+	Ti.App.Properties.setList('listaContactos', Alloy.Globals.contactos);
+	Ti.API.info(JSON.stringify(Alloy.Globals.contactos, null, 4));
+}
+
+
+function actualizaContacto(contactoViejo, contactoNuevo) {
+	var newContactos = Alloy.Globals.contactos.filter(function(e) {
+		return e !== contactoViejo;
+	});
+
+	newContactos.push(contactoNuevo);
+	Alloy.Globals.contactos = newContactos;
+	Ti.App.Properties.setList('listaContactos', Alloy.Globals.contactos);
+	//Ti.API.info(JSON.stringify(Alloy.Globals.contactos, null, 4));
 }

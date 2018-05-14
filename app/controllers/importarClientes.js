@@ -5,28 +5,47 @@ var args = $.args;
 getClientes();
   
 function getClientes() {
-	
-	return creaContactos(Alloy.Globals.compradores);
+	//Ti.API.info(JSON.stringify(Alloy.Globals.compradores.Clientes.Nombres,null,4));
+
+	 creaContactos(Alloy.Globals.compradores.Clientes.Nombres);
 		
 }
 
 
 
 function creaContactos(contactos) {
-	var todos = [];
-	
+	var frecuentes = [];
+	var id = 0;
 	contactos.forEach(function(contacto) {
-		
-			todos.push({
+		frecuentes.push({
 				nombreContacto : {
 					text : contacto.Nombre
 				},
 				telefono : {
 					text : contacto.Telefono
+				},
+				seleccionado:{
+					itemId:"id"+ id++,
+					value:false
 				}
 			});
+			
+			
 		});
 		 
-	$.listaFrecuentes.sections[0].setItems(todos);
+		 
+		 Ti.API.info(JSON.stringify(frecuentes,null,4));
+
+	$.listaContactos.sections[0].setItems(frecuentes);
 	
+}
+
+function handleChange(e){
+    // Get the current "row"
+    var item = e.section.getItemAt(e.itemIndex);
+    // Update the switch value
+    item.seleccionado.value = e.value;
+    // Update the section with the new change
+    e.section.updateItemAt(e.itemIndex, item);
+    Ti.API.info(item);
 }

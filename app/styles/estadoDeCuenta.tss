@@ -4,10 +4,10 @@
 },
 "#View_2": {
 },
-"#Label_1": {
+"#regresar": {
 },
 "#Label_2": {
 	"text": "Estado de cuenta",
 	"left": "40",
-	"right": "40",
+	"right": "40"
 }

@@ -4,18 +4,18 @@
 	"layout": "vertical",
 	"opacity": "1"
 },
-"#inicioSesion": {
+"#aceptar": {
 	"title": "Aceptar",
 	"backgroundColor": "#63dced",
 	"right": "30",
 	"top": "30",
-	"borderRadius": "15"
+	"borderRadius": "15",
 },
 "#sorteosActivos": {
 	"layout": "vertical",
 	"height": "180",
 	"left": "5",
-	"right": "5",
+	"right": "5"
 },
 "#View_1": {
 },
@@ -24,7 +24,7 @@
 	"right": "50",
 	"left": "50",
 	"top": "15",
-	"color": "#feffff",
+	"color": "#feffff"
 },
 "#View_2": {
 	"height": "85",
@@ -41,7 +41,7 @@
 	"backgroundColor": "#63dced",
 	"color": "#feffff",
 	"left": "5%",
-	"top": "15%"
+	"top": "15%",
 },
 "#cantidadBoletos": {
 	"text": "1",
@@ -68,16 +68,15 @@
 	"left": "10",
 	"right": "10",
 	"showPagingControl": "true",
-	contentHeight: Ti.UI.SIZE,
-	contentWidth: Ti.UI.SIZE
-	
+	"contentHeight": Ti.UI.SIZE,
+	"contentWidth": Ti.UI.SIZE
 },
 "#Label_1": {
 	"text": "Cantidad de Boletos",
 	"top": "20"
 },
 "#regresar": {
-	"class": "fuenteApp h5",
+	"class": "fuenteApp h5"
 },
 "#Label_2": {
 	"text": "Selecciona el Sorteo",

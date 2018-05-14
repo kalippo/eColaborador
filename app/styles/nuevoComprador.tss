@@ -3,14 +3,19 @@
 "#vistaTitulo": {
 },
 "#vistaFiltros": {
-	"height": "77%",
 },
 "#regresar": {
+	"color": "#ffffff",
+	"left": "10",
+	"text": "Cancelar",
+	"top": "10",
+	"width": "100"
 },
 "#Label_2": {
-	"text": "Nuevo Comprador",
-	"right": "50",
-	"left": "50"
+	"text": "Agregar Contacto",
+	"right": "25%",
+	"left": "25%",
+	"top": "10"
 },
 "#vistaOpciones": {
 	"height": "40",
@@ -25,7 +30,7 @@
 	"color": "blue"
 },
 "#telefono": {
-	"title": "Telefono"
+	"title": "Desde Telefono",
 },
 "#nuevo": {
 	"title": "Nuevo"
@@ -33,18 +38,11 @@
 "#frecuentes": {
 	"title": "Frecuentes"
 },
-"#View_1": {
-	"left": "7%",
-	"top": "96%"
-},
-"#vistaAgregar": {
-	"height": "50",
-	"bottom": "1",
-},
-"#Button_1": {
-	"title": "Agregar",
-	"backgroundColor": "#4bc3fe",
+"#agregar": {
+	"text": "OK",
 	"color": "#ffffff",
-	"height": "100%",
-	"width": "100%",
+	"right": "10",
+	"left": "70%",
+	"top": "10",
+	"class": "fuenteApp derecha"
 }

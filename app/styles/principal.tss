@@ -31,30 +31,31 @@
 	"top": "10"
 },
 "#vistaPrincipal": {
-	"layout": "horizontal"
+	"layout": "horizontal",
 },
 "#vistaPanel": {
 	"layout": "vertical",
-	"scrollType": "vertical"
+	"scrollType": "vertical",
 },
 "#vistaCalendario": {
 	"class": "panelOpciones",
 	"backgroundColor": "#eef2f2",
 	"height": "45",
 	"layout": "horizontal",
-	"top": "4"
+	"top": "4",
 },
 "#vistaCuentaRegresiva": {
-	"height": "115",
+	"height": "1",
 	"layout": "vertical",
 	"backgroundColor": "white",
 	"left": "10",
 	"right": "10",
 	"borderColor": "#66ffff",
-	"top": "10"
+	"top": "10",
+	"visible": "false",
 },
 "#vistaCuentaRegresiva[platform=ios formFactor=tablet]": {
-	"height": "170",
+	"height": "1",
 	"layout": "vertical",
 	"backgroundColor": "white",
 	"left": "60",
@@ -107,7 +108,7 @@
 "#iconoMenu": {
 	"text": "\uf0c9",
 	"height": "40",
-	"width": "40",
+	"width": "40"
 },
 "#postales": {
 	"text": "\uf1d8",
@@ -162,7 +163,7 @@
 	"text": "CALENDARIO",
 	"left": "15",
 	"top": "20",
-	"color": "black"
+	"color": "black",
 },
 "#vistaTitulo": {
 	"left": "5",

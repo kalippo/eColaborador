@@ -3,8 +3,6 @@
         <TextField class="campoCaptura" id="nombre"/>
         <TextField class="campoCaptura" id="apellidos"/>
         <TextField class="campoCaptura" id="telefono"/>
-        <TextField class="campoCaptura" id="correo"/>
-        <TextField class="campoCaptura" id="empresa"/>
         <Button class="boton" id="crearComprador"/>
     </View>
 </Alloy>

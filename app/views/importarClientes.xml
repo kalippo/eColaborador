@@ -7,15 +7,16 @@
             </View>
             <View id="View_2"/>
             <View class="fondoBlanco" id="vistaClientes">
-                <ListView id="listaFrecuentes">
-                	 <ItemTemplate name="templateContactos">
-                    <Label bindId="nombreContacto" class="fuenteApp h3" id="nombreContacto"/>
-                    <Label bindId="telefono" class="fuenteApp h2" id="telefono"/>
-                    <Switch class="fondoBlanco" id="seleccionado"/>
-                </ItemTemplate>
-            </Templates>
-            <ListSection class="fondoBlanco" name="contactos"/>
-        </ListView>
+                <ListView defaultItemTemplate="templateContactos" id="listaContactos">
+                    <Templates>
+                        <ItemTemplate name="templateContactos">
+                            <Label bindId="nombreContacto" class="fuenteApp h2" id="nombreContacto"/>
+                            <Label bindId="telefono" class="fuenteApp h1" id="telefono"/>
+                            <Switch bindId="seleccionado" class="fondoBlanco" id="seleccionado" onChange="handleChange"/>
+                        </ItemTemplate>
+                    </Templates>
+                    <ListSection class="fondoBlanco" name="contactos"/>
+                </ListView>
             </View>
         </ScrollView>
     </View>
