@@ -5,9 +5,9 @@ var args = $.args;
 getClientes();
   
 function getClientes() {
-	//Ti.API.info(JSON.stringify(Alloy.Globals.compradores.Clientes.Nombres,null,4));
+	Ti.API.info('importar frecuentes'+JSON.stringify(Alloy.Globals.compradores,null,4));
 
-	 creaContactos(Alloy.Globals.compradores.Clientes.Nombres);
+	 creaContactos(Alloy.Globals.compradores);
 		
 }
 
@@ -19,10 +19,10 @@ function creaContactos(contactos) {
 	contactos.forEach(function(contacto) {
 		frecuentes.push({
 				nombreContacto : {
-					text : contacto.Nombre
+					text : contacto.nombre
 				},
 				telefono : {
-					text : contacto.Telefono
+					text : contacto.telefono
 				},
 				seleccionado:{
 					itemId:"id"+ id++,

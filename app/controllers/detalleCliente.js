@@ -98,7 +98,7 @@ function crearAsignacion(sorteo, cantidadBoletos) {
 		text : cantidadBoletos
 	});
 
-	var imagenSorteo =  Ti.UI.createImageView({
+	var imagenSorteo = Ti.UI.createImageView({
 		image : Alloy.Collections.sorteosActivos.get(sorteo.toString()).get('original'),
 		width : '80',
 		height : '26',
@@ -132,6 +132,7 @@ function edicionNotas(e) {
 	newContactos.push(detalle);
 	Alloy.Globals.contactos = newContactos;
 	Ti.App.Properties.setList('listaContactos', Alloy.Globals.contactos);
+	actualizaContactos( );
 	Ti.API.info(JSON.stringify(Alloy.Globals.contactos, null, 4));
 }
 
@@ -144,5 +145,26 @@ function actualizaContacto(contactoViejo, contactoNuevo) {
 	newContactos.push(contactoNuevo);
 	Alloy.Globals.contactos = newContactos;
 	Ti.App.Properties.setList('listaContactos', Alloy.Globals.contactos);
+	actualizaContactos( );
 	//Ti.API.info(JSON.stringify(Alloy.Globals.contactos, null, 4));
 }
+
+
+function actualizaContactos() {
+
+	Alloy.Globals.Cloud.Users.update({
+		
+		custom_fields : {
+			compradores : JSON.stringify(Alloy.Globals.contactos)
+			 
+		}
+	}, function(e) {
+		if(e.success) {
+			var user = e.users[0];
+			Ti.API.info('Success:\n' + JSON.stringify(contactos));
+		} else {
+			Ti.API.info('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
+		}
+	});
+}
+

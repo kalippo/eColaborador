@@ -1,80 +1,12 @@
 Ti.API.info('test');
 Alloy.Globals.Cloud = require('ti.cloud');
 
-//Alloy.Globals.contactos = [];
-Alloy.Globals.contactos = Ti.App.Properties.getList('listaContactos', []);
+
+
+//COLECCIONES
 Alloy.Globals.maxId = Ti.App.Properties.getInt('maxId', 1);
-var login = Ti.App.Properties.getString('password', '');
-var password = Ti.App.Properties.getString('login', '');
-
-Ti.API.info('login:' + login + ' password:' + password);
-if(login != '' && password != '') {
-	Alloy.Globals.Cloud.Users.login({
-		login : login,
-		password : password
-	}, function(e) {
-		if(e.success) {
-			Alloy.Globals.Cloud.Users.showMe(function(e) {
-				if(e.success) {
-					 
-					var user = e.users[0];
-					Ti.App.Properties.setString('login', user.username);
-					Ti.App.Properties.setString('password', password);
-					var Datoscolaborador = Alloy.createModel('modeloColaborador', {
-						idColaborador : user.username,
-						nombre : user.first_name,
-						telefono : user.telefono,
-						direccion : user.direccion
-					});
-					Datoscolaborador.save();
-					Alloy.Collections.colaborador.push(Datoscolaborador);
-					Alloy.Globals.user = user;
-					Alloy.Globals.contactos  = JSON.parse(user.custom_fields.compradores);
-					
-					alert('Success:\n' + 'id: ' + user.id + '\n' + 'first name: ' + user.first_name + '\n' + 'last name: ' + user.last_name);
-				} else {
-					alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
-				}
-			});
-		} else {
-
-			alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
-		}
-	});
-}    
-
-(function() {
-	var ACS = require('ti.cloud'),
-	    env = Ti.App.deployType.toLowerCase() === 'production' ? 'production' : 'development',
-	    username = Ti.App.Properties.getString('acs-username-' + env),
-	    password = Ti.App.Properties.getString('acs-password-' + env);
-
-	// if not configured, just return
-	if(!env || !username || !password) {
-		return;
-	}
-	/**
-	 * Appcelerator Cloud (ACS) Admin User Login Logic
-	 *
-	 * fires login.success with the user as argument on success
-	 * fires login.failed with the result as argument on error
-	 */
-	ACS.Users.login({
-		login : username,
-		password : password,
-	}, function(result) {
-		if(env === 'development') {
-			Ti.API.info('ACS Login Results for environment `' + env + '`:');
-			Ti.API.info(result);
-		}
-		if(result && result.success && result.users && result.users.length) {
-			Ti.App.fireEvent('login.success', result.users[0], env);
-		} else {
-			Ti.App.fireEvent('login.failed', result, env);
-		}
-	});
-})();
-
+var loginColaborador = Ti.App.Properties.getString('password', '');
+var passwordColaborador = Ti.App.Properties.getString('login', '');
 
 var collectionMenuPrincipal = Backbone.Collection.extend();
 var menuPrincipal = new collectionMenuPrincipal();
@@ -87,6 +19,11 @@ Alloy.Collections.sorteosActivos = sorteosActivos;
 var collectionColaboradorActivos = Backbone.Collection.extend();
 var colaborador = new collectionColaboradorActivos();
 Alloy.Collections.colaborador = colaborador;
+
+var collectionCompradores = Backbone.Collection.extend();
+var compradores = new collectionCompradores();
+Alloy.Collections.compradores = compradores;
+
 // TEST
 //LOGIN
 Alloy.Globals.estaLogeado = true;
@@ -99,109 +36,18 @@ Alloy.Globals.Datoscolaborador = {
 	correo : "colaborador@gmail.com"
 };
 
-//CLIENTES DEL COLABORADOR
-
-Alloy.Globals.compradores = {
-	"Clientes" : {
-		"Nombres" : [{
-			"Nombre" : "ABBEY JEZABEL RODRIGUEZ GASPAR",
-			"Telefono" : "8119564921",
-			"Extensión" : ""
-		}, {
-			"Nombre" : "ALFONSO  MUÑOZ HURTADO",
-			"Telefono" : "8115153030",
-			"Extensión" : "4931"
-		}, {
-			"Nombre" : "ANA ROCIO ROBLES SANCHEZ",
-			"Telefono" : "8181931914",
-			"Extensión" : ""
-		}, {
-			"Nombre" : "ARTURO ISRAEL GONZALEZ PEREZ",
-			"Telefono" : "8183230759",
-			"Extensión" : ""
-		}, {
-			"Nombre" : "GUILLERMO  MAHID ",
-			"Telefono" : "5530091536",
-			"Extensión" : ""
-		}, {
-			"Nombre" : "GUILLERMO CHAHIEL KAREN AYALA",
-			"Telefono" : "5530091536",
-			"Extensión" : ""
-		}, {
-			"Nombre" : "HERNALDO  ARROYO SUSTAITA",
-			"Telefono" : "8183544596",
-			"Extensión" : ""
-		}, {
-			"Nombre" : "HIGINIO JUNIOR SANDOVAL LEAL",
-			"Telefono" : "8117745465",
-			"Extensión" : ""
-		}, {
-			"Nombre" : "JOSE DE JESUS JIMENEZ MARTINEZ",
-			"Telefono" : "8113981007",
-			"Extensión" : ""
-		}, {
-			"Nombre" : "LEONARD RUSSELL GREEN COLMENARES",
-			"Telefono" : "8114884128",
-			"Extensión" : ""
-		}, {
-			"Nombre" : "LESLI  VERA HERNANDEZ",
-			"Telefono" : "8111744473",
-			"Extensión" : ""
-		}, {
-			"Nombre" : "LUIS ANTONIO CALVILLO GUZMAN",
-			"Telefono" : "8180263853",
-			"Extensión" : ""
-		}, {
-			"Nombre" : "LUIS GERARDO HERNANDEZ DE LA ROSA",
-			"Telefono" : "8110400167",
-			"Extensión" : ""
-		}, {
-			"Nombre" : "LUIS GERARDO HERNANDEZ DE LA ROSA",
-			"Telefono" : "8113468542",
-			"Extensión" : ""
-		}, {
-			"Nombre" : "LUIS RICARDO HERNANDEZ DE LA ROSA",
-			"Telefono" : "8117368659",
-			"Extensión" : ""
-		}, {
-			"Nombre" : "MARIA DEL ROSARIO SOTO GONZALEZ",
-			"Telefono" : "8183230759",
-			"Extensión" : ""
-		}, {
-			"Nombre" : "NELSON ISRAEL RODRIGUEZ SANCHEZ",
-			"Telefono" : "8119564921",
-			"Extensión" : ""
-		}, {
-			"Nombre" : "ORLANDO RUBEN DE LA ROSA GARCIA",
-			"Telefono" : "8110434346",
-			"Extensión" : ""
-		}, {
-			"Nombre" : "ROSALINDA  PEREZ PEÑA",
-			"Telefono" : "8113943575",
-			"Extensión" : ""
-		}, {
-			"Nombre" : "ROSARIO  SOTO GONZALEZ",
-			"Telefono" : "8119774281",
-			"Extensión" : ""
-		}, {
-			"Nombre" : "WILFRIDO  CANELA COSS",
-			"Telefono" : "8130928308",
-			"Extensión" : ""
-		}, {
-			"Nombre" : "XIMENA SOPHIA MUÑOZ VERA",
-			"Telefono" : "8113468542",
-			"Extensión" : ""
-		}]
-	}
-};
-
 // GLOBALES
+Alloy.Globals.contactos = [];
+Alloy.Globals.compradores = [];
+Alloy.Globals.boletosColaborador = [];
+Alloy.Globals.colaborador[];
 
-//cargar sorteos
 
-Alloy.Globals.cargaSorteosActivosWS = function() {
+//SERVICIOS
 
-	Ti.API.info('prueba wcf: ');
+Alloy.Globals.WsObtenerSorteos = function() {
+
+	Ti.API.info('prueba ObtenerSorteos: ');
 	var data = [];
 	var theURL = 'http://10.97.129.14/AppColaborador/Desarrollo/ServicioAppColaborador/v1/Service.svc';
 	var body = "<x:Envelope xmlns:x=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\">\n    <x:Header/>\n    <x:Body>\n        <tem:ObtenerSorteos></tem:ObtenerSorteos>\n    </x:Body>\n</x:Envelope>";
@@ -210,28 +56,28 @@ Alloy.Globals.cargaSorteosActivosWS = function() {
 	xhr.onload = function() {
 		// Assuming that you have a valid json response
 		//Ti.API.info('ws: ');
-		//Ti.API.info(JSON.stringify(this.responseText, null, 4));
+		//Ti.API.info('responde: \n '+JSON.stringify(this.responseText, null, 4));
 		var xml = this.responseXML.documentElement;
 		var elements = xml.getElementsByTagName("ObtenerSorteosResult");
 
 		//Ti.API.info(xml);
 		var xmlText = elements.item(0).textContent;
 		var XMLObject = Titanium.XML.parseString(xmlText);
-		var xmlSorteos = XMLObject.getElementsByTagName("SORTEO");
-		//Ti.API.info(xmlSorteos.length);
+		var xmlSorteos = XMLObject.getElementsByTagName("raiz");
+		//Ti.API.info('xml:\n'+JSON.stringify(xmlSorteos.length, null, 4));
 		var sorteos = [];
 		Alloy.Collections.sorteosActivos.reset();
 		for( i = 0; i < xmlSorteos.length; i++) {
-			var IdSorteo = xmlSorteos.item(i).getElementsByTagName("IdSorteo").item(0).textContent;
-			var Descripcion = xmlSorteos.item(i).getElementsByTagName("Descripcion").item(0).textContent;
-			var TipoSorteo = xmlSorteos.item(i).getElementsByTagName("TipoSorteo").item(0).textContent;
-			var NumeroSorteo = xmlSorteos.item(i).getElementsByTagName("NumeroSorteo").item(0).textContent;
-			var FechaInicio = xmlSorteos.item(i).getElementsByTagName("FechaInicio").item(0).textContent;
-			var FechaFin = xmlSorteos.item(i).getElementsByTagName("FechaFin").item(0).textContent;
-			var FechaFiniquito = xmlSorteos.item(i).getElementsByTagName("FechaFiniquito").item(0).textContent;
-			var PrecioUnitario = xmlSorteos.item(i).getElementsByTagName("PrecioUnitario").item(0).textContent;
-			var Emision = xmlSorteos.item(i).getElementsByTagName("Emision").item(0).textContent;
-			var EnVenta = xmlSorteos.item(i).getElementsByTagName("EnVenta").item(0).textContent;
+			var IdSorteo = xmlSorteos.item(i).getElementsByTagName("idSorteo").item(0).textContent;
+			var Descripcion = xmlSorteos.item(i).getElementsByTagName("descripcion").item(0).textContent;
+			var TipoSorteo = xmlSorteos.item(i).getElementsByTagName("tipoSorteo").item(0).textContent;
+			var NumeroSorteo = xmlSorteos.item(i).getElementsByTagName("numeroSorteo").item(0).textContent;
+			var FechaInicio = xmlSorteos.item(i).getElementsByTagName("fechaInicio").item(0).textContent;
+			var FechaFin = xmlSorteos.item(i).getElementsByTagName("fechaFin").item(0).textContent;
+			var FechaFiniquito = xmlSorteos.item(i).getElementsByTagName("fechaFiniquito").item(0).textContent;
+			var PrecioUnitario = xmlSorteos.item(i).getElementsByTagName("precioUnitario").item(0).textContent;
+			var Emision = xmlSorteos.item(i).getElementsByTagName("emision").item(0).textContent;
+			var EnVenta = xmlSorteos.item(i).getElementsByTagName("enVenta").item(0).textContent;
 			//Ti.API.info(id);
 
 			var sorteo = Alloy.createModel('modeloSorteo', {
@@ -254,7 +100,7 @@ Alloy.Globals.cargaSorteosActivosWS = function() {
 		}
 		asignarImagenesSorteo();
 		//Ti.API.info(JSON.stringify(sorteos, null, 4));
-		//Ti.API.info(JSON.stringify(Alloy.Collections.sorteosActivos, null, 4));
+		Ti.API.info(JSON.stringify(Alloy.Collections.sorteosActivos, null, 4));
 	};
 	xhr.onerror = function(e)/* on  error in getting data from server */
 	{
@@ -273,6 +119,189 @@ Alloy.Globals.cargaSorteosActivosWS = function() {
 
 };
 
+Alloy.Globals.WsObtenerClientesColaborador = function(idColaborador) {
+
+	Ti.API.info('prueba ObtenerClientesColaborador: ');
+	var data = [];
+	var xmlParametros = "<![CDATA[<raiz> <idColaborador>" + idColaborador.toString() + "</idColaborador></raiz>]]>";
+	var theURL = 'http://10.97.129.14/AppColaborador/Desarrollo/ServicioAppColaborador/v1/Service.svc';
+	var body = "<x:Envelope xmlns:x=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\">\n    <x:Header/>\n    <x:Body>\n        <tem:ObtenerClientesColaborador>\n            <tem:xml>" + xmlParametros + "\n\t\t\t</tem:xml>\n        </tem:ObtenerClientesColaborador>\n    </x:Body>\n</x:Envelope>";
+	var xhr = Titanium.Network.createHTTPClient();
+	//xhr.withCredentials = true;
+	xhr.onload = function() {
+		//Ti.API.info(this.responseText);
+		var xml = this.responseXML.documentElement;
+		var elements = xml.getElementsByTagName("ObtenerClientesColaboradorResult");
+
+		//Ti.API.info(xml);
+		var xmlText = elements.item(0).textContent;
+		var XMLObject = Titanium.XML.parseString(xmlText);
+		var xmlCompradores = XMLObject.getElementsByTagName("nombres");
+		//Ti.API.info('xml:\n' + JSON.stringify(xmlCompradores, null, 4));
+		//Ti.API.info(xmlCompradores.length);
+		compradores = [];
+		for( i = 0; i < xmlCompradores.length; i++) {
+			//var nombre =
+			var comprador = xmlCompradores.item(i).getElementsByTagName("nombre").item(0).textContent;
+			var telefono = xmlCompradores.item(i).getElementsByTagName("telefono").item(0).textContent;
+			//Ti.API.info('nombre:' +
+			// JSON.stringify(xmlCompradores.item(i).getElementsByTagName("nombre").item(0).textContent,
+			// null, 4));
+			//Ti.API.info('telefono:' +
+			// JSON.stringify(xmlCompradores.item(i).getElementsByTagName("telefono").item(0).textContent,
+			// null, 4));
+			compradores.push({
+				nombre : comprador,
+				telefono : telefono
+			});
+		}
+		Ti.API.info('compradores:\n' + JSON.stringify(compradores, null, 4));
+		Alloy.Globals.compradores = compradores;
+	};
+	xhr.onerror = function(e)/* on  error in getting data from server */
+	{
+		//check response status and act aaccordingly.
+		Ti.API.info("error");
+		Ti.API.info(JSON.stringify(e, null, 4));
+
+		return;
+
+	};
+	xhr.open("POST", theURL);
+
+	xhr.setRequestHeader("Content-Type", "text/xml; charset=utf-8");
+	xhr.setRequestHeader("SOAPAction", "http://tempuri.org/IService/ObtenerClientesColaborador");
+	xhr.setRequestHeader("Cache-Control", "no-cache");
+	xhr.setRequestHeader("Postman-Token", "e7d9c3bd-ddf0-4b0a-8a8b-bbdf10381fa5");
+	xhr.send(body);
+
+};
+
+Alloy.Globals.WsObtenerBoletosColaboradorPorSorteo = function(idColaborador, tipoSorteo, numeroSorteo) {
+
+	Ti.API.info('prueba ObtenerBoletosColaboradorPorSorteo : ');
+	var data = [];
+	// @formatter:off
+	var xmlParametros = "<![CDATA[" 
+						+ " < raiz > 
+							+"<numeroSorteo>" + numeroSorteo.toString() + "</numeroSorteo>" 
+							+ "<tipoSorteo>" + tipoSorteo.toString() + "</tipoSorteo> " 
+							+ "<idColaborador>" + idColaborador.toString() + "</idColaborador>" 
+						+ "</raiz>"
+					+" ]]>";
+	// @formatter:on
+	var theURL = 'http://10.97.129.14/AppColaborador/Desarrollo/ServicioAppColaborador/v1/Service.svc';
+	var body = "<x:Envelope xmlns:x=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\">\n    <x:Header/>\n    <x:Body>\n        <tem:ObtenerClientesColaborador>\n            <tem:xml>" + xmlParametros + "\n\t\t\t</tem:xml>\n        </tem:ObtenerClientesColaborador>\n    </x:Body>\n</x:Envelope>";
+	var xhr = Titanium.Network.createHTTPClient();
+	//xhr.withCredentials = true;
+	xhr.onload = function() {
+		//Ti.API.info(this.responseText);
+		var xml = this.responseXML.documentElement;
+		var elements = xml.getElementsByTagName("ObtenerBoletosColaboradorPorSorteoResult");
+
+		//Ti.API.info(xml);
+		var xmlText = elements.item(0).textContent;
+		var XMLObject = Titanium.XML.parseString(xmlText);
+		var xmlBoletos = XMLObject.getElementsByTagName("raiz");
+		//Ti.API.info('xml:\n' + JSON.stringify(xmlCompradores, null, 4));
+		//Ti.API.info(xmlCompradores.length);
+		boletosColaborador = [];
+		for( i = 0; i < xmlBoletos.length; i++) {
+			//var nombre =
+			var numeroBoleto = xmlBoletos.item(i).getElementsByTagName("numeroBoleto").item(0).textContent;
+		
+			
+			boletosColaborador.push({
+				boleto : numeroBoleto,
+				 
+			});
+		}
+		Ti.API.info('compradores:\n' + JSON.stringify(boletosColaborador, null, 4));
+		Alloy.Globals.boletosColaborador = boletosColaborador;
+	};
+	xhr.onerror = function(e)/* on  error in getting data from server */
+	{
+		//check response status and act aaccordingly.
+		Ti.API.info("error");
+		Ti.API.info(JSON.stringify(e, null, 4));
+
+		return;
+
+	};
+	xhr.open("POST", theURL);
+
+	xhr.setRequestHeader("Content-Type", "text/xml; charset=utf-8");
+	xhr.setRequestHeader("SOAPAction", "http://tempuri.org/IService/ObtenerClientesColaborador");
+	xhr.setRequestHeader("Cache-Control", "no-cache");
+	xhr.setRequestHeader("Postman-Token", "e7d9c3bd-ddf0-4b0a-8a8b-bbdf10381fa5");
+	xhr.send(body);
+
+};
+
+
+Alloy.Globals.login = function() {
+	Ti.API.info('login:' + loginColaborador + ' password:' + passwordColaborador);
+	if(loginColaborador != '' && passwordColaborador != '') {
+		Alloy.Globals.Cloud.Users.login({
+			login : loginColaborador,
+			password : passwordColaborador
+		}, function(e) {
+			if(e.success) {
+				Alloy.Globals.Cloud.Users.showMe(function(e) {
+					if(e.success) {
+
+						var user = e.users[0];
+						Ti.App.Properties.setString('login', user.username);
+						Ti.App.Properties.setString('password', passwordColaborador);
+						//Ti.API.info('USER: /n ' + JSON.stringify(user, null, 4));
+
+						Alloy.Globals.colaborador = user;
+						Alloy.Globals.contactos = JSON.parse(user.custom_fields.compradores);
+						//Ti.API.info('COLABORADOR:\n ' + JSON.stringify(Alloy.Globals.colaborador, null,
+						// 4));
+						//Ti.API.info('COMPRADORES: \n ' + JSON.stringify(Alloy.Globals.compradores,
+						// null, 4));
+					} else {
+						Ti.API.info('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
+					}
+				});
+			} else {
+				var ACS = require('ti.cloud'),
+				    env = Ti.App.deployType.toLowerCase() === 'production' ? 'production' : 'development',
+				    username = Ti.App.Properties.getString('acs-username-' + env),
+				    password = Ti.App.Properties.getString('acs-password-' + env);
+
+				// if not configured, just return
+				if(!env || !username || !password) {
+					return;
+				}
+				/**
+				 * Appcelerator Cloud (ACS) Admin User Login Logic
+				 *
+				 * fires login.success with the user as argument on success
+				 * fires login.failed with the result as argument on error
+				 */
+				ACS.Users.login({
+					login : username,
+					password : password,
+				}, function(result) {
+					if(env === 'development') {
+						Ti.API.info('ACS Login Results for environment `' + env + '`:');
+						Ti.API.info(result);
+					}
+					if(result && result.success && result.users && result.users.length) {
+						Ti.App.fireEvent('login.success', result.users[0], env);
+					} else {
+						Ti.App.fireEvent('login.failed', result, env);
+					}
+				});
+			}
+		});
+	}
+}
+
+
+//METODOS
 function asignarImagenesSorteo() {
 
 	Alloy.Globals.Cloud.PhotoCollections.showPhotos({
@@ -300,7 +329,8 @@ function asignarImagenesSorteo() {
 
 					});
 				});
-				//Ti.API.info(JSON.stringify(Alloy.Collections.sorteosActivos, null, 4));
+				//Ti.API.info("SORTEOS ACTIVOS \n" +
+				// JSON.stringify(Alloy.Collections.sorteosActivos, null, 4));
 
 			}
 		} else {
@@ -310,5 +340,8 @@ function asignarImagenesSorteo() {
 
 };
 
-Alloy.Globals.cargaSorteosActivosWS();
+
+Alloy.Globals.login();
+Alloy.Globals.WsObtenerSorteos();
+Alloy.Globals.WsObtenerClientesColaborador(1662196);
 

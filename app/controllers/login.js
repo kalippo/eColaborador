@@ -22,45 +22,32 @@ function login(idColaborador, password) {
 		if(e.success) {
 			if(e.users.length == 1) {
 				//alert('Existe el usuario');
-
-				Alloy.Globals.Cloud.Users.login({
-					login : idColaborador,
-					password : password
-				}, function(e) {
-					if(e.success) {
-						//var user = e.users[0];
-						//alert('Success:\n' + 'id: ' + user.id + '\n' + 'sessionId: ' + Cloud.sessionId
-						// + '\n' + 'first name: ' + user.first_name + '\n' + 'last name: ' +
-						// user.last_name);
-						actualizaDatosColaborador(e, password);
-					} else {
-
-						alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
-					}
-				});
+					login(idColaborador,password);
+					actualizaDatosColaborador(e);
+				
 			} else {
 				//alert('No existe ');
 
 				// WS Login
 				// Crear TI User
 				Alloy.Globals.Cloud.Users.create({
-					email : 'pedro.miramontes@sorteostec.mx',
+					email : idColaborador + '@sorteostec.mx',
 					username : idColaborador,
-					first_name : 'Pedro',
-					last_name : 'Miramontes',
+					first_name : idColaborador,
+					last_name : idColaborador,
 					password : password,
 					password_confirmation : password,
 					custom_fields : {
-						compradores : 'aaa',
-						telefono : '81818181',
+						compradores : '[]',
+						telefono : '11111111',
 						direccion : 'en algun lugar de un gran pais'
 					}
 				}, function(e) {
 					if(e.success) {
-
+						login(idColaborador,password);
 						actualizaDatosColaborador(e);
 					} else {
-						alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
+						Ti.API.info('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
 					}
 				});
 
@@ -72,27 +59,35 @@ function login(idColaborador, password) {
 }
 
 
-function actualizaDatosColaborador(e, password) {   
+function login(idColaborador,password){
+	Alloy.Globals.Cloud.Users.login({
+					login : idColaborador,
+					password : password
+				}, function(e) {
+					if(e.success) {
+						
+					} else {
 
-	Cloud.Users.showMe(function(e) {
+						Ti.API.info('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
+					}
+				});
+}
+
+
+function actualizaDatosColaborador(e, password) {
+
+	Alloy.Globals.Cloud.Users.showMe(function(e) {
 		if(e.success) {
-			Ti.API.info(JSON.stringify(e.users[0], null, 4));
-			Ti.App.Properties.setString('login', e.users[0].username);
-			Ti.App.Properties.setString('password', password);
-			var Datoscolaborador = Alloy.createModel('modeloColaborador', {
-				idColaborador : e.username,
-				nombre : e.first_name,
-				telefono : e.telefono,
-				direccion : e.direccion
-			});
-			Datoscolaborador.save();
-			Alloy.Collections.colaborador.push(Datoscolaborador);
 
-			Ti.API.info(JSON.stringify(Alloy.Collections.colaborador, null, 4));
 			var user = e.users[0];
-			alert('Success:\n' + 'id: ' + user.id + '\n' + 'first name: ' + user.first_name + '\n' + 'last name: ' + user.last_name);
+			Ti.App.Properties.setString('login', user.username);
+			Ti.App.Properties.setString('password', password);
+			Ti.API.info('actualizaDatosColaborador.compradores: ' + JSON.stringify(user, null, 4));
+			Alloy.Globals.colaborador = user;
+			Alloy.Globals.compradores = JSON.parse(user.custom_fields.compradores);
+
 		} else {
-			alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
+			Ti.API.info('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
 		}
 	});
 }
