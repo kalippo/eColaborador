@@ -28,21 +28,21 @@
 	"width": "65%",
 	"class": "fondoBlanco",
 	"right": "50",
-	"top": "10"
+	"top": "10",
 },
 "#vistaPrincipal": {
-	"layout": "horizontal",
+	"layout": "horizontal"
 },
 "#vistaPanel": {
 	"layout": "vertical",
-	"scrollType": "vertical",
+	"scrollType": "vertical"
 },
 "#vistaCalendario": {
 	"class": "panelOpciones",
 	"backgroundColor": "#eef2f2",
 	"height": "45",
 	"layout": "horizontal",
-	"top": "4",
+	"top": "4"
 },
 "#vistaCuentaRegresiva": {
 	"height": "1",
@@ -52,7 +52,7 @@
 	"right": "10",
 	"borderColor": "#66ffff",
 	"top": "10",
-	"visible": "false",
+	"visible": "false"
 },
 "#vistaCuentaRegresiva[platform=ios formFactor=tablet]": {
 	"height": "1",
@@ -159,16 +159,18 @@
 	"image": "/Iconos/calendario-icono.png",
 	"width": "40"
 },
-"#Label_1": {
+"#lblCalendario": {
 	"text": "CALENDARIO",
 	"left": "15",
 	"top": "20",
-	"color": "black",
+	"color": "black"
 },
 "#vistaTitulo": {
 	"left": "5",
 	"right": "5",
-	"width": "100%"
+	"width": "100%",
+		"backgroundGradient": {type:'linear',startPoint:{x:'0%',y:'50%'},endPoint:{x:'100%',y:'50%'},colors:[{color:'#eef2f6',offset:0.0},{color:'#eef2f6',offset:0.99}],}
+
 },
 "#vistaD": {
 },

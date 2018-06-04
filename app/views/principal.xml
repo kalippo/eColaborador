@@ -1,6 +1,6 @@
 <Alloy>
-    <View class="container fondoGris" layout="vertical">
-        <View class="vistaTitulo fondoGris" id="vistaTitulo">
+    <View class="container fondoGris" layout="vertical" left="0.00%" top="0.00%">
+        <View class="fondoGris vistaTitulo" id="vistaTitulo">
             <View class="vistaOpciones" id="vistaMenu">
                 <Label class="fa colorAzul h6 " id="iconoMenu"/>
             </View>
@@ -40,7 +40,7 @@
                 </View>
                 <View id="vistaCalendario">
                     <ImageView class="centrado" id="iconoCalendario"/>
-                    <Label class="fuenteApp" id="Label_1"/>
+                    <Label class="fuenteApp" id="lblCalendario"/>
                 </View>
             </ScrollView>
         </View>

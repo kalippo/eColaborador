@@ -11,6 +11,7 @@ Alloy.Globals.contactos.forEach(function(contacto) {
 });
 
 $.cantidadBoletos.text = parseInt($.cantidadBoletos.boletos) + " Boletos";
+Ti.API.info('crearListaSorteos sorteosActivos:' + JSON.stringify(Alloy.Collections.sorteosActivos, null, 4));
 
 crearListaSorteos(Alloy.Collections.sorteosActivos.where({
 	activo : 1
@@ -26,22 +27,26 @@ $.regresar.addEventListener('click', function(error) {
 
 $.aceptar.addEventListener('click', function(error) {
 
-	var indice = $.vistaSeleccionarSorteo.currentPage;
-	var viewArray = $.vistaSeleccionarSorteo.getViews();
-	detalle.boletos.push({
-		"id" : viewArray[indice].getViewById('imagen').idImagen,
-		"cantidad" : $.cantidadBoletos.boletos
-	});
-	detalle.pagoPendiente = detalle.pagoPendiente + (500 * $.cantidadBoletos.boletos);
+	try {
+		var indice = $.vistaSeleccionarSorteo.currentPage;
+		var viewArray = $.vistaSeleccionarSorteo.getViews();
+		detalle.boletos.push({
+			"id" : viewArray[indice].getViewById('imagen').idImagen,
+			"cantidad" : $.cantidadBoletos.boletos
+		});
+		detalle.pagoPendiente = detalle.pagoPendiente + (500 * $.cantidadBoletos.boletos);
 
-	var newContactos = Alloy.Globals.contactos.filter(function(e) {
-		return e !== detalle;
-	});
+		var newContactos = Alloy.Globals.contactos.filter(function(e) {
+			return e !== detalle;
+		});
 
-	newContactos.push(detalle);
-	Alloy.Globals.contactos = newContactos;
-	Ti.App.Properties.setList('listaContactos', Alloy.Globals.contactos);
-
+		newContactos.push(detalle);
+		Alloy.Globals.contactos = newContactos;
+		Alloy.Globals.guardarContactos();
+		Ti.App.Properties.setList('listaContactos', Alloy.Globals.contactos);
+	} catch (err) {
+		alert('Error al ingresar el boleto, favor de intentar de nuevo');
+	}
 	var inicio = Alloy.createController("detalleCliente", args);
 	inicio = inicio.getView();
 	inicio.open();
@@ -64,9 +69,9 @@ $.botonMenos.addEventListener('click', function(error) {
 
 function crearListaSorteos(sorteos) {
 	//var menuActivo = Alloy.Collections.menuPrincipal.where({activo : true});
-	Ti.API.info(JSON.stringify(sorteos, null, 4));
-	var paginas = [];
 	//Ti.API.info(JSON.stringify(paginas, null, 4));
+	Ti.API.info('crearListaSorteos sorteos:' + JSON.stringify(sorteos, null, 4));
+	var paginas = [];
 	sorteos.sort().forEach(function(opcion) {
 		Ti.API.info(JSON.stringify(opcion, null, 4));
 		var imagenSorteo = Titanium.UI.createImageView({

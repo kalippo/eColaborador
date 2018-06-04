@@ -1,7 +1,7 @@
 ".container[platform=android]": {
 },
 ".container[platform=ios]": {
-	"top": "25",
+	"top": "20",
 	"backgroundColor": "white"
 },
 ".boton": {
@@ -38,7 +38,8 @@
 },
 ".vistaTitulo": {
 	"height": "50",
-	"backgroundColor": "#4bc3ff"
+	"backgroundColor": "#1fbdca",
+	"backgroundGradient": {type:'linear',startPoint:{x:'0%',y:'50%'},endPoint:{x:'100%',y:'50%'},colors:[{color:'#1fbdca',offset:0.0},{color:'#127abc',offset:0.99}],}
 },
 ".imagenColaborador": {
 	"image": "/Images/Home/app-ECOL-icono-logo.png",

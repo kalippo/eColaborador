@@ -2,6 +2,7 @@
 var args = $.args;
 
 $.regresar.addEventListener('click',function(error){
+	Alloy.Globals.Logout();
 	var validacion = Alloy.createController("index");
 	validacion = validacion.getView();
 	validacion.open();

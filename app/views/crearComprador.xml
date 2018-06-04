@@ -1,8 +1,8 @@
 <Alloy>
-    <View class="container fondoBlanco" layout="vertical">
+    <Window class="container fondoBlanco" layout="vertical">
         <TextField class="campoCaptura" id="nombre"/>
         <TextField class="campoCaptura" id="apellidos"/>
         <TextField class="campoCaptura" id="telefono"/>
         <Button class="boton" id="crearComprador"/>
-    </View>
+    </Window>
 </Alloy>

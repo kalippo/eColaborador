@@ -52,7 +52,13 @@ $.aceptar.addEventListener('click', function(error) {
 });
 
 function llenaDatosColaborador() {
-	$.nombreColaborador.text = Alloy.Globals.colaborador.first_name;
-	$.correoColaborador.text = Alloy.Globals.colaborador.email;
-	$.telefonoColaborador.text = Alloy.Globals.colaborador.custom_fields.telefono;
+	if(Alloy.Globals.colaborador == '') {
+		$.nombreColaborador.text = '';
+		$.correoColaborador.text = '';
+		$.telefonoColaborador.text = '';
+	} else {
+		$.nombreColaborador.text = Alloy.Globals.colaborador.first_name;
+		$.correoColaborador.text = Alloy.Globals.colaborador.email;
+		$.telefonoColaborador.text = Alloy.Globals.colaborador.custom_fields.telefono;
+	}
 }

@@ -59,7 +59,9 @@ $.agregar.addEventListener('click', function(error) {
 		//Ti.API.info(JSON.stringify(viewArray[indice].getViewById('nombre').value, null,
 		// 4));
 		//Ti.API.info(JSON.stringify(Alloy.Globals.contactos, null, 4));
-		guardarContactos();
+		//guardarContactos();
+		Alloy.Globals.maxId++;
+		Alloy.Globals.guardarContactos();
 		//alerta('Contacto dado de alta ');
 
 		regresar();
@@ -81,10 +83,11 @@ $.agregar.addEventListener('click', function(error) {
 					"notas" : ""
 
 				});
-  
-				guardarContactos();
+				Alloy.Globals.maxId++;
+				//guardarContactos();
 			}
 		});
+		Alloy.Globals.guardarContactos();
 		//alerta('Contactos importados correctamente');
 		regresar();
 
@@ -92,6 +95,16 @@ $.agregar.addEventListener('click', function(error) {
 });
 
 function guardarContactos() {
+	Alloy.Globals.contactos.sort(function(a, b) {
+		var keyA = a.nombreContacto,
+		    keyB = b.nombreContacto;
+		if(keyA < keyB)
+			return -1;
+		if(keyA > keyB)
+			return 1;
+		return 0;
+	});
+	Ti.API.info(JSON.stringify(Alloy.Globals.contactos, null, 4));
 	Ti.App.Properties.setList('listaContactos', Alloy.Globals.contactos);
 	Alloy.Globals.maxId = Alloy.Globals.maxId + 1;
 	Ti.App.Properties.setInt('maxId', Alloy.Globals.maxId);
@@ -100,7 +113,7 @@ function guardarContactos() {
 
 
 function alerta(texto) {
-setTimeout(function() {
+	setTimeout(function() {
 		var dialog = Titanium.UI.createAlertDialog({
 			title : 'Sorteos Tec',
 			message : texto,

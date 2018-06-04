@@ -4,7 +4,8 @@ exports.definition = {
 		    "activo": "integer",
 		    "pantalla": "text",
 		    "indice": "integer",
-		    "original" : "text"
+		    "original" : "text",
+		    "necesitaLogin":"integer",
 		},
 		adapter: {
 			type: "sql",

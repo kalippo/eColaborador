@@ -3,11 +3,129 @@
 "#View_1": {
 },
 "#View_2": {
-},
+	"layout": "vertical"
+},  
 "#regresar": {
 },
 "#Label_2": {
 	"text": "Estado de cuenta",
 	"left": "40",
 	"right": "40"
+},
+"#View_3": {
+	"backgroundColor": "#eaeaea",
+	"height": "22%",
+	"layout": "vertical"
+},
+"#View_4": {
+	"height": "10%",
+	"layout": "horizontal",
+	"backgroundColor": "#fcfcfc"
+},
+"#lblPuntos": {
+	"text": "Total de puntos:",
+	"left": "20%",
+	"top": "10"
+},
+"#lblSaldo": {
+	"text": "Saldo global:",
+	"left": "20%",
+	"top": "10"
+},
+"#saldo": {
+	"text": "$",
+	"top": "10",
+	"color": "#52c4fc"
+},
+"#puntos": {
+	"color": "#52c4fc",
+	"text": "$",
+	"top": "20%"
+},
+"#vistaSaldo": {
+	"height": "25%",
+	"layout": "horizontal",
+	"top": "20%"
+},
+"#vistaPuntos": {
+	"height": "30%",
+	"layout": "horizontal"
+},
+"#Label_1": {
+	"text": "Actualizado al 7 de marzo de 2018",
+	"color": "#7f7f7f",
+	"class": "fuenteApp h3 centrado"
+},
+"#Label_3": {
+	"text": "Consulta tu saldo por sorteo",
+	"top": "30%",
+	"left": "20",
+	"right": "20"
+},
+"#View_5": {
+	"height": "15%",
+	"layout": "horizontal"
+},
+"#Label_4": {
+	"text": "Sorteo",
+	"left": "20",
+	"top": "43%"
+},
+"#vistaTotales": {
+	"backgroundColor": "#cccccc",
+	"height": "8%",
+	"left": "20",
+	"right": "20",
+	"top": "10"
+},
+"#lblSaldoTotal": {
+	"text": "Saldo:",
+	"left": "20"
+},
+"#saldoTotal": {
+	"text": "0",
+	"left": "50%"
+},
+"#lblPagosTotal": {
+	"text": "Mis pagos:",
+	"left": "20"
+},
+"#pagosTotal": {
+	"text": "0",
+	"left": "50%"
+},
+"#lblBoletosTotal": {
+	"text": "Mis boletos:",
+	"left": "20"
+},
+"#boletosTotal": {
+	"text": "0",
+	"left": "50%"
+},
+"#lblTalonesTotal": {
+	"text": "Mis talones:",
+	"left": "20"
+},
+"#talonesTotal": {
+	"text": "0",
+	"left": "50%"
+},
+"#Picker": {
+	"type": Titanium.UI.PICKER_TYPE_PLAIN,
+	"bottom": "5",
+	"left": "5",
+	"right": "20",
+	"top": "15",
+	"useSpinner": false,
+	"layout": "vertical",
+	"borderColor": "#7f7f7f",
+	"height": "50%",
+	"width": "70%"
+},
+"#column1": {
+},
+"#Button_1": {
+	"title": "Ver movimientos",
+	"backgroundColor": "#63dced",
+	"borderRadius": "20",
 }

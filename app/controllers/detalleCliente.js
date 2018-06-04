@@ -47,8 +47,8 @@ $.agregarPago.addEventListener('click', function(error) {
 		detalle.pagoPendiente -= e.text;
 		newContactos.push(detalle);
 		Alloy.Globals.contactos = newContactos;
-		Ti.App.Properties.setList('listaContactos', Alloy.Globals.contactos);
-
+		//Ti.App.Properties.setList('listaContactos', Alloy.Globals.contactos);
+		Alloy.Globals.guardarContactos();
 		$.pagoPendiente.text = detalle.pagoPendiente;
 
 	});
@@ -64,9 +64,11 @@ function asignarBoletos() {
 	//boletos.forEach(function(sorteo){
 	detalle.boletos.forEach(function(boleto) {
 		Ti.API.info(JSON.stringify(boleto, null, 4));
-		crearAsignacion(boleto.id, boleto.cantidad);
-		cantidadBoletos += boleto.cantidad;
-
+		try {
+			crearAsignacion(boleto.id, boleto.cantidad);
+			cantidadBoletos += boleto.cantidad;
+		} catch (err) {
+		}
 	});
 	$.cantidadBoletos.text = cantidadBoletos;
 	//});
@@ -74,14 +76,15 @@ function asignarBoletos() {
 
 
 function crearAsignacion(sorteo, cantidadBoletos) {
-	var vistaAsignacion = Titanium.UI.createView({
-		backgroudn : "white",
-		width : '115',
-		height : '30',
-		top : 1,
-		left : 1,
-		layout : 'horizontal'
-	});
+	if(Alloy.Collections.sorteosActivos.get(sorteo.toString()))
+		var vistaAsignacion = Titanium.UI.createView({
+			backgroudn : "white",
+			width : '115',
+			height : '30',
+			top : 1,
+			left : 1,
+			layout : 'horizontal'
+		});
 	var cantidadBoletos = Ti.UI.createLabel({
 		color : 'white',
 		backgroundColor : 'blue',
@@ -132,7 +135,7 @@ function edicionNotas(e) {
 	newContactos.push(detalle);
 	Alloy.Globals.contactos = newContactos;
 	Ti.App.Properties.setList('listaContactos', Alloy.Globals.contactos);
-	actualizaContactos( );
+	actualizaContactos();
 	Ti.API.info(JSON.stringify(Alloy.Globals.contactos, null, 4));
 }
 
@@ -145,7 +148,7 @@ function actualizaContacto(contactoViejo, contactoNuevo) {
 	newContactos.push(contactoNuevo);
 	Alloy.Globals.contactos = newContactos;
 	Ti.App.Properties.setList('listaContactos', Alloy.Globals.contactos);
-	actualizaContactos( );
+	actualizaContactos();
 	//Ti.API.info(JSON.stringify(Alloy.Globals.contactos, null, 4));
 }
 
@@ -153,10 +156,10 @@ function actualizaContacto(contactoViejo, contactoNuevo) {
 function actualizaContactos() {
 
 	Alloy.Globals.Cloud.Users.update({
-		
+
 		custom_fields : {
 			compradores : JSON.stringify(Alloy.Globals.contactos)
-			 
+
 		}
 	}, function(e) {
 		if(e.success) {

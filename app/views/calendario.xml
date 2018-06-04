@@ -1,0 +1,11 @@
+<Alloy>
+    <Window class="container" layout="vertical">
+        <View class="vistaTitulo" id="vistaTitulo">
+            <Label class="fa h5 regresar" id="regresar"/>
+            <Label class="etiquetaTitulo fuenteApp h4 centrado" id="Label_2"/>
+        </View>
+        <View id="vistaCalendario">
+            <ImageView id="imagenCalendario"/>
+        </View>
+    </Window>
+</Alloy>
