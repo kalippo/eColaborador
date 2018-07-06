@@ -1,0 +1,60 @@
+".container": {
+},
+"#vistaTitulo": {
+},
+"#vistaSorteos": {
+	"height": "30%",
+	"layout": "vertical",
+},
+"#vistaGanadores": {
+	"layout": "vertical"
+},
+"#vistaSeleccionarSorteo": {
+	"bottom": "10",
+	"top": "1",
+},
+"#titulo": {
+	"text": "Consulta de ganadores",
+	"right": "50",
+	"left": "50",
+	"top": "25",
+	"color": "#feffff"
+},
+"#regresar": {
+	"class": "fuenteApp h5"
+},
+"#Label_2": {
+	"text": "Selecciona el Sorteo",
+	"top": "10",
+	"color": "#000000"
+},
+"#sorteosActivos": {
+	"layout": "vertical",
+	"left": "5",
+	"right": "5",
+},
+"#vistaSeleccionarSorteo": {
+	"scrollType": "horizontal",
+	"layout": "horizontal",
+	"left": "10",
+	"right": "10",
+	"showPagingControl": "true",
+	"contentHeight": Ti.UI.SIZE,
+	"contentWidth": Ti.UI.SIZE
+},
+"#Label_1": {
+	"text": "Tus boletos ganadores del",
+	"right": "20",
+	"left": "20",
+	"color": "#000000"
+},
+"#etiquetaSorteo": {
+	"text": "xxxxx sorteo son:",
+	"color": "#000000"
+},
+"#vistaPremios": {
+	"left": "10",
+	"right": "10",
+	"layout": "vertical",
+	"scrollType": "vertical"
+}

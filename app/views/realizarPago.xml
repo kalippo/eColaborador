@@ -1,0 +1,14 @@
+<Alloy>
+    <Window layout="vertical" left="0.00%" opacity="1">
+        <View id="vistaArriba"/>
+        <View class="fondoGris" id="View_1">
+            <View class="vistaTitulo" id="View_2">
+                <Label class="centrado fuenteApp h4" id="Label_1"/>
+                <Label class="fa h5 regresar" id="regresar"/>
+            </View>
+            <TextField id="cantidadPagar"/>
+            <Button class="boton" id="pagar"/>
+        </View>
+        <View id="vistaAbajo"/>
+    </Window>
+</Alloy>

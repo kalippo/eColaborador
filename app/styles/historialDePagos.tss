@@ -1,0 +1,30 @@
+".container": {
+},
+"#vistaTitulo": {
+},
+"#regresar": {
+},
+"#Label_1": {
+	"text": "Historial de pagos",
+	"color": "#ffffff",
+	"right": "30",
+	"left": "30",
+	"top": "25",
+	"class": "fuenteApp"
+},
+"#View_1": {
+},
+"#ListView_1": {
+},
+"#listaHistorial": {
+	"headerTitle": " Pago.                     Fecha",
+	"class": "fondoBlanco"
+},
+"#cantidad": {
+	"left": 20,
+	"color": "black"
+},
+"#fecha": {
+	"left": "40%",
+	"color": "black"
+}

@@ -9,8 +9,7 @@
   "os:mobileweb": {},
   "os:windows": {},
   "dependencies": {
-    "nl.fokkezb.drawer": "*",
-    "de.marcelpociot.alloysidemenu": "*",
-    "com.jpntex.navdrawer": "*"
+    "com.jpntex.navdrawer": "*",
+    "com.alcoapps.socialshare": "*"
   }
 }

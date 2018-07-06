@@ -1,0 +1,50 @@
+".container": {
+},
+"#View_1": {
+	"height": "33%",
+	"layout": "vertical",
+	"class": "fondoGris",
+	"opacity": "1"
+},
+"#View_2": {
+	"height": "25%"
+},
+"#vistaArriba": {
+	"height": "33%",
+	"opacity": ".8",
+	"backgroundColor": "#cccccc"
+},
+"#vistaAbajo": {
+	"height": "33%",
+	"opacity": ".8",
+	"backgroundColor": "#cccccc"
+},
+"#Label_1": {
+	"text": "Realizar pago",
+	"color": "#ffffff",
+	"right": "30",
+	"left": "30",
+	"class": "centrado fuenteApp"
+},
+"#cantidadPagar": {
+	"height": "25%",
+	"borderRadius": "10",
+	"borderColor": "#E5E5E5",
+	"borderWidth": "1",
+	"backgroundColor": "#ffffff",
+	"left": "40",
+	"right": "40",
+	"top": "10",
+	"keyboardType": Ti.UI.KEYBOARD_NUMBER_PAD,
+	"color": "#000000",
+},
+"#pagar": {
+	"title": "Pagar"
+},
+"#regresar": {
+	"left": "4%",
+	"height": "30",
+	"width": "30",
+	"top": "10",
+	"class": "fa h5 regresar"
+}

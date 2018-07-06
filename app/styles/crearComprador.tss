@@ -1,20 +1,26 @@
-".container": {},
+".container": {
+},
 "#nombre": {
-	"hintText": "Nombre",
+	"hintText": "Nombres",
 	"color": "#666666",
-	hintTextColor: "gray"
+	"hintTextColor": "gray",
+},
+"#empresa": {
+	"hintText": "Empresa",
+	"color": "#666666",
+	"hintTextColor": "gray",
 },
 "#apellidos": {
 	"hintText": "Apellidos",
 	"color": "black",
-	hintTextColor: "gray"
+	"hintTextColor": "gray"
 },
 ".campoCaptura": {
 	"borderRadius": "10",
 	"borderColor": "#E5E5E5",
 	"borderWidth": "1",
 	"height": "50",
-	"width": "80%", 
+	"width": "80%",
 	"top": "15",
 	"left": "20",
 	"right": "20"
@@ -25,6 +31,6 @@
 "#telefono": {
 	"hintText": "Telefono",
 	"color": "black",
-	hintTextColor: "gray"	,
-	keyboardType: Ti.UI.KEYBOARD_NUMBER_PAD
+	"hintTextColor": "gray",
+	"keyboardType": Ti.UI.KEYBOARD_NUMBER_PAD
 }

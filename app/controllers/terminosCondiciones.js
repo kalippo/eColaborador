@@ -7,3 +7,19 @@ $.atras.addEventListener('click', function(error) {
 	validacion = validacion.getView();
 	validacion.open();
 });
+
+/*
+$.webAviso.addEventListener('error', function(e) {
+ 
+	var code = e.errorCode;
+	if (code == Ti.UI.URL_ERROR_SSL_FAILED) {
+		 $.webAviso.stopLoading( );
+	}
+});
+
+$.webAviso.addEventListener("sslerror", function(e) {
+    Ti.API.error("Event: sslerror");
+    Ti.API.error(JSON.stringify(e));
+});
+
+*/

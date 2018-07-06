@@ -1,0 +1,19 @@
+<Alloy>
+    <Window backgroundColor="#f9f9f9" class="container fondoGris" layout="vertical">
+        <View class="vistaTitulo" id="vistaTitulo">
+            <Label class="fuenteApp h4 centrado " id="titulo"/>
+            <Label class="fa h5 regresar" id="regresar"/>
+        </View>
+        <View id="vistaSorteos">
+            <Label class="fuenteApp h5 centrado" id="Label_2"/>
+            <View id="sorteosActivos">
+                <ScrollableView id="vistaSeleccionarSorteo"/>
+            </View>
+        </View>
+        <View class="fondoBlanco" id="vistaGanadores">
+            <Label class="fuenteApp centrado" id="Label_1"/>
+            <Label class="fuenteApp centrado" id="etiquetaSorteo"/>
+            <ScrollView id="vistaPremios"/>
+        </View>
+    </Window>
+</Alloy>

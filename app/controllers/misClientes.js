@@ -2,7 +2,7 @@
 // directly or:
 var args = $.args;
 //getClientes();
-
+   
 desplegarCompradores();
 
 $.regresar.addEventListener('click', function(error) {
@@ -63,7 +63,7 @@ function desplegarCompradores() {
 
 				});
 			}
-			if(contacto.boletos.length > 0) {
+			if(contacto.boletos.length == 0) {
 				sinBoleto.push({
 					nombreContacto : {
 						text : contacto.nombreContacto,
@@ -71,10 +71,13 @@ function desplegarCompradores() {
 					}
 				});
 			}
+			 
+			
 		});
 		$.listaCOntactos.sections[0].setItems(todos);
 		$.listaConAdeudo.sections[0].setItems(conAdeudo);
-		desplegarCompradoresSinBoletos(sinBoleto);
+		$.listaSinBoletos.sections[0].setItems(sinBoleto);
+		//desplegarCompradoresSinBoletos(sinBoleto);
 		//Ti.API.info(JSON.stringify(sinBoleto, null, 4));
 
 	} else {
@@ -184,20 +187,7 @@ function desplegarCompradoresSinBoletos(sinBoleto) {
 }
 
 
-function getClientes() {
-	var url = "https://randomuser.me/api/?results=15";
-	var client = Ti.Network.createHTTPClient({
-		onload : function(e) {
-			return creaContactos(JSON.parse(this.responseText).results);
-		},
-		onerror : function(e) {
-			Ti.API.info(e.error);
-		},
-		timeout : 5000 // in milliseconds
-	});
-	client.open("GET", url);
-	client.send();
-}
+
 
 
 function creaContactos(contactos) {
@@ -246,6 +236,22 @@ function creaContactos(contactos) {
 
 $.listaCOntactos.addEventListener('itemclick', function(e) {
 	var row = $.listaCOntactos.sections[0].getItemAt(e.itemIndex);
+	//Ti.API.info(JSON.stringify(row.nombreContacto.contactoId, null, 4));
+	//list.sections[0].getItemAt(e);
+	var validacion = Alloy.createController("detalleCliente", row.nombreContacto.contactoId);
+	validacion = validacion.getView();
+	validacion.open();
+});
+$.listaConAdeudo.addEventListener('itemclick', function(e) {
+	var row = $.listaConAdeudo.sections[0].getItemAt(e.itemIndex);
+	//Ti.API.info(JSON.stringify(row.nombreContacto.contactoId, null, 4));
+	//list.sections[0].getItemAt(e);
+	var validacion = Alloy.createController("detalleCliente", row.nombreContacto.contactoId);
+	validacion = validacion.getView();
+	validacion.open();
+});
+$.listaSinBoletos.addEventListener('itemclick', function(e) {
+	var row = $.listaSinBoletos.sections[0].getItemAt(e.itemIndex);
 	//Ti.API.info(JSON.stringify(row.nombreContacto.contactoId, null, 4));
 	//list.sections[0].getItemAt(e);
 	var validacion = Alloy.createController("detalleCliente", row.nombreContacto.contactoId);

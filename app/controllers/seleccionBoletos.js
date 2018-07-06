@@ -11,10 +11,11 @@ Alloy.Globals.contactos.forEach(function(contacto) {
 });
 
 $.cantidadBoletos.text = parseInt($.cantidadBoletos.boletos) + " Boletos";
+
 Ti.API.info('crearListaSorteos sorteosActivos:' + JSON.stringify(Alloy.Collections.sorteosActivos, null, 4));
 
 crearListaSorteos(Alloy.Collections.sorteosActivos.where({
-	activo : 1
+	activo : '1'
 }));
 
 $.regresar.addEventListener('click', function(error) {
@@ -25,16 +26,51 @@ $.regresar.addEventListener('click', function(error) {
 
 });
 
+$.vistaSeleccionarSorteo.addEventListener('scrollend', actualizaCantidadBoletos);
+
+function actualizaCantidadBoletos() {
+	var indice = $.vistaSeleccionarSorteo.currentPage;
+	var viewArray = $.vistaSeleccionarSorteo.getViews();
+	var cantidad = viewArray[indice].getViewById('imagen').cantidad;
+	Ti.API.info(cantidad);
+	$.cantidadBoletos.text = cantidad + " Boletos";
+	$.cantidadBoletos.boletos = cantidad;
+	$.cantidadBoletos.anterior = cantidad;
+}
+
+
 $.aceptar.addEventListener('click', function(error) {
 
 	try {
 		var indice = $.vistaSeleccionarSorteo.currentPage;
 		var viewArray = $.vistaSeleccionarSorteo.getViews();
-		detalle.boletos.push({
-			"id" : viewArray[indice].getViewById('imagen').idImagen,
-			"cantidad" : $.cantidadBoletos.boletos
-		});
-		detalle.pagoPendiente = detalle.pagoPendiente + (500 * $.cantidadBoletos.boletos);
+		var idSorteo = viewArray[indice].getViewById('imagen').idImagen;
+		var sorteo = Alloy.Collections.sorteosActivos.where({
+		id : idSorteo
+		})[0];
+		Ti.API.info('sorteo:' + JSON.stringify(sorteo, null, 4));
+		Ti.API.info(parseInt(sorteo.get('precioUnitario')));
+
+		var encontrado = false;
+		for( i = 0; i < detalle.boletos.length; i++) {
+			if(detalle.boletos[i].id == idSorteo) {
+				detalle.boletos[i].cantidad = $.cantidadBoletos.boletos;
+				encontrado = true;
+			}
+		}
+		if(!encontrado) {
+			detalle.boletos.push({
+				"id" : idSorteo,
+				"cantidad" : $.cantidadBoletos.boletos
+			});
+		}
+
+		var diferenciaBoletos = $.cantidadBoletos.boletos - $.cantidadBoletos.anterior;
+		Ti.API.info('anterior :' + $.cantidadBoletos.anterior);
+		Ti.API.info('nuevo:' + $.cantidadBoletos.boletos);
+		Ti.API.info('diferencia:' + diferenciaBoletos);
+
+		detalle.pagoPendiente = detalle.pagoPendiente + (parseInt(sorteo.get('precioUnitario')) * diferenciaBoletos);
 
 		var newContactos = Alloy.Globals.contactos.filter(function(e) {
 			return e !== detalle;
@@ -60,7 +96,7 @@ $.botonMas.addEventListener('click', function(error) {
 });
 
 $.botonMenos.addEventListener('click', function(error) {
-	if(parseInt($.cantidadBoletos.text) > 1) {
+	if(parseInt($.cantidadBoletos.text) >= 1) {
 		$.cantidadBoletos.boletos = parseInt($.cantidadBoletos.boletos) - 1;
 		$.cantidadBoletos.text = parseInt($.cantidadBoletos.boletos) + " Boletos";
 
@@ -69,18 +105,29 @@ $.botonMenos.addEventListener('click', function(error) {
 
 function crearListaSorteos(sorteos) {
 	//var menuActivo = Alloy.Collections.menuPrincipal.where({activo : true});
-	//Ti.API.info(JSON.stringify(paginas, null, 4));
+	Ti.API.info(JSON.stringify(sorteos, null, 4));
 	Ti.API.info('crearListaSorteos sorteos:' + JSON.stringify(sorteos, null, 4));
 	var paginas = [];
 	sorteos.sort().forEach(function(opcion) {
-		Ti.API.info(JSON.stringify(opcion, null, 4));
+		var cantidad = 0;
+		detalle.boletos.forEach(function(boleto) {
+			Ti.API.info('boleto:' + boleto.id.toString());
+			if(boleto.id.toString() == opcion.get('id').toString()) {
+				cantidad = boleto.cantidad;
+			}
+		});
+
+		Ti.API.info('sorteo:' + opcion.get('id').toString());
+		Ti.API.info(JSON.stringify(cantidad, null, 4));
+
 		var imagenSorteo = Titanium.UI.createImageView({
 			id : "imagen",
 			image : opcion.get('original'),
 			top : '50',
 			left : '10',
 			right : '10',
-			idImagen : opcion.get('id')
+			idImagen : opcion.get('id'),
+			cantidad : cantidad
 
 		});
 
@@ -109,7 +156,7 @@ function crearListaSorteos(sorteos) {
 			textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER,
 			color : "white",
 			font : {
-				fontSize : 20,
+				fontSize : 15,
 				fontFamily : 'Montserrat-Regular'
 			},
 		});
@@ -136,6 +183,7 @@ function crearListaSorteos(sorteos) {
 	});
 	//Ti.API.info(JSON.stringify(paginas, null, 4));
 	$.vistaSeleccionarSorteo.views = paginas;
+	actualizaCantidadBoletos();
 
 }
 

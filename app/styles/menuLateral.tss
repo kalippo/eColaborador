@@ -34,7 +34,7 @@
 	"text": "x"
 },
 "#miPerfil": {
-	"text": "Mi Perfil",
+	"text": "Mi Perfil"
 },
 ".icono": {
 	"left": "20",
@@ -50,7 +50,8 @@
 	"left": "35"
 },
 "#preguntasFrecuentes": {
-	"text": "Preguntas Frecuentes"
+	"text": "Preguntas Frecuentes",
+	"visible": "true",
 },
 "#iconoNotificaciones": {
 	"text": "\uf0f3"

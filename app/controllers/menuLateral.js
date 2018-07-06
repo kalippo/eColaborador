@@ -22,9 +22,9 @@ $.terminos.addEventListener('click', function(error) {
 });
 
 $.notificaciones.addEventListener('click', function(error) {
-	var validacion = Alloy.createController("notificaciones");
+	/*var validacion = Alloy.createController("notificaciones");
 	validacion = validacion.getView();
-	validacion.open();
+	validacion.open();*/
 });
 
 $.cerrarSesion.addEventListener('click', function(error) {

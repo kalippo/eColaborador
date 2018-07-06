@@ -19,8 +19,8 @@
 	"top": "15"
 },
 ".vistaOpciones": {
-	"width": "40",
-	"height": "40",
+	"width": "35",
+	"height": "35",
 	"top": "10"
 },
 "#vistaLogo": {
@@ -28,36 +28,33 @@
 	"width": "65%",
 	"class": "fondoBlanco",
 	"right": "50",
-	"top": "10",
+	"top": "20"
 },
 "#vistaPrincipal": {
-	"layout": "horizontal"
+	"layout": "vertical"
 },
 "#vistaPanel": {
-	"layout": "vertical",
-	"scrollType": "vertical"
+	"layout": "vertical"
 },
 "#vistaCalendario": {
 	"class": "panelOpciones",
-	"backgroundColor": "#eef2f2",
 	"height": "45",
 	"layout": "horizontal",
 	"top": "4"
 },
 "#vistaCuentaRegresiva": {
-	"height": "1",
+	"height": "0",
 	"layout": "vertical",
-	"backgroundColor": "white",
 	"left": "10",
 	"right": "10",
 	"borderColor": "#66ffff",
 	"top": "10",
-	"visible": "false"
+	"visible": "false",
+	"backgroundColor": "white"
 },
 "#vistaCuentaRegresiva[platform=ios formFactor=tablet]": {
-	"height": "1",
+	"height": "0",
 	"layout": "vertical",
-	"backgroundColor": "white",
 	"left": "60",
 	"right": "60",
 	"borderColor": "#66ffff",
@@ -86,9 +83,9 @@
 },
 "#vistaContador": {
 	"layout": "horizontal",
-	"backgroundColor": "white",
 	"left": "10",
-	"right": "10"
+	"right": "10",
+	"backgroundColor": "#feffff"
 },
 "#vistaDiasHorasMinutos": {
 	"height": "1",
@@ -107,21 +104,26 @@
 },
 "#iconoMenu": {
 	"text": "\uf0c9",
-	"height": "40",
-	"width": "40"
+	"height": "30",
+	"width": "30",
+	"left": "5",
+	"right": "5",
+	"top": "20"
 },
 "#postales": {
 	"text": "\uf1d8",
 	"width": "40",
 	"height": "40",
 	"right": "10",
-	"left": "5"
+	"left": "88%",
+	"color": "#2974b6",
+	"top": "20",
+	"visible": "false",
 },
 "#titulo": {
-	"image": "/Images/Home/ecol-top.png",
+	"image": "/Images/Home/colaborapp-home-LOGO.png",
 	"height": "30",
-	"width": "120",
-	"left": "25%"
+	"visible": "false"
 },
 "#contadorDias": {
 	"text": "15"
@@ -166,11 +168,11 @@
 	"color": "black"
 },
 "#vistaTitulo": {
-	"left": "5",
-	"right": "5",
+	"left": "0",
+	"right": "0",
 	"width": "100%",
-		"backgroundGradient": {type:'linear',startPoint:{x:'0%',y:'50%'},endPoint:{x:'100%',y:'50%'},colors:[{color:'#eef2f6',offset:0.0},{color:'#eef2f6',offset:0.99}],}
-
+	"backgroundGradient": {type:'linear',startPoint:{x:'0%',y:'50%'},endPoint:{x:'100%',y:'50%'},colors:[{color:'#eef2f6',offset:0.0},{color:'#eef2f6',offset:0.99}],},
+	"layout": "absolute"
 },
 "#vistaD": {
 },
@@ -196,10 +198,13 @@
 	"text": "SEGUNDOS"
 },
 "#vistaMenu": {
-	"left": "10"
+	"left": "10",
+	"layout": "absolute",
+	"scrollType": "vertical",
+	"top": "20"
 },
 "#vistaPostales": {
 	"right": "10"
 },
-"#View_1": {
+"#vistaMenu": {
 }

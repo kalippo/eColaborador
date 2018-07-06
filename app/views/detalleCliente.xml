@@ -10,10 +10,13 @@
                 <ImageView class="imagenColaborador" id="fotoCliente"/>
                 <Label class="fuenteApp h2" id="nombreCliente"/>
                 <Label class="fuenteApp h2" id="telefonoCliente"/>
+                <View id="View_1">
+                    <Label class="fa h4" id="whatsapp"/>
+                </View>
             </View>
             <View class="panelDetalles" id="vistaEstatusPago">
                 <Label class="etiquetasDetalle h3 fuenteApp" id="estatusDePago"/>
-                <View id="vistaEstatus">
+                <View class="fuenteApp h2" id="vistaEstatus">
                     <Label class="fuenteApp" id="estatus"/>
                 </View>
             </View>
@@ -33,11 +36,11 @@
                 <View id="pendiente">
                     <Label class="fuenteApp h3" id="titulopagoPendiente"/>
                     <Label class="fa h4 colorTurquesa derecha" id="saldarDeuda"/>
-                    <Label class="fuenteApp h3" id="pagoPendiente"/>
-                    <Label id="Label_1"/>
+                    <Label class="fuenteApp h4" id="pagoPendiente"/>
+                    <Label class="fuenteApp h4" id="Label_1"/>
                 </View>
                 <View id="vistaAbonos">
-                    <Button class="h2" id="agregarPago"/>
+                    <Button class="h2 fuenteApp" id="agregarPago"/>
                     <Label class="h2 fuenteApp derecha" id="historial"/>
                     <View id="View_2"/>
                 </View>
@@ -46,9 +49,11 @@
                 <View id="tituloAbonos">
                     <Label class="etiquetasDetalle fuenteApp" id="tituloNotas"/>
                 </View>
-                <TextArea id="notas" onChange="edicionNotas"/>
+                <TextArea id="notas"/>
             </View>
-            <Button class="fuenteApp" id="eliminarContacto"/>
+            <View height="50" layout="vertical" top="20">
+                <Button class="h2 fuenteApp" id="eliminarContacto"/>
+            </View>
             <Label class="contenidoDetalle h2" id="ultimaActualizacion"/>
         </ScrollView>
     </Window>

@@ -30,22 +30,22 @@
 },
 "#password": {
 	"hintText": "Contraseña",
-	"passwordMask": "1"
+	"passwordMask": "true",
 },
 "#iniciarSesion": {
-	"title": "INICIAR SESIÓN",
+	"title": "INICIAR SESIÓN"
 },
 "#etiquetaComunicate": {
 	"text": "SI NO CUENTAS CON TU CONTRASEÑA COMUNICATE AL 12 34 56 78 PARA SOLICITAR TUS ACCESOS",
 	"width": "80%",
 	"textAlign": Ti.UI.TEXT_ALIGNMENT_JUSTIFY,
 	"autoLink": Ti.UI.AUTOLINK_PHONE_NUMBERS,
-	"color": "#105a9b",
+	"color": "#feffff",
 	"top": "20%"
 },
 "#ImageView_1": {
 	"top": "10%",
 	"height": "120",
 	"width": "120",
-	"image": "/Images/Home/app-ECOL-icono-logo.png"
+	"image": "/Images/Home/Colaborapp-LOGO-ICONO.png"
 }

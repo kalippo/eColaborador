@@ -8,13 +8,14 @@
 "#vistaSorteosActivos": {
 	"layout": "horizontal",
 	"showPagingControl": "true",
-	"pagingControlColor": "blue",
 	"borderColor": "#993300",
 	"borderWidth": "1",
 	"bottom": "5",
-	"left": "5",
-	"right": "5",
+	"left": "20",
+	"right": "20",
 	"top": "5",
+	"overlayEnabled": "true",
+	"pagingControlOnTop": "true"
 },
 "#home": {
 	"text": "\uf015",
@@ -22,7 +23,7 @@
 	"color": "white",
 	"height": "30",
 	"width": "30",
-	"top": "10",
+	"top": "15",
 	"class": "fa",
 	"zIndex": "10"
 },
@@ -30,13 +31,17 @@
 	"text": "\uf0f3",
 	"height": "30",
 	"right": "10",
-	"top": "10",
+	"top": "15",
 	"width": "30",
-	"color": "white"
+	"color": "white",
+	"visible": "false"
 },
-"#vistaGaleria": {
-	"height": "58%",
-	"layout": "vertical"
+"#vistapremios": {
+	"layout": "horizontal",
+	"bottom": "10",
+	"left": "10",
+	"right": "10",
+	"top": "10"
 },
 "#vistaVideos": {
 	"height": "150",
@@ -45,29 +50,123 @@
 "#View_1": {
 	"height": "50",
 	"layout": "absolute",
+	"left": "5",
+	"right": "5",
+	"top": "5"
 },
 "#View_2": {
 	"height": "30",
-	"layout": "horizontal"
+	"layout": "horizontal",
+	"top": "10"
 },
 "#Label_1": {
 	"text": "Selecciona el sorteo para buscar tus \n herramientas de venta",
-	"width": "100%",
-	"layout": "vertical"
+	"layout": "vertical",
+	"color": "#000000"
 },
 "#Label_2": {
-	"text": "GALERÍA DE IMAGENES"
+	"text": "GALERÍA DE IMAGENES",
+	"color": "#006080"
 },
 ".tituloSeccion": {
 	"top": "5",
-	"left": "5",
-	"right": "5"
+	"left": "20",
+	"right": "20"
 },
 "#vistaSorteosActivos": {
 },
-"#ScrollableView_2": {
-},
 "#vistaSorteos": {
-	"height": "60%",
+	"height": "30%",
+	"layout": "vertical"
+},
+"#vistaGaleria": {
+	"layout": "vertical"
+},
+"#vistaPremios": {
+	"layout": "horizontal",
+	"scrollType": "horizontal",
+	"scrollingEnabled": "true",
+	"overlayEnabled": "true",
+	"pagingControlOnTop": "true",
+	"showPagingControl": "true",
+	"height": "100",
+	"top": "5"
+},
+"#ScrollView_1": {
+},
+"#vistaHerramientas": {
 	"layout": "vertical",
+	"scrollType": "vertical"
+},
+"#TabGroup": {
+},
+"#Tab_1": {
+},
+"#Window_1": {
+	"title": "Window"
+},
+"#Tab_2": {
+},
+"#View_3": {
+	"height": "50",
+	"layout": "horizontal",
+	"backgroundColor": "#ffffff"
+},
+"#descargarImagen": {
+	"text": "\uf019",
+	"height": "40",
+	"width": "40",
+	"class": "fa h5",
+	"left": "40%",
+	"color": "#66ccff"
+},
+"#compartirImagen": {
+	"text": "\uf1e1",
+	"height": "40",
+	"width": "40",
+	"color": "#66ccff"
+},
+"#View_4": {
+	"backgroundColor": "#eef2f6",
+	"height": "20"
+},
+"#vistaMensajes": {
+	"layout": "vertical",
+	"visible": "true",
+	"height": "200"
+},
+"#View_6": {
+	"height": "50"
+},
+"#Label_5": {
+	"text": "ENVIO DE MENSAJES PARA MIS CLIENTES",
+	"left": "10",
+	"right": "10",
+	"class": "fuenteApp h3 centrado",
+	"color": "#006080"
+},
+"#Label_6": {
+	"text": "Selecciona uno de los mensajes predeterminados y comparte con tus compradores",
+	"left": "30",
+	"right": "30",
+	"class": "fuenteApp"
+},
+"#vistaListaMensajes": {
+	"layout": "horizontal",
+	"left": "20",
+	"right": "20",
+	"height": "100"
+},
+"#Label_3": {
+	"text": "Mis herramientas",
+	"left": "40",
+	"top": "15",
+	"color": "#ffffff",
+	"right": "40",
+	"class": "fuenteApp centrado"
+},
+"#ImageView_1": {
+},
+"#iv": {
+	"image": "/images/se_1_original.jpg",
 }

@@ -8,14 +8,14 @@
 	"color": "#ffffff",
 	"left": "10",
 	"text": "Cancelar",
-	"top": "10",
+	"top": "25",
 	"width": "100"
 },
 "#Label_2": {
 	"text": "Agregar Contacto",
 	"right": "25%",
 	"left": "25%",
-	"top": "10"
+	"top": "25"
 },
 "#vistaOpciones": {
 	"height": "40",
@@ -43,6 +43,6 @@
 	"color": "#ffffff",
 	"right": "10",
 	"left": "70%",
-	"top": "10",
+	"top": "25",
 	"class": "fuenteApp derecha"
 }

@@ -16,7 +16,7 @@ $.iniciarSesion.addEventListener('click', function(error) {
 			alert('Clave decolaborador o password incorrectos');
 			$.password.value = '';
 		}
-		}, 1500);
+		}, 2500);
 		
 	}
 

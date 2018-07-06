@@ -15,7 +15,12 @@ Ti.API.info(JSON.stringify(detalle, null, 4));
 
 $.nombreCliente.text = detalle.nombreContacto;
 $.telefonoCliente.text = detalle.telefono;
-$.pagoPendiente.text = detalle.pagoPendiente;
+if(detalle.pagoPendiente == null) {
+	$.pagoPendiente.text = 0;
+} else {
+	$.pagoPendiente.text = detalle.pagoPendiente;
+}
+
 $.notas.value = detalle.notas;
 if(detalle.pagoPendiente > 0) {
 	$.estatus.text = "Adeudo";
@@ -30,29 +35,43 @@ $.regresar.addEventListener('click', function(error) {
 	inicio.open();
 });
 
+$.notas.addEventListener('change', edicionNotas);
+
+$.whatsapp.addEventListener('click', function(error) {
+	Ti.Platform.openURL("https://api.whatsapp.com/send?phone=521" + $.telefonoCliente.text);
+});
+
 $.agregarPago.addEventListener('click', function(error) {
-	var dialog = Ti.UI.createAlertDialog({
-		message : 'Cantidad a abonar:',
-		style : Ti.UI.iOS.AlertDialogStyle.PLAIN_TEXT_INPUT,
-		ok : 'Abonar',
-		title : 'Agregar Abono'
-	});
-	dialog.addEventListener('click', function(e) {
+	/*
 
-		Ti.API.info(JSON.stringify(detalle.pagoPendiente, null, 4));
+	 var dialog = Ti.UI.createAlertDialog({
+	 message : 'Cantidad a abonar:',
+	 style : Ti.UI.iOS.AlertDialogStyle.PLAIN_TEXT_INPUT,
+	 ok : 'Abonar',
+	 title : 'Agregar Abono'
+	 });
+	 dialog.addEventListener('click', function(e) {
 
-		var newContactos = Alloy.Globals.contactos.filter(function(e) {
-			return e !== detalle;
-		});
-		detalle.pagoPendiente -= e.text;
-		newContactos.push(detalle);
-		Alloy.Globals.contactos = newContactos;
-		//Ti.App.Properties.setList('listaContactos', Alloy.Globals.contactos);
-		Alloy.Globals.guardarContactos();
-		$.pagoPendiente.text = detalle.pagoPendiente;
+	 Ti.API.info(JSON.stringify(detalle.pagoPendiente, null, 4));
 
-	});
-	dialog.show();
+	 var newContactos = Alloy.Globals.contactos.filter(function(e) {
+	 return e !== detalle;
+	 });
+	 detalle.pagoPendiente -= e.text;
+	 newContactos.push(detalle);
+	 Alloy.Globals.contactos = newContactos;
+	 //Ti.App.Properties.setList('listaContactos', Alloy.Globals.contactos);
+	 Alloy.Globals.guardarContactos();
+	 $.pagoPendiente.text = detalle.pagoPendiente;
+
+	 });
+	 dialog.show();
+	 */
+
+	var inicio = Alloy.createController("realizarPago", args);
+	inicio = inicio.getView();
+	inicio.open();
+
 });
 
 $.seleccionarBoletos.addEventListener('click', function(error) {
@@ -62,14 +81,16 @@ $.seleccionarBoletos.addEventListener('click', function(error) {
 });
 function asignarBoletos() {
 	//boletos.forEach(function(sorteo){
-	detalle.boletos.forEach(function(boleto) {
-		Ti.API.info(JSON.stringify(boleto, null, 4));
-		try {
-			crearAsignacion(boleto.id, boleto.cantidad);
-			cantidadBoletos += boleto.cantidad;
-		} catch (err) {
-		}
-	});
+	try {
+		detalle.boletos.forEach(function(boleto) {
+			Ti.API.info(JSON.stringify(boleto, null, 4));
+			if(boleto.cantidad > 0) {
+				crearAsignacion(boleto.id, boleto.cantidad);
+				cantidadBoletos += boleto.cantidad;
+			}
+		});
+	} catch (err) {
+	}
 	$.cantidadBoletos.text = cantidadBoletos;
 	//});
 }
@@ -132,10 +153,10 @@ function edicionNotas(e) {
 		return e !== detalle;
 	});
 	detalle.notas = $.notas.value;
+	Ti.API.info('edicionNotas detalle' + JSON.stringify(detalle, null, 4));
 	newContactos.push(detalle);
 	Alloy.Globals.contactos = newContactos;
-	Ti.App.Properties.setList('listaContactos', Alloy.Globals.contactos);
-	actualizaContactos();
+	Alloy.Globals.guardarContactos();
 	Ti.API.info(JSON.stringify(Alloy.Globals.contactos, null, 4));
 }
 
@@ -170,4 +191,41 @@ function actualizaContactos() {
 		}
 	});
 }
+
+
+$.historial.addEventListener('click', function() {
+	var inicio = Alloy.createController("historialDePagos", args);
+	inicio = inicio.getView();
+	inicio.open();
+});
+
+$.eliminarContacto.addEventListener('click', function() {
+	var dialog = Ti.UI.createAlertDialog({
+		cancel : 1,
+		ok : 0,
+		buttonNames : ['Si', 'No'],
+		message : '¿Estas seguro de querer borrar el coprador?',
+		title : 'Delete'
+	});
+	dialog.addEventListener('click', function(e) {
+		if(e.index === e.source.ok) {
+			try {
+				var newContactos = Alloy.Globals.contactos.filter(function(e) {
+					return e !== detalle;
+				});
+
+				Alloy.Globals.contactos = newContactos;
+				Alloy.Globals.guardarContactos();
+				var inicio = Alloy.createController("misClientes");
+				inicio = inicio.getView();
+				inicio.open();
+			} catch (err) {
+				alert('Ha ocurrido un error al eliminar el comprador');
+			}
+		}
+
+	});
+	dialog.show();
+
+});
 

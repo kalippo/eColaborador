@@ -3,18 +3,34 @@
         <View class="vistaTitulo" id="vistaTitulo">
             <Label class="h5 fa" id="home"/>
             <Label class="fa h5 centrado" id="notificacion"/>
+            <Label class="fuenteApp centrado h4" id="Label_3"/>
         </View>
-        <View id="vistaSorteos">
-            <View id="View_1">
-                <Label class="fuenteApp h4 tituloSeccion centrado" id="Label_1" lass="fuenteApp h4"/>
+        <ScrollView id="vistaHerramientas">
+            <View class="fondoGris" id="vistaSorteos">
+                <View id="View_1">
+                    <Label class="fuenteApp h3 tituloSeccion centrado" id="Label_1" lass="fuenteApp h4"/>
+                </View>
+                <ScrollableView id="vistaSorteosActivos"/>
             </View>
-            <ScrollableView id="vistaSorteosActivos"/>
-        </View>
-        <View id="vistaGaleria">
-            <View id="View_2">
-                <Label class="fuenteApp h4 tituloSeccion centrado" id="Label_2"/>
+            <View id="vistaGaleria">
+                <View id="View_2">
+                    <Label class="fuenteApp h4 tituloSeccion centrado" id="Label_2"/>
+                </View>
+                <ScrollableView id="vistaPremios"/>
+                <ImageView id="iv"/>
+                <View id="View_3">
+                    <Label class="fa h5" id="descargarImagen"/>
+                    <Label class="fa h5" id="compartirImagen"/>
+                </View>
+                <View id="View_4"/>
+                <View id="vistaMensajes">
+                    <View id="View_6">
+                        <Label class="fuenteApp h3 centrado" id="Label_5"/>
+                    </View>
+                    <Label class="fuenteApp h2 centrado" id="Label_6"/>
+                    <ScrollView id="vistaListaMensajes"/>
+                </View>
             </View>
-            <ScrollableView id="ScrollableView_2"/>
-        </View>
+        </ScrollView>
     </Window>
 </Alloy>

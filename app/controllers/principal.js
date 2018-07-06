@@ -1,51 +1,74 @@
 // Arguments passed into this controller can be accessed via the `$.args` object
 // directly or:
 var args = $.args;
-
+var sorteoCuentaRegresiva;
+var hayMenu = false;
+cuentaRegresivaVisible();
+muestraMenu();
 Alloy.Collections.menuPrincipal.comparator = function(model) {
 	return model.get('indice');
 };
+//$.etiquetaSorteo.text = 'trololololo lolo lo lolo lo';
+//Alloy.Globals.leerCuentaRegresiva();
+//obtenerImagenes();
+var timerSorteoActivo = setInterval(function() {
+	//Ti.API.info('timerSorteo: ');
+	try {
+		sorteoCuentaRegresiva = Alloy.Collections.sorteosActivos.where({
+			id : Alloy.Globals.idSorteoCuentaRegresiva
+		});
+		if(sorteoCuentaRegresiva.length > 0) {
+			//Ti.API.info('destino: ' +
+			// JSON.stringify(sorteoCuentaRegresiva[0].get('nombreSorteo'), null, 4));
+			//Ti.API.info('total: ' + JSON.stringify(sorteoCuentaRegresiva.length, null, 4));
+			//Ti.API.info('kill timerSorteo: ');
+			clearInterval(timerSorteoActivo);
+			cuentaRegresiva();
+			cuentaRegresivaVisible();   
 
-obtenerImagenes();
-
-function obtenerImagenes() {
-	Alloy.Globals.Cloud.PhotoCollections.showPhotos({
-		collection_id : "5a4e90755a276e961e1f55f6"
-		//5a4e90755a276e961e1f55f6
-	}, function(e) {
-		if(e.success) {
-			if(!e.photos) {
-				//alert('Success: No photos');
-			} else {
-				Alloy.Collections.menuPrincipal.reset();
-				e.photos.forEach(function(photo) {
-					var menus = Alloy.createModel('modeloMenuPrincipal', {
-						activo : photo.custom_fields.activo,
-						pantalla : photo.custom_fields.pantalla,
-						indice : photo.custom_fields.indice,
-						original : photo.urls.original,
-						necesitaLogin : photo.custom_fields.necesitaLogin
-					});
-					menus.save();
-					Alloy.Collections.menuPrincipal.push(menus);
-				});
-				//Ti.API.info(JSON.stringify(Alloy.Collections.menuPrincipal,null,4));
-				crearMenuOpciones(Alloy.Collections.menuPrincipal.where({
-					activo : true
-				}));
-			}
-		} else {
-			alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
 		}
-	});
+	} catch(err) {
+		Ti.API.info('timerSorteo error:' + err);
+	}
+
+}, 3000);
+
+setTimeout(matarTimers, 8000);
+
+var timerMenuPrincipal = setInterval(muestraMenu, 3000);
+
+function matarTimers() {
+	Ti.API.info('matarTimers: ');
+	clearInterval(timerSorteoActivo);
+	clearInterval(timerMenuPrincipal);
+}
+
+
+function muestraMenu() {
+
+	try {
+		var menu = Alloy.Collections.menuPrincipal.where({
+			activo : true
+		});
+		//Ti.API.info('menuPrincipal:' + JSON.stringify(Alloy.Collections.menuPrincipal,
+		// null, 4));
+		//Ti.API.info('muestraMenu:' + JSON.stringify(menu, null, 4));
+		if(menu.length > 0) {
+			crearMenuOpciones(menu);
+
+			Ti.API.info('kill timerMenu: ');
+			clearInterval(timerMenuPrincipal);
+		}
+	} catch (err) {
+	}
 }
 
 
 function crearMenuOpciones(menuActivo) {
-	//var menuActivo = Alloy.Collections.menuPrincipal.where({activo : true});
-	//Ti.API.info(JSON.stringify(menuActivo,null,4));
+	$.vistaPanel.removeAllChildren();
+	//if($.vistaPanel.children.lenght == 0) {
 	menuActivo.sort().forEach(function(opcion) {
-		//Ti.API.info(JSON.stringify(opcion.get('pantalla'),null,4));
+		//Ti.API.info('opcion: ' + JSON.stringify(opcion, null, 4));
 		var menu = Titanium.UI.createImageView({
 			image : opcion.get('original'),
 			id : opcion.get('pantalla'),
@@ -66,7 +89,10 @@ function crearMenuOpciones(menuActivo) {
 		menu.height = menu.width * .4;
 
 		$.vistaPanel.add(menu);
+		//Alloy.Globals.menusCargados = 1;
 	});
+	//}
+	//}
 }
 
 
@@ -95,10 +121,12 @@ function clickMenu() {
 	if(this.pantallaDestino != 'blank' && (this.necesitaLogin == 0 || Alloy.Globals.estaLogeado == true)) {
 		var validacion = Alloy.createController(this.pantallaDestino);
 		validacion = validacion.getView();
+		matarTimers();
 		validacion.open();
 	} else if(this.necesitaLogin == 1 && Alloy.Globals.estaLogeado == false) {
 		var validacion = Alloy.createController('login');
 		validacion = validacion.getView();
+		matarTimers();
 		validacion.open();
 	}
 }
@@ -107,8 +135,51 @@ function clickMenu() {
 $.iconoCalendario.addEventListener('click', abreCalendario);
 $.lblCalendario.addEventListener('click', abreCalendario);
 
-function abreCalendario(){
+function abreCalendario() {
 	var validacion = Alloy.createController('calendario');
-		validacion = validacion.getView();
-		validacion.open();
+	validacion = validacion.getView();
+	validacion.open();
 }
+
+
+var timerContador = setInterval(cuentaRegresiva, 1000);
+
+function cuentaRegresivaVisible() {
+	if(Alloy.Globals.idSorteoCuentaRegresiva != 0) {
+		cuentaRegresiva();
+		$.vistaCuentaRegresiva.visible = true;
+		$.vistaCuentaRegresiva.height = 120;
+	} else {
+		$.vistaCuentaRegresiva.visible = false;
+		$.vistaCuentaRegresiva.height = 0;
+	}
+}
+
+
+function cuentaRegresiva() {
+	if(Alloy.Globals.idSorteoCuentaRegresiva != 0) {
+
+		var fechaSorteo = Date.parse(Alloy.Globals.fechaSorteoCuentaRegresiva);
+		var hoy = Date.now();
+		resta = fechaSorteo - hoy;
+		var contador = new Date(resta);
+		var dias = (contador.getUTCDate() - 1).toString();
+		var horas = (contador.getUTCHours()).toString();
+		var minutos = (contador.getUTCMinutes()).toString();
+		var segundos = (contador.getUTCSeconds()).toString();
+		$.contadorDias.text = dias.toString();
+		$.contadorHoras.text = horas.toString();
+		$.contadorMinutos.text = minutos.toString();
+		$.contadorSegundos.text = segundos.toString();
+		var sorteoCuentaRegresiva = Alloy.Collections.sorteosActivos.where({
+			id : Alloy.Globals.idSorteoCuentaRegresiva
+		});
+		try {
+			var sorteoContador = sorteoCuentaRegresiva[0].get('nombreSorteo');
+			$.etiquetaSorteo.text = sorteoContador;
+		} catch(err) {
+		}
+	}
+
+}
+

@@ -5,7 +5,7 @@
             <Label class=" colorAzul fuenteApp h3" id="titulo"/>
         </View>
         <View id="vistaAviso">
-            <WebView id="webAviso"/>
+            <!--WebView id="webAviso"/-->
         </View>
     </Window>
 </Alloy>

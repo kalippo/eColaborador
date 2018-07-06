@@ -1,0 +1,19 @@
+<Alloy>
+    <Window class="container fondoBlanco" layout="vertical">
+        <View class="vistaTitulo" id="vistaTitulo">
+            <Label class="regresar fa" id="regresar"/>
+            <Label class="fuenteApp h4 centrado" id="Label_1"/>
+        </View>
+        <View id="View_1">
+            <ListView defaultItemTemplate="templateHistorial" id="listaHistorial">
+                <Templates>
+                    <ItemTemplate name="templateHistorial">
+                        <Label bindId="cantidad" class="fuenteApp h4" id="cantidad"/>
+                        <Label bindId="fecha" class="fuenteApp h4" id="fecha"/>
+                    </ItemTemplate>
+                </Templates>
+                <ListSection class="fondoBlanco" name="historial"/>
+            </ListView>
+        </View>
+    </Window>
+</Alloy>

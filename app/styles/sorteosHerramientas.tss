@@ -2,21 +2,21 @@
 },
 "#vistaTitulo": {
 	"layout": "horizontal",
-	"class": "titulo"
+	"class": "titulo",
 },
 "#vistaPrincipal": {
 	"layout": "vertical"
 },
 "#atras": {
 	"text": "<< Atras",
-	"top": "10",
-	"left": "10"
+	"top": "20",
+	"left": "10",
 },
 "#herramientas": {
 	"text": "Mis Herramientas",
 	"class": "h4 centrado colorAzul fuenteApp",
 	"left": "20",
-	"top": "10"
+	"top": "20",
 },
 "#vistaMensajes": {
 	"height": "200",
@@ -54,7 +54,7 @@
 "#Label_3": {
 	"text": "ENVIO DE MENSAJES PARA MIS CLIENTES",
 	"left": "10",
-	"top": "20",
+	"top": "20"
 },
 "#ImageView_2": {
 	"height": "60",

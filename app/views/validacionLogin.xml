@@ -1,8 +1,8 @@
 <Alloy>
-    <Window backgroundColor="#75d5ff" class="container backgroundLogin" left="0.00%" top="6.67%">
+    <Window backgroundColor="#75d5ff" class="container backgroundLogin" left="0.00%" top="0">
         <View class="vistaValidarLogin" id="vistaValidarColaborador">
             <Label class="etiquetaValidarLogin" id="bienvenido"/>
-            <Label class="etiquetaValidarLogin" id="nombreColaborador"/>
+            <Label class="etiquetaValidarLogin centrado" id="nombreColaborador"/>
             <Button class="boton" id="entrar"/>
             <Label class="etiquetaValidarLogin" id="noSoyYo"/>
             <View id="View_1"/>

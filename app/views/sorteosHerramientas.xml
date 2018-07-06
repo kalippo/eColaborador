@@ -1,5 +1,5 @@
 <Alloy>
-    <Window class="container" layout="vertical">
+    <Window class="container" layout="vertical" left="0.00%" top="6.67%">
         <View class="vistaTitulo fondoBlanco" id="vistaTitulo">
             <Label class="colorAzul h3 fuenteApp" id="atras"/>
             <Label class="h4 fuenteApp colorAzul centrado" id="herramientas"/>

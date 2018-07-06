@@ -14,7 +14,7 @@ $.listaCOntactos.addEventListener('itemclick', function(error) {
 
 
 function getClientes() {
-
+/*
 	var url = "https://randomuser.me/api/?results=10";
 	var client = Ti.Network.createHTTPClient({
 		onload : function(e) {
@@ -27,6 +27,7 @@ function getClientes() {
 	});
 	client.open("GET", url);
 	client.send();
+	*/
 }
 
 function creaContactos(contactos) {

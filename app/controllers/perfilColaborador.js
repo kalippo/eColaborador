@@ -7,7 +7,12 @@ var args = $.args;
 
 llenaDatosColaborador();
 
+
+
+
 $.imagenColaborador.addEventListener("click", function(e) {
+	/* abrir la galeria del telefono
+	
 	//Open the photo gallery
 	Titanium.Media.openPhotoGallery({
 		//function to call upon successful load of the gallery
@@ -35,6 +40,7 @@ $.imagenColaborador.addEventListener("click", function(e) {
 		mediaTypes : [Ti.Media.MEDIA_TYPE_PHOTO]
 		//The other is Titanium.Media.MEDIA_TYPE_VIDEO
 	});
+	*/
 });
 
 $.cancelar.addEventListener('click', function(error) {

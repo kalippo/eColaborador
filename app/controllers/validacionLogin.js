@@ -30,6 +30,7 @@ buscaPalabras(Alloy.Globals.colaborador.first_name + ' ' + Alloy.Globals.colabor
 	$.entrar.enabled = ($.terminos.value && $.aviso.value);
 	$.entrar.opacity = $.entrar.enabled+.5;
 	
+	
 };
 
 function buscaPalabras(cadena) {

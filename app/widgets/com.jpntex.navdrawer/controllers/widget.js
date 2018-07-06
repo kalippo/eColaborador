@@ -309,6 +309,10 @@ exports.changeView = function(view) {
 	}
 };
 
+
+
+
+
 exports.toggleMenu = function() {
 	if (menuOpen) {
 		closeMenu();

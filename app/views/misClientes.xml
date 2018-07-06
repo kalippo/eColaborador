@@ -38,7 +38,19 @@
                             <ListSection class="fondoBlanco" name="contactos"/>
                         </ListView>
                     </View>
-                    <View id="vistaSinAdeudo"/>
+                    <View id="vistaSinAdeudo">
+                    	<ListView defaultItemTemplate="templateSinBoletos" id="listaSinBoletos">
+                            <Templates>
+                                <ItemTemplate name="templateSinBoletos">
+                                    <Label bindId="estatus" class="fa h4 " id="iconoEstatus"/>
+                                    <Label bindId="nombreContacto" id="nombreContacto"/>
+                                    <Label bindId="edit" class="fa" id="edit"/>
+                                </ItemTemplate>
+                            </Templates>
+                            <ListSection class="fondoBlanco" name="contactos"/>
+                        </ListView>
+                    </View>
+                    	
                 </ScrollableView>
             </View>
         </ScrollView>

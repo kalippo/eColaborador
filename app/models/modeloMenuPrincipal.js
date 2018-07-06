@@ -36,7 +36,6 @@ exports.definition = {
 			}
 			*/
 		});
-
 		return Collection;
 	}
 };

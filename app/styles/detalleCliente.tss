@@ -14,7 +14,7 @@
 },
 "#vistaDatosContacto": {
 	"backgroundColor": "#ffffff",
-	"height": "30%",
+	"height": "35%",
 	"layout": "vertical"
 },
 "#vistaEstatusPago": {
@@ -53,7 +53,6 @@
 "#vistaTituloPanel": {
 	"height": "40"
 },
- 
 "#cantidadBoletos": {
 	"text": "0"
 },
@@ -65,7 +64,6 @@
 "#vistaCantidadBoletos": {
 	"height": "30%"
 },
- 
 "#tituloAbonos": {
 	"height": "20%"
 },
@@ -79,26 +77,23 @@
 },
 "#ultimaActualizacion": {
 	"text": "Actualizado el 16 de Noviembre de 2017",
-	"top": "2%"
+	"top": "5",
+	"visible": "false",
 },
 "#eliminarContacto": {
-	"title": "Eliminar de Contactos",
-	"color": "#red",
+	"title": "Eliminar Contacto",
 	"backgroundColor": "#66ccff",
-	"height": "40",
-	"width": "70%",
-	"class": "boton",
-	"left": "20",
-	"right": "20",
-	"visible": "true",
-	"zIndex": "10"
+	"color": "#ffffff",
+	"borderRadius": "10",
+	"width": "90%",
+	"height": "45",
 },
 "#fotoCliente": {
 	"height": "100",
 	"width": "100",
 	"borderWidth": "9",
 	"borderColor": "white",
-	"top": "5",
+	"top": "5"
 },
 "#nombreCliente": {
 	"text": "Pedro Pablo Miramontes Valencia",
@@ -127,15 +122,16 @@
 },
 "#buscar": {
 	"text": "\uf0e0",
-	"width": "50",
+	"width": "40",
 	"left": "85%",
 	"right": "5",
 	"color": "#ffffff",
-	"top": "15"
+	"top": "15",
+	"height": "40",
+	"visible": "false"
 },
 "#regresar": {
 },
- 
 "#boletosEntregados": {
 	"text": "Boletos entregados"
 },
@@ -148,10 +144,10 @@
 },
 "#historial": {
 	"text": "Ver Historial >>",
-	"left": "2",
 	"right": "5",
 	"top": "50",
-	"class": "fuenteApp h2 centrado"
+	"class": "fuenteApp h2 centrado",
+	"color": "#000000"
 },
 "#saldarDeuda": {
 	"text": "\uf14b",
@@ -161,9 +157,9 @@
 	"zIndex": "10"
 },
 "#pagoPendiente": {
-	"left": "27",
+	"left": "15.90%",
 	"text": "0",
-	"top": "60",
+	"top": "50%",
 	"color": "#000000",
 	"zIndex": "10"
 },
@@ -184,23 +180,19 @@
 	"top": "59%"
 },
 "#View_2": {
-	"width": "50%",
-	"left": "35",
+	"width": "120",
 	"top": "66",
 	"borderWidth": "1",
 	"height": "1",
-	"right": "4"
+	"right": "5",
+	"borderColor": "#000000"
 },
 "#pendiente": {
-	"width": "55%",
+	"width": "55%"
 },
 "#vistaDeudaPagos": {
 	"height": "19%",
 	"layout": "horizontal"
-},
-"#eliminarContacto": {
-	"width": "50%",
-	"height": "19%"
 },
 "#vistaBoletosAsignados": {
 	"height": "30%",
@@ -212,20 +204,36 @@
 	"editable": "true",
 	"height": "100%",
 	"width": "100%",
-	"color": "#000000",
+	"color": "#000000"
 },
 "#pagoPendiente": {
 	"text": "Label",
 	"left": "20%",
-	"top": "50%"
+	"top": "50%",
+	"color": "#000000"
 },
 "#titulopagoPendiente": {
 	"left": "10",
 	"text": "Pago Pendiente",
-	"top": "10"
+	"top": "10",
+	"color": "#000000"
 },
 "#Label_1": {
 	"text": "$",
 	"left": "15",
-	"top": "60"
+	"top": "50%",
+	"color": "#000000",
+	"class": "fuenteApp h4"
+},
+"#View_1": {
+	"layout": "horizontal",
+	"left": "30",
+	"right": "30"
+},
+"#whatsapp": {
+	"text": "\uf232",
+	"height": "30",
+	"width": "30",
+	"color": "#3180bd",
+	"left": "10"
 }

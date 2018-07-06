@@ -21,7 +21,7 @@
 },
 "#entrar": {
 	"title": "Entrar",
-	"top": "160"
+	"top": "160",
 },
 "#View_1": {
 	"borderWidth": "1",
@@ -49,8 +49,10 @@
 	"height": "45"
 },
 "#terminos": {
+	"backgroundSelectedColor": "#499fbf",
 },
 "#aviso": {
+	"backgroundFocusedColor": "#0c467f",
 },
 ".switches[platform=android]": {
 	"left": "5",
@@ -66,12 +68,14 @@
 "#Label_1": {
 	"text": "Acepto el aviso de privacidad",
 	"left": "60",
-	"top": "15"
+	"top": "15",
+	"color": "#feffff",
 },
 "#Label_2": {
 	"text": "Acepto los terminos y condiciones",
 	"left": "60",
-	"top": "15"
+	"top": "15",
+	"color": "#feffff",
 },
 "#View_2": {
 	"height": "100",

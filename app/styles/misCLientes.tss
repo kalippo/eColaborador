@@ -5,7 +5,7 @@
 "#titulo": {
 	"text": "Mis Compradores",
 	"left": "40",
-	"right": "40"
+	"right": "40",
 },
 "#vistaClientes": {
 	"layout": "vertical",
@@ -34,7 +34,8 @@
 	"text": "\uf002",
 	"right": "10",
 	"left": "200",
-	"height": "35"
+	"height": "30",
+	"top": "15",
 },
 "#regresar": {
 },
@@ -66,7 +67,7 @@
 	"title": "Sin Boleto",
 	"borderWidth": "0",
 	"separatorColor": "gray",
-	"dividerHeight": "1dp",
+	"dividerHeight": "1dp"
 },
 ".botonFiltro": {
 	"width": "32%",
@@ -108,7 +109,7 @@
 	"right": "10",
 	"top": "7"
 },
-"#listaSinAdeudo": {
+"#listaSinBoletos": {
 	"backgroundColor": "white"
 },
 "#ImageView_2": {
