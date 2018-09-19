@@ -1,47 +1,42 @@
 ".container": {
 },
 "#vistaTitulo": {
-	"height": "50"
-},
-"#vista": {
 },
 "#vistaSorteosActivos": {
 	"layout": "horizontal",
 	"showPagingControl": "true",
-	"borderColor": "#993300",
-	"borderWidth": "1",
-	"bottom": "5",
-	"left": "20",
-	"right": "20",
 	"top": "5",
-	"overlayEnabled": "true",
-	"pagingControlOnTop": "true"
+	"pagingControlHeight": "10",
+	"currentPageIndicatorColor": "#004283",
+	"pageIndicatorColor": "#2bb5c7",
+	"bottom": "10",
+	"pagingControlHeight": 10
 },
-"#home": {
-	"text": "\uf015",
+"#home ": {
 	"left": "10",
 	"color": "white",
-	"height": "30",
-	"width": "30",
-	"top": "15",
+	"top": "20",
 	"class": "fa",
 	"zIndex": "10"
 },
-"#notificacion": {
+"#notificacion ": {
 	"text": "\uf0f3",
-	"height": "30",
 	"right": "10",
-	"top": "15",
 	"width": "30",
-	"color": "white",
-	"visible": "false"
+	"visible": "false",
+	"left": "200"
 },
 "#vistapremios": {
 	"layout": "horizontal",
 	"bottom": "10",
 	"left": "10",
 	"right": "10",
-	"top": "10"
+	"top": "10",
+	"pagingControlHeight": "10",
+	"currentPageIndicatorColor": "#004283",
+	"pageIndicatorColor": "#2bb5c7",
+	"bottom": "10",
+	"pagingControlHeight": 10
 },
 "#vistaVideos": {
 	"height": "150",
@@ -73,57 +68,46 @@
 	"left": "20",
 	"right": "20"
 },
-"#vistaSorteosActivos": {
-},
 "#vistaSorteos": {
-	"height": "30%",
+	"height": "190",
 	"layout": "vertical"
 },
 "#vistaGaleria": {
-	"layout": "vertical"
+	"layout": "vertical",
+	"height": "800"
 },
 "#vistaPremios": {
 	"layout": "horizontal",
 	"scrollType": "horizontal",
 	"scrollingEnabled": "true",
 	"overlayEnabled": "true",
-	"pagingControlOnTop": "true",
 	"showPagingControl": "true",
-	"height": "100",
-	"top": "5"
-},
-"#ScrollView_1": {
+	"top": "5",
+	"height": "400"
 },
 "#vistaHerramientas": {
 	"layout": "vertical",
 	"scrollType": "vertical"
 },
-"#TabGroup": {
-},
-"#Tab_1": {
-},
-"#Window_1": {
-	"title": "Window"
-},
-"#Tab_2": {
-},
 "#View_3": {
 	"height": "50",
 	"layout": "horizontal",
-	"backgroundColor": "#ffffff"
+	"backgroundColor": "#ffffff",
+	"top": "10",
+	"width": "100"
 },
 "#descargarImagen": {
 	"text": "\uf019",
-	"height": "40",
-	"width": "40",
+	"height": "50",
+	"width": "50",
 	"class": "fa h5",
-	"left": "40%",
-	"color": "#66ccff"
+	"color": "#66ccff",
+	"visible": "true"
 },
 "#compartirImagen": {
 	"text": "\uf1e1",
-	"height": "40",
-	"width": "40",
+	"height": "50",
+	"width": "50",
 	"color": "#66ccff"
 },
 "#View_4": {
@@ -133,7 +117,7 @@
 "#vistaMensajes": {
 	"layout": "vertical",
 	"visible": "true",
-	"height": "200"
+	"height": "260"
 },
 "#View_6": {
 	"height": "50"
@@ -149,24 +133,32 @@
 	"text": "Selecciona uno de los mensajes predeterminados y comparte con tus compradores",
 	"left": "30",
 	"right": "30",
-	"class": "fuenteApp"
+	"class": "fuenteApp",
+	"height": "50",
+	"color": "#000000"
 },
 "#vistaListaMensajes": {
 	"layout": "horizontal",
-	"left": "20",
-	"right": "20",
-	"height": "100"
+	"height": "100",
+	"width": "300",
+	"scrollType": "horizontal"
 },
 "#Label_3": {
 	"text": "Mis herramientas",
 	"left": "40",
-	"top": "15",
 	"color": "#ffffff",
 	"right": "40",
 	"class": "fuenteApp centrado"
 },
 "#ImageView_1": {
 },
-"#iv": {
-	"image": "/images/se_1_original.jpg",
-}
+"#procesando": {
+	"style": Titanium.UI.ActivityIndicatorStyle.BIG_DARK,
+	"height": "50",
+	"width": "50"
+},
+"#vistaProcesando": {
+	"opacity": ".5",
+	"visible": "false",
+	"backgroundColor": "gray"
+},

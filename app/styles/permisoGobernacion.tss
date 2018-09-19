@@ -1,0 +1,16 @@
+".container": {
+},
+"#vistaTitulo": {
+},
+"#vistaAviso": {
+},
+"#atras": {
+},
+"#titulo": {
+	"text": "PERMISOS DE GOBERNACIÓN",
+	"right": "40",
+	"left": "40"
+},
+"#webAviso": {
+	"url": "https://m.sorteostec.org/assets/permisos.html"
+}

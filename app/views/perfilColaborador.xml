@@ -1,29 +1,29 @@
 <Alloy>
     <Window class="container" layout="vertical">
         <View class="vistaTitulo" id="vistaTitulo">
-            <Label class="fuenteApp h3 colorTurquesa" id="cancelar"/>
-            <Label class="fuenteApp h3 centrado colorAzul" id="editarPerfil"/>
-            <Label class="fuenteApp h3 colorTurquesa" id="aceptar"/>
+            <Label class="fa h5 regresar" id="cancelar"/>
+            <Label class="etiquetaTitulo fuenteApp h4 centrado" id="editarPerfil"/>
         </View>
         <View id="vistaPerfil">
             <View id="vistaFotoPerfil">
                 <ImageView class="imagenColaborador" id="imagenColaborador"/>
             </View>
             <View class="vistaDatosColaborador" id="vistaNombre">
-                <Label class="fuenteApp h3 tituloPerfil colorAzul" id="nombre"/>
-                <Label class="fuenteApp datosPerfil h2" id="nombreColaborador"/>
+                <Label class="fuenteApp h2 tituloPerfil colorAzul" id="nombre"/>
+                <TextField class="fuenteApp datosPerfil h2 texto" id="nombreColaborador"/>
             </View>
             <View class="separador"/>
             <View class="vistaDatosColaborador" id="vistaCorreo">
-                <Label class="fuenteApp h3 tituloPerfil colorAzul" id="correo"/>
-                <Label class="fuenteApp datosPerfil h2" id="correoColaborador"/>
+                <Label class="fuenteApp h2 tituloPerfil colorAzul" id="correo"/>
+                <TextField class="fuenteApp datosPerfil h2 texto" id="correoColaborador"/>
             </View>
             <View class="separador"/>
             <View class="vistaDatosColaborador" id="vistaTelefono">
-                <Label class="fuenteApp h3 tituloPerfil colorAzul" id="telefono"/>
-                <Label class="fuenteApp datosPerfil h2" id="telefonoColaborador"/>
+                <Label class="fuenteApp h2 tituloPerfil colorAzul" id="telefono"/>
+                <TextField class="fuenteApp datosPerfil h2 tecladoNumerico texto" id="telefonoColaborador"/>
             </View>
             <View class="separador"/>
+            <Button class="boton" id="aceptar"/>
         </View>
     </Window>
 </Alloy>

@@ -6,7 +6,7 @@
 },
 "#vistaOpciones": {
 	"backgroundColor": "#ffffff",
-	"layout": "vertical"
+	"layout": "vertical",
 },
 "#fotoColaborador": {
 	"layout": "vertical",
@@ -51,7 +51,7 @@
 },
 "#preguntasFrecuentes": {
 	"text": "Preguntas Frecuentes",
-	"visible": "true",
+	"visible": "false"
 },
 "#iconoNotificaciones": {
 	"text": "\uf0f3"
@@ -63,7 +63,8 @@
 	"text": "Ayuda / Atención"
 },
 "#contacto": {
-	"text": "Contacto"
+	"text": "Contacto",
+	"visible": "false"
 },
 "#avisoPrivacidad": {
 	"text": "Aviso de Privacidad"
@@ -81,7 +82,8 @@
 	"text": "Terminos y Condiciones"
 },
 "#legales": {
-	"text": "Legales Sorteos Tec"
+	"text": "Legales Sorteos Tec",
+	"visible": "false"
 },
 "#cerrarSesion": {
 	"text": "Cerrar Sesión"
@@ -89,7 +91,11 @@
 "#iconoPerfil": {
 	"text": "\uf007"
 },
-"#iconoCerrarSesion": {
-},
 "#vistaMiPerfil": {
+},
+"#permisosGobernacion": {
+	"text": "Permisos de gobernación"
+},
+"#sorteosTec": {
+	"text": "Sorteos Tec",
 }

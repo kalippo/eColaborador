@@ -5,44 +5,54 @@
 "#vistaFiltros": {
 },
 "#regresar": {
-	"color": "#ffffff",
 	"left": "10",
-	"text": "Cancelar",
-	"top": "25",
 	"width": "100"
 },
 "#Label_2": {
 	"text": "Agregar Contacto",
 	"right": "25%",
-	"left": "25%",
-	"top": "25"
+	"left": "25%"
 },
 "#vistaOpciones": {
 	"height": "40",
-	"layout": "horizontal"
+	"layout": "horizontal",
+	"backgroundColor": "#f5f5f5",
 },
 ".botonFiltro": {
-	"width": "32%",
+	"width": "30%",
 	"height": "90%",
-	"left": "1",
+	"left": "0",
 	"top": "5",
-	"borderColor": "white",
-	"color": "blue"
+	"backgroundColor": "#f5f5f5",
+	"color": "blue",
+	"borderWidth": "0"
 },
 "#telefono": {
-	"title": "Desde Telefono",
+	"title": "Contactos",
+	"color": "#6dace7",
+	"borderColor": "#f5f5f5",
 },
 "#nuevo": {
-	"title": "Nuevo"
+	"title": "Nuevo",
+	"color": "#6dace7",
+	"borderColor": "#f5f5f5",
+	"left": "5%",
 },
 "#frecuentes": {
-	"title": "Frecuentes"
+	"title": "Frecuentes",
+	"color": "#6dace7",
+	"borderColor": "#f5f5f5",
 },
 "#agregar": {
 	"text": "OK",
 	"color": "#ffffff",
 	"right": "10",
 	"left": "70%",
-	"top": "25",
 	"class": "fuenteApp derecha"
+},
+"#seleccion": {
+	"height": "3",
+	"backgroundColor": "#52c4fb",
+	"left": "5%",
+	"width": "30%"
 }

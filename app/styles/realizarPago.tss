@@ -35,11 +35,10 @@
 	"left": "40",
 	"right": "40",
 	"top": "10",
-	"keyboardType": Ti.UI.KEYBOARD_NUMBER_PAD,
-	"color": "#000000",
+	"color": "#000000"
 },
 "#pagar": {
-	"title": "Pagar"
+	"title": "Aceptar",
 },
 "#regresar": {
 	"left": "4%",

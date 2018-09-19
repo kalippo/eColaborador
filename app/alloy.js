@@ -2,6 +2,30 @@ Ti.API.info('test');
 var servicioWeb = 'http://servicioscrm.sorteostec.org/AppColaborador/Desarrollo/ServicioAppColaborador/v1/Service.svc';
 Alloy.Globals.Cloud = require('ti.cloud');
 
+//inicializar variables globales
+Alloy.Globals.reinicioVariables = function() {
+	Alloy.Globals.estaLogeado = false;
+	Alloy.Globals.contactos = [];
+	Alloy.Globals.compradores = [];
+	Alloy.Globals.notificaciones = [];
+	Alloy.Globals.boletosColaborador = [];
+	Alloy.Globals.idSorteoCuentaRegresiva = 0;
+	Alloy.Globals.fechaSorteoCuentaRegresiva = 0;
+	Alloy.Globals.colaborador = '';
+	Alloy.Globals.premios = [];
+	Alloy.Globals.menusCargados = 0;
+	Alloy.Globals.resultadoLogin = {
+		exitoso : 0
+	};
+	Alloy.Globals.saldos = [];
+	Alloy.Globals.saldoGlobal = [];
+	var deviceToken = null;
+
+};
+
+Alloy.Globals.reinicioVariables();
+// NOTIFICACIONES
+
 //Alloy.Globals.contactos = Ti.App.Properties.getList('listaContactos', []);
 
 Alloy.Globals.maxId = Ti.App.Properties.getInt('maxId', 1);
@@ -29,34 +53,15 @@ Alloy.Collections.compradores = compradores;
 Alloy.Globals.imagenCalendario = '';
 Alloy.Globals.listaMensajes = [];
 
-//inicializar variables globales
-Alloy.Globals.reinicioVariables = function() {
-	Alloy.Globals.estaLogeado = false;
-	Alloy.Globals.contactos = [];
-	Alloy.Globals.compradores = [];
-	Alloy.Globals.boletosColaborador = [];
-	Alloy.Globals.idSorteoCuentaRegresiva = 0;
-	Alloy.Globals.fechaSorteoCuentaRegresiva = 0;
-	Alloy.Globals.colaborador = '';
-	Alloy.Globals.premios = [];
-	Alloy.Globals.menusCargados = 0;
-	Alloy.Globals.resultadoLogin = {
-		exitoso : 0
-	};
-	Alloy.Globals.saldos = [];
-	Alloy.Globals.saldoGlobal = [];
-
-};
-
 //Obtener llaves globales
-Alloy.Globals.leerCuentaRegresiva = function() {
+Alloy.Globals.leerCuentaRegresiva = function(callback, error) {
 	Alloy.Globals.Cloud.KeyValues.get({
 		name : 'idsorteocuentaregresiva'
 	}, function(e) {
 		if(e.success) {
 			var idSorteo = e.keyvalues[0].value;
 			//Ti.API.info('idsorteocuentaregresiva: ');
-			Ti.API.info('idsorteocuentaregresiva:\n' + JSON.stringify(idSorteo, null, 4));
+			//Ti.API.info('idsorteocuentaregresiva:\n' + JSON.stringify(idSorteo, null, 4));
 			if(idSorteo > 0) {
 				Alloy.Globals.Cloud.KeyValues.get({
 					name : 'fechacuentaregresiva'
@@ -66,20 +71,22 @@ Alloy.Globals.leerCuentaRegresiva = function() {
 
 						Alloy.Globals.idSorteoCuentaRegresiva = idSorteo;
 						Alloy.Globals.fechaSorteoCuentaRegresiva = fecha;
+						Ti.API.info('idSorteoCuentaRegresiva:' + Alloy.Globals.idSorteoCuentaRegresiva + '\nfechaSorteoCuentaRegresiva:' + Alloy.Globals.fechaSorteoCuentaRegresiva);
+						callback();
 						//Alloy.Globals.cargaCuentaRegresiva();
+					} else {
+						error();
 					}
 				});
 			}
 		}
 	});
-	Ti.API.info('idSorteoCuentaRegresiva:' + Alloy.Globals.idSorteoCuentaRegresiva + '\nfechaSorteoCuentaRegresiva:' + Alloy.Globals.fechaSorteoCuentaRegresiva);
 
 };
-Alloy.Globals.reinicioVariables();
-Alloy.Globals.leerCuentaRegresiva();
+
 //SERVICIOS
 
-Alloy.Globals.WsObtenerSorteos = function() {
+Alloy.Globals.WsObtenerSorteos = function(callback) {
 
 	Ti.API.info('prueba ObtenerSorteos: ');
 	var data = [];
@@ -135,6 +142,7 @@ Alloy.Globals.WsObtenerSorteos = function() {
 			}
 		}
 		asignarImagenesSorteo();
+		callback();
 		//Ti.API.info('sorteosActivos' + JSON.stringify(Alloy.Collections.sorteosActivos,
 		// null, 4));
 		//Ti.API.info('sorteosActivos:\n' +
@@ -203,13 +211,16 @@ Alloy.Globals.WsObtenerClientesColaborador = function(idColaborador) {
 			//Ti.API.info('telefono:' +
 			// JSON.stringify(xmlCompradores.item(i).getElementsByTagName("telefono").item(0).textContent,
 			// null, 4));
-			compradores.push({
-				nombre : comprador,
-				telefono : telefono
-			});
+			if(telefono.trim() != '') {
+				compradores.push({
+					nombre : comprador,
+					telefono : telefono
+				});
+			}
 		}
 		//Ti.API.info('compradores:\n' + JSON.stringify(compradores, null, 4));
 		Alloy.Globals.compradores = compradores;
+		//callback();
 	};
 	xhr.onerror = function(e)/* on  error in getting data from server */
 	{
@@ -232,7 +243,7 @@ Alloy.Globals.WsObtenerClientesColaborador = function(idColaborador) {
 
 };
 
-Alloy.Globals.WsObtenerBoletosColaboradorPorSorteo = function(idColaborador, tipoSorteo, numeroSorteo) {
+Alloy.Globals.WsObtenerBoletosColaboradorPorSorteo = function(idColaborador, tipoSorteo, numeroSorteo, callback, error) {
 
 	Ti.API.info('prueba ObtenerBoletosColaboradorPorSorteo : ');
 	var data = [];
@@ -279,6 +290,7 @@ Alloy.Globals.WsObtenerBoletosColaboradorPorSorteo = function(idColaborador, tip
 		}
 		//Ti.API.info('boletos:\n' + JSON.stringify(boletosColaborador, null, 4));
 		Alloy.Globals.boletosColaborador = boletosColaborador;
+		callback();
 	};
 
 	xhr.onerror = function(e)/* on  error in getting data from server */
@@ -286,12 +298,12 @@ Alloy.Globals.WsObtenerBoletosColaboradorPorSorteo = function(idColaborador, tip
 		//check response status and act aaccordingly.
 		Ti.API.info("ObtenerBoletosColaboradorPorSorteo error");
 		Ti.API.info(JSON.stringify(e, null, 4));
-
+		error();
 		return;
 
 	};
 
-	xhr.open("POST", servicioWeb,false);
+	xhr.open("POST", servicioWeb, false);
 
 	xhr.setRequestHeader("Content-Type", "text/xml; charset=utf-8");
 	xhr.setRequestHeader("SOAPAction", "http://tempuri.org/IService/ObtenerBoletosColaboradorPorSorteo");
@@ -381,7 +393,7 @@ Alloy.Globals.WsObtenerObsequiosColaborador = function(idColaborador, idSorteo, 
 
 };
 
-Alloy.Globals.WsObtenerDescripcionPremios = function(idColaborador, idSorteo) {
+Alloy.Globals.WsObtenerDescripcionPremios = function(idColaborador, idSorteo, callback, timeout) {
 
 	Ti.API.info('prueba ObtenerDescripcionPremios  : ');
 	var data = [];
@@ -403,7 +415,9 @@ Alloy.Globals.WsObtenerDescripcionPremios = function(idColaborador, idSorteo) {
 	// @formatter:on
 
 	var theURL = servicioWeb;
-	var xhr = Titanium.Network.createHTTPClient();
+	var xhr = Titanium.Network.createHTTPClient({
+		timeout : 5000
+	});
 	//xhr.withCredentials = true;
 
 	xhr.onload = function() {
@@ -436,11 +450,13 @@ Alloy.Globals.WsObtenerDescripcionPremios = function(idColaborador, idSorteo) {
 					descripcion : descripcion,
 					nombreRotulado : nombreRotulado
 				});
+
 			} catch (err) {
 			}
 		}
 		//Ti.API.info('ObtenerDescripcionPremios:\n' + JSON.stringify(premios, null, 4));
 		Alloy.Globals.premios = premios;
+		callback();
 	};
 
 	xhr.onerror = function(e)/* on  error in getting data from server */
@@ -448,7 +464,7 @@ Alloy.Globals.WsObtenerDescripcionPremios = function(idColaborador, idSorteo) {
 		//check response status and act aaccordingly.
 		Ti.API.info("ObtenerBoletosColaboradorPorSorteo error");
 		Ti.API.info(JSON.stringify(e, null, 4));
-
+		timeout();
 		return;
 
 	};
@@ -465,7 +481,7 @@ Alloy.Globals.WsObtenerDescripcionPremios = function(idColaborador, idSorteo) {
 
 };
 
-Alloy.Globals.WsEsAccesoValido = function(loginColaborador, passwordColaborador) {
+Alloy.Globals.WsEsAccesoValido = function(loginColaborador, passwordColaborador, callback) {
 
 	Ti.API.info('prueba EsAccesoValido  : ');
 	var data = [];
@@ -505,10 +521,10 @@ Alloy.Globals.WsEsAccesoValido = function(loginColaborador, passwordColaborador)
 		resultadoLogin = {};
 		for( i = 0; i < xmlPremios.length; i++) {
 			//var nombre =
-			var exitoso = xmlPremios.item(i).getElementsByTagName("exitoso").item(0).textContent;
-			var nombreColaborador = xmlPremios.item(i).getElementsByTagName("nombreColaborador").item(0).textContent;
-			var mensaje = xmlPremios.item(i).getElementsByTagName("mensaje").item(0).textContent;
 			try {
+				var exitoso = xmlPremios.item(i).getElementsByTagName("exitoso").item(0).textContent;
+				var mensaje = xmlPremios.item(i).getElementsByTagName("mensaje").item(0).textContent;
+				var nombreColaborador = xmlPremios.item(i).getElementsByTagName("nombreColaborador").item(0).textContent;
 				resultadoLogin = {
 					exitoso : exitoso,
 					nombreColaborador : nombreColaborador,
@@ -516,11 +532,12 @@ Alloy.Globals.WsEsAccesoValido = function(loginColaborador, passwordColaborador)
 				};
 			} catch (e) {
 
-				alert(xmlPremios.item(i).getElementsByTagName("mensaje").item(0).textContent);
+				//alert(xmlPremios.item(i).getElementsByTagName("mensaje").item(0).textContent);
 			}
 		}
 		Alloy.Globals.resultadoLogin = resultadoLogin;
 		Ti.API.info('resultadoLogin:' + JSON.stringify(Alloy.Globals.resultadoLogin, null, 4));
+		callback();
 	};
 
 	xhr.onerror = function(e)/* on  error in getting data from server */
@@ -545,7 +562,7 @@ Alloy.Globals.WsEsAccesoValido = function(loginColaborador, passwordColaborador)
 
 };
 
-Alloy.Globals.WsObtenerEstadoCuentaColaborador = function(idColaborador) {
+Alloy.Globals.WsObtenerEstadoCuentaColaborador = function(idColaborador, callback, timeout) {
 
 	Ti.API.info('prueba WsObtenerEstadoCuentaColaborador   idColaborador: ' + idColaborador);
 	var data = [];
@@ -567,7 +584,9 @@ Alloy.Globals.WsObtenerEstadoCuentaColaborador = function(idColaborador) {
 	// @formatter:on
 
 	var theURL = servicioWeb;
-	var xhr = Titanium.Network.createHTTPClient();
+	var xhr = Titanium.Network.createHTTPClient({
+		timeout : 8000
+	});
 	//xhr.withCredentials = true;
 
 	xhr.onload = function() {
@@ -579,43 +598,51 @@ Alloy.Globals.WsObtenerEstadoCuentaColaborador = function(idColaborador) {
 		var xmlText = elements.item(0).textContent;
 		var XMLObject = Titanium.XML.parseString(xmlText);
 		var xmlsaldos = XMLObject.getElementsByTagName("saldo");
-		//Ti.API.info('xml saldos 	:' + JSON.stringify(xmlsaldos.length, null, 4));
+		// Ti.API.info('xml saldos 	:' + JSON.stringify(xmlsaldos.length, null, 4));
 
 		saldos = [];
-		try {
-			for( i = 0; i < xmlsaldos.length; i++) {
 
-				try {
-					var idJuego = xmlsaldos.item(i).getElementsByTagName("idJuego").item(0).textContent;
-					var idProducto = xmlsaldos.item(i).getElementsByTagName("idProducto").item(0).textContent;
-					var numeroJuego = xmlsaldos.item(i).getElementsByTagName("numeroJuego").item(0).textContent;
-					var nombreJuego = xmlsaldos.item(i).getElementsByTagName("nombreJuego").item(0).textContent;
-					var saldo = xmlsaldos.item(i).getElementsByTagName("saldo").item(0).textContent;
-					var monto = xmlsaldos.item(i).getElementsByTagName("monto").item(0).textContent;
-					var orden = xmlsaldos.item(i).getElementsByTagName("orden").item(0).textContent;
-					var fecha_cierre = xmlsaldos.item(i).getElementsByTagName("fecha_cierre").item(0).textContent;
-					var esJuegoVigente = xmlsaldos.item(i).getElementsByTagName("esJuegoVigente").item(0).textContent;
+		for( i = 0; i < xmlsaldos.length; i++) {
+			// Ti.API.info('xml item 	:' + JSON.stringify(xmlsaldos.item(i), null, 4));
 
-					saldos.push({
-						idJuego : idJuego,
-						idProducto : idProducto,
-						numeroJuego : numeroJuego,
-						nombreJuego : nombreJuego,
-						saldo : saldo,
-						monto : monto,
-						orden : orden,
-						fecha_cierre : fecha_cierre,
-						esJuegoVigente : esJuegoVigente
-					});
-				} catch(err) {
-				}
-
+			var talones = 0;
+			try {
+				var talones = xmlsaldos.item(i).getElementsByTagName("talones").item(0).textContent;
+			} catch(err) {
 			}
-		} catch(e) {
+			try {
+				var idJuego = xmlsaldos.item(i).getElementsByTagName("idJuego").item(0).textContent;
+				var idProducto = xmlsaldos.item(i).getElementsByTagName("idProducto").item(0).textContent;
+				var numeroJuego = xmlsaldos.item(i).getElementsByTagName("numeroJuego").item(0).textContent;
+				var nombreJuego = xmlsaldos.item(i).getElementsByTagName("nombreJuego").item(0).textContent;
+				var saldo = xmlsaldos.item(i).getElementsByTagName("saldo").item(0).textContent;
+				var monto = xmlsaldos.item(i).getElementsByTagName("monto").item(0).textContent;
+				var orden = xmlsaldos.item(i).getElementsByTagName("orden").item(0).textContent;
+				var fecha_cierre = xmlsaldos.item(i).getElementsByTagName("fecha_cierre").item(0).textContent;
+				var esJuegoVigente = xmlsaldos.item(i).getElementsByTagName("esJuegoVigente").item(0).textContent;
+
+				saldos.push({
+					idJuego : idJuego,
+					idProducto : idProducto,
+					numeroJuego : numeroJuego,
+					nombreJuego : nombreJuego,
+					saldo : saldo,
+					monto : monto,
+					orden : orden,
+					fecha_cierre : fecha_cierre,
+					esJuegoVigente : esJuegoVigente,
+					talones : talones,
+				});
+			} catch(err) {
+			}
+
 		}
+
 		Alloy.Globals.saldos = saldos;
+		callback();
 		//Ti.API.info('ObtenerEstadoCuentaColaborador:' +
 		// JSON.stringify(Alloy.Globals.saldos, null, 4));
+
 	};
 
 	xhr.onerror = function(e)/* on  error in getting data from server */
@@ -623,12 +650,12 @@ Alloy.Globals.WsObtenerEstadoCuentaColaborador = function(idColaborador) {
 		//check response status and act aaccordingly.
 		Ti.API.info("ObtenerBoletosColaboradorPorSorteo error");
 		Ti.API.info(JSON.stringify(e, null, 4));
-
+		timeout(e);
 		return;
 
 	};
 
-	xhr.open("POST", servicioWeb, false);
+	xhr.open("POST", servicioWeb, true);
 
 	xhr.setRequestHeader("Content-Type", "text/xml; charset=utf-8");
 	xhr.setRequestHeader("SOAPAction", "http://tempuri.org/IService/ObtenerEstadoCuentaColaborador");
@@ -640,7 +667,7 @@ Alloy.Globals.WsObtenerEstadoCuentaColaborador = function(idColaborador) {
 
 };
 
-Alloy.Globals.WsObtenerSaldoGlobalColaborador = function(idColaborador) {
+Alloy.Globals.WsObtenerSaldoGlobalColaborador = function(idColaborador, callback) {
 
 	Ti.API.info('prueba ObtenerSaldoGlobalColaborador   idColaborador: ' + idColaborador);
 	var data = [];
@@ -678,13 +705,21 @@ Alloy.Globals.WsObtenerSaldoGlobalColaborador = function(idColaborador) {
 		var saldoGlobal = xmlsaldo.item(0).getElementsByTagName("saldoGlobal").item(0).textContent;
 		var puntos = xmlsaldo.item(0).getElementsByTagName("puntos").item(0).textContent;
 
+		// var fechaActualizacion = '15 de Agosto de 2018';
+		// try {
+		// var fechaActualizacion =
+		// xmlsaldo.item(0).getElementsByTagName("fechaActualizacion").item(0).textContent;
+		// } catch (err) {
+		// }
 		var saldoGlobal = {
 			saldoGlobal : saldoGlobal,
 			puntos : puntos,
+			// fechaActualizacion : fechaActualizacion,
 
 		};
 
 		Alloy.Globals.saldoGlobal = saldoGlobal;
+		callback();
 	};
 
 	xhr.onerror = function(e) {
@@ -696,7 +731,7 @@ Alloy.Globals.WsObtenerSaldoGlobalColaborador = function(idColaborador) {
 
 	};
 
-	xhr.open("POST", servicioWeb, false);
+	xhr.open("POST", servicioWeb, true);
 
 	xhr.setRequestHeader("Content-Type", "text/xml; charset=utf-8");
 	xhr.setRequestHeader("SOAPAction", "http://tempuri.org/IService/ObtenerSaldoGlobalColaborador");
@@ -707,7 +742,7 @@ Alloy.Globals.WsObtenerSaldoGlobalColaborador = function(idColaborador) {
 
 };
 
-Alloy.Globals.login = function(loginColaborador, passwordColaborador) {
+Alloy.Globals.login = function(loginColaborador, passwordColaborador, callback) {
 	Ti.API.info('login:' + loginColaborador + ' password:' + passwordColaborador);
 	if(loginColaborador != '' && passwordColaborador != '') {
 		Alloy.Globals.Cloud.Users.login({
@@ -715,27 +750,14 @@ Alloy.Globals.login = function(loginColaborador, passwordColaborador) {
 			password : passwordColaborador
 		}, function(e) {
 			if(e.success) {
-				Alloy.Globals.estaLogeado = true;
-				Alloy.Globals.Cloud.Users.showMe(function(e) {
-					if(e.success) {
+				cargaDatosLogin(passwordColaborador, function() {
 
-						var user = e.users[0];
-						Ti.App.Properties.setString('login', user.username);
-						Ti.App.Properties.setString('password', passwordColaborador);
-						//Ti.API.info('user:' + JSON.stringify(user, null, 4));
-
-						Alloy.Globals.colaborador = user;
-						Alloy.Globals.contactos = JSON.parse(user.custom_fields.compradores);
-						cargaDatosInicio(user.username);
-
-					} else {
-						Ti.API.info('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
-					}
+					callback();
 				});
+				//callback();
 			} else {
 
-				Alloy.Globals.WsEsAccesoValido(loginColaborador, passwordColaborador);
-				setTimeout(function() {
+				Alloy.Globals.WsEsAccesoValido(loginColaborador, passwordColaborador, function() {
 					Ti.API.info('resultadoLogin postTimeout:' + JSON.stringify(Alloy.Globals.resultadoLogin, null, 4));
 					if(Alloy.Globals.resultadoLogin.exitoso == 1) {
 						Alloy.Globals.Cloud.Users.create({
@@ -747,6 +769,7 @@ Alloy.Globals.login = function(loginColaborador, passwordColaborador) {
 							password_confirmation : passwordColaborador,
 							custom_fields : {
 								compradores : '[]',
+								notificaciones : '[]',
 								telefono : '',
 								direccion : ''
 
@@ -761,21 +784,11 @@ Alloy.Globals.login = function(loginColaborador, passwordColaborador) {
 									password : passwordColaborador
 								}, function(e) {
 									if(e.success) {
-										Ti.API.info('resultadoLogin usuario logeado:');
-										Alloy.Globals.estaLogeado = true;
-										Alloy.Globals.Cloud.Users.showMe(function(e) {
-											if(e.success) {
-
-												var user = e.users[0];
-												Ti.App.Properties.setString('login', user.username);
-												Ti.App.Properties.setString('password', passwordColaborador);
-												Alloy.Globals.colaborador = user;
-												Alloy.Globals.contactos = JSON.parse(user.custom_fields.compradores);
-												cargaDatosInicio(user.username);
-											} else {
-												Ti.API.info('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
-											}
+										cargaDatosLogin(passwordColaborador, function() {
+											alert('callback');
+											callback();
 										});
+										//callback();
 									}
 								});
 							} else {
@@ -783,43 +796,80 @@ Alloy.Globals.login = function(loginColaborador, passwordColaborador) {
 							}
 						});
 					} else {
-						var ACS = require('ti.cloud'),
-						    env = Ti.App.deployType.toLowerCase() === 'production' ? 'production' : 'development',
-						    username = Ti.App.Properties.getString('acs-username-' + env),
-						    password = Ti.App.Properties.getString('acs-password-' + env);
-
-						// if not configured, just return
-						if(!env || !username || !password) {
-							return;
-						}
-						/**
-						 * Appcelerator Cloud (ACS) Admin User Login Logic
-						 *
-						 * fires login.success with the user as argument on success
-						 * fires login.failed with the result as argument on error
-						 */
-						ACS.Users.login({
-							login : username,
-							password : password,
-						}, function(result) {
-							if(env === 'development') {
-								Ti.API.info('ACS Login Results for environment `' + env + '`:');
-								Ti.API.info(result);
-							}
-							if(result && result.success && result.users && result.users.length) {
-								Ti.App.fireEvent('login.success', result.users[0], env);
-
-							} else {
-								Ti.App.fireEvent('login.failed', result, env);
-							}
+						loginInvitado(function() {
+							callback();
 						});
+						//callback();
 					}
-				}, 2000);
+
+				});
 
 			}
 		});
 	}
 };
+
+function loginInvitado(callback) {
+	var ACS = require('ti.cloud'),
+	    env = Ti.App.deployType.toLowerCase() === 'production' ? 'production' : 'development',
+	    username = Ti.App.Properties.getString('acs-username-' + env),
+	    password = Ti.App.Properties.getString('acs-password-' + env);
+
+	// if not configured, just return
+	if(!env || !username || !password) {
+		return;
+	}
+	/**
+	 * Appcelerator Cloud (ACS) Admin User Login Logic
+	 *
+	 * fires login.success with the user as argument on success
+	 * fires login.failed with the result as argument on error
+	 */
+	ACS.Users.login({
+		login : username,
+		password : password,
+	}, function(result) {
+		if(env === 'development') {
+			Ti.API.info('ACS Login Results for environment `' + env + '`:');
+			Ti.API.info(result);
+		}
+		if(result && result.success && result.users && result.users.length) {
+			Ti.App.fireEvent('login.success', result.users[0], env);
+
+		} else {
+			Ti.App.fireEvent('login.failed', result, env);
+		}
+		callback();
+	});
+}
+
+
+function cargaDatosLogin(passwordColaborador, callback) {
+	Alloy.Globals.estaLogeado = true;
+	Alloy.Globals.Cloud.Users.showMe(function(e) {
+		if(e.success) {
+
+			var user = e.users[0];
+			Ti.App.Properties.setString('login', user.username);
+			Ti.App.Properties.setString('password', passwordColaborador);
+			//Ti.API.info('user:' + JSON.stringify(user, null, 4));
+
+			Alloy.Globals.colaborador = user;
+			Alloy.Globals.contactos = JSON.parse(user.custom_fields.compradores);
+			if(user.custom_fields.notificaciones) {
+				Alloy.Globals.notificaciones = JSON.parse(user.custom_fields.notificaciones);
+			}
+			cargaDatosInicio(user.username);
+			Ti.API.info('suscribirNotificaciones');
+			suscribirNotificaciones();
+
+		} else {
+			Ti.API.info('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
+		}
+		callback();
+	});
+}
+
 
 Alloy.Globals.Logout = function() {
 	Alloy.Globals.reinicioVariables();
@@ -849,7 +899,7 @@ function leercalendario() {
 }
 
 
-Alloy.Globals.obtenerImagenesMenuPrincipal = function() {
+Alloy.Globals.obtenerImagenesMenuPrincipal = function(callback) {
 	Alloy.Globals.Cloud.PhotoCollections.showPhotos({
 		collection_id : "5a4e90755a276e961e1f55f6"
 		//5a4e90755a276e961e1f55f6
@@ -870,6 +920,7 @@ Alloy.Globals.obtenerImagenesMenuPrincipal = function() {
 					menus.save();
 					Alloy.Collections.menuPrincipal.push(menus);
 				});
+				callback();
 				//Ti.API.info(JSON.stringify(Alloy.Collections.menuPrincipal,null,4));
 				//crearMenuOpciones(Alloy.Collections.menuPrincipal.where({
 				//	activo : true
@@ -896,7 +947,7 @@ Alloy.Globals.obtenerMensajes = function() {
 							icono : photo.urls.original,
 							texto : photo.custom_fields.texto
 
-						});  
+						});
 					}
 				});
 				Alloy.Globals.listaMensajes = mensajes;
@@ -936,6 +987,7 @@ function asignarImagenesSorteo() {
 
 					});
 				});
+
 				//Ti.API.info("SORTEOS ACTIVOS \n" +
 				//JSON.stringify('SORTEOSACTIVOSIMAGENES:' + Alloy.Collections.sorteosActivos,
 				// null, 4);
@@ -949,6 +1001,41 @@ function asignarImagenesSorteo() {
 }
 
 
+Alloy.Globals.actualizarLogin = function(nombre, correo, telefono, correcto, error) {
+	Alloy.Globals.Cloud.Users.update({
+		email : correo,
+		first_name : nombre,
+		custom_fields : {
+			telefono : telefono
+		}
+	}, function(e) {
+		if(e.success) {
+			var user = e.users[0];
+			Alloy.Globals.Cloud.Users.showMe(function(e) {
+				if(e.success) {
+
+					var user = e.users[0];
+
+					Alloy.Globals.colaborador = user;
+					Alloy.Globals.contactos = JSON.parse(user.custom_fields.compradores);
+					Alloy.Globals.notificaciones = JSON.parse(user.custom_fields.notificaciones);
+
+					cargaDatosInicio(user.username);
+					correcto();
+
+				} else {
+					Ti.API.info('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
+					error();
+				}
+
+			});
+		} else {
+			alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
+		}
+	});
+};
+
+
 Alloy.Globals.guardarContactos = function() {
 	Alloy.Globals.contactos.sort(function(a, b) {
 		var keyA = a.nombreContacto,
@@ -959,10 +1046,10 @@ Alloy.Globals.guardarContactos = function() {
 			return 1;
 		return 0;
 	});
-
 	Alloy.Globals.Cloud.Users.update({
 		custom_fields : {
-			compradores : JSON.stringify(Alloy.Globals.contactos)
+			compradores : JSON.stringify(Alloy.Globals.contactos),
+			notificaciones : JSON.stringify(Alloy.Globals.notificaciones)
 
 		}
 	}, function(e) {
@@ -973,24 +1060,120 @@ Alloy.Globals.guardarContactos = function() {
 		}
 	});
 
-	Ti.API.info(JSON.stringify(Alloy.Globals.contactos, null, 4));
+	Ti.API.info('notif:' + JSON.stringify(Alloy.Globals.notificaciones, null, 4));
+	Ti.API.info('contactos:' + JSON.stringify(Alloy.Globals.contactos, null, 4));
 	Ti.App.Properties.setList('listaContactos', Alloy.Globals.contactos);
 	Alloy.Globals.maxId = Alloy.Globals.maxId + 1;
 	Ti.App.Properties.setInt('maxId', Alloy.Globals.maxId);
 	Ti.API.info(Alloy.Globals.maxId);
+}; 
+
+
+
+
+function suscribirNotificaciones() {
+
+	if(Ti.Platform.osname == 'android') {
+		var CloudPush = require('ti.cloudpush');
+
+		// Initialize the module
+		CloudPush.retrieveDeviceToken({
+			success : deviceTokenSuccess,
+			error : deviceTokenError
+		});
+
+		// Enable push notifications for this device
+		// Save the device token for subsequent API calls
+
+		function deviceTokenError(e) {
+			alert('Failed to register for push notifications! ' + e.error);
+		}
+
+
+		// Process incoming push notifications
+		CloudPush.addEventListener('callback', function(evt) {
+			//alert("Notification received: " + evt.payload);
+			var notif = JSON.parse(evt.payload);
+			Ti.API.info('notificacion:\n' + JSON.stringify(notif, null, 4));
+
+			Alloy.Globals.notificaciones.push({
+				tipo : notif.custom_field.tipo,
+				titulo : notif.android.title,
+				detalle : notif.android.alert,
+				fecha : notif.custom_field.fecha,
+			});
+			Alloy.Globals.guardarContactos();
+
+		});
+	}
+}
+
+
+
+
+
+function deviceTokenSuccess(e) {
+	deviceToken = e.deviceToken;
+	//alert('deviceTokenSuccess' + deviceToken);
+
+	var Cloud = require("ti.cloud");
+	Alloy.Globals.Cloud.PushNotifications.subscribeToken({
+		device_token : deviceToken,
+		channel : 'colaboro',
+		type : Ti.Platform.name === 'android' ? 'android' : 'ios'
+	}, function(e) {
+		if(e.success) {
+			// alert('Subscribed');
+			Ti.API.info('Subscribed');
+
+		} else {
+			alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
+		}
+	});
+}
+
+
+
+		
+Alloy.Globals.unsubscribeToChannel = function (){
+//  Alloy.Globals.Cloud.PushNotifications.unsubscribe({
+//         channel: 'test',
+//         device_token: deviceToken
+//     }, function (e)     {
+//         if (e.success) {
+//             Ti.API.info('Unsubscribed');
+//         } else {
+//           		  alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
+//         }
+//     }); 
 };
 
-Alloy.Globals.login(log, pass);
-Alloy.Globals.obtenerImagenesMenuPrincipal();
-Alloy.Globals.WsObtenerSorteos();
-leercalendario();
-Alloy.Globals.obtenerMensajes();
+
+Alloy.Globals.login(log, pass, function() {
+	leercalendario();
+	Alloy.Globals.obtenerMensajes();
+
+});
+
+Alloy.Globals.pixelToDp = function(px) {
+	return (parseInt(px) / (Titanium.Platform.displayCaps.dpi / 160));
+};
+
+Alloy.Globals.anchoPantalla = function(a) {
+	var anchoPantalla = Ti.Platform.displayCaps.platformWidth;
+
+	if(Ti.Platform.osname == 'android') {
+		anchoPantalla = Alloy.Globals.pixelToDp(anchoPantalla);
+	}
+	return anchoPantalla;
+};
 
 function cargaDatosInicio(idColaborador) {
 
 	Alloy.Globals.WsObtenerClientesColaborador(idColaborador);
-	Alloy.Globals.WsObtenerEstadoCuentaColaborador(idColaborador);
-	Alloy.Globals.WsObtenerSaldoGlobalColaborador(idColaborador);
+	//Alloy.Globals.WsObtenerEstadoCuentaColaborador(idColaborador);
+	//Alloy.Globals.WsObtenerSaldoGlobalColaborador(idColaborador);
 
 }
+
 

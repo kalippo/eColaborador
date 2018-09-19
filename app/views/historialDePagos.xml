@@ -1,7 +1,7 @@
 <Alloy>
     <Window class="container fondoBlanco" layout="vertical">
         <View class="vistaTitulo" id="vistaTitulo">
-            <Label class="regresar fa" id="regresar"/>
+            <Label class="regresar fa h5" id="regresar"/>
             <Label class="fuenteApp h4 centrado" id="Label_1"/>
         </View>
         <View id="View_1">

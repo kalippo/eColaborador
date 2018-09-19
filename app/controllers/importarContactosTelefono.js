@@ -1,49 +1,65 @@
-// Arguments passed into this controller can be accessed via the `$.args` object directly or:
+// Arguments passed into this controller can be accessed via the `$.args` object
+// directly or:
 //var args = $.args;
 
- 
-
-
-if (Ti.Contacts.hasContactsPermissions()) {
+if(Ti.Contacts.hasContactsPermissions()) {
 	leeContactos();
 } else {
 	Ti.Contacts.requestContactsPermissions(function(e) {
-		if (e.success) {
+		if(e.success) {
 			leeContactos();
 
 		} else {
-			Ti.API.info('no authorization');   
+			Ti.API.info('no authorization');
 		}
 	});
 }
 
 function leeContactos() {
-
-	var people = Ti.Contacts.getAllPeople();
-	
-	creaContactos(people);
+	if(Ti.Contacts.hasContactsPermissions()) {
+		var contactos = Ti.Contacts.getAllPeople();
+	} else {
+		Ti.Contacts.requestContactsPermissions(function(e) {
+			var contactos = Ti.Contacts.getAllPeople();
+		});
+	}
+	//Ti.API.info('contactos:\n' + JSON.stringify(people,null,4));
+	creaContactos(contactos.sort(compare));
 }
-
 
 
 //return creaContactos(JSON.parse(this.responseText).results);
 
 function creaContactos(contactos) {
 	var listaContactos = [];
-	 var id=0;
+	var id = 0;
 	contactos.forEach(function(contacto) {
+
+		Ti.API.log('contacto:' + JSON.stringify(contacto.getPhone(), null, 4));
+		if(contacto.getPhone().mobile) {
+			var telefono = contacto.getPhone().mobile[0];
+		} else if(contacto.getPhone().home) {
+			var telefono = contacto.getPhone().home[0];
+		} else if(contacto.getPhone().work) {
+			var telefono = contacto.getPhone().work[0];
+		} else if(contacto.getPhone().main) {
+			var telefono = contacto.getPhone().main[0];
+		}
+
+		//telefono = telefono.replace(/[^\d.]/g, "");
+
 		listaContactos.push({
 			nombreContacto : {
 				text : contacto.getFullName()
 			},
 			telefono : {
-				text : contacto.getPhone()[1]
+				text : telefono
 			},
-			
-				seleccionado:{
-					itemId:"id"+ id++,
-					value:false
-				}
+
+			seleccionado : {
+				itemId : "id" + id++,
+				value : false
+			}
 		});
 	});
 	Ti.API.log(JSON.stringify(listaContactos));
@@ -52,12 +68,28 @@ function creaContactos(contactos) {
 }
 
 
-function handleChange(e){
-    // Get the current "row"
-    var item = e.section.getItemAt(e.itemIndex);
-    // Update the switch value
-    item.seleccionado.value = e.value;
-    // Update the section with the new change
-    e.section.updateItemAt(e.itemIndex, item);
-    Ti.API.info(item);
+function handleChange(e) {
+	// Get the current "row"
+	var item = e.section.getItemAt(e.itemIndex);
+	// Update the switch value
+	item.seleccionado.value = e.value;
+	// Update the section with the new change
+	e.section.updateItemAt(e.itemIndex, item);
+	Ti.API.info(item);
 }
+
+
+function compare(a, b) {
+	// Use toUpperCase() to ignore character casing
+	const nombreA = a.fullName.toUpperCase();
+	const nombreB = b.fullName.toUpperCase();
+
+	var comparison = 0;
+	if(nombreA > nombreB) {
+		comparison = 1;
+	} else if(nombreA < nombreB) {
+		comparison = -1;
+	}
+	return comparison;
+}
+

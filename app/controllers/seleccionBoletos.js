@@ -119,13 +119,22 @@ function crearListaSorteos(sorteos) {
 
 		Ti.API.info('sorteo:' + opcion.get('id').toString());
 		Ti.API.info(JSON.stringify(cantidad, null, 4));
+		
+		var anchoImagen = 215;
+		var anchoPantalla = Ti.Platform.displayCaps.platformWidth;
+
+		if(Ti.Platform.osname == 'android') {
+			anchoPantalla = Alloy.Globals.pixelToDp(anchoPantalla);
+		}
+		var margenIzquierdo = (anchoPantalla - anchoImagen) / 2;
 
 		var imagenSorteo = Titanium.UI.createImageView({
 			id : "imagen",
 			image : opcion.get('original'),
 			top : '50',
-			left : '10',
-			right : '10',
+			//left : margenIzquierdo,
+			width : anchoImagen,
+			height : '111',
 			idImagen : opcion.get('id'),
 			cantidad : cantidad
 
@@ -136,10 +145,22 @@ function crearListaSorteos(sorteos) {
 		});
 
 		// "\uf058",
+		var fechaSorteo = Titanium.UI.createLabel({
+			text : opcion.get('fechaFin'),
+			//left : '10%',
+			//right : '10%',
+			top : '130',
+			textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER,
+			color : "white",
+			font : {
+				fontSize : 15,
+				fontFamily : 'Montserrat-Regular'
+			},
+		});
 		var checkBox = Titanium.UI.createLabel({
 			text : "\uf058",
-			left : '80%',
-			top : '17%',
+			left : '70%',
+			top : '20%',
 			height : '50',
 			width : '50',
 			color : "#63dced",
@@ -148,22 +169,10 @@ function crearListaSorteos(sorteos) {
 				fontFamily : 'FontAwesome'
 			},
 		});
-		var fechaSorteo = Titanium.UI.createLabel({
-			text : opcion.get('fechaFin'),
-			left : '10%',
-			right : '10%',
-			top : '75%',
-			textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER,
-			color : "white",
-			font : {
-				fontSize : 15,
-				fontFamily : 'Montserrat-Regular'
-			},
-		});
 		var fondoCheckBox = Titanium.UI.createLabel({
 			text : "\uf111",
-			left : '80%',
-			top : '17%',
+			left : '70%',
+			top : '20%',
 			height : '50',
 			width : '50',
 			color : "white",
@@ -173,8 +182,8 @@ function crearListaSorteos(sorteos) {
 			},
 		});
 		vistaSorteo.add(imagenSorteo);
-		vistaSorteo.add(fondoCheckBox);
-		vistaSorteo.add(checkBox);
+		// vistaSorteo.add(fondoCheckBox);
+		// vistaSorteo.add(checkBox);
 		vistaSorteo.add(fechaSorteo);
 
 		paginas.push(vistaSorteo);

@@ -1,0 +1,62 @@
+".container": {
+},
+"#View_1": {
+	"height": "110"
+},
+"#Label_1": {
+},
+"#Label_2": {
+	"text": "¡Muchas felicidades!",
+	"left": "15%",
+	"right": "15%",
+	"class": "etiquetaTitulo"
+},
+"#Label_3": {
+	"text": "Tus boletos vendidos resultaron \n ganadores",
+	"left": "10%",
+	"top": "60",
+	"right": "10%",
+	"height": "50",
+},
+"#View_2": {
+	"layout": "vertical"
+},
+"#View_3": {
+	"left": "20",
+	"top": "20",
+	"borderRadius": "10",
+	"height": "400",
+	"layout": "vertical",
+	"right": "20"
+},
+"#View_4": {
+	"height": "100"
+},
+"#vistaListaBoletos": {
+	"height": "150",
+	"layout": "vertical"
+},
+"#View_6": {
+	"layout": "vertical"
+},
+"#Label_4": {
+	"text": "Boletos ganadores:",
+	"left": "29%",
+	"top": "40%",
+	"class": "etiquetaTitulo fuenteApp h4 centrado"
+},
+"#Label_5": {
+	"text": "Consulta la lista completa de ganadores del",
+	"right": "15",
+	"left": "15"
+},
+"#Button_1": {
+	"title": "CONSULTA AQUÍ",
+	"backgroundColor": "#63dced",
+	"height": "50",
+	"left": "40",
+	"right": "40"
+},
+"#nombreSorteo": {
+	"text": "Label",
+}

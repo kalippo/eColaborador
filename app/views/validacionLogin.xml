@@ -4,7 +4,7 @@
             <Label class="etiquetaValidarLogin" id="bienvenido"/>
             <Label class="etiquetaValidarLogin centrado" id="nombreColaborador"/>
             <Button class="boton" id="entrar"/>
-            <Label class="etiquetaValidarLogin" id="noSoyYo"/>
+            <Label class="etiquetaValidarLogin fuenteApp" id="noSoyYo"/>
             <View id="View_1"/>
         </View>
         <View id="vistaLegal">

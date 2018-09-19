@@ -1,0 +1,19 @@
+".container": {
+},
+"#View_1": {
+	"class": "vistaTitulo"
+},
+"#View_2": {
+},
+"#WebView_1": {
+	"url": "https://m.sorteostec.org/#/",
+},
+"#regresar": {
+	"left": "6%",
+	"top": "24%",
+},
+"#Label_2": {
+	"text": "Sorteos Tec",
+	"right": "50",
+	"left": "50"
+}

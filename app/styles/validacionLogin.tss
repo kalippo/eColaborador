@@ -1,27 +1,27 @@
 ".container": {
 },
 "#vistaValidarColaborador": {
-	"top": "120"
+	"top": "120",
 },
 "#bienvenido": {
 	"text": "Bienvenido",
 	"textAlign": Ti.UI.TEXT_ALIGNMENT_CENTER,
-	"top": "60"
+	"top": "70",
 },
 "#nombreColaborador": {
 	"text": "P",
-	"top": "85",
+	"top": "100",
 },
 "etiquetas": {
 },
 "#noSoyYo": {
-	"text": "No Soy Yo",
+	"text": "No soy yo",
 	"textAlign": Ti.UI.TEXT_ALIGNMENT_CENTER,
-	"top": "240"
+	"top": "240",
 },
 "#entrar": {
 	"title": "Entrar",
-	"top": "160",
+	"top": "160"
 },
 "#View_1": {
 	"borderWidth": "1",
@@ -49,10 +49,10 @@
 	"height": "45"
 },
 "#terminos": {
-	"backgroundSelectedColor": "#499fbf",
+	"backgroundSelectedColor": "#499fbf"
 },
 "#aviso": {
-	"backgroundFocusedColor": "#0c467f",
+	"backgroundFocusedColor": "#0c467f"
 },
 ".switches[platform=android]": {
 	"left": "5",
@@ -66,16 +66,16 @@
 "#imagenColaborador": {
 },
 "#Label_1": {
-	"text": "Acepto el aviso de privacidad",
+	"text": "Acepto el aviso de privacidad.",
 	"left": "60",
 	"top": "15",
-	"color": "#feffff",
+	"color": "#feffff"
 },
 "#Label_2": {
-	"text": "Acepto los terminos y condiciones",
+	"text": "Acepto los términos y condiciones.",
 	"left": "60",
 	"top": "15",
-	"color": "#feffff",
+	"color": "#feffff"
 },
 "#View_2": {
 	"height": "100",

@@ -1,16 +1,16 @@
 ".container": {
 },
-
 "#vistaNoSoyYo": {
 	"layout": "vertical",
-	"top": "120",
-},
-
-"#label_1": {
-	"text": "SI NO CUENTAS CON TUS DATOS DE ACCESO COMUNICATE AL 1515 3030 PARA SOLICITARLOS.",
 	"top": "25%"
 },
-
+"#label_1": {
+	"text": "Si no cuentas con tu contraseña \n comunícate al 8115153030 \n para solicitar tu acceso.",
+	"top": "25%",
+	"left": "30",
+	"right": "30",
+	"color": "#004283",
+},
 "#regresar": {
 	"title": "REGRESAR",
 	"top": "10%"

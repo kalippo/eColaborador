@@ -26,6 +26,9 @@ if(detalle.pagoPendiente > 0) {
 	$.estatus.text = "Adeudo";
 	//$.vistaEstatus.backgroundColor='red';
 }
+else{
+	$.estatus.text = "Sin Adeudo";
+}
 
 asignarBoletos();
 
@@ -92,7 +95,7 @@ function asignarBoletos() {
 	} catch (err) {
 	}
 	$.cantidadBoletos.text = cantidadBoletos;
-	//});
+	//});     
 }
 
 
@@ -204,8 +207,8 @@ $.eliminarContacto.addEventListener('click', function() {
 		cancel : 1,
 		ok : 0,
 		buttonNames : ['Si', 'No'],
-		message : '¿Estas seguro de querer borrar el coprador?',
-		title : 'Delete'
+		message : '¿Estas seguro de querer borrar este comprador?',
+		title : 'Borrar comprador'
 	});
 	dialog.addEventListener('click', function(e) {
 		if(e.index === e.source.ok) {
@@ -229,3 +232,7 @@ $.eliminarContacto.addEventListener('click', function() {
 
 });
 
+$.llamar.addEventListener('click', function() {
+	Titanium.Platform.openURL('tel:' + $.telefonoCliente.text.trim());
+
+});

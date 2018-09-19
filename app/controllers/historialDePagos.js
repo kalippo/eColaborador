@@ -12,9 +12,10 @@ var pagos = detalle.abonos;
 var listaPagos =[];
 pagos.forEach(function(pago) {
 	Ti.API.info('pago:' + JSON.stringify(pago, null, 4));
+	var cantidad = String.formatCurrency(parseInt(pago.cantidad));
 	//var fecha = Date(pago.fecha);
 	listaPagos.push({
-		cantidad: {text:pago.cantidad},
+		cantidad: {text:cantidad},
 		fecha: {text: pago.fecha }
 	});
 	

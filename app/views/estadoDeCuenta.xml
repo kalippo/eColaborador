@@ -1,46 +1,53 @@
 <Alloy>
-    <Window class="container fondoBlanco" layout="vertical">
-        <View class="vistaTitulo" id="View_1">
-            <Label class="fa h5 regresar" id="regresar"/>
-            <Label class="etiquetaTitulo fuenteApp h4 centrado" id="Label_2"/>
+    <Window class="container fondoBlanco" theme="Theme.AppCompat.Light.NoActionBar">
+        <View class="container fondoBlanco" layout="vertical">
+            <View class="vistaTitulo" id="View_1">
+                <Label class="fa h5 regresar" id="regresar"/>
+                <Label class="etiquetaTitulo fuenteApp h4 centrado" id="Label_2"/>
+            </View>
+            <View id="View_2">
+                <View class="fondoGris" id="View_3">
+                    <View id="vistaSaldo">
+                        <Label class="fuenteApp h4" id="lblSaldo"/>
+                        <Label class="fuenteApp h4" id="saldo"/>
+                    </View>
+                    <View id="vistaPuntos">
+                        <Label class="fuenteApp h4" id="lblPuntos"/>
+                        <Label class="fuenteApp h4" id="puntos"/>
+                    </View>
+                    <View id="View_5">
+                        <Label class="fuenteApp h4" id="actualizacion"/>
+                    </View>
+                </View>
+                <View id="View_4">
+                    <Label class="fuenteApp centrado h3 colorAzul" id="Label_3"/>
+                </View>
+                <View id="vistaSeleccionSorteo">
+                    <Picker class="colorAzul" id="sorteosSaldo">
+                        <PickerColumn id="columnaSorteo"/>
+                    </Picker>
+                </View>
+                <View class="fondoGris segmento" id="vistasaldos">
+                    <Label class="fuenteApp h3" id="lblSaldoTotal"/>
+                    <Label class="fuenteApp h3" id="saldoTotal"/>
+                </View>
+                <View class="fondoGris segmento" id="vistapagos">
+                    <Label class="fuenteApp h3" id="lblPagosTotal"/>
+                    <Label class="fuenteApp h3" id="pagosTotal"/>
+                </View>
+                <View class="fondoGris segmento" id="vistaBoletos">
+                    <Label class="fuenteApp h3" id="lblBoletosTotal"/>
+                    <Label class="fuenteApp h3" id="boletosTotal"/>
+                </View>
+                <View class="fondoGris segmento" id="vistaTalones">
+                    <Label class="fuenteApp h3" id="lblTalonesTotal"/>
+                    <Label class="fuenteApp h3" id="talonesTotal"/>
+                </View>
+                <Button class="boton" id="Button_1"/>
+            </View>
         </View>
-        <View id="View_2">
-            <View id="View_3">
-                <View id="vistaSaldo">
-                    <Label class="fuenteApp h4" id="lblSaldo"/>
-                    <Label class="fuenteApp h4" id="saldo"/>
-                </View>
-                <View id="vistaPuntos">
-                    <Label class="fuenteApp h4" id="lblPuntos"/>
-                    <Label class="fuenteApp h4" id="puntos"/>
-                </View>
-                <Label class="fuenteApp centrado h3" id="Label_1"/>
-            </View>
-            <View id="View_4">
-                <Label class="fuenteApp centrado h3" id="Label_3"/>
-            </View>
-            <View id="View_5">
-                <Picker id="sorteosSaldo">
-                    <PickerColumn id="column1"/>
-                </Picker>
-            </View>
-            <View id="vistaTotales">
-                <Label class="fuenteApp h3" id="lblSaldoTotal"/>
-                <Label class="fuenteApp h3" id="saldoTotal"/>
-            </View>
-            <View id="vistaTotales">
-                <Label class="fuenteApp h3" id="lblPagosTotal"/>
-                <Label class="fuenteApp h3" id="pagosTotal"/>
-            </View>
-            <View id="vistaTotales">
-                <Label class="fuenteApp h3" id="lblBoletosTotal"/>
-                <Label class="fuenteApp h3" id="boletosTotal"/>
-            </View>
-            <View id="vistaTotales">
-                <Label class="fuenteApp h3" id="lblTalonesTotal"/>
-                <Label class="fuenteApp h3" id="talonesTotal"/>
-            </View>
-            <Button class="boton" id="Button_1"/>
+        <View id="vistaProcesando">
+            <ActivityIndicator id="procesando"/>
         </View>
     </Window>
 </Alloy>

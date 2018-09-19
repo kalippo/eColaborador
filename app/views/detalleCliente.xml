@@ -11,13 +11,14 @@
                 <Label class="fuenteApp h2" id="nombreCliente"/>
                 <Label class="fuenteApp h2" id="telefonoCliente"/>
                 <View id="View_1">
-                    <Label class="fa h4" id="whatsapp"/>
+                    <Label class="fa h6" id="whatsapp"/>
+                    <Label class="fa h6" id="llamar"/>
                 </View>
             </View>
             <View class="panelDetalles" id="vistaEstatusPago">
                 <Label class="etiquetasDetalle h3 fuenteApp" id="estatusDePago"/>
                 <View class="fuenteApp h2" id="vistaEstatus">
-                    <Label class="fuenteApp" id="estatus"/>
+                    <Label class="fuenteApp h2" id="estatus"/>
                 </View>
             </View>
             <View class="panelDetalles" id="vistaBoletosEntregados">

@@ -20,11 +20,14 @@ $.vistaFiltros.addEventListener('scroll', function(e) {
 	$.telefono.color = "#6dace7";
 
 	if(e.currentPage == 0) {
-		$.nuevo.color = "black";
+		$.nuevo.color = "#666666";
+		$.seleccion.left = "5%";
 	} else if(e.currentPage == 1) {
-		$.frecuentes.color = "black";
+		$.frecuentes.color = "#666666";
+		$.seleccion.left = "35%";
 	} else if(e.currentPage == 2) {
-		$.telefono.color = "black";
+		$.telefono.color = "#666666";
+		$.seleccion.left = "65%";
 	}
 
 });
@@ -45,36 +48,55 @@ $.agregar.addEventListener('click', function(error) {
 	//Ti.API.info(JSON.stringify(indice, null, 4));
 
 	if(indice == 0) {
+		if(viewArray[indice].getViewById('nombre').value.trim() == '' ) {
+			var dialog = Ti.UI.createAlertDialog({
 
-		Alloy.Globals.contactos.push({
-			"id" : Alloy.Globals.maxId,
-			"nombreContacto" : viewArray[indice].getViewById('nombre').value + ' ' + viewArray[indice].getViewById('apellidos').value,
-			"telefono" : viewArray[indice].getViewById('telefono').value,
-			"pagoPendiente" : 0,
-			"boletos" : [],
-			"abonos" : [],
-			"notas" : ""
-
+			buttonNames : ['Ok'],
+			message : 'El nombre no puede ir vacio',
+			title : 'Alta de comprador'
 		});
-		//Ti.API.info(JSON.stringify(viewArray[indice].getViewById('nombre').value, null,
-		// 4));
-		//Ti.API.info(JSON.stringify(Alloy.Globals.contactos, null, 4));
-		//guardarContactos();
-		Alloy.Globals.maxId++;
-		Alloy.Globals.guardarContactos();
-		//alerta('Contacto dado de alta ');
+		dialog.show();
+		} else if(viewArray[indice].getViewById('telefono').value.trim() == '') {
+			var dialog = Ti.UI.createAlertDialog({
 
-		regresar();
+			buttonNames : ['Ok'],
+			message : 'favor de escribir un numero telefonico',
+			title : 'Alta de comprador'
+		});
+		dialog.show();
+		} else{
+
+			Alloy.Globals.contactos.push({
+				"id" : Alloy.Globals.maxId,
+				"nombreContacto" : viewArray[indice].getViewById('nombre').value + ' ' + viewArray[indice].getViewById('apellidos').value,
+				"telefono" : viewArray[indice].getViewById('telefono').value,
+				"pagoPendiente" : 0,
+				"boletos" : [],
+				"abonos" : [],
+				"notas" : ""
+
+			});
+			//Ti.API.info(JSON.stringify(viewArray[indice].getViewById('nombre').value, null,
+			// 4));
+			//Ti.API.info(JSON.stringify(Alloy.Globals.contactos, null, 4));
+			//guardarContactos();
+			Alloy.Globals.maxId++;
+			Alloy.Globals.guardarContactos();
+			//alerta('Contacto dado de alta ');
+
+			regresar();
+		}
 	} else if(indice == 1 || indice == 2) {
-		//Ti.API.info(JSON.stringify(viewArray[indice].getViewById('listaFrecuentes')
-		// ,null,4));
+		//Ti.API.info(JSON.stringify(viewArray[indice].getViewById('listaFrecuentes'),null,4));
 		var list = viewArray[indice].getViewById('listaContactos');
-		//Ti.API.info(JSON.stringify(list.sections[0].getItems(),null,4));
+		Ti.API.info('lista:'+JSON.stringify(list.sections[0].getItems(),null,4));
 		list.sections[0].getItems().forEach(function(contacto) {
-			if(contacto.seleccionado.value == 1) {
-				//Ti.API.info(JSON.stringify(contacto, null, 4));
+		Ti.API.info('contacto activo:'+JSON.stringify(contacto.seleccionado.value ,null,4));
+		Ti.API.info('contacto disponible:'+JSON.stringify(contacto.seleccionado.enabled ,null,4));
+			if(contacto.seleccionado.value == 1 && contacto.seleccionado.enabled == 1) {
+				Ti.API.info('contacto:'+JSON.stringify(contacto, null, 4));
 				Alloy.Globals.contactos.push({
-					"id" : Alloy.Globals.maxId,
+					"id" : Alloy.Globals.maxId, 
 					"nombreContacto" : contacto.nombreContacto.text,
 					"telefono" : contacto.telefono.text,
 					"pagoPendiente" : 0,

@@ -5,12 +5,12 @@
 "#titulo": {
 	"text": "Mis Compradores",
 	"left": "40",
-	"right": "40",
+	"right": "40"
 },
 "#vistaClientes": {
 	"layout": "vertical",
 	"top": "1",
-	"height": "84%"
+	"height": "75%"
 },
 ".icon": {
 	"width": "50dp",
@@ -34,8 +34,7 @@
 	"text": "\uf002",
 	"right": "10",
 	"left": "200",
-	"height": "30",
-	"top": "15",
+	"visible": "false"
 },
 "#regresar": {
 },
@@ -46,35 +45,34 @@
 },
 "#vistaOpciones": {
 	"height": "50",
-	"layout": "horizontal"
+	"layout": "horizontal",
+	"backgroundColor": "#f5f5f5"
 },
 "#todos": {
 	"title": "Todos",
-	"left": "5",
-	"borderWidth": "1",
-	"color": "#000000",
-	"separatorColor": "gray",
-	"dividerHeight": "1dp"
+	"left": "5%",
+	"color": "#666666",
+	"borderWidth": "0",
+	"borderColor": "#f5f5f5"
 },
 "#conAdeudo": {
 	"title": "Con Adeudo",
 	"borderWidth": "0",
 	"color": "#6dace7",
-	"separatorColor": "gray",
-	"dividerHeight": "1dp"
+	"borderColor": "#f5f5f5"
 },
 "#sinAdeudo": {
 	"title": "Sin Boleto",
 	"borderWidth": "0",
-	"separatorColor": "gray",
-	"dividerHeight": "1dp"
+	"color": "#6dace7",
+	"borderColor": "#f5f5f5"
 },
 ".botonFiltro": {
-	"width": "32%",
+	"width": "30%",
 	"height": "90%",
-	"left": "1",
+	"left": "0",
 	"top": "5",
-	"borderColor": "white"
+	"backgroundColor": "#f5f5f5"
 },
 "#vistaTodos": {
 },
@@ -110,7 +108,8 @@
 	"top": "7"
 },
 "#listaSinBoletos": {
-	"backgroundColor": "white"
+	"backgroundColor": "white",
+	"layout": "vertical",
 },
 "#ImageView_2": {
 },
@@ -148,4 +147,10 @@
 	"zIndex": "10",
 	"class": "fuenteApp",
 	"visible": "false"
+},
+"#seleccion": {
+	"height": "3",
+	"backgroundColor": "#52c4fb",
+	"left": "5%",
+	"width": "30%"
 }

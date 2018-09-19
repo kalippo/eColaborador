@@ -3,13 +3,14 @@
 "#vistaTitulo": {
 },
 "#vistaCalendario": {
+	"scrollType": "vertical"
 },
 "#imagenCalendario": {
 },
 "#regresar": {
 },
 "#Label_2": {
-	"text": "Calendario de Sorteos",
+	"text": "Próximos Sorteos",
 	"left": "40",
 	"right": "40",
 }

@@ -1,17 +1,29 @@
 ".container[platform=android]": {
 },
+".textoAzul": {
+	"color": "#004283"
+},
 ".container[platform=ios]": {
 	"top": "0",
 	"backgroundColor": "white"
 },
+".texto": {
+	"borderRadius": "10",
+	"backgroundColor": "white",
+	"color": "#78b1c9",
+	"hintTextColor": "gray",
+	"paddingLeft": "15",
+	"padding": {top:'5',left:'15'}
+},
 ".boton": {
 	"height": "60",
 	"top": "10",
-	"right": "40",
-	"left": "40",
-	"borderRadius": "30",
+	"right": "30",
+	"left": "30",
+	"borderRadius": "20",
 	"color": "#ffffff",
-	"backgroundColor": "#064481"
+	"backgroundColor": "#004283",
+	"padding": {left:'10',top:'5'}
 },
 ".etiquetaValidarLogin": {
 	"left": "5%",
@@ -23,10 +35,10 @@
 	"font": {fontSize:'18',fontFamily:'Montserrat-Regular',fontStyle:'regular',fontWeight:''}
 },
 ".etiquetaTitulo": {
-	"textAlign": Ti.UI.TEXT_ALIGNMENT_CENTER,
 	"color": "white",
 	"left": "5",
-	"top": "25"
+	"top": "20",
+	"height": "35"
 },
 ".vistaValidarLogin": {
 	"layout": "absolute",
@@ -34,12 +46,12 @@
 	"width": "90%",
 	"left": "5%",
 	"backgroundColor": "#ffffff",
-	"borderRadius": "60"
+	"borderRadius": "30"
 },
 ".vistaTitulo": {
 	"height": "60",
 	"backgroundColor": "#1fbdca",
-	"backgroundGradient": {type:'linear',startPoint:{x:'0%',y:'50%'},endPoint:{x:'100%',y:'50%'},colors:[{color:'#1fbdca',offset:0.0},{color:'#127abc',offset:0.99}],}
+	"backgroundGradient": {type:'linear',startPoint:{x:'0%',y:'50%'},endPoint:{x:'100%',y:'50%'},colors:[{color:'#1fbdca',offset:0.0},{color:'#127abc',offset:0.99}]}
 },
 ".imagenColaborador": {
 	"image": "/Images/Home/Colaborapp-LOGO-ICONO.png",
@@ -81,7 +93,7 @@
 	"color": "#63dced"
 },
 ".fondoGris": {
-	"backgroundColor": "#eef2f6"
+	"backgroundColor": "#f5f5f5"
 },
 ".fondoBlanco": {
 	"backgroundColor": "white"
@@ -96,13 +108,16 @@
 	"font": {fontSize:'17'}
 },
 ".h4[platform=android]": {
-	"font": {fontSize:'22'}
+	"font": {fontSize:'20'}
 },
 ".h5[platform=android]": {
-	"font": {fontSize:'27'}
+	"font": {fontSize:'22'}
 },
 ".h6[platform=android]": {
-	"font": {fontSize:'32'}
+	"font": {fontSize:'28'}
+},
+".h7[platform=android]": {
+	"font": {fontSize:'35'}
 },
 ".h1[platform=ios]": {
 	"font": {fontSize:'9'}
@@ -122,6 +137,9 @@
 ".h6[platform=ios]": {
 	"font": {fontSize:'24'}
 },
+".h7[platform=ios]": {
+	"font": {fontSize:'29'}
+},
 ".h1[platform=ios formFactor=tablet]": {
 	"font": {fontSize:'19'}
 },
@@ -140,8 +158,14 @@
 ".h6[platform=ios formFactor=tablet]": {
 	"font": {fontSize:'34'}
 },
+".h7[platform=ios formFactor=tablet]": {
+	"font": {fontSize:'39'}
+},
 ".backgroundLogin": {
-	"backgroundGradient": {type:'radial',startPoint:{x:50,y:50},endPoint:{x:100,y:100},colors:[{color:'#1fbdca',offset:0.7},{color:'#127abc',offset:1.00}],backfillStart:true,backfillEnd:true,}
+	"backgroundGradient": {type:'radial',startPoint:{x:0,y:0},startRadius:2000,colors:[{color:'#1fbdca',offset:0.70},{color:'#127abc',offset:1.0}],backfillStart:true,backfillEnd:true}
+},
+".backgroundLogin[platform=ios]": {
+	"backgroundGradient": {type:'radial',startPoint:{x:0,y:0},endPoint:{x:80,y:80},colors:[{color:'#127abc',offset:0.95},{color:'#1fbdca',offset:1.00}],backfillStart:true,backfillEnd:true}
 },
 ".regresar": {
 	"top": "20",
@@ -150,4 +174,15 @@
 	"height": "35",
 	"text": "\uf053",
 	"width": "35"
+},
+".tecladoNumerico": {
+	"keyboardType": Ti.UI.KEYBOARD_NUMBER_PAD
+},
+"#Label_3": {
+},
+"#View_2": {
+	"left": "37%",
+	"top": "24%"
+},
+"#webAviso": {
 }

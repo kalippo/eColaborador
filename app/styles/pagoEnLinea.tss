@@ -1,0 +1,88 @@
+".container": {
+},
+"#View_1": {
+	"height": "100%",
+	"layout": "vertical"
+},
+"#View_2": {
+	"height": "60",
+	"left": "0",
+	"top": "0"
+},
+"#regresar": {
+	"left": "8%",
+	"top": "37%"
+},
+"#titulo": {
+	"text": "Pago en Línea",
+	"right": "50",
+	"left": "50",
+	"color": "#ffffff",
+	"class": "etiquetaTitulo fuenteApp h4 centrado"
+},
+"#View_3": {
+	"layout": "vertical"
+},
+"#vistaOpcion": {
+	"backgroundColor": "#006699",
+	"height": "180",
+	"layout": "vertical",
+	"left": "30",
+	"right": "30",
+	"top": "10",
+	"class": "fondoAzul",
+	"borderRadius": "5",
+},
+"#imgCompartirLiga": {
+	"height": "40",
+	"width": "40",
+	"top": "10",
+	"opacity": "1"
+},
+"#imgRealizarPago": {
+	"height": "40",
+	"width": "40",
+	"top": "10",
+	"opacity": "1"
+},
+"#imgCancelarPago": {
+	"height": "40",
+	"width": "40",
+	"top": "10",
+	"opacity": "1"
+},
+"#lbl1": {
+	"text": "Envia una liga a tu comprador donde podrá realizar su pago",
+	"color": "#ffffff",
+	"left": "20",
+	"right": "20",
+	"top": "10",
+	"opacity": "1"
+},
+"#lbl2": {
+	"text": "Envia una liga a tu comprador donde podrá realizar su pago",
+	"color": "#ffffff",
+	"left": "20",
+	"right": "20",
+	"top": "10",
+	"opacity": "1"
+},
+"#lbl3": {
+	"text": "Envia una liga a tu comprador donde podrá realizar su pago",
+	"color": "#ffffff",
+	"left": "20",
+	"right": "20",
+	"top": "10",
+	"opacity": "1"
+},
+"#Button_1": {
+	"title": "COMPARTIR",
+	"backgroundColor": "#2dbdc9",
+	"color": "#ffffff",
+	"height": "40",
+	"left": "10",
+	"right": "10",
+	"top": "10",
+	"borderRadius": "5",
+	"opacity": "1"
+}

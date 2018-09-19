@@ -13,23 +13,27 @@
 	"width": "80"
 },
 "#titulo": {
-	"left": "90", 
-	"top": "5",
-	"width": "220"
+	"left": "90",
+	"top": "10",
+	"width": "220",
+	"color": "black"
 },
 "#detalle": {
 	"left": "90",
-	"top": "30",
-	"width": "220"
+	"top": "40",
+	"width": "220",
+	"color": "gray"
 },
 "#regresar": {
 },
 "#tituloVista": {
 	"text": "Notificaciones",
 	"left": "50",
-	"top": "10",
+	"top": "20",
 	"color": "#feffff",
 	"right": "50"
 },
 "#fuenteApp h4 centrado": {
+},
+"#listaNotificaciones": {
 }

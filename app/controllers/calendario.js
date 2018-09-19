@@ -4,7 +4,8 @@ var args = $.args;
 
 
 $.imagenCalendario.image = Alloy.Globals.imagenCalendario;
-
+$.imagenCalendario.width = Alloy.Globals.anchoPantalla();
+$.vistaCalendario.width = $.vistaTitulo.width;
 $.regresar.addEventListener('click', function(error) {
 	var inicio = Alloy.createController("index");
 	inicio = inicio.getView();

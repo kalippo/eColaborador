@@ -1,14 +1,27 @@
 // Arguments passed into this controller can be accessed via the `$.args` object
 // directly or:
 var args = $.args;
+$.vistaProcesando.visible = true;
+$.procesando.show();
 /*
-crearListaSorteos(Alloy.Collections.sorteosActivos.where({
-activo : '1'
-}));*/
-
+ crearListaSorteos(Alloy.Collections.sorteosActivos.where({
+ activo : '1'
+ }));*/
+if(Ti.Platform.osname == 'android') {
+	$.descargarImagen.visible = true;
+	$.compartirImagen.visible = true;
+} else {
+	$.descargarImagen.visible = true;
+	$.compartirImagen.visible = true;
+}
 //obtenerImagenesSorteos();
+Ti.API.info('x: ' + JSON.stringify($.vistaPremios.width, null, 4));
+var anchoGaleria = Alloy.Globals.anchoPantalla();
+// alert('ancho: ' + anchoGaleria);
+$.vistaPremios.height = anchoGaleria;
+$.vistaPremios.width = anchoGaleria;
 
-$.vistaPremios.height = 300;
+//$.vistaPremios.width;
 listaDeGalerias();
 crearListaMensajes();
 //muestraGaleria('5b18a36e93fb030220038efa');
@@ -37,6 +50,9 @@ function seleccionaGaleria() {
 
 
 function muestraGaleria(idCollection) {
+
+	$.vistaProcesando.visible = true;
+	$.procesando.show();
 	Alloy.Globals.Cloud.PhotoCollections.showPhotos({
 		collection_id : idCollection//collection.id
 		//5a4e90755a276e961e1f55f6
@@ -48,11 +64,12 @@ function muestraGaleria(idCollection) {
 				var paginasGaleria = [];
 				//Ti.API.info(JSON.stringify(e.photos.sort(compare),null,4));
 				e.photos.sort(compare).forEach(function(photo) {
-					Ti.API.info('photo:' + JSON.stringify(photo, null, 4));
+					//Ti.API.info('photo:' + JSON.stringify(photo, null, 4));
 					var imagenPremio = Titanium.UI.createImageView({
 						id : 'imagenPremio',
 						image : photo.urls.original,
-						top : 5,
+						left : '0',
+						right : '0',
 						nombreArchivo : photo.filename
 
 					});
@@ -65,7 +82,9 @@ function muestraGaleria(idCollection) {
 					paginasGaleria.push(vistaPremio);
 				});
 				$.vistaPremios.views = paginasGaleria;
-
+				Ti.API.info('x: ' + $.vistaPremios.width);
+				$.procesando.hide();
+				$.vistaProcesando.visible = false;
 				//crearMenuOpciones(Alloy.Collections.menuPrincipal.where({
 				//	activo : true
 				//}));
@@ -78,6 +97,7 @@ function muestraGaleria(idCollection) {
 
 
 function listaDeGalerias() {
+
 	Alloy.Globals.Cloud.PhotoCollections.showSubcollections({
 		page : 1,
 		per_page : 20,
@@ -86,7 +106,7 @@ function listaDeGalerias() {
 		if(e.success) {
 			var paginas = [];
 
-			Ti.API.info('Success:\n' + 'Count: ' + e.collections.length);
+			// Ti.API.info('Success:\n' + 'Count: ' + e.collections.length);
 			var galerias = [];
 			for(var i = 0; i < e.collections.length; i++) {
 				var collection = e.collections[i];
@@ -108,22 +128,54 @@ function listaDeGalerias() {
 						var photo = f.photos[0];
 						//Ti.API.info('photo:' + JSON.stringify(photo, null, 4));
 						//Ti.API.info('galeria:' + JSON.stringify(galeria, null, 4));
-						var imagenSorteo = Titanium.UI.createImageView({
-							id : 'imagenGaleria',
-							image : photo.urls.original,
-							top : '10',
-							left : '10%',
-							bottom : '10',
-							right : '10',
-							width : '80%',
 
-						});
+						var anchoImagen = 215;
 
 						var vistaSorteo = Titanium.UI.createView({
 							background : "blue",
 							idGaleria : galeria.idGaleria
 						});
+						var imagenSorteo = Titanium.UI.createImageView({
+							id : 'imagenGaleria',
+							image : photo.urls.original,
+							top : '5',
+							//	left : margenIzquierdo,
+							//bottom : '10',
+							//	right : '10',
+							width : anchoImagen,
+							height : '111',
+
+						});
+
+						//var posicionCheck = margenIzquierdo + anchoImagen ;
+						var checkBox = Titanium.UI.createLabel({
+							text : "\uf058",
+							//right : margenIzquierdo,
+							top : 5,
+							height : '50',
+							width : '50',
+							color : "#63dced",
+							font : {
+								fontSize : 40,
+								fontFamily : 'FontAwesome'
+							},
+						});
+						var fondoCheckBox = Titanium.UI.createLabel({
+							text : "\uf111",
+							//right : margenIzquierdo,
+							top : 5,
+							height : '50',
+							width : '50',
+							color : "white",
+							font : {
+								fontSize : 40,
+								fontFamily : 'FontAwesome'
+							},
+						});
+
 						vistaSorteo.add(imagenSorteo);
+						//vistaSorteo.add(fondoCheckBox);
+						//vistaSorteo.add(checkBox);
 
 						paginas.push(vistaSorteo);
 						$.vistaSorteosActivos.views = paginas;
@@ -159,8 +211,8 @@ function crearListaSorteos(sorteos) {
 			top : '10',
 			left : '40',
 			right : '40',
-			bottom : "10",
-			width : '70%',
+			width : '80%',
+			heighth : '80%',
 			background : "blue"
 
 		});
@@ -169,6 +221,8 @@ function crearListaSorteos(sorteos) {
 			background : "blue",
 			left : '10',
 			right : '10',
+			width : '80%',
+			heighth : '80%',
 		});
 		vistaSorteo.add(imagenSorteo);
 
@@ -202,120 +256,196 @@ function compare(a, b) {
 
 
 $.compartirImagen.addEventListener('click', function() {
+
+	if(Ti.Platform.osname == 'android') {
+		if(!Ti.Filesystem.hasStoragePermissions()) {
+			Ti.Filesystem.requestStoragePermissions(function(result) {
+				console.log('Permission granted? ' + result.success);
+				if(result.success) {
+					compatirArchivo();
+
+				} else {
+					alert('Permission denied.');
+				}
+			});
+		} else {
+			compatirArchivo();
+		}
+	}
+
+});
+
+function descargarArchivo() {
 	var indice = $.vistaPremios.currentPage;
 	var viewArray = $.vistaPremios.getViews();
 	var vistaImagen = viewArray[indice].getViewById('imagenPremio');
 
-	if(OS_ANDROID && i.Filesystem.isExternalStoragePresent()) {
-		var img = vistaImagen.toImage().media;
-		fileToShare = Titanium.Filesystem.getFile(Titanium.Filesystem.externalStorageDeirectory, vistaImagen.nombreArchivo);
-	} else {
-		var img = $.newimage.toImage();
-		fileToShare = Titanium.Filesystem.getFile(Titanium.Filesystem.applicationDataDirectory, vistaImagen.nombreArchivo);
-	}
-	fileToShare.write(img);
-
+	Ti.API.info(JSON.stringify(vistaImagen.image, null, 4));
 	var downloadingFileUrl = vistaImagen.image;
-	Ti.API.info('imagen:' + downloadingFileUrl);
 
-	/*
-	 var xhr = Titanium.Network.createHTTPClient({
-	 onload : function() {
-
-	 if(Ti.Filesystem.isExternalStoragePresent()) {
-	 var file = Ti.Filesystem.getFile(Ti.Filesystem.externalStorageDirectory,
-	 vistaImagen.nombreArchivo);
-	 }// No SD or iOS
-	 else {
-	 var file = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,
-	 vistaImagen.nombreArchivo);
-	 }
-	 // Save file
-	 file.write(this.responseData);
-	 Ti.API.info(file.toString());
-	 // Debug: Test if file exist now
-	 if(file.exists) {
-	 //alert('[saveFile] Saved: YES! (' + file.nativePath + ')');
-	 share({
-	 file : file
-	 });
-
-	 } else {
-	 Ti.API.info('[saveFile] Saved: NO!');
-	 }
-
-	 },
-	 timeout : 10000
-	 });
-	 xhr.open('GET',
-	 'https://s3-us-west-1.amazonaws.com/storage-platform.cloud.appcelerator.com/VsCFrroIecox2cc1mCb7lsuTtmQFX4zn/photos/c4/a4/5b1aa9d7b75a6531400079c9/se_1_original.jpg');
-	 xhr.send();
-
-	 */
-
-});
-
-$.descargarImagen.addEventListener('click', function() {
-
-	/*var indice = $.vistaPremios.currentPage;
-	 var viewArray = $.vistaPremios.getViews();
-	 var vistaImagen = viewArray[indice].getViewById('imagenPremio');
-
-	 Ti.API.info(JSON.stringify(vistaImagen.image, null, 4));
-	 var downloadingFileUrl = vistaImagen.image;
-
-	 var imagen = vistaImagen.toImage();
-	 guardarArchivo(imagen, 'imagen.png');
-	 */
-	Ti.API.info('guardar');
-	var img = $.iv.toBlob();
-	Titanium.Media.saveToPhotoGallery(img, {
-		"success" : function(e) {
-			alert('Saved to your camera roll.');
+	var xhr = Ti.Network.createHTTPClient({
+		onerror : function() {
+			alert('Error fetching profile image');
 		},
-		"error" : function(e) {
-			alert(e.error);
+
+		onload : function() {
+			$.vistaProcesando.visible = true;
+			$.procesando.show();
+			// this.responseData holds the binary data fetched from url
+			Ti.API.info('ur:' + downloadingFileUrl);
+			Ti.API.info('archivo:' + vistaImagen.nombreArchivo);
+			var image_to_save = this.responseData;
+
+			//As name, the same as the one in DB
+			var picture = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, vistaImagen.nombreArchivo);
+			//picture.write(image_to_save);
+			if(picture.exists) {
+				Ti.API.info('local:' + picture.nativePath);
+
+				//alert('[saveFile] Saved: YES! (' + file.nativePath + ')');
+
+				//alert('permiso para galeria');
+				if(Ti.Platform.osname == 'android') {
+					Ti.API.info("ANDROID");
+					var storagePermission = "android.permission.WRITE_EXTERNAL_STORAGE";
+					var hasStoragePerm = Ti.Android.hasPermission(storagePermission);
+					var permissionsToRequest = [];
+					Ti.API.info(hasStoragePerm);
+					if(hasStoragePerm) {
+						Ti.Media.saveToPhotoGallery(vistaImagen.toImage(), {
+							success : function() {
+								alert('Imagen descargada correctamente a tu galería');
+							},
+							error : function() {
+								alert('Error al descargar la imagen');
+							}
+						});
+					} else {
+
+						permissionsToRequest.push(storagePermission);
+						if(permissionsToRequest.length > 0) {
+							Ti.API.info("si tiene permiso");
+
+							Ti.Android.requestPermissions(permissionsToRequest, function(e) {
+								if(e.success) {
+									Ti.API.info("SUCCESS");
+									Ti.Media.saveToPhotoGallery(vistaImagen.toImage(), {
+										success : function() {
+											alert('Imagen descargada correctamente a tu galería');
+										},
+										error : function() {
+											alert('Error al descargar la imagen');
+										}
+									});
+								} else {
+									Ti.API.info("ERROR: " + e.error);
+									alert('No se cuenta con permisos en Android para decargar imagenes');
+
+								}
+							});
+						}
+					}
+
+				} else if(!Ti.Media.hasPhotoGalleryPermissions()) {
+					Ti.Media.requestPhotoGalleryPermissions(function(e) {
+						if(e.succes) {
+							Ti.Media.saveToPhotoGallery(vistaImagen.toImage(), {
+								success : function() {
+									alert('Imagen descargada correctamente a tu galería');
+								},
+								error : function() {
+									alert('Error al descargar la imagen');
+								}
+							});
+						}
+					});
+				}
+
+			}
+			//Ti.App.Properties.setString("user_picture_name", res.profil_picture);
+
+			image_to_save = null;
+			$.vistaProcesando.visible = false;
+			$.procesando.hide();
 		}
 	});
+
+	xhr.open("GET", downloadingFileUrl);
+	xhr.send();
+}
+
+
+function compatirArchivo() {
+	var indice = $.vistaPremios.currentPage;
+	var viewArray = $.vistaPremios.getViews();
+	var vistaImagen = viewArray[indice].getViewById('imagenPremio');
+
+	Ti.API.info(JSON.stringify(vistaImagen.image, null, 4));
+	var downloadingFileUrl = vistaImagen.image;
+
+	var xhr = Ti.Network.createHTTPClient({
+		onerror : function() {
+			alert('Error fetching profile image');
+		},
+
+		onload : function() {
+			// this.responseData holds the binary data fetched from url
+			Ti.API.info('ur:' + downloadingFileUrl);
+			Ti.API.info('archivo:' + vistaImagen.nombreArchivo);
+			var image_to_save = this.responseData;
+
+			//As name, the same as the one in DB
+			var picture = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, vistaImagen.nombreArchivo);
+			picture.write(image_to_save);
+			if(picture.exists) {
+				Ti.API.info('local:' + picture.nativePath);
+
+				//alert('[saveFile] Saved: YES! (' + file.nativePath + ')');
+				share({
+					file : picture
+				});
+			}
+			//Ti.App.Properties.setString("user_picture_name", res.profil_picture);
+
+			image_to_save = null;
+		}
+	});
+
+	xhr.open("GET", downloadingFileUrl);
+	xhr.send();
+}
+
+
+$.descargarImagen.addEventListener('click', function() {
+	if(Ti.Platform.osname == 'android') {
+		if(!Ti.Filesystem.hasStoragePermissions()) {
+			Ti.Filesystem.requestStoragePermissions(function(result) {
+				console.log('Permission granted? ' + result.success);
+				if(result.success) {
+					descargarArchivo();
+
+				} else {
+					alert('Permission denied.');
+				}
+			});
+		} else {
+			descargarArchivo();
+		}
+	} else {
+		descargarArchivo();
+	}
 
 });
 
 function guardarArchivo(file, filename) {
 	Ti.API.info('guardarArchivo');
-	// OS
-	if(Ti.Platform.osname === 'iPhone' || Ti.Platform.osname === 'iPad') {
-		var ios = true;
-	}
+	var indice = $.vistaPremios.currentPage;
+	var viewArray = $.vistaPremios.getViews();
+	var vistaImagen = viewArray[indice].getViewById('imagenPremio');
 
-	// Test if External Storage (Android only)
-	if(Ti.Filesystem.isExternalStoragePresent()) {
-		var file = Ti.Filesystem.getFile(Ti.Filesystem.externalStorageDirectory, filename);
-	}
-	// No SD or iOS
-	else {
-		var file = Ti.Filesystem.getFile(Ti.Filesystem.tempDirectory, filename);
-	}
-
-	// Save file
-	file.write(file);
-
-	// Debug: Test if file exist now
-	if(file.exists) {
-		Ti.API.info('[saveFile] Saved: YES! (' + file.nativePath + ')');
-
-	} else {
-		Ti.API.info('[saveFile] Saved: NO!');
-	}
-
-	// Return full path of file
-	if(ios && Ti.version <= '1.8.2') {
-		var iosPath = Ti.Filesystem.applicationDataDirectory + filename;
-		iosPath = iosPath.replace('file://', 'app://');
-
-		return iosPath;
-	} else {
-		return file.nativePath;
-	}
+	var picture = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, res.profil_picture);
+	//As name, the same as the one in DB
+	picture.write(vistaImagen);
 
 }
 
@@ -352,6 +482,14 @@ function share(options) {
 
 		Ti.Android.currentActivity.startActivity(share);
 
+	} else {
+		if(options.text) {
+			require('com.alcoapps.socialshare').share({
+				status : options.text,
+				
+				androidDialogTitle : 'Sorteos Tec'
+			});
+		}
 	}
 }
 
@@ -363,15 +501,16 @@ function crearListaMensajes() {
 	var paginas = [];
 	//Ti.API.info(JSON.stringify(paginas, null, 4));
 	Alloy.Globals.listaMensajes.forEach(function(mensaje) {
-		Ti.API.info('mensajes:' + JSON.stringify(mensaje, null, 4));
+		// Ti.API.info('mensajes:' + JSON.stringify(mensaje, null, 4));
 		//Ti.API.info(JSON.stringify(opcion,null,4));
 		var mensaje = Titanium.UI.createImageView({
 			image : mensaje.icono,
 			top : '10',
-			left : '10',
-			right : '10',
-			bottom : "10",
-			width : '80',
+			left : '15',
+			right : '15',
+
+			width : '70',
+			height : '70',
 			background : "blue",
 			mensaje : mensaje.texto
 

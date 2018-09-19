@@ -1,0 +1,13 @@
+<Alloy>
+    <Window>
+        <View class="container" layout="vertical">
+            <View class="vistaTitulo" id="View_1">
+                <Label class="h5 fa etiquetaTitulo regresar" id="regresar"/>
+                <Label class="fuenteApp centrado h4 etiquetaTitulo" id="Label_2"/>
+            </View>
+            <View id="View_2">
+                <WebView id="WebView_1"/>
+            </View>
+        </View>
+    </Window>
+</Alloy>

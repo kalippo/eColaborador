@@ -1,7 +1,7 @@
 <Alloy>
     <Window backgroundColor="#75d5ff" class="container backgroundLogin" layout="vertical" left="0.00%" top="6.67%">
         <View class="vistaValidarLogin" id="vistaNoSoyYo">
-            <Label class="etiquetaValidarLogin" id="label_1"/>
+            <Label class="FuenteApp centrado h3" id="label_1"/>
             <Button class="boton" id="regresar"/>
         </View>
     </Window>

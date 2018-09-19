@@ -11,12 +11,12 @@ $.regresar.addEventListener('click', function(error) {
 	inicio.open();
 });
 
-$.todos.addEventListener('click', function(e) {
-	$.vistaFiltros.scrollToView(0);
+$.todos.addEventListener('click', function(e) {    
+	$.vistaFiltros.scrollToView(0);   
 });
 $.conAdeudo.addEventListener('click', function(e) {
 	$.vistaFiltros.scrollToView(1);
-});
+});   
 $.sinAdeudo.addEventListener('click', function(e) {
 	$.vistaFiltros.scrollToView(2);
 });
@@ -26,13 +26,23 @@ $.vistaFiltros.addEventListener('scroll', function(e) {
 	$.todos.color = "#6dace7";
 	$.conAdeudo.color = "#6dace7";
 	$.sinAdeudo.color = "#6dace7";
+//	$.todos.backgroundColor = "white";
+//	$.conAdeudo.backgroundColor = "white";
+//	$.sinAdeudo.backgroundColor = "white";
 
 	if(e.currentPage == 0) {
-		$.todos.color = "black";
+		$.todos.color = "#666666";
+		$.seleccion.left = "5%";
+		//$.todos.backgroundColor = "#cccccc";
+		
 	} else if(e.currentPage == 1) {
-		$.conAdeudo.color = "black";
+		$.conAdeudo.color = "#666666";
+		$.seleccion.left = "35%";
+		//$.conAdeudo.backgroundColor = "#cccccc";
 	} else if(e.currentPage == 2) {
-		$.sinAdeudo.color = "black";
+		$.sinAdeudo.color = "#666666";
+		$.seleccion.left = "65%";
+	//	$.sinAdeudo.backgroundColor = "#cccccc";
 	}
 
 });
@@ -87,36 +97,7 @@ function desplegarCompradores() {
 
 
 function desplegarCompradoresSinBoletos(sinBoleto) {
-	/*	var secciones = [];
-	 var listView = Ti.UI.createListView();
-	 var sorteoSeccion = Ti.UI.createListSection({ headerTitle: 'Sin Boletos'});
-	 //Ti.API.info(JSON.stringify(sorteo, null, 4));
-	 var sorteoDataSet = [
-	 {properties: { title: 'algo'}},
-	 {properties: { title: 'algo mas'}}
-	 ];
-	 //Ti.API.info(JSON.stringify(sorteoDataSet, null, 4));
-	 sorteoSeccion.setItems(sorteoDataSet);
-	 secciones.push(sorteoSeccion);
-
-	 Alloy.Collections.sorteosActivos.forEach(function (sorteo){
-	 var sorteoSeccion = Ti.UI.createListSection({ headerTitle:
-	 sorteo.get('nombreSorteo')});
-	 //Ti.API.info(JSON.stringify(sorteo, null, 4));
-	 var sorteoDataSet = [
-	 {properties: { title: 'algo'}},
-	 {properties: { title: 'algo mas'}}
-	 ];
-	 //Ti.API.info(JSON.stringify(sorteoDataSet, null, 4));
-	 sorteoSeccion.setItems(sorteoDataSet);
-	 secciones.push(sorteoSeccion);
-	 //$.listaSinAdeudo.secctions = secciones;
-	 //Ti.API.info(JSON.stringify(secciones, null, 4));
-
-	 });
-	 listView.sections = secciones;
-	 $.vistaSinAdeudo.add(listView);
-	 */
+	
 
 	var layout = [{
 		title : "Sin Boleto",

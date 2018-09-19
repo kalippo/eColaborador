@@ -1,15 +1,25 @@
 <Alloy>
-    <Window backgroundColor="#54b0c9" class=" backgroundLogin" layout="vertical">
-        <View id="vistaTop">
-            <ImageView id="ImageView_1"/>
+    <Window>
+        <View class="backgroundLogin" id="vistaLogin" layout="vertical">
+            <View id="vistaTop">
+                <Label class="fa h7 derecha" id="cancelar"/>
+                <ImageView id="ImageView_1"/>
+            </View>
+            <View id="vistaDatosLogin">
+                <TextField class="textoLogin tecladoNumerico texto" id="claveColaborador"/>
+                <TextField class="textoLogin texto" id="password"/>
+                <Button class="boton fuenteApp h4" id="iniciarSesion"/>
+                <Label class="fuenteApp h3  colorAzul centrado" id="continuaInvitado"/>
+                <View id="View_1"/>
+                <Label class="fuenteApp h3  colorAzul centrado" id="sorteosTec"/>
+                <View id="View_2"/>
+            </View>
+            <View id="vistaInformacion">
+                <Label class="fuenteApp h4 centrado" id="etiquetaComunicate"/>
+            </View>
         </View>
-        <View id="vistaDatosLogin">
-            <TextField class="textoLogin" id="claveColaborador"/>
-            <TextField class="textoLogin" id="password"/>
-            <Button class="boton fuenteApp h4" id="iniciarSesion"/>
-        </View>
-        <View id="vistaInformacion">
-            <Label class="fuenteApp h2" id="etiquetaComunicate"/>
+        <View id="vistaProcesando">
+            <ActivityIndicator class="h7" id="procesando"/>
         </View>
     </Window>
 </Alloy>

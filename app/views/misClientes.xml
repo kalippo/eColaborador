@@ -3,14 +3,15 @@
         <View class="vistaTitulo" id="vistaTitulo">
             <Label class="fa h5 regresar" id="regresar"/>
             <Label class="etiquetaTitulo fuenteApp h4 centrado" id="titulo"/>
-            <Label class="etiquetaTitulo fa h4 derecha" id="buscar"/>
+            <Label class="etiquetaTitulo fa h5 derecha" id="buscar"/>
         </View>
-        <ScrollView id="vistaClientes">
-            <View class="fondoBlanco" id="vistaOpciones">
-                <Button class="botonFiltro fondoBlanco" id="todos"/>
-                <Button class="botonFiltro fondoBlanco" id="conAdeudo"/>
-                <Button class="botonFiltro fondoBlanco" id="sinAdeudo"/>
-            </View>
+        <View id="vistaOpciones">
+            <Button class="botonFiltro centrado" id="todos"/>
+            <Button class="botonFiltro centrado" id="conAdeudo"/>
+            <Button class="botonFiltro centrado" id="sinAdeudo"/>
+        </View>
+        <View id="seleccion"/>
+        <View id="vistaClientes">
             <View id="vistaListaClientes">
                 <ScrollableView id="vistaFiltros">
                     <View id="vistaTodos">
@@ -39,7 +40,7 @@
                         </ListView>
                     </View>
                     <View id="vistaSinAdeudo">
-                    	<ListView defaultItemTemplate="templateSinBoletos" id="listaSinBoletos">
+                        <ListView defaultItemTemplate="templateSinBoletos" id="listaSinBoletos">
                             <Templates>
                                 <ItemTemplate name="templateSinBoletos">
                                     <Label bindId="estatus" class="fa h4 " id="iconoEstatus"/>
@@ -50,10 +51,9 @@
                             <ListSection class="fondoBlanco" name="contactos"/>
                         </ListView>
                     </View>
-                    	
                 </ScrollableView>
             </View>
-        </ScrollView>
+        </View>
         <View id="crearNuevoComprador">
             <Label class="fa h6 " id="Label_1"/>
             <Label class="fuenteApp h4 " id="Label_2"/>

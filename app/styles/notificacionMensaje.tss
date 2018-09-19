@@ -1,0 +1,44 @@
+".container": {
+},
+"#View_1": {
+	"height": "110"
+},
+"#titulo": {
+	"text": "Sorteos Tec",
+	"left": "40",
+	"top": "60",
+	"right": "40",
+	"height": "50",
+},
+"#View_2": {
+	"layout": "vertical"
+},
+"#View_3": {
+	"left": "20",
+	"top": "20",
+	"borderRadius": "10",
+	"height": "400",
+	"layout": "vertical",
+	"right": "20"
+},
+"#View_6": {
+	"layout": "vertical"
+},
+"#mensaje": {
+	"left": "29%",
+	"top": "40%",
+	"class": "etiquetaTitulo fuenteApp h4 centrado",
+	"right": "15",
+	"left": "15",
+	"top": "50",
+	"autoLink": Ti.UI.AUTOLINK_ALL
+},
+"#header": {
+	"right": "40",
+	"text": "Sorteos Tec",
+	"left": "40",
+},
+"#vistaMgs": {
+	"bottom": "40",
+	"top": "40"
+}

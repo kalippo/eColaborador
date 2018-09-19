@@ -14,15 +14,15 @@
 },
 "#vistaDatosContacto": {
 	"backgroundColor": "#ffffff",
-	"height": "35%",
+	"height": "200",
 	"layout": "vertical"
 },
 "#vistaEstatusPago": {
 	"height": "50"
 },
 "#vistaBoletosEntregados": {
-	"height": "30%",
-	"layout": "vertical"
+	"layout": "vertical",
+	"height": "150",
 },
 "#vistaAbonos": {
 	"width": "45%"
@@ -62,7 +62,7 @@
 	"top": "1%"
 },
 "#vistaCantidadBoletos": {
-	"height": "30%"
+	"height": "30%",
 },
 "#tituloAbonos": {
 	"height": "20%"
@@ -78,19 +78,19 @@
 "#ultimaActualizacion": {
 	"text": "Actualizado el 16 de Noviembre de 2017",
 	"top": "5",
-	"visible": "false",
+	"visible": "false"
 },
 "#eliminarContacto": {
 	"title": "Eliminar Contacto",
-	"backgroundColor": "#66ccff",
-	"color": "#ffffff",
+	"backgroundColor": "#ffffff",
+	"color": "#ff0000",
 	"borderRadius": "10",
 	"width": "90%",
-	"height": "45",
+	"height": "45"
 },
 "#fotoCliente": {
-	"height": "100",
-	"width": "100",
+	"height": "110",
+	"width": "110",
 	"borderWidth": "9",
 	"borderColor": "white",
 	"top": "5"
@@ -110,11 +110,11 @@
 },
 "#vistaEstatus": {
 	"backgroundColor": "#66ccff",
-	"borderRadius": "10",
+	"borderRadius": "5",
 	"bottom": "10",
 	"right": "10",
 	"top": "10",
-	"width": "100"
+	"width": "130"
 },
 "#estatus": {
 	"text": "Pagado",
@@ -154,7 +154,8 @@
 	"top": "15",
 	"left": "10",
 	"right": "5",
-	"zIndex": "10"
+	"zIndex": "10",
+	"visible": "false"
 },
 "#pagoPendiente": {
 	"left": "15.90%",
@@ -165,14 +166,14 @@
 },
 "#agregarPago": {
 	"title": "Agregar Pago",
-	"left": "30",
 	"top": "10",
 	"backgroundColor": "#66ccff",
-	"borderRadius": "10",
+	"borderRadius": "5",
 	"color": "#feffff",
 	"height": "25",
 	"right": "10",
-	"class": "h3"
+	"class": "h3",
+	"width": "130"
 },
 "#Label_4": {
 	"text": "Label",
@@ -191,7 +192,7 @@
 	"width": "55%"
 },
 "#vistaDeudaPagos": {
-	"height": "19%",
+	"height": "100",
 	"layout": "horizontal"
 },
 "#vistaBoletosAsignados": {
@@ -204,7 +205,11 @@
 	"editable": "true",
 	"height": "100%",
 	"width": "100%",
-	"color": "#000000"
+	"color": "#000000",
+	"hintTextColor": "gry",
+	"accessibilityHint ": "Aquí puedes agregar tus notas y recordatorios acerca de este cliente",
+	"hintText ": "Aquí puedes agregar tus notas y recordatorios acerca de este cliente",
+	"accessibilityLabel": "Aquí puedes agregar tus notas y recordatorios acerca de este cliente"
 },
 "#pagoPendiente": {
 	"text": "Label",
@@ -227,13 +232,23 @@
 },
 "#View_1": {
 	"layout": "horizontal",
-	"left": "30",
-	"right": "30"
+	"left": "40%",
+	"right": "10%"
 },
 "#whatsapp": {
 	"text": "\uf232",
 	"height": "30",
 	"width": "30",
 	"color": "#3180bd",
-	"left": "10"
+	"left": "10",
+	"top": "3"
+},
+"#llamar": {
+	"text": "\uf098",
+	"height": "30",
+	"width": "30",
+	"color": "#3180bd",
+	"left": "10",
+	"top": "3",
+	"right": "10"
 }

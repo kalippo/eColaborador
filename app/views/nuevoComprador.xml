@@ -1,19 +1,20 @@
 <Alloy>
-    <Window class="container" layout="vertical">
+    <Window class="container fondoBlanco" layout="vertical">
         <View class="vistaTitulo" id="vistaTitulo">
-            <Label class="h3 fuenteApp" id="regresar"/>
-            <Label class="etiquetaTitulo fuenteApp h3 centrado" id="Label_2"/>
-            <Label class="fuenteApp h3 derecha" id="agregar"/>
+            <Label class="h5 fa regresar" id="regresar"/>
+            <Label class="etiquetaTitulo fuenteApp h4 centrado" id="Label_2"/>
+            <Label class="fuenteApp h3 derecha etiquetaTitulo" id="agregar"/>
         </View>
-        <View class="fondoBlanco" id="vistaOpciones">
-            <Button class="botonFiltro fondoBlanco" id="nuevo"/>
-            <Button class="botonFiltro fondoBlanco" id="frecuentes"/>
-            <Button class="botonFiltro fondoBlanco" id="telefono"/>
+        <View id="vistaOpciones">
+            <Button class="botonFiltro centrado" id="nuevo"/>
+            <Button class="botonFiltro centrado" id="frecuentes"/>
+            <Button class="botonFiltro centrado" id="telefono"/>
         </View>
+        <View id="seleccion"/>
         <ScrollableView id="vistaFiltros">
             <Require src="crearComprador"/>
             <Require src="importarClientes"/>
-            <Require src="importarContactosTelefono"/>
+            <Require src="importarContactosTelefono"/>   
         </ScrollableView>
     </Window>
 </Alloy>

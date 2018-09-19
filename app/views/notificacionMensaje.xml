@@ -1,0 +1,21 @@
+<Alloy>
+    <Window class="container" layout="vertical">
+        <View class="vistaTitulo" id="View_1">
+            <Label class="fa h5 regresar" id="regresar"/>
+            <Label class="etiquetaTitulo fuenteApp h4 centrado" id="header"/>
+            <Label class="etiquetaTitulo fuenteApp h3 centrado" id="titulo"/>
+        </View>
+        <View class="fondoGris" id="View_2">
+            <View class="fondoBlanco" id="View_3">
+                <View id="vistaMgs">
+                    <Label class="fuenteApp h4 centrado textoAzul" id="mensaje"/>
+                </View>
+                <View id="vistaListaBoletos"/>
+                <View id="View_6">
+                    <Label class="FuenteApp h3 centrado colorTurquesa" id="Label_5"/>
+                    <Label class="FuenteApp h3 centrado colorTurquesa" id="nombreSorteo"/>
+                </View>
+            </View>
+        </View>
+    </Window>
+</Alloy>

@@ -34,20 +34,24 @@ function obtenerSorteoSeleccionado() {
 
 
 function llenaDatosGanadores(idSorteo) {
+	$.vistaProcesando.visible = true;
+	$.procesando.show();
+
 	$.vistaPremios.removeAllChildren();
 	Ti.API.info('idSorteo: ' + JSON.stringify(idSorteo, null, 4));
 	var idColaborador = Alloy.Globals.colaborador.username;
 	Ti.API.info('idColaborador: ' + JSON.stringify(idColaborador, null, 4));
 	//Alloy.Globals.WsObtenerDescripcionPremios(idColaborador, idSorteo);
-	Alloy.Globals.WsObtenerDescripcionPremios('1662196', idSorteo);
-	var nombreSorteo = Alloy.Collections.sorteosActivos.where({
-		id : idSorteo
-	});
-	$.etiquetaSorteo.text = nombreSorteo[0].get('nombreSorteo').toString() + ' son:';
-	Ti.API.info('nombreSorteo: ' + JSON.stringify(nombreSorteo[0], null, 4));
-	setTimeout(function() {
-			Ti.API.info('cantidad premios:' + Alloy.Globals.premios.length);
-		if (Alloy.Globals.premios.length==0){
+	Alloy.Globals.WsObtenerDescripcionPremios(idColaborador, idSorteo, function() {
+
+		var nombreSorteo = Alloy.Collections.sorteosActivos.where({
+			id : idSorteo
+		});
+		$.etiquetaSorteo.text = nombreSorteo[0].get('nombreSorteo').toString() + ' son:';
+		Ti.API.info('nombreSorteo: ' + JSON.stringify(nombreSorteo[0], null, 4));
+
+		Ti.API.info('cantidad premios:' + Alloy.Globals.premios.length);
+		if(Alloy.Globals.premios.length == 0) {
 			var vistaPremio = Titanium.UI.createView({
 				backgroundColor : "white",
 				top : 10,
@@ -65,7 +69,7 @@ function llenaDatosGanadores(idSorteo) {
 					fontStyle : 'regular',
 					fontWeight : ''
 				},
-				text : 'Sin boletos premiados en este sorteo '  ,
+				text : 'Sin boletos premiados en este sorteo ',
 				color : '#883fd1',
 				left : 10,
 				top : 10,
@@ -73,7 +77,7 @@ function llenaDatosGanadores(idSorteo) {
 
 			});
 			vistaPremio.add(etiqueta);
-			
+
 			$.vistaPremios.add(vistaPremio);
 		}
 		Alloy.Globals.premios.forEach(function(premio) {
@@ -90,7 +94,7 @@ function llenaDatosGanadores(idSorteo) {
 			});
 
 			var boleto = Titanium.UI.createLabel({
-				"font" : { 
+				"font" : {
 					fontSize : '12',
 					fontFamily : 'Montserrat-Regular',
 					fontStyle : 'regular',
@@ -138,7 +142,15 @@ function llenaDatosGanadores(idSorteo) {
 			vistaPremio.add(premio);
 			$.vistaPremios.add(vistaPremio);
 		});
-	}, 2000);
+
+		$.procesando.hide();
+		$.vistaProcesando.visible = false;
+
+	}, function(e) {
+		alert('no se ha podido consultar la informacion de ganadores,\n favor de intentarlo más tarde');
+		$.procesando.hide();
+		$.vistaProcesando.visible = false;
+	});
 
 }
 
@@ -149,24 +161,26 @@ function crearListaSorteos(sorteos) {
 	Ti.API.info('crearListaSorteos sorteos:' + JSON.stringify(sorteos, null, 4));
 	var paginas = [];
 	sorteos.forEach(function(opcion) {
-     
-		Ti.API.info('fechaFin:' + JSON.stringify(opcion.get('fechaFin'), null, 4));
-		Ti.API.info('fechaFiniquito:' + JSON.stringify(opcion.get('fechaFiniquito'), null, 4));
+
+		//Ti.API.info('fechaFin:' + JSON.stringify(opcion.get('fechaFin'), null, 4));
+		//Ti.API.info('fechaFiniquito:' + JSON.stringify(opcion.get('fechaFiniquito'),
+		// null, 4));
 
 		var fechaFin = new Date(opcion.get('fechaFin'));
 		var fechaFiniquito = new Date(opcion.get('fechaFiniquito'));
 		var hoy = new Date(Date.now());
 
 		if(fechaFin <= Date.now() && fechaFiniquito > Date.now()) {
-			Ti.API.info('SI');
-
+			//Ti.API.info('SI');
+			var anchoImagen = 215;
+			
 			var imagenSorteo = Titanium.UI.createImageView({
 				id : "imagen",
 				image : opcion.get('original'),
-				top : '10%',
+				top : '10',
 				idImagen : opcion.get('id'),
-				width : "250",
-				height : '85%',
+				width : anchoImagen,
+				height : '111',
 
 			});
 
@@ -177,31 +191,30 @@ function crearListaSorteos(sorteos) {
 			// "\uf058",
 			var checkBox = Titanium.UI.createLabel({
 				text : "\uf058",
-				left : '80%',
+				left : '70%',
 				top : '17%',
 				height : '50',
 				width : '50',
 				color : "#63dced",
 				font : {
 					fontSize : 40,
-					fontFamily : 'FontAwesome'    
+					fontFamily : 'FontAwesome'
 				},
 			});
 			var fechaSorteo = Titanium.UI.createLabel({
 				text : opcion.get('fechaFin'),
-				left : '10%',
-				right : '10%',
-				bottom:'10%',
+				
+				top : '90',
 				textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER,
 				color : "white",
 				font : {
-					fontSize : 20,
+					fontSize : 15,
 					fontFamily : 'Montserrat-Regular'
 				},
 			});
 			var fondoCheckBox = Titanium.UI.createLabel({
 				text : "\uf111",
-				left : '80%',
+				left : '70%',
 				top : '17%',
 				height : '50',
 				width : '50',
@@ -212,8 +225,8 @@ function crearListaSorteos(sorteos) {
 				},
 			});
 			vistaSorteo.add(imagenSorteo);
-			vistaSorteo.add(fondoCheckBox);
-			vistaSorteo.add(checkBox);
+			// vistaSorteo.add(fondoCheckBox);
+			// vistaSorteo.add(checkBox);
 			vistaSorteo.add(fechaSorteo);
 
 			paginas.push(vistaSorteo);
