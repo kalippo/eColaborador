@@ -1,0 +1,15 @@
+<Alloy>
+    <Window class="container" layout="vertical">
+        <View class="vistaTitulo" id="View_1">
+            <Label class="fa h5 regresar" id="regresar"/>
+            <Label class="fuenteApp h4 centrado" id="Label_2"/>
+        </View>
+        <View id="View_2">
+            <View class="fondoGris" id="View_3">
+                <Label class="fuenteApp h4 colorAzul centrado" id="Label_1"/>
+                <Label class="fuenteApp h4 centrado" id="Label_3"/>
+                <ListView id="listaPagos"/>
+            </View>
+        </View>
+    </Window>
+</Alloy>

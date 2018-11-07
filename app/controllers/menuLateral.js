@@ -35,11 +35,7 @@ $.notificaciones.addEventListener('click', function(error) {
 	validacion = validacion.getView();
 	validacion.open();
 });
-$.sorteosTec.addEventListener('click', function(error) {
-	var validacion = Alloy.createController("sorteosTecWEB");
-	validacion = validacion.getView();
-	validacion.open();
-});
+
 
 $.cerrarSesion.addEventListener('click', function(error) {
 	if(Alloy.Globals.estaLogeado) {

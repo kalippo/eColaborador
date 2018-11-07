@@ -2,6 +2,14 @@
 // directly or:
 var args = $.args;
 
+var win = Titanium.UI.currentWindow; 
+
+$.win.addEventListener('android:back', function(e) {
+    e.cancelBubble = true;
+
+    // Ti.App.fireEvent('android_back_button');
+});
+   
 Alloy.Globals.contactos.forEach(function(contacto) {
 	if(contacto.id == args) {
 		detalle = contacto;

@@ -861,7 +861,7 @@ function cargaDatosLogin(passwordColaborador, callback) {
 			}
 			cargaDatosInicio(user.username);
 			Ti.API.info('suscribirNotificaciones');
-			suscribirNotificaciones();
+			//suscribirNotificaciones();
 
 		} else {
 			Ti.API.info('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
@@ -886,7 +886,7 @@ Alloy.Globals.Logout = function() {
 
 function leercalendario() {
 	Alloy.Globals.Cloud.Photos.show({
-		photo_id : '5b0dbed6fd2da951720008de'
+		photo_id : '5bbb898f1ce6bb02194dfb84'
 	}, function(e) {
 		if(e.success) {
 			var photo = e.photos[0];
@@ -940,7 +940,7 @@ Alloy.Globals.obtenerMensajes = function() {
 		if(e.success) {
 			if(e.photos) {
 				var mensajes = [];
-				e.photos.forEach(function(photo) {
+				e.photos.forEach(function(photo) {  
 
 					if(photo.custom_fields.activo) {
 						mensajes.push({
@@ -960,6 +960,17 @@ Alloy.Globals.obtenerMensajes = function() {
 };
 
 //METODOS
+
+Alloy.Globals.esNumero = function(number) {
+    var letters = /^[0-9.,$]+$/;
+    var bl = false; 
+    if (number.match(letters)) {
+
+        bl = true;
+    }
+    return bl;
+};
+
 function asignarImagenesSorteo() {
 
 	Ti.API.info("asignarImagenesSorteo");
@@ -1171,9 +1182,6 @@ Alloy.Globals.anchoPantalla = function(a) {
 function cargaDatosInicio(idColaborador) {
 
 	Alloy.Globals.WsObtenerClientesColaborador(idColaborador);
-	//Alloy.Globals.WsObtenerEstadoCuentaColaborador(idColaborador);
-	//Alloy.Globals.WsObtenerSaldoGlobalColaborador(idColaborador);
-
 }
 
 

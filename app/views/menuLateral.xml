@@ -27,7 +27,6 @@
                 <Label class="icono fa h4 colorAzul" id="iconoInformacion"/>
                 <Label class="titulo fuenteAppBold colorAzul h3" id="informacion"/>
             </View>
-            <Label class="contenido h2 colorAzul" id="sorteosTec"/>
             <Label class="contenido h2 colorAzul" id="avisoPrivacidad"/>
             <Label class="contenido h2 colorAzul" id="terminos"/>
             <Label class="contenido h2 colorAzul" id="permisosGobernacion"/>

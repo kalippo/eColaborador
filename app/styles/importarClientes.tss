@@ -2,9 +2,11 @@
 },
 "#vistaOpciones": {
 	"height": "90",
-	"layout": "vertical"
+	"layout": "vertical",
 },
 "#vistaClientes": {
+	"left": "0",
+	"top": "0",
 },
 "#Label_1": {
 	"text": "Estos son tus compradores registrados en Sorteos Tec",
@@ -20,11 +22,13 @@
 },
 "#scrollContenido": {
 	"layout": "vertical",
-	"scrollType": "vertical"
+	"scrollType": "vertical",
 },
 "#View_2": {
 	"backgroundColor": "#eaeaea",
-	"height": "20"
+	"height": "20",
+	"left": "0",
+	"top": "0",
 },
 "#listaFrecuentes": {
 },
@@ -43,7 +47,7 @@
 	"top": "10",
 	"left": "10",
 	"color": "black",
-	"width": "300",
+	"width": "300"
 },
 "#seleccionado": {
 	"left": "80%",

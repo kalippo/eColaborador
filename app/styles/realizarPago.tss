@@ -4,15 +4,17 @@
 	"height": "33%",
 	"layout": "vertical",
 	"class": "fondoGris",
-	"opacity": "1"
+	"opacity": "1",
 },
 "#View_2": {
-	"height": "25%"
+	"height": "25%",
+	"left": "0",
+	"top": "0",
 },
 "#vistaArriba": {
 	"height": "33%",
 	"opacity": ".8",
-	"backgroundColor": "#cccccc"
+	"backgroundColor": "#cccccc",
 },
 "#vistaAbajo": {
 	"height": "33%",
@@ -24,7 +26,7 @@
 	"color": "#ffffff",
 	"right": "30",
 	"left": "30",
-	"class": "centrado fuenteApp"
+	"class": "centrado fuenteApp",
 },
 "#cantidadPagar": {
 	"height": "25%",
@@ -38,7 +40,7 @@
 	"color": "#000000"
 },
 "#pagar": {
-	"title": "Aceptar",
+	"title": "Aceptar"
 },
 "#regresar": {
 	"left": "4%",

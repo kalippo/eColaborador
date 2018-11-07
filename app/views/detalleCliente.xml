@@ -1,5 +1,5 @@
 <Alloy>
-    <Window class="container" layout="vertical">
+    <Window class="container" layout="vertical" id="win">
         <View class="vistaTitulo" id="vistaTitulo">
             <Label class="fa h5 regresar" id="regresar"/>
             <Label class="etiquetaTitulo fuenteApp h5 centrado" id="titulo"/>

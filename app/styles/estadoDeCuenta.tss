@@ -3,7 +3,9 @@
 "#View_1": {
 },
 "#View_2": {
-	"layout": "vertical"
+	"layout": "vertical",
+	"left": "0",
+	"top": "0"
 },
 "#regresar": {
 },
@@ -45,6 +47,7 @@
 	"color": "#78b1c9",
 	"bottom": "10",
 	"top": "10",
+	"visible": "false",
 },
 "#vistaSaldo": {
 	"height": "40",
@@ -59,7 +62,7 @@
 	"text": "Consulta tu saldo por sorteo",
 	"top": "30%",
 	"left": "20",
-	"right": "20",
+	"right": "20"
 },
 "#vistaSeleccionSorteo": {
 	"height": "50",

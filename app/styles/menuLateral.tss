@@ -6,7 +6,7 @@
 },
 "#vistaOpciones": {
 	"backgroundColor": "#ffffff",
-	"layout": "vertical",
+	"layout": "vertical"
 },
 "#fotoColaborador": {
 	"layout": "vertical",
@@ -95,7 +95,4 @@
 },
 "#permisosGobernacion": {
 	"text": "Permisos de gobernación"
-},
-"#sorteosTec": {
-	"text": "Sorteos Tec",
 }

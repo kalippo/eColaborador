@@ -1,0 +1,27 @@
+<Alloy>
+    <Window class="fondoGris" layout="vertical">
+        <View class="vistaTitulo" id="View_1">
+            <Label class="fa h5 regresar" id="regresar"/>
+            <Label class="etiquetaTitulo fuenteApp h4 centrado" id="Label_1"/>
+        </View>
+        <View class="fondoGris" id="View_2">
+            <Label class="fuenteApp h3 centrado colorAzul" id="Label_2"/>
+            <Button class="botonDegradado" id="continuar"/>
+            <View id="View_3">
+                <Switch id="seleccionarComprador"/>
+                <Label class="fuenteApp h4  colorAzul" id="Label_3"/>
+            </View>
+        </View>
+        <View class="fondoBlanco" id="vistaContactos">
+            <Label class="fuenteApp h3 centrado colorAzul" id="Label_4"/>
+            <ListView defaultItemTemplate="templateContactos" id="listaContactos">
+                <Templates>
+                    <ItemTemplate height="60" name="templateContactos">
+                        <Label bindId="nombreContacto" class="fuenteApp h3" id="nombreContacto"/>
+                    </ItemTemplate>
+                </Templates>
+                <ListSection class="fondoBlanco" name="contactos"/>
+            </ListView>
+        </View>
+    </Window>
+</Alloy>

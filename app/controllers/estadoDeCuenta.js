@@ -13,6 +13,7 @@ Alloy.Globals.WsObtenerSaldoGlobalColaborador(Alloy.Globals.colaborador.username
 	$.puntos.text = Alloy.Globals.saldoGlobal.puntos;
 	$.actualizacion.text = 'Actualizado al '+ Alloy.Globals.saldoGlobal.fechaActualizacion;
 });
+
 Alloy.Globals.WsObtenerEstadoCuentaColaborador(Alloy.Globals.colaborador.username, function() {
 	var sorteosSaldos = [];
 	Alloy.Globals.saldos.forEach(function(saldo) {

@@ -1,0 +1,70 @@
+".container": {
+},
+"#View_1": {
+},
+"#regresar": {
+},
+"#Label_1": {
+	"text": "Generar Liga de Pago",
+	"right": "60",
+	"left": "60"
+},
+"#View_2": {
+	"height": "210",
+	"left": "0",
+	"top": "0",
+	"layout": "vertical"
+},
+"#vistaContactos": {
+	"left": "0",
+	"top": "0",
+	"layout": "vertical"
+},
+"#nombreContacto": {
+	"top": "20",
+	"left": "30",
+	"color": "black",
+	"right": "30"
+},
+"#seleccionado": {
+	"left": "80%",
+	"top": "10",
+	"right": "10",
+	"value": "false"
+},
+"#Label_2": {
+	"text": "Envia una liga a tus compradores \npara que puedan realizar un \npago de forma segura",
+	"top": "15"
+},
+"#continuar": {
+	"title": "Continuar",
+	"left": "50",
+	"right": "50",
+	"top": 15,
+	"color": "#ffffff"
+},
+"#View_3": {
+	"layout": "horizontal",
+	"bottom": "1",
+	"left": "50",
+	"right": "50",
+	"top": "15"
+},
+"#seleccionarComprador": {
+	"top": "5",
+	"value": "0"
+},
+"#Label_3": {
+	"left": "10",
+	"text": "Asociar pago",
+	"top": "12"
+},
+"#listaContactos": {
+	"top":15
+},
+"#Label_4": {
+	"text": "Selecciona un comprador de tu lista para asociar su pago",
+	"left": "30",
+	"top": "15",
+	"right": "30"
+}

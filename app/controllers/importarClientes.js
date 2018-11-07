@@ -14,7 +14,7 @@ function getClientes() {
 
 
 function creaContactos(contactos) {
-	var frecuentes = [];
+	var frecuentes = [];  
 	var id = 0;
 	contactos.forEach(function(contacto) {
 		var repetido = Alloy.Globals.contactos.filter(function(c) {

@@ -6,7 +6,7 @@
                 <ImageView id="ImageView_1"/>
             </View>
             <View id="vistaDatosLogin">
-                <TextField class="textoLogin tecladoNumerico texto" id="claveColaborador"/>
+                <TextField class="textoLogin tecladoNumerico  texto" id="claveColaborador"/>
                 <TextField class="textoLogin texto" id="password"/>
                 <Button class="boton fuenteApp h4" id="iniciarSesion"/>
                 <Label class="fuenteApp h3  colorAzul centrado" id="continuaInvitado"/>

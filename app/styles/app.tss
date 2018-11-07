@@ -12,8 +12,7 @@
 	"backgroundColor": "white",
 	"color": "#78b1c9",
 	"hintTextColor": "gray",
-	"paddingLeft": "15",
-	"padding": {top:'5',left:'15'}
+	"paddingLeft": "15"
 },
 ".boton": {
 	"height": "60",
@@ -23,7 +22,7 @@
 	"borderRadius": "20",
 	"color": "#ffffff",
 	"backgroundColor": "#004283",
-	"padding": {left:'10',top:'5'}
+	"padding": "{left:'10',top:'5'}"
 },
 ".etiquetaValidarLogin": {
 	"left": "5%",
@@ -176,13 +175,19 @@
 	"width": "35"
 },
 ".tecladoNumerico": {
-	"keyboardType": Ti.UI.KEYBOARD_NUMBER_PAD
+	"keyboardType": Ti.UI.KEYBOARD_TYPE_NUMBER_PAD
 },
 "#Label_3": {
+	"text": "Label"
 },
 "#View_2": {
 	"left": "37%",
 	"top": "24%"
 },
 "#webAviso": {
+},
+".botonDegradado": {
+	"borderRadius": "5",
+	"height": "60",
+	"backgroundGradient": {type:'linear',startPoint:{x:'0%',y:'0%'},endPoint:{x:'100%',y:'0%'},colors:[{color:'#1fbdca',offset:0.0},{color:'#127abc',offset:0.99}]}
 }

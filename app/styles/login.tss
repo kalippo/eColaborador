@@ -45,12 +45,12 @@
 	"font": {fontSize:'27',fontFamily:'Montserrat-Regular',fontStyle:'normal',fontWeight:''}
 },
 "#claveColaborador": {
-	"hintText": "Ingresa tu clave de colaborador"
+	"hintText": "Ingresa tu clave de colaborador",
 },
 "#password": {
 	"hintText": "Ingresa tu contraseña",
 	"passwordMask": "true",
-	"paddingLeft": "15"
+	//"paddingLeft": "15",
 },
 "#iniciarSesion": {
 	"title": "INICIAR SESIÓN",
@@ -61,7 +61,7 @@
 	"height": "80",
 	"top": "20",
 	"left": "100",
-	"right": "100",
+	"right": "100"
 },
 "#etiquetaComunicate": {
 	"text": "Si no cuentas con tu contraseña \ncomunícate al 8115153030 \npara solicitar tu acceso.",
@@ -104,7 +104,7 @@
 	"backgroundColor": "gray",
 	"left": "0.00%",
 	"top": "0.00%",
-	"width": "100.00%",
+	"width": "100.00%"
 },
 "#vistaLogin": {
 },
@@ -122,7 +122,8 @@
 },
 "#sorteosTec": {
 	"text": "Información de los sorteos",
-	"top": "10"
+	"top": "10",
+	"visible": "false",
 },
 "#View_1": {
 	"borderWidth": "1",
@@ -135,7 +136,7 @@
 	"height": "1",
 	"width": "210",
 	"borderColor": "#12456f"
-}
+},
 "#View_1[ formFactor=tablet]": {
 	"borderWidth": "1",
 	"height": "1",

@@ -1,25 +1,25 @@
 <Alloy>
-    <Window class="container">
-        <ScrollView class="vistaTitulo" id="View_1">
-            <View id="View_2">
-                <Label class="fa h5 regresar" id="regresar"/>
-                <Label class="etiquetaTitulo fuenteApp h4 centrado" id="titulo"/>
-            </View>
-            <View id="View_3">
-                <View id="vistaOpcion">
+    <Window class="container" layout="vertical">
+        <View class="vistaTitulo" id="View_2">
+            <Label class="fa h5 regresar" id="regresar"/>
+            <Label class="etiquetaTitulo fuenteApp h4 centrado" id="titulo"/>
+        </View>
+        <ScrollView id="View_1">
+            <View class="fondoGris" id="View_3">
+                <View class="fondoBlanco" id="vistaOpcion">
                     <ImageView id="imgCompartirLiga"/>
-                    <Label class="fuenteApp h3 centrado" id="lbl1"/>
-                    <Button id="compartirLiga"/>
+                    <Label class="fuenteApp h3 centrado colorAzul" id="lbl1"/>
+                    <Button class="botonDegradado" id="botonGenerarPago"/>
                 </View>
-                <View id="vistaOpcion">
+                <View class="fondoBlanco" id="vistaOpcion">
                     <ImageView id="imgRealizarPago"/>
-                    <Label class="fuenteApp h3 centrado" id="lbl2"/>
-                    <Button id="realizarPago"/>
+                    <Label class="fuenteApp h3 centrado colorAzul" id="lbl2"/>
+                    <Button class="botonDegradado" id="botonGenerarUrl"/>
                 </View>
-                <View id="vistaOpcion">
+                <View class="fondoBlanco" id="vistaOpcion">
                     <ImageView id="imgCancelarPago"/>
-                    <Label class="fuenteApp h3 centrado" id="lbl3"/>
-                    <Button id="cancelarPago"/>
+                    <Label class="fuenteApp h3 centrado colorAzul" id="lbl3"/>
+                    <Button class="botonDegradado" id="botonCancelarPago"/>
                 </View>
             </View>
         </ScrollView>

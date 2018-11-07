@@ -13,6 +13,15 @@ Alloy.Globals.contactos.forEach(function(contacto) {
 
 Ti.API.info(JSON.stringify(detalle, null, 4));
 
+var win = Titanium.UI.currentWindow; 
+
+$.win.addEventListener('android:back', function(e) {
+    e.cancelBubble = true;
+
+    // Ti.App.fireEvent('android_back_button');
+});
+
+
 $.nombreCliente.text = detalle.nombreContacto;
 $.telefonoCliente.text = detalle.telefono;
 if(detalle.pagoPendiente == null) {

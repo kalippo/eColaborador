@@ -2,7 +2,7 @@
 <ti:app xmlns:ti="http://ti.appcelerator.org">
     <id>com.sorteostec.colaboro</id>
     <name>Colaboro</name>
-    <version>1.13</version>
+    <version>1.15</version>
     <publisher>pedromiramontes</publisher>
     <url>undefined</url>
     <description>undefined</description>
@@ -61,7 +61,7 @@
         </plist>
     </ios>
     <android xmlns:android="http://schemas.android.com/apk/res/android">
-        <manifest android:versionCode="136" android:versionName="1.1.10">
+        <manifest android:versionCode="138" android:versionName="1.1.10">
             <application>
                 <activity
                     android:configChanges="keyboardHidden|orientation"
@@ -103,7 +103,7 @@
         <target device="ipad">true</target>
         <target device="iphone">true</target>
     </deployment-targets>
-    <sdk-version>7.3.1.GA</sdk-version>
+    <sdk-version>7.5.0.v20180919143608</sdk-version>
     <plugins>
         <plugin version="1.0">ti.alloy</plugin>
         <!--plugin>com.soasta.touchtest.android</plugin-->

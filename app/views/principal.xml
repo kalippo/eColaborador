@@ -1,5 +1,5 @@
 <Alloy>
-    <View>
+    <View top="10">
         <View class="container fondoGris" layout="vertical" left="0.00%" top="0.00%">
             <View class="fondoGris vistaTitulo" id="vistaTitulo">
                 <Label class="fa colorAzul h7 " id="iconoMenu"/>

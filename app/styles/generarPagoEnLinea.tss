@@ -1,0 +1,68 @@
+".container": {
+},
+"#vistaTitulo": {
+},
+"#regresar": {
+},
+"#titulo": {
+	"text": "Pago en Línea",
+	"right": "50",
+	"left": "50"
+},
+"#vistaPago": {
+	"layout": "vertical"
+},
+"#Label_1": {
+	"text": "Seleccione el sorteo y monto a pagar",
+	"right": "50",
+	"top": "20",
+	"left": "50"
+},
+"#ListaSorteos": {
+	"type": Titanium.UI.PICKER_TYPE_PLAIN,
+	"height": "150",
+	"borderRadius": "10",
+	"borderColor": "#E5E5E5",
+	"borderWidth": "1",
+	"left": "30",
+	"right": "30",
+	"top": "20",
+	"selectionIndicator": "true",
+},
+"#monto": {
+	"height": "60",
+	"borderRadius": "10",
+	"borderColor": "#E5E5E5",
+	"borderWidth": "1",
+	"left": "30",
+	"paddingLeft": "30",
+	"right": "30",
+	"top": "20",
+	"class": "fuenteApp",
+	"hintText": "Monto a pagar",
+	"maxLength": "14"
+},
+"#continuar": {
+	"title": "Continuar",
+	"color": "#ffffff",
+	"left": "30",
+	"right": "30",
+	"top": "20",
+	"borderRadius": "5"
+},
+"#columnaSorteo": {
+},
+"#vistaProcesando": {
+	"height": "150",
+	"left": "30",
+	"opacity": ".2",
+	"right": "30",
+	"top": "-150",
+	"backgroundColor": "#000000",
+	"visible": "false",
+	"borderWidth": "20"
+},
+"#procesando": {
+	"height": "50",
+	"width": "50"
+}

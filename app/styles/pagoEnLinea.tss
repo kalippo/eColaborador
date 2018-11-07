@@ -1,17 +1,14 @@
 ".container": {
 },
 "#View_1": {
-	"height": "100%",
-	"layout": "vertical"
+	"layout": "vertical",
+	"scrollType": "vertical"
 },
 "#View_2": {
-	"height": "60",
 	"left": "0",
 	"top": "0"
 },
 "#regresar": {
-	"left": "8%",
-	"top": "37%"
 },
 "#titulo": {
 	"text": "Pago en Línea",
@@ -24,36 +21,37 @@
 	"layout": "vertical"
 },
 "#vistaOpcion": {
-	"backgroundColor": "#006699",
 	"height": "180",
 	"layout": "vertical",
 	"left": "30",
 	"right": "30",
-	"top": "10",
+	"top": "30",
 	"class": "fondoAzul",
-	"borderRadius": "5",
+	"borderRadius": "5"
 },
 "#imgCompartirLiga": {
 	"height": "40",
 	"width": "40",
 	"top": "10",
-	"opacity": "1"
+	"opacity": "1",
+	"image": "/Images/Home/GenerarLiga.png",
 },
 "#imgRealizarPago": {
 	"height": "40",
 	"width": "40",
 	"top": "10",
-	"opacity": "1"
+	"opacity": "1",
+	"image": "/Images/Home/Realizarpago.png",
 },
 "#imgCancelarPago": {
 	"height": "40",
 	"width": "40",
 	"top": "10",
-	"opacity": "1"
+	"opacity": "1",
+	"image": "/Images/Home/CancelarPagos.png",
 },
 "#lbl1": {
-	"text": "Envia una liga a tu comprador donde podrá realizar su pago",
-	"color": "#ffffff",
+	"text": "Realiza un pago directamente \na tu cuenta de Sorteos Tec",
 	"left": "20",
 	"right": "20",
 	"top": "10",
@@ -61,28 +59,41 @@
 },
 "#lbl2": {
 	"text": "Envia una liga a tu comprador donde podrá realizar su pago",
-	"color": "#ffffff",
 	"left": "20",
 	"right": "20",
 	"top": "10",
 	"opacity": "1"
 },
 "#lbl3": {
-	"text": "Envia una liga a tu comprador donde podrá realizar su pago",
-	"color": "#ffffff",
+	"text": "Cancela los pagos realizados \nel día de hoy",
 	"left": "20",
 	"right": "20",
 	"top": "10",
 	"opacity": "1"
 },
-"#Button_1": {
-	"title": "COMPARTIR",
-	"backgroundColor": "#2dbdc9",
+"#botonGenerarPago": {
+	"title": "Realizar Pago",
 	"color": "#ffffff",
-	"height": "40",
 	"left": "10",
 	"right": "10",
 	"top": "10",
-	"borderRadius": "5",
+	"opacity": "1"
+},
+"#compartirLiga": {
+},
+"#botonGenerarUrl": {
+	"title": "Generar Liga",
+	"color": "#ffffff",
+	"left": "10",
+	"right": "10",
+	"top": "10",
+	"opacity": "1"
+},
+"#botonCancelarPago": {
+	"title": "Revisar Pagos",
+	"color": "#ffffff",
+	"left": "10",
+	"right": "10",
+	"top": "10",
 	"opacity": "1"
 }

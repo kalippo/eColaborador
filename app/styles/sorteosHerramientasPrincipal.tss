@@ -52,7 +52,8 @@
 "#View_2": {
 	"height": "30",
 	"layout": "horizontal",
-	"top": "10"
+	"top": "10",
+	"left": "0",
 },
 "#Label_1": {
 	"text": "Selecciona el sorteo para buscar tus \n herramientas de venta",
@@ -61,7 +62,7 @@
 },
 "#Label_2": {
 	"text": "GALERÍA DE IMAGENES",
-	"color": "#006080"
+	"color": "#006080",
 },
 ".tituloSeccion": {
 	"top": "5",
@@ -74,7 +75,7 @@
 },
 "#vistaGaleria": {
 	"layout": "vertical",
-	"height": "800"
+	"height": "800",
 },
 "#vistaPremios": {
 	"layout": "horizontal",
@@ -161,4 +162,4 @@
 	"opacity": ".5",
 	"visible": "false",
 	"backgroundColor": "gray"
-},
+}

@@ -10,6 +10,14 @@ Alloy.Globals.contactos.forEach(function(contacto) {
 	}
 });
 
+var win = Titanium.UI.currentWindow; 
+
+$.win.addEventListener('android:back', function(e) {
+    e.cancelBubble = true;
+
+    // Ti.App.fireEvent('android_back_button');
+});
+
 $.cantidadBoletos.text = parseInt($.cantidadBoletos.boletos) + " Boletos";
 
 Ti.API.info('crearListaSorteos sorteosActivos:' + JSON.stringify(Alloy.Collections.sorteosActivos, null, 4));

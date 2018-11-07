@@ -10,7 +10,7 @@
 "#vistaClientes": {
 	"layout": "vertical",
 	"top": "1",
-	"height": "75%"
+	"height": '88%'
 },
 ".icon": {
 	"width": "50dp",
@@ -30,8 +30,8 @@
 },
 "#icon": {
 },
-"#buscar": {
-	"text": "\uf002",
+"#Agregar": {
+	"text": "\uf055",
 	"right": "10",
 	"left": "200",
 	"visible": "false"
@@ -53,7 +53,7 @@
 	"left": "5%",
 	"color": "#666666",
 	"borderWidth": "0",
-	"borderColor": "#f5f5f5"
+	"borderColor": "#f5f5f5",
 },
 "#conAdeudo": {
 	"title": "Con Adeudo",
@@ -94,22 +94,22 @@
 "#Label_1": {
 	"text": "\uf234",
 	"color": "#feffff",
-	"left": "10",
+	"left": "20",
 	"top": "0",
 	"class": "h6 fa",
-	"height": "40",
+	"height": "50",
 	"width": "40"
 },
 "#Label_2": {
 	"text": "Agregar nuevo comprador",
 	"color": "#ffffff",
-	"left": "50",
+	"left": "60",
 	"right": "10",
-	"top": "7"
+	"top": "15"
 },
 "#listaSinBoletos": {
 	"backgroundColor": "white",
-	"layout": "vertical",
+	"layout": "vertical"
 },
 "#ImageView_2": {
 },
@@ -136,7 +136,11 @@
 	"top": "57%"
 },
 "#crearNuevoComprador": {
-	"backgroundColor": "#4bc3fe"
+	"backgroundColor": "#4bc3fe",
+	"visible": "true",
+	"zIndex": "100",
+	"top": "1",
+	"bottom": "1"
 },
 "#sinClientes": {
 	"text": "Aún no has registrado ningun /n comprador en tu lista",
@@ -153,4 +157,8 @@
 	"backgroundColor": "#52c4fb",
 	"left": "5%",
 	"width": "30%"
+},
+"#View_1": {
+	"layout": "vertical",
+	"bottom": "1",
 }

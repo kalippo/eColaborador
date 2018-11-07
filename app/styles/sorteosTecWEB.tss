@@ -4,13 +4,18 @@
 	"class": "vistaTitulo"
 },
 "#View_2": {
+	"left": "0",
+	"top": "0"
 },
 "#WebView_1": {
-	"url": "https://m.sorteostec.org/#/",
+	"left": "0",
+	"top": "0",
+	"enableZoomControls": "true",
+	"loading": "true",
+	"right": "0"
 },
 "#regresar": {
 	"left": "6%",
-	"top": "24%",
 },
 "#Label_2": {
 	"text": "Sorteos Tec",

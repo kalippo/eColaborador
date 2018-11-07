@@ -1,5 +1,5 @@
 <Alloy>
-    <Window layout="vertical" left="0.00%" opacity="1">
+    <Window id="win" layout="vertical" left="0.00%" opacity="1">
         <View id="vistaArriba"/>
         <View class="fondoGris" id="View_1">
             <View class="vistaTitulo" id="View_2">

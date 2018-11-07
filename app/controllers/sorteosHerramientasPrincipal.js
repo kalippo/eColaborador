@@ -12,10 +12,10 @@ if(Ti.Platform.osname == 'android') {
 	$.compartirImagen.visible = true;
 } else {
 	$.descargarImagen.visible = true;
-	$.compartirImagen.visible = true;
+	$.compartirImagen.visible = false;
 }
 //obtenerImagenesSorteos();
-Ti.API.info('x: ' + JSON.stringify($.vistaPremios.width, null, 4));
+// Ti.API.info('x: ' + JSON.stringify($.vistaPremios.width, null, 4));
 var anchoGaleria = Alloy.Globals.anchoPantalla();
 // alert('ancho: ' + anchoGaleria);
 $.vistaPremios.height = anchoGaleria;
@@ -82,7 +82,7 @@ function muestraGaleria(idCollection) {
 					paginasGaleria.push(vistaPremio);
 				});
 				$.vistaPremios.views = paginasGaleria;
-				Ti.API.info('x: ' + $.vistaPremios.width);
+				// Ti.API.info('x: ' + $.vistaPremios.width);
 				$.procesando.hide();
 				$.vistaProcesando.visible = false;
 				//crearMenuOpciones(Alloy.Collections.menuPrincipal.where({
@@ -109,25 +109,25 @@ function listaDeGalerias() {
 			// Ti.API.info('Success:\n' + 'Count: ' + e.collections.length);
 			var galerias = [];
 			for(var i = 0; i < e.collections.length; i++) {
-				var collection = e.collections[i];
+				var collection = e.collections[i];  
 				//Ti.API.info('collection:' + JSON.stringify(collection, null, 4));
 				if(collection.counts.photos > 0 && collection.custom_fields.activo) {
 					galerias.push({
 						nombre : collection.name,
 						idCover : collection.cover_photo_id,
 						idGaleria : collection.id
-					});
+					}); 
 				}
 			}
-			//Ti.API.info('galerias:' + JSON.stringify(galerias, null, 4));
+			// Ti.API.info('galerias:' + JSON.stringify(galerias, null, 4));
 			galerias.forEach(function(galeria) {
 				Alloy.Globals.Cloud.Photos.show({
 					photo_id : galeria.idCover
 				}, function(f) {
 					if(f.success) {
 						var photo = f.photos[0];
-						//Ti.API.info('photo:' + JSON.stringify(photo, null, 4));
-						//Ti.API.info('galeria:' + JSON.stringify(galeria, null, 4));
+						// Ti.API.info('photo:' + JSON.stringify(photo, null, 4));
+						// Ti.API.info('galeria:' + JSON.stringify(galeria, null, 4));
 
 						var anchoImagen = 215;
 
@@ -385,7 +385,7 @@ function compatirArchivo() {
 
 	var xhr = Ti.Network.createHTTPClient({
 		onerror : function() {
-			alert('Error fetching profile image');
+			alert('Error fetching profile image');  
 		},
 
 		onload : function() {
@@ -465,10 +465,8 @@ function share(options) {
 		}
 
 		if(options.text) {
-
 			intent.putExtra(Ti.Android.EXTRA_TEXT, options.text);
 		}
-
 		if(options.image) {
 			intent.putExtraUri(Ti.Android.EXTRA_STREAM, options.image.nativePath);
 		}
@@ -484,12 +482,25 @@ function share(options) {
 
 	} else {
 		if(options.text) {
-			require('com.alcoapps.socialshare').share({
-				status : options.text,
-				
-				androidDialogTitle : 'Sorteos Tec'
-			});
+			var text = encodeURIComponent(options.text);
+			Ti.API.info(text);
+			Ti.Platform.openURL("https://wa.me/?text=" +text);
+			
+			
+			// var Social = require('dk.napp.social');
+// 
+			// Ti.API.info("Facebook available: " + Social.isFacebookSupported());
+			// Ti.API.info("Twitter available: " + Social.isTwitterSupported());
+			
+
+			// require('com.alcoapps.socialshare').share({
+			// status : options.text,
+			//
+			// androidDialogTitle : 'Sorteos Tec'
+			// });
 		}
+		
+		
 	}
 }
 
@@ -499,9 +510,9 @@ function crearListaMensajes() {
 	$.vistaListaMensajes.removeAllChildren();
 	//Ti.API.info(JSON.stringify(sorteos, null, 4));
 	var paginas = [];
-	//Ti.API.info(JSON.stringify(paginas, null, 4));
+	Ti.API.info('mensajes: '+JSON.stringify(Alloy.Globals.listaMensajes, null, 4));
 	Alloy.Globals.listaMensajes.forEach(function(mensaje) {
-		// Ti.API.info('mensajes:' + JSON.stringify(mensaje, null, 4));
+		 Ti.API.info('mensajes:' + JSON.stringify(mensaje, null, 4));
 		//Ti.API.info(JSON.stringify(opcion,null,4));
 		var mensaje = Titanium.UI.createImageView({
 			image : mensaje.icono,

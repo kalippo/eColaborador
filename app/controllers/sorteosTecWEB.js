@@ -7,3 +7,12 @@ $.regresar.addEventListener('click',function(){
 				validacion = validacion.getView();
 				validacion.open();
 });
+
+
+if (Ti.Platform.osname =='android')
+{
+	$.WebView_1.url = 'https://docs.google.com/gview?embedded=true&url=https://s3-us-west-1.amazonaws.com/storage-platform.cloud.appcelerator.com/VsCFrroIecox2cc1mCb7lsuTtmQFX4zn/files/60/36/5ba41b644b56530222f66844/sorteoTradicional.pdf';
+}else {
+	$.WebView_1.url = 'https://s3-us-west-1.amazonaws.com/storage-platform.cloud.appcelerator.com/VsCFrroIecox2cc1mCb7lsuTtmQFX4zn/files/60/36/5ba41b644b56530222f66844/sorteoTradicional.pdf';
+	
+}

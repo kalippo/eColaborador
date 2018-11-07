@@ -1,7 +1,10 @@
 // Arguments passed into this controller can be accessed via the `$.args` object
 // directly or:
+Ti.API.info('Login');
+
 var args = $.args;
 Ti.API.info(JSON.stringify(Alloy.Globals.estaLogeado, null, 4));
+
 $.iniciarSesion.addEventListener('click', function(error) {
 	if($.claveColaborador.value.trim() == '' || $.password.value.trim() == '') {
 		alert('favor de llenar todos los campos');
@@ -38,7 +41,7 @@ $.continuaInvitado.addEventListener('click', function() {
 });
 
 $.sorteosTec.addEventListener('click', function() {
-	var validacion = Alloy.createController("calendario");
+	var validacion = Alloy.createController("sorteosTecWEB");
 	validacion = validacion.getView();
 	validacion.open();
 }); 

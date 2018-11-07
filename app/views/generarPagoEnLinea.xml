@@ -1,0 +1,19 @@
+<Alloy>
+    <Window class="container" layout="vertical" theme="Theme.AppCompat.Light.NoActionBar">
+        <View class="vistaTitulo" id="vistaTitulo">
+            <Label class="fa h5 regresar" id="regresar"/>
+            <Label class="etiquetaTitulo fuenteApp h4 centrado" id="titulo"/>
+        </View>
+        <View class="fondoGris" id="vistaPago">
+            <Label class="fuenteApp h4 centrado colorAzul" id="Label_1"/>
+            <Picker class="fondoBlanco" id="ListaSorteos">
+                <PickerColumn id="columnaSorteo"/>
+            </Picker>
+            <View id="vistaProcesando">
+                <ActivityIndicator id="procesando"/>
+            </View>
+            <TextField anterior="0" class="fuenteApp fondoBlanco tecladoNumerico " id="monto" montoInt="0"/>
+            <Button class="botonDegradado" id="continuar"/>
+        </View>
+    </Window>
+</Alloy>
