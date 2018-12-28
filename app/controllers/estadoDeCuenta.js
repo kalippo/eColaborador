@@ -2,6 +2,13 @@
 // directly or:
 var args = $.args;
 
+if(Alloy.Globals.isiPhoneX()==true) {
+	$.vistaTitulo.top = Alloy.Globals.margenNotch;
+} else {
+
+	$.vistaTitulo.top = "0"; 
+}
+
 $.vistaProcesando.visible = true;
 $.procesando.show();
 

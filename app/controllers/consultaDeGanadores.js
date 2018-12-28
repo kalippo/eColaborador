@@ -10,6 +10,13 @@ crearListaSorteos(Alloy.Collections.sorteosActivos);
 
 obtenerSorteoSeleccionado();
 
+if(Alloy.Globals.isiPhoneX()==true) {
+	$.vistaTitulo.top = Alloy.Globals.margenNotch;
+} else {
+
+	$.vistaTitulo.top = "0"; 
+}
+
 $.regresar.addEventListener('click', function(error) {
 
 	var inicio = Alloy.createController("index", args);

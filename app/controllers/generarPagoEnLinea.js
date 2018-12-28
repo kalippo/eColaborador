@@ -2,6 +2,9 @@
 // directly or:
 var args = $.args;
 var regresar = 'pagoEnLinea';
+
+//Alloy.Globals.WsObtenerIdEmpleadoVenta();
+
 Ti.API.info(JSON.stringify(args, null, 4));
 
 $.continuar.enabled = false;
@@ -24,8 +27,25 @@ $.continuar.addEventListener('click', function() {
 		dialog.show();
 
 	} else {
-		var param = '?idCliente=' + Alloy.Globals.colaborador.username + '&idSorteo=' + '1' + '%monto=' + $.monto.value.replace(/[^0-9.]+/g, '');
+		var param = '?idCliente=' + Alloy.Globals.colaborador.username 
+		   + '&idSorteo=' + '1' 
+		   + '&idTipoSorteo=' + '1'
+		   + '&numeroSorteo=' + '1'
+		   + '&monto=' + $.monto.value.replace(/[^0-9.]+/g, '')
+		   +'&idEmpleadoVenta=2198692' ; //+ Alloy.Globals.EmpleadoVenta.idEmpleadoVenta ;
 		Ti.API.info(param);
+		
+		
+		if (regresar==''){
+		Ti.Platform.openURL("http://10.97.129.29/SitioColaboroStage/v1/WebForm1.aspx" + param); //replace string lit with your url
+		     
+		}
+		else{
+		     share({
+                    text : "http://10.97.129.29/SitioColaboroStage/v1/WebForm1.aspx" + param
+               });
+		}
+//http://cobroenlineatec.com/?idCliente=10023&idSorteo=1&idTipoSorteo=1&numeroSorteo=1&monto=100.00&idEmpleadoVenta=2198692
 
 	}
 });
@@ -118,5 +138,64 @@ function llenaSorteos() {
 		// $.procesando.hide();
 		// $.vistaProcesando.visible = false;
 	});
+}
+
+
+
+
+
+
+function share(options) {
+
+     if(OS_ANDROID) {
+
+          var intent = Ti.Android.createIntent({
+               action : Ti.Android.ACTION_SEND
+          });
+
+          intent.putExtra(Ti.Android.EXTRA_SUBJECT, options.title);
+
+          if(options.link) {
+               intent.putExtra(Ti.Android.EXTRA_TEXT, options.link);
+          }
+
+          if(options.text) {
+               intent.putExtra(Ti.Android.EXTRA_TEXT, options.text);
+          }
+          if(options.image) {
+               intent.putExtraUri(Ti.Android.EXTRA_STREAM, options.image.nativePath);
+          }
+
+          if(options.file) {
+               //alert(options.file.nativePath);
+               intent.putExtraUri(Ti.Android.EXTRA_STREAM, options.file.nativePath);
+          }
+
+          var share = Ti.Android.createIntentChooser(intent, 'Delen');
+
+          Ti.Android.currentActivity.startActivity(share);
+
+     } else {
+          if(options.text) {
+               var text = encodeURIComponent(options.text);
+               Ti.API.info(text);
+               Ti.Platform.openURL("https://wa.me/?text=" +text);
+               
+               
+               // var Social = require('dk.napp.social');
+// 
+               // Ti.API.info("Facebook available: " + Social.isFacebookSupported());
+               // Ti.API.info("Twitter available: " + Social.isTwitterSupported());
+               
+
+               // require('com.alcoapps.socialshare').share({
+               // status : options.text,
+               //
+               // androidDialogTitle : 'Sorteos Tec'
+               // });
+          }
+          
+          
+     }
 }
 

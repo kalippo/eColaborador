@@ -3,6 +3,13 @@
 var args = $.args;
 $.nuevo.color = "black";
 
+if(Alloy.Globals.isiPhoneX()==true) {
+	$.vistaTitulo.top = Alloy.Globals.margenNotch;
+} else {
+
+	$.vistaTitulo.top = "0"; 
+}
+
 $.nuevo.addEventListener('click', function(e) {
 	$.vistaFiltros.scrollToView(0);
 });

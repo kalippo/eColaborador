@@ -57,7 +57,7 @@
 	"layout": "horizontal",
 	"left": "5",
 	"right": "0",
-	"backgroundColor": "#feffff"
+	"backgroundColor": "#feffff",
 },
 "#vistaContador[platform=ios formFactor=tablet]": {
 	"layout": "horizontal",
@@ -77,7 +77,7 @@
 	"height": "45",
 	"width": "50",
 	"left": "10",
-	"top": "15",
+	"top": "15"
 },
 "#postales": {
 	"text": "\uf1d8",
@@ -86,16 +86,14 @@
 	"right": "10",
 	"left": "88%",
 	"color": "#2974b6",
-	"top": "20",
-	"visible": "false",
+	"visible": "true",
 },
 "#titulo": {
 	"image": "/Images/Home/COLABORO-HOME-TXT.png",
 	"visible": "true",
 	"left": "50",
-	"top": "15",
 	"bottom": "1",
-	"right": "50",
+	"right": "50"
 },
 "#contadorDias": {
 	"text": "15"

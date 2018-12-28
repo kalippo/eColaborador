@@ -4,9 +4,9 @@
 	"layout": "vertical",
 	"scrollType": "vertical"
 },
-"#View_2": {
+"#vistaTitulo": {
 	"left": "0",
-	"top": "0"
+	"top": "0",
 },
 "#regresar": {
 },
@@ -15,7 +15,7 @@
 	"right": "50",
 	"left": "50",
 	"color": "#ffffff",
-	"class": "etiquetaTitulo fuenteApp h4 centrado"
+	"class": "etiquetaTitulo fuenteApp h4 centrado",
 },
 "#View_3": {
 	"layout": "vertical"
@@ -34,21 +34,21 @@
 	"width": "40",
 	"top": "10",
 	"opacity": "1",
-	"image": "/Images/Home/GenerarLiga.png",
+	"image": "/Images/Home/GenerarLiga.png"
 },
 "#imgRealizarPago": {
 	"height": "40",
 	"width": "40",
 	"top": "10",
 	"opacity": "1",
-	"image": "/Images/Home/Realizarpago.png",
+	"image": "/Images/Home/Realizarpago.png"
 },
 "#imgCancelarPago": {
 	"height": "40",
 	"width": "40",
 	"top": "10",
 	"opacity": "1",
-	"image": "/Images/Home/CancelarPagos.png",
+	"image": "/Images/Home/CancelarPagos.png"
 },
 "#lbl1": {
 	"text": "Realiza un pago directamente \na tu cuenta de Sorteos Tec",

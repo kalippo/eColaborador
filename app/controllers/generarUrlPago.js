@@ -3,6 +3,14 @@
 var args = $.args;
 var selectedId = 0;
 
+
+if(Alloy.Globals.isiPhoneX()==true) {
+	$.vistaTitulo.top = Alloy.Globals.margenNotch;
+} else {
+
+	$.vistaTitulo.top = "0"; 
+}
+
 getClientes();
 
 $.seleccionarComprador.addEventListener('change', function() {

@@ -5,6 +5,15 @@ var sorteoCuentaRegresiva;
 var hayMenu = false;
 cuentaRegresivaVisible();
 
+//alert('Is iPhone X: ' + isiPhoneX());
+if(Alloy.Globals.isiPhoneX()==true) {
+	$.vistaTitulo.top = Alloy.Globals.margenNotch;
+	$.vistaTitulo.heigth = 30;
+} else {
+
+	$.vistaTitulo.top = "0"; 
+}
+
 Alloy.Globals.obtenerImagenesMenuPrincipal(muestraMenu);
 //alert(Alloy.Collections.sorteosActivos.length);
 if(Alloy.Collections.sorteosActivos.length > 0) {
@@ -106,7 +115,7 @@ function crearMenuOpciones(menuActivo) {
 		if(Ti.Platform.osname == 'android') {
 			anchoPantalla = pixelToDp(anchoPantalla);
 		}
-		menu.width = anchoPantalla-(margenDerecho+margenIzquierdo);
+		menu.width = anchoPantalla - (margenDerecho + margenIzquierdo);
 		menu.height = menu.width * .4;
 
 		$.vistaPanel.add(menu);
@@ -157,7 +166,7 @@ function clickMenu() {
 
 $.iconoCalendario.addEventListener('click', abreCalendario);
 $.lblCalendario.addEventListener('click', abreCalendario);
-$.postales.addEventListener('click', function(){
+$.postales.addEventListener('click', function() {
 	var validacion = Alloy.createController('pagoEnLinea');
 	validacion = validacion.getView();
 	validacion.open();
@@ -199,18 +208,18 @@ function cuentaRegresiva() {
 		resta = fechaSorteo - hoy;
 		// Ti.API.info('fechaSorteo: ' + JSON.stringify(new Date(fechaSorteo), null, 4));
 		// Ti.API.info('hoy: ' + JSON.stringify(new Date(hoy), null, 4));
-		 // Ti.API.info('resta: ' + JSON.stringify(new Date(resta), null, 4));
+		// Ti.API.info('resta: ' + JSON.stringify(new Date(resta), null, 4));
 		// Ti.API.info('resta: ' + JSON.stringify(resta, null, 4));
 		var contador = new Date(resta);
-		 // Ti.API.info('UTC Hora: ' + JSON.stringify(contador.getUTCMonth(), null, 4));
-		var dias = (contador.getUTCMonth()*30 + contador.getUTCDate()).toString();
+		// Ti.API.info('UTC Hora: ' + JSON.stringify(contador.getUTCMonth(), null, 4));
+		var dias = (contador.getUTCMonth() * 30 + contador.getUTCDate()).toString();
 		var horas = (contador.getUTCHours()).toString();
 		var minutos = (contador.getUTCMinutes()).toString();
 		var segundos = (contador.getUTCSeconds()).toString();
 		$.contadorDias.text = dias.toString();
 		$.contadorHoras.text = horas.toString();
 		$.contadorMinutos.text = minutos.toString();
-		$.contadorSegundos.text = segundos.toString(); 
+		$.contadorSegundos.text = segundos.toString();
 		var sorteoCuentaRegresiva = Alloy.Collections.sorteosActivos.where({
 			id : Alloy.Globals.idSorteoCuentaRegresiva
 		});
@@ -225,7 +234,9 @@ function cuentaRegresiva() {
 
 
 $.vistaPanel.addEventListener('swipe', function(e) {
-	
+
 	Ti.API.info('scroll: ' + JSON.stringify(e.direction, null, 4));
 });
+
+
 

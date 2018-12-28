@@ -2,6 +2,15 @@
 // directly or:
 var args = $.args;
 //getClientes();
+
+if(Alloy.Globals.isiPhoneX()==true) {
+	$.vistaTitulo.top = Alloy.Globals.margenNotch;
+	$.vistaTitulo.heigth = 20;
+} else {
+
+	$.vistaTitulo.top = "0"; 
+}
+
    
 desplegarCompradores();
 

@@ -1,8 +1,10 @@
 Ti.API.info('test');
+//var servicioWeb = 'http://10.97.129.29/ServicioColaboro/v1/Service.svc';
 var servicioWeb = 'http://servicioscrm.sorteostec.org/AppColaborador/Desarrollo/ServicioAppColaborador/v1/Service.svc';
 Alloy.Globals.Cloud = require('ti.cloud');
 
 //inicializar variables globales
+Alloy.Globals.margenNotch=15;
 Alloy.Globals.reinicioVariables = function() {
 	Alloy.Globals.estaLogeado = false;
 	Alloy.Globals.contactos = [];
@@ -19,6 +21,8 @@ Alloy.Globals.reinicioVariables = function() {
 	};
 	Alloy.Globals.saldos = [];
 	Alloy.Globals.saldoGlobal = [];
+	Alloy.Globals.EmpleadoVenta = [];
+	
 	var deviceToken = null;
 
 };
@@ -52,6 +56,7 @@ Alloy.Collections.compradores = compradores;
 
 Alloy.Globals.imagenCalendario = '';
 Alloy.Globals.listaMensajes = [];
+
 
 //Obtener llaves globales
 Alloy.Globals.leerCuentaRegresiva = function(callback, error) {
@@ -478,6 +483,174 @@ Alloy.Globals.WsObtenerDescripcionPremios = function(idColaborador, idSorteo, ca
 	xhr.setValidatesSecureCertificate(true);
 	xhr.validatesSecureCertificate = true;
 	xhr.send(body);
+
+};
+
+
+Alloy.Globals.WsObtenerPagos = function(idColaborador, callback, timeout) {
+
+     Ti.API.info('prueba ObtenerPagos  : ');
+     var data = [];
+
+     // @formatter:off
+     var xmlParametros = "<![CDATA[" 
+                    + " <raiz> "
+                         +"<idColaborador>" + idColaborador.toString() + "</idColaborador>" 
+                    + "</raiz>"
+               + " ]]>";
+     var body = "<x:Envelope xmlns:x=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\">"
+               +"<x:Header/>"
+               +"<x:Body>"
+               +"<tem:ObtenerDescripcionPremios>"
+               +"     <tem:xml>" + xmlParametros + "</tem:xml>"
+               +"</tem:ObtenerDescripcionPremios>"
+               +"</x:Body>\n</x:Envelope>";
+     // @formatter:on
+
+     var theURL = servicioWeb;
+     var xhr = Titanium.Network.createHTTPClient({
+          timeout : 5000
+     });
+     //xhr.withCredentials = true;
+
+     xhr.onload = function() {
+          //Ti.API.info(this.responseText);
+          var xml = this.responseXML.documentElement;
+          var elements = xml.getElementsByTagName("ObtenerDescripcionPremiosResult");
+
+          //Ti.API.info(xml);
+          var xmlText = elements.item(0).textContent;
+          var XMLObject = Titanium.XML.parseString(xmlText);
+          var xmlPremios = XMLObject.getElementsByTagName("premios");
+          //Ti.API.info('xml:\n' + JSON.stringify(xmlObsequios.length, null, 4));
+
+          premios = [];
+          for( i = 0; i < xmlPremios.length; i++) {
+               //var nombre =
+               try {
+                    var idSorteo = xmlPremios.item(i).getElementsByTagName("idSorteo").item(0).textContent;
+                    var numeroSorteo = xmlPremios.item(i).getElementsByTagName("numeroSorteo").item(0).textContent;
+                    var idTipoProducto = xmlPremios.item(i).getElementsByTagName("idTipoProducto").item(0).textContent;
+                    var numeroBoleto = xmlPremios.item(i).getElementsByTagName("numeroBoleto").item(0).textContent;
+                    var descripcion = xmlPremios.item(i).getElementsByTagName("descripcion").item(0).textContent;
+                    var nombreRotulado = xmlPremios.item(i).getElementsByTagName("nombreRotulado").item(0).textContent;
+
+                    premios.push({
+                         idSorteo : idSorteo,
+                         numeroSorteo : numeroSorteo,
+                         idTipoProducto : idTipoProducto,
+                         numeroBoleto : numeroBoleto,
+                         descripcion : descripcion,
+                         nombreRotulado : nombreRotulado
+                    });
+
+               } catch (err) {
+               }
+          }
+          //Ti.API.info('ObtenerDescripcionPremios:\n' + JSON.stringify(premios, null, 4));
+          Alloy.Globals.premios = premios;
+          callback();
+     };
+
+     xhr.onerror = function(e)/* on  error in getting data from server */
+     {
+          //check response status and act aaccordingly.
+          Ti.API.info("ObtenerBoletosColaboradorPorSorteo error");
+          Ti.API.info(JSON.stringify(e, null, 4));
+          timeout();
+          return;
+
+     };
+
+     xhr.open("POST", servicioWeb);
+
+     xhr.setRequestHeader("Content-Type", "text/xml; charset=utf-8");
+     xhr.setRequestHeader("SOAPAction", "http://tempuri.org/IService/ObtenerDescripcionPremios");
+     xhr.setRequestHeader("Cache-Control", "no-cache");
+     xhr.setRequestHeader("Postman-Token", "e7d9c3bd-ddf0-4b0a-8a8b-bbdf10381fa5");
+     xhr.setValidatesSecureCertificate(true);
+     xhr.validatesSecureCertificate = true;
+     xhr.send(body);
+
+};
+
+
+
+
+
+Alloy.Globals.WsObtenerIdEmpleadoVenta = function(idColaborador,  callback, timeout) {
+
+     Ti.API.info('prueba ObtenerIdEmpleadoVenta  : ');
+     var data = [];
+
+     // @formatter:off
+     var xmlParametros = "<![CDATA[" 
+                    + " <raiz> "
+                         +"<idColaborador>" + idColaborador.toString() + "</idColaborador>" 
+                    + "</raiz>"
+               + " ]]>";
+     var body = "<x:Envelope xmlns:x=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\">"
+               +"<x:Header/>"
+               +"<x:Body>"
+               +"<tem:ObtenerIdEmpleadoVenta>"
+               +"     <tem:xml>" + xmlParametros + "</tem:xml>"
+               +"</tem:ObtenerIdEmpleadoVenta>"
+               +"</x:Body>\n</x:Envelope>";
+     // @formatter:on
+
+     var theURL = servicioWeb;
+     var xhr = Titanium.Network.createHTTPClient({
+          timeout : 5000
+     });
+     //xhr.withCredentials = true;
+
+     xhr.onload = function() {
+          //Ti.API.info(this.responseText);
+          var xml = this.responseXML.documentElement;
+          var elements = xml.getElementsByTagName("ObtenerIdEmpleadoVentaResult");
+
+          //Ti.API.info(xml);
+          var xmlText = elements.item(0).textContent;
+          var XMLObject = Titanium.XML.parseString(xmlText);
+          var xmlEmpleadoVenta = XMLObject.getElementsByTagName("medioVentaPadre");
+          //Ti.API.info('xml:\n' + JSON.stringify(xmlObsequios.length, null, 4));
+
+          empleadoVenta = [];
+         try {
+                    var idEmpleadoVenta = xmlEmpleadoVenta.item(0).getElementsByTagName("idEmpleadoVenta").item(0).textContent;
+                    var nombreEjecutivo = xmlEmpleadoVenta.item(0).getElementsByTagName("nombreEjecutivo").item(0).textContent;
+                    empleadoVenta = {
+                         idEmpleadoVenta : idEmpleadoVenta,
+                         nombreEjecutivo : nombreEjecutivo
+                         };
+               } catch (e) {
+
+                    //alert(xmlPremios.item(i).getElementsByTagName("mensaje").item(0).textContent);
+               }
+          //Ti.API.info('ObtenerDescripcionPremios:\n' + JSON.stringify(premios, null, 4));
+          Alloy.Globals.EmpleadoVenta = empleadoVenta;
+          callback();
+     };
+
+     xhr.onerror = function(e)/* on  error in getting data from server */
+     {
+          //check response status and act aaccordingly.
+          Ti.API.info("ObtenerIdEmpleadoVenta error");
+          Ti.API.info(JSON.stringify(e, null, 4));
+          timeout();
+          return;
+
+     };
+
+     xhr.open("POST", servicioWeb);
+
+     xhr.setRequestHeader("Content-Type", "text/xml; charset=utf-8");
+     xhr.setRequestHeader("SOAPAction", "http://tempuri.org/IService/ObtenerIdEmpleadoVenta");
+     xhr.setRequestHeader("Cache-Control", "no-cache");
+     xhr.setRequestHeader("Postman-Token", "e7d9c3bd-ddf0-4b0a-8a8b-bbdf10381fa5");
+     xhr.setValidatesSecureCertificate(true);
+     xhr.validatesSecureCertificate = true;
+     xhr.send(body);
 
 };
 
@@ -921,10 +1094,7 @@ Alloy.Globals.obtenerImagenesMenuPrincipal = function(callback) {
 					Alloy.Collections.menuPrincipal.push(menus);
 				});
 				callback();
-				//Ti.API.info(JSON.stringify(Alloy.Collections.menuPrincipal,null,4));
-				//crearMenuOpciones(Alloy.Collections.menuPrincipal.where({
-				//	activo : true
-				//}));
+				
 			}
 		} else {
 			alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
@@ -1184,4 +1354,14 @@ function cargaDatosInicio(idColaborador) {
 	Alloy.Globals.WsObtenerClientesColaborador(idColaborador);
 }
 
+
+
+
+
+Alloy.Globals.isiPhoneX = function() {
+	return (Ti.Platform.displayCaps.platformWidth === 375 && Ti.Platform.displayCaps.platformHeight == 812) ||
+	// // Portrait
+	(Ti.Platform.displayCaps.platformHeight === 812 && Ti.Platform.displayCaps.platformWidth == 375);
+	// Landscape
+};
 

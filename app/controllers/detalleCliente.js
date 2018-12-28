@@ -5,6 +5,13 @@ var cantidadBoletos = 0;
 Ti.API.info(JSON.stringify(args, null, 4));
 var detalle = "";
 
+if(Alloy.Globals.isiPhoneX()==true) {
+	$.vistaTitulo.top = Alloy.Globals.margenNotch;
+} else {
+
+	$.vistaTitulo.top = "0"; 
+}
+
 Alloy.Globals.contactos.forEach(function(contacto) {
 	if(contacto.id == args) {
 		detalle = contacto;

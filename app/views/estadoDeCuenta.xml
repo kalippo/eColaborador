@@ -1,7 +1,7 @@
 <Alloy>
     <Window class="container fondoBlanco" theme="Theme.AppCompat.Light.NoActionBar">
         <View class="container fondoBlanco" layout="vertical">
-            <View class="vistaTitulo" id="View_1">
+            <View class="vistaTitulo" id="vistaTitulo">
                 <Label class="fa h5 regresar" id="regresar"/>
                 <Label class="etiquetaTitulo fuenteApp h4 centrado" id="Label_2"/>
             </View>

@@ -1,13 +1,13 @@
 ".container": {
 },
-"#View_1": {
+"#vistaTitulo": {
 },
 "#regresar": {
 },
-"#Label_1": {
+"#labeltitulo": {
 	"text": "Generar Liga de Pago",
 	"right": "60",
-	"left": "60"
+	"left": "60",
 },
 "#View_2": {
 	"height": "210",
@@ -60,7 +60,7 @@
 	"top": "12"
 },
 "#listaContactos": {
-	"top":15
+	"top": 15
 },
 "#Label_4": {
 	"text": "Selecciona un comprador de tu lista para asociar su pago",

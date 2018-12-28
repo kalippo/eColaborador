@@ -1,6 +1,6 @@
 <Alloy>
-    <Window id="win" backgroundColor="#4c4d4c" class="container" layout="vertical">
-        <View class="vistaTitulo" id="View_1">
+    <Window backgroundColor="#4c4d4c" class="container" id="win" layout="vertical">
+        <View class="vistaTitulo" id="vistaTitulo">
             <Label class="fuenteApp h5 centrado " id="titulo"/>
             <Label class="fa h5 regresar" id="regresar"/>
         </View>

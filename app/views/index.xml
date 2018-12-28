@@ -3,6 +3,6 @@
         <View role="menu">
             <Label>Menu</Label>
         </View>
-        <View role="main" />
+        <View role="main"/>
     </Widget>
 </Alloy>

@@ -2,7 +2,7 @@
 },
 "#vistaNotificacion": {
 	"layout": "vertical",
-	"opacity": "1",
+	"opacity": "1"
 },
 "#aceptar": {
 	"title": "Aceptar",
@@ -13,9 +13,9 @@
 },
 "#sorteosActivos": {
 	"layout": "vertical",
-	"height": "180",
+	"height": "180"
 },
-"#View_1": {
+"#vistaTitulo": {
 },
 "#titulo": {
 	"text": "Entregar boletos",
@@ -63,7 +63,7 @@
 "#vistaSeleccionarSorteo": {
 	"scrollType": "horizontal",
 	"layout": "horizontal",
-	"showPagingControl": "true",   
+	"showPagingControl": "true",
 	"top": "5",
 	"pagingControlHeight": "10",
 	"currentPageIndicatorColor": "#004283",
@@ -71,7 +71,7 @@
 	"bottom": "10",
 	"pagingControlHeight": 10,
 	"contentHeight": Ti.UI.SIZE,
-	"contentWidth": Ti.UI.SIZE,
+	"contentWidth": Ti.UI.SIZE
 },
 "#Label_1": {
 	"text": "Cantidad de Boletos",

@@ -2,6 +2,13 @@
 // directly or:
 var args = $.args;
 
+if(Alloy.Globals.isiPhoneX()==true) {
+	$.vistaTitulo.top = Alloy.Globals.margenNotch;
+} else {
+
+	$.vistaTitulo.top = "0"; 
+}
+
 Ti.API.info(JSON.stringify(args, null, 4));
 //$.botonMas.height = $.botonMas.width;
 Alloy.Globals.contactos.forEach(function(contacto) {

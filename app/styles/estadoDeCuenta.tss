@@ -1,6 +1,6 @@
 ".container": {
 },
-"#View_1": {
+"#vistaTitulo": {
 },
 "#View_2": {
 	"layout": "vertical",
@@ -47,7 +47,7 @@
 	"color": "#78b1c9",
 	"bottom": "10",
 	"top": "10",
-	"visible": "false",
+	"visible": "false"
 },
 "#vistaSaldo": {
 	"height": "40",

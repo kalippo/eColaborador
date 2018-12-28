@@ -47,8 +47,15 @@
 	"backgroundColor": "#ffffff",
 	"borderRadius": "30"
 },
+".vistaTitulo[platform=ios]": {
+	"height": "60",
+	"top": "0",
+	"backgroundColor": "#1fbdca",
+	"backgroundGradient": {type:'linear',startPoint:{x:'0%',y:'50%'},endPoint:{x:'100%',y:'50%'},colors:[{color:'#1fbdca',offset:0.0},{color:'#127abc',offset:0.99}]}
+},
 ".vistaTitulo": {
 	"height": "60",
+	"top": "0",
 	"backgroundColor": "#1fbdca",
 	"backgroundGradient": {type:'linear',startPoint:{x:'0%',y:'50%'},endPoint:{x:'100%',y:'50%'},colors:[{color:'#1fbdca',offset:0.0},{color:'#127abc',offset:0.99}]}
 },

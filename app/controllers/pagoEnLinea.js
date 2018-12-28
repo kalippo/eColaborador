@@ -1,7 +1,16 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
 
+Alloy.Globals.WsObtenerIdEmpleadoVenta(Alloy.Globals.colaborador.username, function () {
+     Ti.API.info('EmpleadoVenta:\n'  + JSON.stringify(Alloy.Globals.EmpleadoVenta));
+});
 
+if(Alloy.Globals.isiPhoneX()==true) {
+	$.vistaTitulo.top = Alloy.Globals.margenNotch;
+} else {
+
+	$.vistaTitulo.top = "0"; 
+}
 
 $.regresar.addEventListener('click', function(error) {
 	var inicio = Alloy.createController("index");

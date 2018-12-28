@@ -1,8 +1,8 @@
 <Alloy>
     <Window class="fondoGris" layout="vertical">
-        <View class="vistaTitulo" id="View_1">
+        <View class="vistaTitulo" id="vistaTitulo">
             <Label class="fa h5 regresar" id="regresar"/>
-            <Label class="etiquetaTitulo fuenteApp h4 centrado" id="Label_1"/>
+            <Label class="etiquetaTitulo fuenteApp h4 centrado" id="labeltitulo"/>
         </View>
         <View class="fondoGris" id="View_2">
             <Label class="fuenteApp h3 centrado colorAzul" id="Label_2"/>

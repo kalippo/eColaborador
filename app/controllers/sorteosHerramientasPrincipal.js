@@ -3,6 +3,14 @@
 var args = $.args;
 $.vistaProcesando.visible = true;
 $.procesando.show();
+
+if(Alloy.Globals.isiPhoneX()==true) {
+	$.vistaTitulo.top = Alloy.Globals.margenNotch;
+} else {
+
+	$.vistaTitulo.top = "0"; 
+}
+
 /*
  crearListaSorteos(Alloy.Collections.sorteosActivos.where({
  activo : '1'
@@ -106,7 +114,7 @@ function listaDeGalerias() {
 		if(e.success) {
 			var paginas = [];
 
-			// Ti.API.info('Success:\n' + 'Count: ' + e.collections.length);
+			Ti.API.info('Success:\n' + 'Count: ' + e.collections);
 			var galerias = [];
 			for(var i = 0; i < e.collections.length; i++) {
 				var collection = e.collections[i];  
