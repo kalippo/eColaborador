@@ -1,8 +1,11 @@
 ".container": {
 },
-"#View_1": {
+"#vistaTitulo": {
 },
 "#View_2": {
+	"layout": "vertical",
+	"left": "0",
+	"top": "0",
 },
 "#ListView_1": {
 },
@@ -33,7 +36,9 @@
 	"color": "#feffff",
 	"right": "50"
 },
-"#fuenteApp h4 centrado": {
-},
 "#listaNotificaciones": {
+	"bottom": "0",
+	"left": "0",
+	"right": "0",
+	"top": "0"
 }

@@ -12,6 +12,10 @@
             <View id="vistaProcesando">
                 <ActivityIndicator id="procesando"/>
             </View>
+            <View id="vistaSaldo">
+                <Label class="fuenteApp h4 colorAzul" id="Label_2"/>
+                <Label class="fuenteApp h4 colorAzul" id="lblSaldoSorteo"/>
+            </View>
             <TextField anterior="0" class="fuenteApp fondoBlanco tecladoNumerico " id="monto" montoInt="0"/>
             <Button class="botonDegradado" id="continuar"/>
         </View>

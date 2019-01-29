@@ -3,6 +3,8 @@ var args = $.args;
 
 Alloy.Globals.WsObtenerIdEmpleadoVenta(Alloy.Globals.colaborador.username, function () {
      Ti.API.info('EmpleadoVenta:\n'  + JSON.stringify(Alloy.Globals.EmpleadoVenta));
+},function(){
+     
 });
 
 if(Alloy.Globals.isiPhoneX()==true) {

@@ -1,6 +1,7 @@
 <Alloy>
     <View class="container" layout="vertical">
         <View class="fondoGris" id="vistaColaborador">
+            <Label class="centrado fuenteApp" id="Label_1"/>
             <ImageView class="imagenColaborador" id="fotoColaborador"/>
             <Label class="fuenteAppBold h3 centrado colorAzul" id="nombreColaborador"/>
             <Label class="fuenteApp h1 centrado colorAzul" id="correoColaborador"/>

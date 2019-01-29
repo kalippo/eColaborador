@@ -1,10 +1,11 @@
 ".container": {
 },
-"#View_1": {
+"#vistaTitulo": {
 },
 "#View_2": {
 	"left": "0",
-	"top": "0"
+	"top": "0",
+	"layout": "vertical"
 },
 "#regresar": {
 },
@@ -14,18 +15,23 @@
 	"right": "50",
 	"color": "#ffffff",
 	"top": "15",
-	"bottom": "5",
+	"bottom": "5"
 },
 "#View_3": {
 	"layout": "vertical",
+	"height": "80%"
 },
 "#Label_1": {
 	"text": "Selecciona el pago que deseas cancelar",
 	"left": "30",
 	"top": "20",
-	"right": "30",
+	"right": "30"
 },
 "#listaPagos": {
+	"backgroundColor": "white",
+	"separatorColor": "gray",
+	"dividerHeight": "1dp",
+	"layout": "vertical"
 },
 "#Label_3": {
 	"color": "#999999",
@@ -34,4 +40,19 @@
 	"text": "¡Unicamente puedes cancelar pagos realizados el día de hoy!",
 	"top": "20",
 	"class": "fuenteApp h4"
+},
+"#descripcion": {
+	"left": "30",
+	"width": "70%",
+	"height": "60"
+},
+"#monto": {
+	"right": "30",
+	"height": "60"
+},
+"#View_1": {
+	"height": "15%",
+},
+"#Button_1": {
+	"title": "Cancelar pago",
 }

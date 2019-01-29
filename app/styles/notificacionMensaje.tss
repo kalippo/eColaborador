@@ -8,10 +8,12 @@
 	"left": "40",
 	"top": "60",
 	"right": "40",
-	"height": "50",
+	"height": "50"
 },
 "#View_2": {
-	"layout": "vertical"
+	"layout": "vertical",
+	"left": "0",
+	"top": "0",
 },
 "#View_3": {
 	"left": "20",
@@ -36,9 +38,9 @@
 "#header": {
 	"right": "40",
 	"text": "Sorteos Tec",
-	"left": "40",
+	"left": "40"
 },
 "#vistaMgs": {
 	"bottom": "40",
-	"top": "40"
+	"top": "40",
 }

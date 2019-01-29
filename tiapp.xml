@@ -2,7 +2,7 @@
 <ti:app xmlns:ti="http://ti.appcelerator.org">
     <id>com.sorteostec.colaboro</id>
     <name>Colaboro</name>
-    <version>1.18</version>
+    <version>1.21</version>
     <publisher>pedromiramontes</publisher>
     <url>undefined</url>
     <description>undefined</description>
@@ -61,7 +61,7 @@
         </plist>
     </ios>
     <android xmlns:android="http://schemas.android.com/apk/res/android">
-        <manifest android:versionCode="138" android:versionName="1.1.10">
+        <manifest android:versionCode="139" android:versionName="1.1.10">
             <application>
                 <activity
                     android:configChanges="keyboardHidden|orientation"

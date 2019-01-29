@@ -1,6 +1,15 @@
 Ti.API.info('test');
+//Produccion
+var servicioWeb =   'http://colaboro.sorteostec.org/ServicioAppColaboro/v1/Service.svc'; 
+//var servicioWeb = 'http://devcrm.sorteostec.org/ServicioColaboro/v1/Service.svc';
 //var servicioWeb = 'http://10.97.129.29/ServicioColaboro/v1/Service.svc';
-var servicioWeb = 'http://servicioscrm.sorteostec.org/AppColaborador/Desarrollo/ServicioAppColaborador/v1/Service.svc';
+//var servicioWeb = 'http://servicioscrm.sorteostec.org/AppColaborador/Desarrollo/ServicioAppColaborador/v1/Service.svc';
+
+//Desarrollo
+var servicioWeb =   'http://stagecolaboro.sorteostec.org/ServicioColaboro/v1/Service.svc'; 
+var servicioWebPago = 'http://servicioscrm.sorteostec.org/CRM/Desarrollo/ServicioPagoElectronico/v1/Service.svc';
+
+
 Alloy.Globals.Cloud = require('ti.cloud');
 
 //inicializar variables globales
@@ -20,7 +29,7 @@ Alloy.Globals.reinicioVariables = function() {
 		exitoso : 0
 	};
 	Alloy.Globals.saldos = [];
-	Alloy.Globals.saldoGlobal = [];
+	Alloy.Globals.saldoGlobal = [];   
 	Alloy.Globals.EmpleadoVenta = [];
 	
 	var deviceToken = null;
@@ -758,7 +767,7 @@ Alloy.Globals.WsObtenerEstadoCuentaColaborador = function(idColaborador, callbac
 
 	var theURL = servicioWeb;
 	var xhr = Titanium.Network.createHTTPClient({
-		timeout : 8000
+		timeout : 18000
 	});
 	//xhr.withCredentials = true;
 
@@ -914,6 +923,88 @@ Alloy.Globals.WsObtenerSaldoGlobalColaborador = function(idColaborador, callback
 	xhr.send(body);
 
 };
+
+
+
+Alloy.Globals.WsCancelarPagoTarjeta = function(idTransaccion, idUsuario, callback) {
+
+     Ti.API.info('prueba ObtenerSaldoGlobalColaborador   idColaborador: ' + idColaborador);
+     var data = [];
+
+     // @formatter:off
+     var xmlParametros = "<![CDATA[" 
+                    + " <raiz> "
+                         +"<idTransaccion>" + idTransaccion.toString() + "</idTransaccion>" 
+                         +"<idUsuario>" + idUsuario.toString() + "</idUsuario>" 
+                    + "</raiz>"
+               + " ]]>";
+               
+     var body = "<x:Envelope xmlns:x=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\">"
+               +"<x:Header/>"
+               +"<x:Body>"
+               +"<tem:CancelarPagoTarjeta>"
+               +"     <tem:xml>" + xmlParametros + "</tem:xml>"
+               +"</tem:CancelarPagoTarjeta>"
+               +"</x:Body>\n</x:Envelope>";
+     // @formatter:on
+
+     var theURL = servicioWebPago;
+     var xhr = Titanium.Network.createHTTPClient();
+     //xhr.withCredentials = true;
+
+     xhr.onload = function() {
+          //Ti.API.info(this.responseText);
+          var xml = this.responseXML.documentElement;
+          var elements = xml.getElementsByTagName("CancelarPagoTarjetaResult");
+
+          //Ti.API.info(xml);
+          var xmlText = elements.item(0).textContent;
+          var XMLObject = Titanium.XML.parseString(xmlText);
+          var xmlsaldo = XMLObject.getElementsByTagName("raiz");
+
+          var fueExitoso = xmlsaldo.item(0).getElementsByTagName("fueExitoso").item(0).textContent;
+          var fueCancelado = xmlsaldo.item(0).getElementsByTagName("fueCancelado").item(0).textContent;
+          var mensaje  = xmlsaldo.item(0).getElementsByTagName("mensaje ").item(0).textContent;
+
+          // var fechaActualizacion = '15 de Agosto de 2018';
+          // try {
+          // var fechaActualizacion =
+          // xmlsaldo.item(0).getElementsByTagName("fechaActualizacion").item(0).textContent;
+          // } catch (err) {
+          // }
+          var resultadoCancelacion = {
+               fueExitoso : fueExitoso,
+               fueCancelado : fueCancelado,
+               mensaje : mensaje,
+               // fechaActualizacion : fechaActualizacion,
+
+          };
+
+          Alloy.Globals.resultadoCancelacion = resultadoCancelacion;
+          callback();
+     };
+
+     xhr.onerror = function(e) {
+
+          Ti.API.info("ObtenerBoletosColaboradorPorSorteo error");
+          Ti.API.info(JSON.stringify(e, null, 4));
+
+          return;
+
+     };
+
+     xhr.open("POST", servicioWeb, true);
+
+     xhr.setRequestHeader("Content-Type", "text/xml; charset=utf-8");
+     xhr.setRequestHeader("SOAPAction", "http://tempuri.org/IService/ObtenerSaldoGlobalColaborador");
+     xhr.setRequestHeader("Cache-Control", "no-cache");
+     xhr.setRequestHeader("Postman-Token", "e7d9c3bd-ddf0-4b0a-8a8b-bbdf10381fa5");
+     xhr.setValidatesSecureCertificate(true);
+     xhr.send(body);
+
+};
+
+
 
 Alloy.Globals.login = function(loginColaborador, passwordColaborador, callback) {
 	Ti.API.info('login:' + loginColaborador + ' password:' + passwordColaborador);

@@ -30,9 +30,6 @@
 },
 "#View_1": {
 },
-"#Label_1": {
-	"text": "x"
-},
 "#miPerfil": {
 	"text": "Mi Perfil"
 },
@@ -95,4 +92,9 @@
 },
 "#permisosGobernacion": {
 	"text": "Permisos de gobernación"
+},
+"#Label_1": {
+	"text": "Versión: 2019.01.25.11.24",
+	"color": "#000000",
+	"top": "10",
 }

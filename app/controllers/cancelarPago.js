@@ -3,22 +3,22 @@
 var args = $.args;
 
 var pagos = [{
-	idTransaccion : '2628',
+	idTransaccion : '175928',
 	idUsuario : '4741',
 	monto : '1',
 	descripcion : 'algo1'
 }, {
-	idTransaccion : '2629',
+	idTransaccion : '175929',
 	idUsuario : '4741',
 	monto : '11',
 	descripcion : 'algo11'
 }, {
-	idTransaccion : '2630',
+	idTransaccion : '175930',
 	idUsuario : '4741',
 	monto : '111',
 	descripcion : 'algo111'
 }, {
-	idTransaccion : '2632',
+	idTransaccion : '175931',
 	idUsuario : '4741',
 	monto : '1111',
 	descripcion : 'algo1111'
@@ -44,9 +44,9 @@ $.regresar.addEventListener('click', function(error) {
 
 function cargarPagos() {
 
-	var PagosDelDia = [];
-	pagos.forEach(function pago() {
-		PagosDelDia.push({
+	var listapagos = [];
+	pagos.forEach(function (pago) {
+		listapagos.push({
 			descripcion : {
 				text : pago.descripcion
 			},
@@ -55,4 +55,8 @@ function cargarPagos() {
 			}
 		});
 	});
+	         $.listaPagos.sections[0].setItems(listapagos);
+
+	Ti.API.info('listapagos:' + JSON.stringify(listapagos, null, 4));
+
 }

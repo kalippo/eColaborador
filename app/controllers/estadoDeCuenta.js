@@ -16,7 +16,9 @@ Ti.API.info('estaLogeado' + JSON.stringify(Alloy.Globals.estaLogeado, null, 4));
 Ti.API.info('username' + JSON.stringify(Alloy.Globals.colaborador.username, null, 4));
 
 Alloy.Globals.WsObtenerSaldoGlobalColaborador(Alloy.Globals.colaborador.username, function() {
-	$.saldo.text = String.formatCurrency(parseInt(Alloy.Globals.saldoGlobal.saldoGlobal));
+     Ti.API.info('saldo global' + JSON.stringify(Alloy.Globals.saldoGlobal, null, 4));
+
+	$.saldo.text = Number.isInteger( Alloy.Globals.saldoGlobal.saldoGlobal) ?String.formatCurrency(parseInt(Alloy.Globals.saldoGlobal.saldoGlobal)):"$0.00";
 	$.puntos.text = Alloy.Globals.saldoGlobal.puntos;
 	$.actualizacion.text = 'Actualizado al '+ Alloy.Globals.saldoGlobal.fechaActualizacion;
 });

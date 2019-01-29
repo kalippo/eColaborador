@@ -19,7 +19,6 @@
 	"left": "50"
 },
 "#ListaSorteos": {
-	"type": Titanium.UI.PICKER_TYPE_PLAIN,
 	"height": "150",
 	"borderRadius": "10",
 	"borderColor": "#E5E5E5",
@@ -65,4 +64,18 @@
 "#procesando": {
 	"height": "50",
 	"width": "50"
+},
+"#vistaSaldo": {
+	"height": "70",
+	"layout": "horizontal"
+},
+"#Label_2": {
+	"text": "Saldo:",
+	"left": "100",
+	"top": "20"
+},
+"#lblSaldoSorteo": {
+	"left": "1",
+	"text": "$",
+	"top": "20"
 }
