@@ -1,6 +1,6 @@
 Ti.API.info('test');
 //Produccion
-var servicioWeb =   'http://colaboro.sorteostec.org/ServicioAppColaboro/v1/Service.svc'; 
+//var servicioWeb =   'http://colaboro.sorteostec.org/ServicioAppColaboro/v1/Service.svc'; 
 //var servicioWeb = 'http://devcrm.sorteostec.org/ServicioColaboro/v1/Service.svc';
 //var servicioWeb = 'http://10.97.129.29/ServicioColaboro/v1/Service.svc';
 //var servicioWeb = 'http://servicioscrm.sorteostec.org/AppColaborador/Desarrollo/ServicioAppColaborador/v1/Service.svc';

@@ -1,5 +1,5 @@
 <Alloy>
-    <Window class="container" layout="vertical" theme="Theme.AppCompat.Light.NoActionBar">
+    <Window class="container" id="principal" layout="vertical" theme="Theme.AppCompat.Light.NoActionBar">
         <View class="vistaTitulo" id="vistaTitulo">
             <Label class="fa h5 regresar" id="regresar"/>
             <Label class="etiquetaTitulo fuenteApp h4 centrado" id="titulo"/>

@@ -17,6 +17,8 @@ if(args.referencia >= 0) {
 
 }
 
+$.principal.addEventListener("click", ocultarTeclado);
+
 $.ListaSorteos.addEventListener('change', function(e) {
 
 	//Ti.API.info(JSON.stringify(e.row, null, 4));
@@ -43,7 +45,7 @@ $.continuar.addEventListener('click', function() {
 			title : 'Pago en línea'
 		});
 		dialog.show();
-	} else if( intMonto == parseInt($.ListaSorteos.getSelectedRow(0).saldo)) {
+	} else if(intMonto == parseInt($.ListaSorteos.getSelectedRow(0).saldo)) {
 		var dialog = Ti.UI.createAlertDialog({
 			message : 'El monto a pagar no puede ser mayor al saldo en el sorteo',
 			ok : 'Okay',
@@ -55,12 +57,12 @@ $.continuar.addEventListener('click', function() {
 		Ti.API.info(param);
 
 		if(regresar == 'pagoEnLinea') {
-			Ti.Platform.openURL("http://stagecolaboro.sorteostec.org/SitioColaboroStage/v1/WebForm1.aspx" + param);
+			Ti.Platform.openURL("http://stagecolaboro.sorteostec.org/SitioColaboroStage/v1/cobroMovil.aspx" + param);
 			//replace string lit with your url
 
 		} else {
 			share({
-				text : "http://stagecolaboro.sorteostec.org/SitioColaboroStage/v1/WebForm1.aspx" + param
+				text : "http://stagecolaboro.sorteostec.org/SitioColaboroStage/v1/cobroMovil.aspx" + param
 			});
 		}
 		//http://cobroenlineatec.com/?idCliente=10023&idSorteo=1&idTipoSorteo=1&numeroSorteo=1&monto=100.00&idEmpleadoVenta=2198692
@@ -259,3 +261,11 @@ function share(options) {
 	}
 }
 
+
+function ocultarTeclado(e) {
+	if(Ti.Platform.osname === 'android') {
+		Ti.UI.Android.hideSoftKeyboard();
+	} else {
+	    $.monto.blur();
+ 	}
+}

@@ -2,7 +2,7 @@
 <ti:app xmlns:ti="http://ti.appcelerator.org">
     <id>com.sorteostec.colaboro</id>
     <name>Colaboro</name>
-    <version>1.21</version>
+    <version>1.24</version>
     <publisher>pedromiramontes</publisher>
     <url>undefined</url>
     <description>undefined</description>

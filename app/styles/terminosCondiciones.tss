@@ -7,12 +7,12 @@
 	"text": "TERMINOS Y CONDICIONES",
 	"left": "40",
 	"top": "20",
-	"right": "40",
+	"right": "40"
 },
 "#vistaTitulo": {
 },
 "#vistaAviso": {
 },
 "#webAviso": {
-	"url": "https://m.sorteostec.org/assets/terminos.html"
+	"url": "https://m.sorteostec.org/assets/terminos.html",
 }
